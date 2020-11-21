@@ -1,0 +1,86 @@
+﻿namespace Proyecto_HRPS
+{
+    partial class MenuInicial
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicial));
+            this.botonDeAdministrador = new System.Windows.Forms.Button();
+            this.botonDeEmpleado = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // botonDeAdministrador
+            // 
+            this.botonDeAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeAdministrador.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeAdministrador.ForeColor = System.Drawing.Color.White;
+            this.botonDeAdministrador.Location = new System.Drawing.Point(172, 138);
+            this.botonDeAdministrador.Name = "botonDeAdministrador";
+            this.botonDeAdministrador.Size = new System.Drawing.Size(182, 79);
+            this.botonDeAdministrador.TabIndex = 0;
+            this.botonDeAdministrador.Text = "ADMINISTRADOR";
+            this.botonDeAdministrador.UseVisualStyleBackColor = false;
+            // 
+            // botonDeEmpleado
+            // 
+            this.botonDeEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeEmpleado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeEmpleado.ForeColor = System.Drawing.Color.White;
+            this.botonDeEmpleado.Location = new System.Drawing.Point(418, 138);
+            this.botonDeEmpleado.Name = "botonDeEmpleado";
+            this.botonDeEmpleado.Size = new System.Drawing.Size(182, 79);
+            this.botonDeEmpleado.TabIndex = 1;
+            this.botonDeEmpleado.Text = "EMPLEADO";
+            this.botonDeEmpleado.UseVisualStyleBackColor = false;
+            this.botonDeEmpleado.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // MenuInicial
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(800, 415);
+            this.Controls.Add(this.botonDeEmpleado);
+            this.Controls.Add(this.botonDeAdministrador);
+            this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MenuInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menú inicial";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button botonDeAdministrador;
+        private System.Windows.Forms.Button botonDeEmpleado;
+    }
+}
+
