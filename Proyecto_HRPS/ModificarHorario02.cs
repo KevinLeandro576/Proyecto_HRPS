@@ -10,29 +10,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
-    public partial class MenuInicial : Form
+    public partial class ModificarHorario02 : Form
     {
-        public MenuInicial()
+        public ModificarHorario02()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void botonDeAdministrador_Click(object sender, EventArgs e)
         {
 
         }

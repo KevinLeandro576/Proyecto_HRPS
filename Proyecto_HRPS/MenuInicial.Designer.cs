@@ -44,6 +44,7 @@
             this.botonDeAdministrador.TabIndex = 0;
             this.botonDeAdministrador.Text = "ADMINISTRADOR";
             this.botonDeAdministrador.UseVisualStyleBackColor = false;
+            this.botonDeAdministrador.Click += new System.EventHandler(this.botonDeAdministrador_Click);
             // 
             // botonDeEmpleado
             // 

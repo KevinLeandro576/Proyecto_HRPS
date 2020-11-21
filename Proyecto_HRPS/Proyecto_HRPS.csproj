@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearPerfilDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearPerfilDeUsuario.Designer.cs">
+      <DependentUpon>CrearPerfilDeUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuDeAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +64,55 @@
     <Compile Include="MenuInicial.Designer.cs">
       <DependentUpon>MenuInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarHorario.Designer.cs">
+      <DependentUpon>ModificarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarHorario02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarHorario02.Designer.cs">
+      <DependentUpon>ModificarHorario02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilesDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerfilesDeUsuario.Designer.cs">
+      <DependentUpon>PerfilesDeUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerEmpleados.Designer.cs">
+      <DependentUpon>VerEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerSalario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerSalario.Designer.cs">
+      <DependentUpon>VerSalario.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CrearPerfilDeUsuario.resx">
+      <DependentUpon>CrearPerfilDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuDeAdministrador.resx">
       <DependentUpon>MenuDeAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuInicial.resx">
       <DependentUpon>MenuInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarHorario.resx">
+      <DependentUpon>ModificarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarHorario02.resx">
+      <DependentUpon>ModificarHorario02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerfilesDeUsuario.resx">
+      <DependentUpon>PerfilesDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +123,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VerEmpleados.resx">
+      <DependentUpon>VerEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerSalario.resx">
+      <DependentUpon>VerSalario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
