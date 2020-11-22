@@ -16,7 +16,7 @@ namespace Proyecto_HRPS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ModificarHorario02());
+            Application.Run(new Solicitudes());
         }
     }
 }
