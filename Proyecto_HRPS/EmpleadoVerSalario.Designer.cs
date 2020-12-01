@@ -75,9 +75,10 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(209, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "SALARIO BRUTO";
+            this.label3.Text = "SALARIO NETO";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

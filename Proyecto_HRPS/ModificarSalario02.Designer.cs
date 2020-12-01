@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelDeSalarioActual = new System.Windows.Forms.Label();
             this.labelDeSalarioNuevo = new System.Windows.Forms.Label();
             this.textBoxDeHorarioActual = new System.Windows.Forms.TextBox();
             this.textBoxDeHorarioNuevo = new System.Windows.Forms.TextBox();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeGuardarCambios = new System.Windows.Forms.Button();
+            this.labelDeSalarioActual = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // labelDeSalarioActual
-            // 
-            this.labelDeSalarioActual.AutoSize = true;
-            this.labelDeSalarioActual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeSalarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeSalarioActual.Location = new System.Drawing.Point(38, 64);
-            this.labelDeSalarioActual.Name = "labelDeSalarioActual";
-            this.labelDeSalarioActual.Size = new System.Drawing.Size(97, 14);
-            this.labelDeSalarioActual.TabIndex = 7;
-            this.labelDeSalarioActual.Text = "SALARIO ACTUAL";
             // 
             // labelDeSalarioNuevo
             // 
@@ -96,6 +85,17 @@
             this.botonDeGuardarCambios.Text = "GUARDAR CAMBIOS";
             this.botonDeGuardarCambios.UseVisualStyleBackColor = false;
             // 
+            // labelDeSalarioActual
+            // 
+            this.labelDeSalarioActual.AutoSize = true;
+            this.labelDeSalarioActual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeSalarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.labelDeSalarioActual.Location = new System.Drawing.Point(38, 64);
+            this.labelDeSalarioActual.Name = "labelDeSalarioActual";
+            this.labelDeSalarioActual.Size = new System.Drawing.Size(97, 14);
+            this.labelDeSalarioActual.TabIndex = 7;
+            this.labelDeSalarioActual.Text = "SALARIO ACTUAL";
+            // 
             // ModificarSalario02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -119,12 +119,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelDeSalarioActual;
         private System.Windows.Forms.Label labelDeSalarioNuevo;
         private System.Windows.Forms.TextBox textBoxDeHorarioActual;
         private System.Windows.Forms.TextBox textBoxDeHorarioNuevo;
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Button botonDeGuardarCambios;
+        private System.Windows.Forms.Label labelDeSalarioActual;
     }
 }
