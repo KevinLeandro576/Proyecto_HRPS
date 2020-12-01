@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,17 +79,53 @@
     <Compile Include="EliminarEmpleados.Designer.cs">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadoVerHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoVerHorario.Designer.cs">
+      <DependentUpon>EmpleadoVerHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoVerHorasExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoVerHorasExtra.Designer.cs">
+      <DependentUpon>EmpleadoVerHorasExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoVerPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoVerPerfil.Designer.cs">
+      <DependentUpon>EmpleadoVerPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoVerSalario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoVerSalario.Designer.cs">
+      <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuDeAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuDeAdministrador.Designer.cs">
       <DependentUpon>MenuDeAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuDeEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDeEmpleado.Designer.cs">
+      <DependentUpon>MenuDeEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuInicial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuInicial.Designer.cs">
       <DependentUpon>MenuInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPerfilesEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPerfilesEmpleado.Designer.cs">
+      <DependentUpon>MenuPerfilesEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarHorario.cs">
       <SubType>Form</SubType>
@@ -108,11 +159,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudesHorasExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolicitudesHorasExtra.Designer.cs">
+      <DependentUpon>SolicitudesHorasExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolicitudesVacaciones.Designer.cs">
+      <DependentUpon>SolicitudesVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Solicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Solicitudes.Designer.cs">
       <DependentUpon>Solicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolicitudesEmpleados.Designer.cs">
+      <DependentUpon>SolicitudesEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="VerEmpleados.cs">
       <SubType>Form</SubType>
@@ -132,6 +207,12 @@
     <Compile Include="VerSalario.Designer.cs">
       <DependentUpon>VerSalario.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerSalarioEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerSalarioEmpleados.Designer.cs">
+      <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ControlDeEmpleados.resx">
       <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,11 +222,29 @@
     <EmbeddedResource Include="EliminarEmpleados.resx">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoVerHorario.resx">
+      <DependentUpon>EmpleadoVerHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoVerHorasExtra.resx">
+      <DependentUpon>EmpleadoVerHorasExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoVerPerfil.resx">
+      <DependentUpon>EmpleadoVerPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoVerSalario.resx">
+      <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuDeAdministrador.resx">
       <DependentUpon>MenuDeAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuDeEmpleado.resx">
+      <DependentUpon>MenuDeEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuInicial.resx">
       <DependentUpon>MenuInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPerfilesEmpleado.resx">
+      <DependentUpon>MenuPerfilesEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarHorario.resx">
       <DependentUpon>ModificarHorario.cs</DependentUpon>
@@ -171,8 +270,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SolicitudesHorasExtra.resx">
+      <DependentUpon>SolicitudesHorasExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolicitudesVacaciones.resx">
+      <DependentUpon>SolicitudesVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Solicitudes.resx">
       <DependentUpon>Solicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolicitudesEmpleados.resx">
+      <DependentUpon>SolicitudesEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerEmpleados.resx">
       <DependentUpon>VerEmpleados.cs</DependentUpon>
@@ -182,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VerSalario.resx">
       <DependentUpon>VerSalario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerSalarioEmpleados.resx">
+      <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -195,6 +309,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
