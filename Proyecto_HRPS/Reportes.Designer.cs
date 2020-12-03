@@ -31,6 +31,7 @@
             this.sal_emp = new System.Windows.Forms.LinkLabel();
             this.reportes_diarios = new System.Windows.Forms.LinkLabel();
             this.vacaciones = new System.Windows.Forms.LinkLabel();
+            this.link_Volver = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // sal_emp
@@ -50,7 +51,7 @@
             this.reportes_diarios.AutoSize = true;
             this.reportes_diarios.Font = new System.Drawing.Font("Arial", 8.25F);
             this.reportes_diarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.reportes_diarios.Location = new System.Drawing.Point(314, 38);
+            this.reportes_diarios.Location = new System.Drawing.Point(244, 38);
             this.reportes_diarios.Name = "reportes_diarios";
             this.reportes_diarios.Size = new System.Drawing.Size(128, 14);
             this.reportes_diarios.TabIndex = 1;
@@ -62,24 +63,37 @@
             this.vacaciones.AutoSize = true;
             this.vacaciones.Font = new System.Drawing.Font("Arial", 8.25F);
             this.vacaciones.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.vacaciones.Location = new System.Drawing.Point(538, 38);
+            this.vacaciones.Location = new System.Drawing.Point(418, 38);
             this.vacaciones.Name = "vacaciones";
             this.vacaciones.Size = new System.Drawing.Size(203, 14);
             this.vacaciones.TabIndex = 2;
             this.vacaciones.TabStop = true;
             this.vacaciones.Text = "VER VACACIONES DE LOS EMPLEADOS";
             // 
+            // link_Volver
+            // 
+            this.link_Volver.AutoSize = true;
+            this.link_Volver.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.link_Volver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.link_Volver.Location = new System.Drawing.Point(662, 38);
+            this.link_Volver.Name = "link_Volver";
+            this.link_Volver.Size = new System.Drawing.Size(49, 14);
+            this.link_Volver.TabIndex = 3;
+            this.link_Volver.TabStop = true;
+            this.link_Volver.Text = "VOLVER";
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 281);
+            this.Controls.Add(this.link_Volver);
             this.Controls.Add(this.vacaciones);
             this.Controls.Add(this.reportes_diarios);
             this.Controls.Add(this.sal_emp);
             this.Name = "Reportes";
-            this.Text = "Reportes";
+            this.Text = "Menú de reportes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +104,6 @@
         private System.Windows.Forms.LinkLabel sal_emp;
         private System.Windows.Forms.LinkLabel reportes_diarios;
         private System.Windows.Forms.LinkLabel vacaciones;
+        private System.Windows.Forms.LinkLabel link_Volver;
     }
 }
