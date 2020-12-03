@@ -38,6 +38,7 @@
             // 
             // dtpFechaInicio
             // 
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpFechaInicio.Location = new System.Drawing.Point(123, 80);
             this.dtpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -47,6 +48,7 @@
             // 
             // dtpFechaFin
             // 
+            this.dtpFechaFin.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpFechaFin.Location = new System.Drawing.Point(427, 80);
             this.dtpFechaFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -57,20 +59,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(120, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(87, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "FECHA DE INICIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(424, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.Size = new System.Drawing.Size(129, 14);
             this.label2.TabIndex = 3;
             this.label2.Text = "FECHA DE FINALIZACIÓN";
             // 
@@ -102,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_Generar);
             this.Controls.Add(this.botonDeVolver);

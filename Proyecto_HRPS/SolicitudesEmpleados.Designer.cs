@@ -48,10 +48,11 @@
             // enlace_Vacaciones
             // 
             this.enlace_Vacaciones.AutoSize = true;
+            this.enlace_Vacaciones.Font = new System.Drawing.Font("Arial", 8.25F);
             this.enlace_Vacaciones.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.enlace_Vacaciones.Location = new System.Drawing.Point(135, 87);
             this.enlace_Vacaciones.Name = "enlace_Vacaciones";
-            this.enlace_Vacaciones.Size = new System.Drawing.Size(134, 13);
+            this.enlace_Vacaciones.Size = new System.Drawing.Size(129, 14);
             this.enlace_Vacaciones.TabIndex = 6;
             this.enlace_Vacaciones.TabStop = true;
             this.enlace_Vacaciones.Text = "SOLICITAR VACACIONES";
@@ -59,10 +60,11 @@
             // enlace_RegistroDeHoras
             // 
             this.enlace_RegistroDeHoras.AutoSize = true;
+            this.enlace_RegistroDeHoras.Font = new System.Drawing.Font("Arial", 8.25F);
             this.enlace_RegistroDeHoras.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.enlace_RegistroDeHoras.Location = new System.Drawing.Point(489, 87);
             this.enlace_RegistroDeHoras.Name = "enlace_RegistroDeHoras";
-            this.enlace_RegistroDeHoras.Size = new System.Drawing.Size(157, 13);
+            this.enlace_RegistroDeHoras.Size = new System.Drawing.Size(149, 14);
             this.enlace_RegistroDeHoras.TabIndex = 7;
             this.enlace_RegistroDeHoras.TabStop = true;
             this.enlace_RegistroDeHoras.Text = "REGISTRAR HORAS EXTRAS";
@@ -71,6 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.enlace_RegistroDeHoras);
             this.Controls.Add(this.enlace_Vacaciones);

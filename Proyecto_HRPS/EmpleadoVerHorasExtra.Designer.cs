@@ -50,28 +50,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(235, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(48, 14);
             this.label1.TabIndex = 18;
             this.label1.Text = "CÉDULA";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(235, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(88, 14);
             this.label2.TabIndex = 19;
             this.label2.Text = "HORAS EXTRAS";
             // 
             // tb_Cedula
             // 
+            this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
             this.tb_Cedula.Location = new System.Drawing.Point(425, 82);
             this.tb_Cedula.Name = "tb_Cedula";
-            this.tb_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.tb_Cedula.Size = new System.Drawing.Size(112, 20);
             this.tb_Cedula.TabIndex = 20;
             // 
             // button1
@@ -90,6 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tb_Cedula);

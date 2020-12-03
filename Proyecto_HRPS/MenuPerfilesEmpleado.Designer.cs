@@ -37,30 +37,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(571, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "VER SALARIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(356, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(64, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "VER PERFIL";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(147, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(78, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "VER HORARIO";
             // 

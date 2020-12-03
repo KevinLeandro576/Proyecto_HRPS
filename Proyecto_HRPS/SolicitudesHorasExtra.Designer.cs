@@ -66,35 +66,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(226, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 9;
             this.label1.Text = "NOMBRE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(226, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.Size = new System.Drawing.Size(90, 14);
             this.label2.TabIndex = 10;
             this.label2.Text = "DÍA TRABAJADO";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(226, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 13);
+            this.label3.Size = new System.Drawing.Size(152, 14);
             this.label3.TabIndex = 11;
             this.label3.Text = "CANTIDAD DE HORAS EXTRA";
             // 
             // tb_Nombre
             // 
+            this.tb_Nombre.Font = new System.Drawing.Font("Arial", 8.25F);
             this.tb_Nombre.Location = new System.Drawing.Point(440, 71);
             this.tb_Nombre.Name = "tb_Nombre";
             this.tb_Nombre.Size = new System.Drawing.Size(135, 20);
@@ -102,6 +106,7 @@
             // 
             // dtp_Dia_Trabajado
             // 
+            this.dtp_Dia_Trabajado.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtp_Dia_Trabajado.Location = new System.Drawing.Point(440, 116);
             this.dtp_Dia_Trabajado.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtp_Dia_Trabajado.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -111,15 +116,17 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.numericUpDown1.Location = new System.Drawing.Point(440, 160);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(135, 20);
             this.numericUpDown1.TabIndex = 15;
             // 
-            // RegistroHorasExtra
+            // SolicitudesHorasExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dtp_Dia_Trabajado);
@@ -129,7 +136,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.botonDeVolver);
-            this.Name = "RegistroHorasExtra";
+            this.Name = "SolicitudesHorasExtra";
             this.Text = "RegistroHorasExtra";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
