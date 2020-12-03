@@ -65,15 +65,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(232, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 8;
             this.label1.Text = "NOMBRE";
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.textBox1.Location = new System.Drawing.Point(442, 71);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 20);
@@ -81,6 +83,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dateTimePicker1.Location = new System.Drawing.Point(442, 125);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(152, 20);
@@ -89,34 +92,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(232, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.Size = new System.Drawing.Size(129, 14);
             this.label2.TabIndex = 11;
             this.label2.Text = "FECHA DE FINALIZACIÓN";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(232, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(87, 14);
             this.label3.TabIndex = 12;
             this.label3.Text = "FECHA DE INICIO";
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dateTimePicker2.Location = new System.Drawing.Point(442, 182);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(152, 20);
             this.dateTimePicker2.TabIndex = 13;
             // 
-            // SolicitarVacaciones
+            // SolicitudesVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label3);
@@ -126,7 +133,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.botonDeVolver);
-            this.Name = "SolicitarVacaciones";
+            this.Name = "SolicitudesVacaciones";
             this.Text = "SolicitarVacaciones";
             this.ResumeLayout(false);
             this.PerformLayout();

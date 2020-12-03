@@ -50,25 +50,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(217, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(54, 14);
             this.label1.TabIndex = 17;
             this.label1.Text = "HORARIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(217, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(48, 14);
             this.label2.TabIndex = 18;
             this.label2.Text = "CÉDULA";
             // 
             // tb_Cedula
             // 
+            this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
             this.tb_Cedula.Location = new System.Drawing.Point(396, 86);
             this.tb_Cedula.Name = "tb_Cedula";
             this.tb_Cedula.Size = new System.Drawing.Size(130, 20);
@@ -90,6 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tb_Cedula);
@@ -97,7 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "EmpleadoVerHorario";
-            this.Text = "EmpleadoVerHorario";
+            this.Text = "Ver Horario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
