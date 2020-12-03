@@ -101,7 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "EmpleadoVerHorario";
-            this.Text = "EmpleadoVerHorario";
+            this.Text = "Ver Horario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
