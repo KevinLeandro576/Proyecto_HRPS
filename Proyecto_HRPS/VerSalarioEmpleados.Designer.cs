@@ -115,7 +115,7 @@
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
             this.Name = "VerSalarioEmpleados";
-            this.Text = "VerSalarioEmpleados";
+            this.Text = "Ver Salario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
