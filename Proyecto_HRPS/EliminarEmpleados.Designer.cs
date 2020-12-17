@@ -36,7 +36,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(24, 256);
+            this.botonDeVolver.Location = new System.Drawing.Point(40, 227);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 44);
             this.botonDeVolver.TabIndex = 5;

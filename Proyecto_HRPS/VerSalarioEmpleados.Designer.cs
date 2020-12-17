@@ -43,7 +43,7 @@
             this.dtpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(176, 20);
             this.dtpFechaInicio.TabIndex = 0;
             // 
             // dtpFechaFin
@@ -53,7 +53,7 @@
             this.dtpFechaFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaFin.Size = new System.Drawing.Size(176, 20);
             this.dtpFechaFin.TabIndex = 1;
             // 
             // label1
@@ -83,7 +83,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(61, 206);
+            this.botonDeVolver.Location = new System.Drawing.Point(96, 174);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 15;
@@ -95,7 +95,7 @@
             this.btn_Generar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.btn_Generar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Generar.ForeColor = System.Drawing.Color.White;
-            this.btn_Generar.Location = new System.Drawing.Point(389, 206);
+            this.btn_Generar.Location = new System.Drawing.Point(337, 174);
             this.btn_Generar.Name = "btn_Generar";
             this.btn_Generar.Size = new System.Drawing.Size(176, 48);
             this.btn_Generar.TabIndex = 16;
@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(667, 364);
+            this.ClientSize = new System.Drawing.Size(651, 287);
             this.Controls.Add(this.btn_Generar);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.label2);

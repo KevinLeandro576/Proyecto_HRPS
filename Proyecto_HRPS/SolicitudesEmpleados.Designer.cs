@@ -38,7 +38,7 @@
             this.enlace_Vacaciones.AutoSize = true;
             this.enlace_Vacaciones.Font = new System.Drawing.Font("Arial", 8.25F);
             this.enlace_Vacaciones.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlace_Vacaciones.Location = new System.Drawing.Point(77, 64);
+            this.enlace_Vacaciones.Location = new System.Drawing.Point(56, 37);
             this.enlace_Vacaciones.Name = "enlace_Vacaciones";
             this.enlace_Vacaciones.Size = new System.Drawing.Size(129, 14);
             this.enlace_Vacaciones.TabIndex = 6;
@@ -50,7 +50,7 @@
             this.enlace_RegistroDeHoras.AutoSize = true;
             this.enlace_RegistroDeHoras.Font = new System.Drawing.Font("Arial", 8.25F);
             this.enlace_RegistroDeHoras.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlace_RegistroDeHoras.Location = new System.Drawing.Point(302, 64);
+            this.enlace_RegistroDeHoras.Location = new System.Drawing.Point(259, 37);
             this.enlace_RegistroDeHoras.Name = "enlace_RegistroDeHoras";
             this.enlace_RegistroDeHoras.Size = new System.Drawing.Size(149, 14);
             this.enlace_RegistroDeHoras.TabIndex = 7;
@@ -62,7 +62,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.linkLabel1.Location = new System.Drawing.Point(542, 64);
+            this.linkLabel1.Location = new System.Drawing.Point(530, 37);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(49, 14);
             this.linkLabel1.TabIndex = 8;

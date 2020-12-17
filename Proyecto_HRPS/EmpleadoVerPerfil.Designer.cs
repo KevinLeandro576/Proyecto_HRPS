@@ -56,7 +56,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(90, 50);
+            this.label1.Location = new System.Drawing.Point(31, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 14);
             this.label1.TabIndex = 17;
@@ -67,7 +67,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(90, 82);
+            this.label2.Location = new System.Drawing.Point(31, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 14);
             this.label2.TabIndex = 18;
@@ -78,7 +78,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(90, 152);
+            this.label3.Location = new System.Drawing.Point(34, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 14);
             this.label3.TabIndex = 19;
@@ -89,7 +89,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label4.Location = new System.Drawing.Point(90, 113);
+            this.label4.Location = new System.Drawing.Point(31, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 14);
             this.label4.TabIndex = 20;
@@ -98,25 +98,25 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(260, 107);
+            this.dateTimePicker1.Location = new System.Drawing.Point(157, 108);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(176, 20);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // tb_Nombre
             // 
             this.tb_Nombre.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Nombre.Location = new System.Drawing.Point(260, 75);
+            this.tb_Nombre.Location = new System.Drawing.Point(157, 75);
             this.tb_Nombre.Name = "tb_Nombre";
-            this.tb_Nombre.Size = new System.Drawing.Size(185, 20);
+            this.tb_Nombre.Size = new System.Drawing.Size(176, 20);
             this.tb_Nombre.TabIndex = 22;
             // 
             // tb_Cedula
             // 
             this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Cedula.Location = new System.Drawing.Point(260, 43);
+            this.tb_Cedula.Location = new System.Drawing.Point(157, 43);
             this.tb_Cedula.Name = "tb_Cedula";
-            this.tb_Cedula.Size = new System.Drawing.Size(185, 20);
+            this.tb_Cedula.Size = new System.Drawing.Size(176, 20);
             this.tb_Cedula.TabIndex = 23;
             // 
             // btn_Guardar
