@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.enlaceDeCrearPerfilDeUsuario = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.enlaceDeVerHorarios = new System.Windows.Forms.LinkLabel();
             this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -45,17 +45,17 @@
             this.enlaceDeCrearPerfilDeUsuario.TabStop = true;
             this.enlaceDeCrearPerfilDeUsuario.Text = "VER HORAS EXTRA";
             // 
-            // linkLabel1
+            // enlaceDeVerHorarios
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.linkLabel1.Location = new System.Drawing.Point(350, 31);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(85, 14);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "VER HORARIOS";
+            this.enlaceDeVerHorarios.AutoSize = true;
+            this.enlaceDeVerHorarios.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enlaceDeVerHorarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.enlaceDeVerHorarios.Location = new System.Drawing.Point(350, 31);
+            this.enlaceDeVerHorarios.Name = "enlaceDeVerHorarios";
+            this.enlaceDeVerHorarios.Size = new System.Drawing.Size(85, 14);
+            this.enlaceDeVerHorarios.TabIndex = 3;
+            this.enlaceDeVerHorarios.TabStop = true;
+            this.enlaceDeVerHorarios.Text = "VER HORARIOS";
             // 
             // enlaceDeVolver
             // 
@@ -76,7 +76,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(788, 330);
             this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.enlaceDeVerHorarios);
             this.Controls.Add(this.enlaceDeCrearPerfilDeUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -91,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel enlaceDeCrearPerfilDeUsuario;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel enlaceDeVerHorarios;
         private System.Windows.Forms.LinkLabel enlaceDeVolver;
     }
 }

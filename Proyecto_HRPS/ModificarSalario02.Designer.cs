@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelDeSalarioNuevo = new System.Windows.Forms.Label();
-            this.textBoxDeHorarioNuevo = new System.Windows.Forms.TextBox();
+            this.textBoxDeSalarioNuevo = new System.Windows.Forms.TextBox();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeGuardarCambios = new System.Windows.Forms.Button();
             this.labelDeSalarioActual = new System.Windows.Forms.Label();
@@ -46,12 +46,12 @@
             this.labelDeSalarioNuevo.TabIndex = 8;
             this.labelDeSalarioNuevo.Text = "SALARIO NUEVO";
             // 
-            // textBoxDeHorarioNuevo
+            // textBoxDeSalarioNuevo
             // 
-            this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(178, 106);
-            this.textBoxDeHorarioNuevo.Name = "textBoxDeHorarioNuevo";
-            this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(176, 21);
-            this.textBoxDeHorarioNuevo.TabIndex = 10;
+            this.textBoxDeSalarioNuevo.Location = new System.Drawing.Point(178, 106);
+            this.textBoxDeSalarioNuevo.Name = "textBoxDeSalarioNuevo";
+            this.textBoxDeSalarioNuevo.Size = new System.Drawing.Size(176, 21);
+            this.textBoxDeSalarioNuevo.TabIndex = 10;
             // 
             // botonDeVolver
             // 
@@ -96,7 +96,7 @@
             this.ClientSize = new System.Drawing.Size(551, 275);
             this.Controls.Add(this.botonDeGuardarCambios);
             this.Controls.Add(this.botonDeVolver);
-            this.Controls.Add(this.textBoxDeHorarioNuevo);
+            this.Controls.Add(this.textBoxDeSalarioNuevo);
             this.Controls.Add(this.labelDeSalarioNuevo);
             this.Controls.Add(this.labelDeSalarioActual);
             this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,7 +111,7 @@
 
         #endregion
         private System.Windows.Forms.Label labelDeSalarioNuevo;
-        private System.Windows.Forms.TextBox textBoxDeHorarioNuevo;
+        private System.Windows.Forms.TextBox textBoxDeSalarioNuevo;
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Button botonDeGuardarCambios;
         private System.Windows.Forms.Label labelDeSalarioActual;

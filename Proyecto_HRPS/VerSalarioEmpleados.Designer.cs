@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDeFechaDeInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDeFechaDeFinalizacion = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.botonDeVolver = new System.Windows.Forms.Button();
-            this.btn_Generar = new System.Windows.Forms.Button();
+            this.botonDeGenerar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dtpFechaInicio
+            // dateTimePickerDeFechaDeInicio
             // 
-            this.dtpFechaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpFechaInicio.Location = new System.Drawing.Point(61, 79);
-            this.dtpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(176, 20);
-            this.dtpFechaInicio.TabIndex = 0;
+            this.dateTimePickerDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeFechaDeInicio.Location = new System.Drawing.Point(61, 79);
+            this.dateTimePickerDeFechaDeInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerDeFechaDeInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerDeFechaDeInicio.Name = "dateTimePickerDeFechaDeInicio";
+            this.dateTimePickerDeFechaDeInicio.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeInicio.TabIndex = 0;
             // 
-            // dtpFechaFin
+            // dateTimePickerDeFechaDeFinalizacion
             // 
-            this.dtpFechaFin.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpFechaFin.Location = new System.Drawing.Point(365, 79);
-            this.dtpFechaFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(176, 20);
-            this.dtpFechaFin.TabIndex = 1;
+            this.dateTimePickerDeFechaDeFinalizacion.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeFechaDeFinalizacion.Location = new System.Drawing.Point(365, 79);
+            this.dateTimePickerDeFechaDeFinalizacion.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerDeFechaDeFinalizacion.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerDeFechaDeFinalizacion.Name = "dateTimePickerDeFechaDeFinalizacion";
+            this.dateTimePickerDeFechaDeFinalizacion.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeFinalizacion.TabIndex = 1;
             // 
             // label1
             // 
@@ -90,17 +90,17 @@
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
             // 
-            // btn_Generar
+            // botonDeGenerar
             // 
-            this.btn_Generar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btn_Generar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Generar.ForeColor = System.Drawing.Color.White;
-            this.btn_Generar.Location = new System.Drawing.Point(336, 174);
-            this.btn_Generar.Name = "btn_Generar";
-            this.btn_Generar.Size = new System.Drawing.Size(176, 48);
-            this.btn_Generar.TabIndex = 16;
-            this.btn_Generar.Text = "GENERAR";
-            this.btn_Generar.UseVisualStyleBackColor = false;
+            this.botonDeGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeGenerar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeGenerar.ForeColor = System.Drawing.Color.White;
+            this.botonDeGenerar.Location = new System.Drawing.Point(336, 174);
+            this.botonDeGenerar.Name = "botonDeGenerar";
+            this.botonDeGenerar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeGenerar.TabIndex = 16;
+            this.botonDeGenerar.Text = "GENERAR";
+            this.botonDeGenerar.UseVisualStyleBackColor = false;
             // 
             // VerSalarioEmpleados
             // 
@@ -108,12 +108,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 287);
-            this.Controls.Add(this.btn_Generar);
+            this.Controls.Add(this.botonDeGenerar);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpFechaFin);
-            this.Controls.Add(this.dtpFechaInicio);
+            this.Controls.Add(this.dateTimePickerDeFechaDeFinalizacion);
+            this.Controls.Add(this.dateTimePickerDeFechaDeInicio);
             this.Name = "VerSalarioEmpleados";
             this.Text = "Ver salarios";
             this.ResumeLayout(false);
@@ -123,11 +123,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeFechaDeInicio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeFechaDeFinalizacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button botonDeVolver;
-        private System.Windows.Forms.Button btn_Generar;
+        private System.Windows.Forms.Button botonDeGenerar;
     }
 }

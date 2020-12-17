@@ -31,8 +31,8 @@
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_Cedula = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
+            this.botonDeBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -69,25 +69,25 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "HORAS EXTRAS";
             // 
-            // tb_Cedula
+            // textBoxDeCedula
             // 
-            this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Cedula.Location = new System.Drawing.Point(175, 55);
-            this.tb_Cedula.Name = "tb_Cedula";
-            this.tb_Cedula.Size = new System.Drawing.Size(176, 20);
-            this.tb_Cedula.TabIndex = 20;
+            this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(175, 55);
+            this.textBoxDeCedula.Name = "textBoxDeCedula";
+            this.textBoxDeCedula.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeCedula.TabIndex = 20;
             // 
-            // button1
+            // botonDeBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(320, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 48);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "BUSCAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.botonDeBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeBuscar.ForeColor = System.Drawing.Color.White;
+            this.botonDeBuscar.Location = new System.Drawing.Point(320, 184);
+            this.botonDeBuscar.Name = "botonDeBuscar";
+            this.botonDeBuscar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeBuscar.TabIndex = 21;
+            this.botonDeBuscar.Text = "BUSCAR";
+            this.botonDeBuscar.UseVisualStyleBackColor = false;
             // 
             // EmpleadoVerHorasExtra
             // 
@@ -95,8 +95,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(564, 293);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tb_Cedula);
+            this.Controls.Add(this.botonDeBuscar);
+            this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
@@ -112,7 +112,7 @@
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_Cedula;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxDeCedula;
+        private System.Windows.Forms.Button botonDeBuscar;
     }
 }

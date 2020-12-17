@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorInicioDeSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorInicioDeSesion.Designer.cs">
+      <DependentUpon>AdministradorInicioDeSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlDeEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="EliminarEmpleados.Designer.cs">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoInicioDeSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoInicioDeSesion.Designer.cs">
+      <DependentUpon>EmpleadoInicioDeSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="EmpleadoVerHorario.cs">
       <SubType>Form</SubType>
@@ -213,6 +225,9 @@
     <Compile Include="VerSalarioEmpleados.Designer.cs">
       <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdministradorInicioDeSesion.resx">
+      <DependentUpon>AdministradorInicioDeSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlDeEmpleados.resx">
       <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarEmpleados.resx">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoInicioDeSesion.resx">
+      <DependentUpon>EmpleadoInicioDeSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpleadoVerHorario.resx">
       <DependentUpon>EmpleadoVerHorario.cs</DependentUpon>

@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tb_Nombre = new System.Windows.Forms.TextBox();
-            this.tb_Cedula = new System.Windows.Forms.TextBox();
-            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.dateTimePickerDeFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.textBoxDeNombre = new System.Windows.Forms.TextBox();
+            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
+            this.botonDeGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -95,41 +95,41 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "FECHA DE NACIMIENTO";
             // 
-            // dateTimePicker1
+            // dateTimePickerDeFechaDeNacimiento
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(176, 20);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePickerDeFechaDeNacimiento.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(157, 108);
+            this.dateTimePickerDeFechaDeNacimiento.Name = "dateTimePickerDeFechaDeNacimiento";
+            this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeNacimiento.TabIndex = 21;
             // 
-            // tb_Nombre
+            // textBoxDeNombre
             // 
-            this.tb_Nombre.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Nombre.Location = new System.Drawing.Point(157, 75);
-            this.tb_Nombre.Name = "tb_Nombre";
-            this.tb_Nombre.Size = new System.Drawing.Size(176, 20);
-            this.tb_Nombre.TabIndex = 22;
+            this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(157, 75);
+            this.textBoxDeNombre.Name = "textBoxDeNombre";
+            this.textBoxDeNombre.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeNombre.TabIndex = 22;
             // 
-            // tb_Cedula
+            // textBoxDeCedula
             // 
-            this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Cedula.Location = new System.Drawing.Point(157, 43);
-            this.tb_Cedula.Name = "tb_Cedula";
-            this.tb_Cedula.Size = new System.Drawing.Size(176, 20);
-            this.tb_Cedula.TabIndex = 23;
+            this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(157, 43);
+            this.textBoxDeCedula.Name = "textBoxDeCedula";
+            this.textBoxDeCedula.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeCedula.TabIndex = 23;
             // 
-            // btn_Guardar
+            // botonDeGuardar
             // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btn_Guardar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_Guardar.Location = new System.Drawing.Point(260, 212);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(176, 48);
-            this.btn_Guardar.TabIndex = 24;
-            this.btn_Guardar.Text = "GUARDAR";
-            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.botonDeGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeGuardar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeGuardar.ForeColor = System.Drawing.Color.White;
+            this.botonDeGuardar.Location = new System.Drawing.Point(260, 212);
+            this.botonDeGuardar.Name = "botonDeGuardar";
+            this.botonDeGuardar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeGuardar.TabIndex = 24;
+            this.botonDeGuardar.Text = "GUARDAR";
+            this.botonDeGuardar.UseVisualStyleBackColor = false;
             // 
             // EmpleadoVerPerfil
             // 
@@ -137,10 +137,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(509, 315);
-            this.Controls.Add(this.btn_Guardar);
-            this.Controls.Add(this.tb_Cedula);
-            this.Controls.Add(this.tb_Nombre);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.botonDeGuardar);
+            this.Controls.Add(this.textBoxDeCedula);
+            this.Controls.Add(this.textBoxDeNombre);
+            this.Controls.Add(this.dateTimePickerDeFechaDeNacimiento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -160,9 +160,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox tb_Nombre;
-        private System.Windows.Forms.TextBox tb_Cedula;
-        private System.Windows.Forms.Button btn_Guardar;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeFechaDeNacimiento;
+        private System.Windows.Forms.TextBox textBoxDeNombre;
+        private System.Windows.Forms.TextBox textBoxDeCedula;
+        private System.Windows.Forms.Button botonDeGuardar;
     }
 }

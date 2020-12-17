@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.botonDeVolver = new System.Windows.Forms.Button();
-            this.btnEnviar = new System.Windows.Forms.Button();
+            this.botonDeEnviar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxDeNombre = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDeFechaDeInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDeFechaDeFinalizacion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -50,17 +50,17 @@
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
             // 
-            // btnEnviar
+            // botonDeEnviar
             // 
-            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btnEnviar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(309, 205);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(176, 48);
-            this.btnEnviar.TabIndex = 7;
-            this.btnEnviar.Text = "ENVIAR";
-            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.botonDeEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeEnviar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeEnviar.ForeColor = System.Drawing.Color.White;
+            this.botonDeEnviar.Location = new System.Drawing.Point(309, 205);
+            this.botonDeEnviar.Name = "botonDeEnviar";
+            this.botonDeEnviar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeEnviar.TabIndex = 7;
+            this.botonDeEnviar.Text = "ENVIAR";
+            this.botonDeEnviar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -73,21 +73,21 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "NOMBRE";
             // 
-            // textBox1
+            // textBoxDeNombre
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(196, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 9;
+            this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(196, 54);
+            this.textBoxDeNombre.Name = "textBoxDeNombre";
+            this.textBoxDeNombre.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeNombre.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // dateTimePickerDeFechaDeInicio
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(196, 88);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(176, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePickerDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeFechaDeInicio.Location = new System.Drawing.Point(196, 88);
+            this.dateTimePickerDeFechaDeInicio.Name = "dateTimePickerDeFechaDeInicio";
+            this.dateTimePickerDeFechaDeInicio.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeInicio.TabIndex = 10;
             // 
             // label2
             // 
@@ -111,13 +111,13 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "FECHA DE INICIO";
             // 
-            // dateTimePicker2
+            // dateTimePickerDeFechaDeFinalizacion
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePicker2.Location = new System.Drawing.Point(196, 125);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(176, 20);
-            this.dateTimePicker2.TabIndex = 13;
+            this.dateTimePickerDeFechaDeFinalizacion.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeFechaDeFinalizacion.Location = new System.Drawing.Point(196, 125);
+            this.dateTimePickerDeFechaDeFinalizacion.Name = "dateTimePickerDeFechaDeFinalizacion";
+            this.dateTimePickerDeFechaDeFinalizacion.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeFinalizacion.TabIndex = 13;
             // 
             // SolicitudesVacaciones
             // 
@@ -125,13 +125,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(562, 290);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePickerDeFechaDeFinalizacion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimePickerDeFechaDeInicio);
+            this.Controls.Add(this.textBoxDeNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.botonDeEnviar);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "SolicitudesVacaciones";
             this.Text = "Solicitar vacaciones";
@@ -143,12 +143,12 @@
         #endregion
 
         private System.Windows.Forms.Button botonDeVolver;
-        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Button botonDeEnviar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxDeNombre;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeFechaDeInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeFechaDeFinalizacion;
     }
 }

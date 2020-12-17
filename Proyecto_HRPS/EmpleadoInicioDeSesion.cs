@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
-    public partial class MenuDeAdministrador : Form
+    public partial class EmpleadoInicioDeSesion : Form
     {
-        public MenuDeAdministrador()
+        public EmpleadoInicioDeSesion()
         {
             InitializeComponent();
         }
 
-        private void enlaceDePerfilesDeUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void MenuDeAdministrador_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sal_emp = new System.Windows.Forms.LinkLabel();
-            this.reportes_diarios = new System.Windows.Forms.LinkLabel();
-            this.vacaciones = new System.Windows.Forms.LinkLabel();
-            this.link_Volver = new System.Windows.Forms.LinkLabel();
+            this.enlaceDeVerSalariosDeEmpleados = new System.Windows.Forms.LinkLabel();
+            this.enlaceDeVerReportesDiarios = new System.Windows.Forms.LinkLabel();
+            this.enlaceDeVerVacacionesDeEmpleados = new System.Windows.Forms.LinkLabel();
+            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // sal_emp
+            // enlaceDeVerSalariosDeEmpleados
             // 
-            this.sal_emp.AutoSize = true;
-            this.sal_emp.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.sal_emp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.sal_emp.Location = new System.Drawing.Point(41, 38);
-            this.sal_emp.Name = "sal_emp";
-            this.sal_emp.Size = new System.Drawing.Size(165, 14);
-            this.sal_emp.TabIndex = 0;
-            this.sal_emp.TabStop = true;
-            this.sal_emp.Text = "VER SALARIOS DE EMPLEADOS";
+            this.enlaceDeVerSalariosDeEmpleados.AutoSize = true;
+            this.enlaceDeVerSalariosDeEmpleados.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.enlaceDeVerSalariosDeEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.enlaceDeVerSalariosDeEmpleados.Location = new System.Drawing.Point(41, 38);
+            this.enlaceDeVerSalariosDeEmpleados.Name = "enlaceDeVerSalariosDeEmpleados";
+            this.enlaceDeVerSalariosDeEmpleados.Size = new System.Drawing.Size(165, 14);
+            this.enlaceDeVerSalariosDeEmpleados.TabIndex = 0;
+            this.enlaceDeVerSalariosDeEmpleados.TabStop = true;
+            this.enlaceDeVerSalariosDeEmpleados.Text = "VER SALARIOS DE EMPLEADOS";
             // 
-            // reportes_diarios
+            // enlaceDeVerReportesDiarios
             // 
-            this.reportes_diarios.AutoSize = true;
-            this.reportes_diarios.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.reportes_diarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.reportes_diarios.Location = new System.Drawing.Point(244, 38);
-            this.reportes_diarios.Name = "reportes_diarios";
-            this.reportes_diarios.Size = new System.Drawing.Size(128, 14);
-            this.reportes_diarios.TabIndex = 1;
-            this.reportes_diarios.TabStop = true;
-            this.reportes_diarios.Text = "VER REPORTES DIARIOS";
+            this.enlaceDeVerReportesDiarios.AutoSize = true;
+            this.enlaceDeVerReportesDiarios.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.enlaceDeVerReportesDiarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.enlaceDeVerReportesDiarios.Location = new System.Drawing.Point(244, 38);
+            this.enlaceDeVerReportesDiarios.Name = "enlaceDeVerReportesDiarios";
+            this.enlaceDeVerReportesDiarios.Size = new System.Drawing.Size(128, 14);
+            this.enlaceDeVerReportesDiarios.TabIndex = 1;
+            this.enlaceDeVerReportesDiarios.TabStop = true;
+            this.enlaceDeVerReportesDiarios.Text = "VER REPORTES DIARIOS";
             // 
-            // vacaciones
+            // enlaceDeVerVacacionesDeEmpleados
             // 
-            this.vacaciones.AutoSize = true;
-            this.vacaciones.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.vacaciones.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.vacaciones.Location = new System.Drawing.Point(418, 38);
-            this.vacaciones.Name = "vacaciones";
-            this.vacaciones.Size = new System.Drawing.Size(203, 14);
-            this.vacaciones.TabIndex = 2;
-            this.vacaciones.TabStop = true;
-            this.vacaciones.Text = "VER VACACIONES DE LOS EMPLEADOS";
+            this.enlaceDeVerVacacionesDeEmpleados.AutoSize = true;
+            this.enlaceDeVerVacacionesDeEmpleados.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.enlaceDeVerVacacionesDeEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.enlaceDeVerVacacionesDeEmpleados.Location = new System.Drawing.Point(418, 38);
+            this.enlaceDeVerVacacionesDeEmpleados.Name = "enlaceDeVerVacacionesDeEmpleados";
+            this.enlaceDeVerVacacionesDeEmpleados.Size = new System.Drawing.Size(203, 14);
+            this.enlaceDeVerVacacionesDeEmpleados.TabIndex = 2;
+            this.enlaceDeVerVacacionesDeEmpleados.TabStop = true;
+            this.enlaceDeVerVacacionesDeEmpleados.Text = "VER VACACIONES DE LOS EMPLEADOS";
             // 
-            // link_Volver
+            // enlaceDeVolver
             // 
-            this.link_Volver.AutoSize = true;
-            this.link_Volver.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.link_Volver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.link_Volver.Location = new System.Drawing.Point(662, 38);
-            this.link_Volver.Name = "link_Volver";
-            this.link_Volver.Size = new System.Drawing.Size(49, 14);
-            this.link_Volver.TabIndex = 3;
-            this.link_Volver.TabStop = true;
-            this.link_Volver.Text = "VOLVER";
+            this.enlaceDeVolver.AutoSize = true;
+            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.enlaceDeVolver.Location = new System.Drawing.Point(662, 38);
+            this.enlaceDeVolver.Name = "enlaceDeVolver";
+            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
+            this.enlaceDeVolver.TabIndex = 3;
+            this.enlaceDeVolver.TabStop = true;
+            this.enlaceDeVolver.Text = "VOLVER";
             // 
             // Reportes
             // 
@@ -88,10 +88,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 281);
-            this.Controls.Add(this.link_Volver);
-            this.Controls.Add(this.vacaciones);
-            this.Controls.Add(this.reportes_diarios);
-            this.Controls.Add(this.sal_emp);
+            this.Controls.Add(this.enlaceDeVolver);
+            this.Controls.Add(this.enlaceDeVerVacacionesDeEmpleados);
+            this.Controls.Add(this.enlaceDeVerReportesDiarios);
+            this.Controls.Add(this.enlaceDeVerSalariosDeEmpleados);
             this.Name = "Reportes";
             this.Text = "Menú de reportes";
             this.ResumeLayout(false);
@@ -101,9 +101,9 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel sal_emp;
-        private System.Windows.Forms.LinkLabel reportes_diarios;
-        private System.Windows.Forms.LinkLabel vacaciones;
-        private System.Windows.Forms.LinkLabel link_Volver;
+        private System.Windows.Forms.LinkLabel enlaceDeVerSalariosDeEmpleados;
+        private System.Windows.Forms.LinkLabel enlaceDeVerReportesDiarios;
+        private System.Windows.Forms.LinkLabel enlaceDeVerVacacionesDeEmpleados;
+        private System.Windows.Forms.LinkLabel enlaceDeVolver;
     }
 }

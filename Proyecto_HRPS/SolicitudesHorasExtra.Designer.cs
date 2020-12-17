@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.botonDeVolver = new System.Windows.Forms.Button();
-            this.btnEnviar = new System.Windows.Forms.Button();
+            this.botonDeEnviar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tb_Nombre = new System.Windows.Forms.TextBox();
-            this.dtp_Dia_Trabajado = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.textBoxDeNombre = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDeDiaTrabajado = new System.Windows.Forms.DateTimePicker();
+            this.numericDeCantidadDeHorasExtra = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDeCantidadDeHorasExtra)).BeginInit();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -51,17 +51,17 @@
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
             // 
-            // btnEnviar
+            // botonDeEnviar
             // 
-            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btnEnviar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(331, 205);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(176, 48);
-            this.btnEnviar.TabIndex = 8;
-            this.btnEnviar.Text = "ENVIAR";
-            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.botonDeEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeEnviar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeEnviar.ForeColor = System.Drawing.Color.White;
+            this.botonDeEnviar.Location = new System.Drawing.Point(331, 205);
+            this.botonDeEnviar.Name = "botonDeEnviar";
+            this.botonDeEnviar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeEnviar.TabIndex = 8;
+            this.botonDeEnviar.Text = "ENVIAR";
+            this.botonDeEnviar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -97,31 +97,31 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "CANTIDAD DE HORAS EXTRA";
             // 
-            // tb_Nombre
+            // textBoxDeNombre
             // 
-            this.tb_Nombre.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Nombre.Location = new System.Drawing.Point(214, 56);
-            this.tb_Nombre.Name = "tb_Nombre";
-            this.tb_Nombre.Size = new System.Drawing.Size(176, 20);
-            this.tb_Nombre.TabIndex = 12;
+            this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(214, 56);
+            this.textBoxDeNombre.Name = "textBoxDeNombre";
+            this.textBoxDeNombre.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeNombre.TabIndex = 12;
             // 
-            // dtp_Dia_Trabajado
+            // dateTimePickerDeDiaTrabajado
             // 
-            this.dtp_Dia_Trabajado.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtp_Dia_Trabajado.Location = new System.Drawing.Point(214, 96);
-            this.dtp_Dia_Trabajado.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtp_Dia_Trabajado.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtp_Dia_Trabajado.Name = "dtp_Dia_Trabajado";
-            this.dtp_Dia_Trabajado.Size = new System.Drawing.Size(176, 20);
-            this.dtp_Dia_Trabajado.TabIndex = 14;
+            this.dateTimePickerDeDiaTrabajado.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dateTimePickerDeDiaTrabajado.Location = new System.Drawing.Point(214, 96);
+            this.dateTimePickerDeDiaTrabajado.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerDeDiaTrabajado.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerDeDiaTrabajado.Name = "dateTimePickerDeDiaTrabajado";
+            this.dateTimePickerDeDiaTrabajado.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeDiaTrabajado.TabIndex = 14;
             // 
-            // numericUpDown1
+            // numericDeCantidadDeHorasExtra
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.numericUpDown1.Location = new System.Drawing.Point(214, 136);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(176, 20);
-            this.numericUpDown1.TabIndex = 15;
+            this.numericDeCantidadDeHorasExtra.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.numericDeCantidadDeHorasExtra.Location = new System.Drawing.Point(214, 136);
+            this.numericDeCantidadDeHorasExtra.Name = "numericDeCantidadDeHorasExtra";
+            this.numericDeCantidadDeHorasExtra.Size = new System.Drawing.Size(176, 20);
+            this.numericDeCantidadDeHorasExtra.TabIndex = 15;
             // 
             // SolicitudesHorasExtra
             // 
@@ -129,17 +129,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 296);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dtp_Dia_Trabajado);
-            this.Controls.Add(this.tb_Nombre);
+            this.Controls.Add(this.numericDeCantidadDeHorasExtra);
+            this.Controls.Add(this.dateTimePickerDeDiaTrabajado);
+            this.Controls.Add(this.textBoxDeNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.botonDeEnviar);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "SolicitudesHorasExtra";
             this.Text = "Registro de horas extra";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDeCantidadDeHorasExtra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,12 +148,12 @@
         #endregion
 
         private System.Windows.Forms.Button botonDeVolver;
-        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Button botonDeEnviar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_Nombre;
-        private System.Windows.Forms.DateTimePicker dtp_Dia_Trabajado;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBoxDeNombre;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDeDiaTrabajado;
+        private System.Windows.Forms.NumericUpDown numericDeCantidadDeHorasExtra;
     }
 }
