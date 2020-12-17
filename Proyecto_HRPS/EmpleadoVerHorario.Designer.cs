@@ -40,7 +40,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(98, 302);
+            this.botonDeVolver.Location = new System.Drawing.Point(61, 187);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 16;
@@ -52,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(217, 149);
+            this.label1.Location = new System.Drawing.Point(154, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 14);
             this.label1.TabIndex = 17;
@@ -63,7 +63,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(217, 93);
+            this.label2.Location = new System.Drawing.Point(154, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 14);
             this.label2.TabIndex = 18;
@@ -72,7 +72,7 @@
             // tb_Cedula
             // 
             this.tb_Cedula.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tb_Cedula.Location = new System.Drawing.Point(396, 86);
+            this.tb_Cedula.Location = new System.Drawing.Point(312, 59);
             this.tb_Cedula.Name = "tb_Cedula";
             this.tb_Cedula.Size = new System.Drawing.Size(130, 20);
             this.tb_Cedula.TabIndex = 19;
@@ -82,7 +82,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(471, 302);
+            this.btnBuscar.Location = new System.Drawing.Point(290, 187);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(176, 48);
             this.btnBuscar.TabIndex = 20;
@@ -94,7 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(556, 281);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tb_Cedula);
             this.Controls.Add(this.label2);

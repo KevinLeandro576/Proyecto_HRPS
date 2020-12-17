@@ -39,7 +39,7 @@
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpFechaInicio.Location = new System.Drawing.Point(123, 80);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(61, 79);
             this.dtpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
@@ -49,7 +49,7 @@
             // dtpFechaFin
             // 
             this.dtpFechaFin.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpFechaFin.Location = new System.Drawing.Point(427, 80);
+            this.dtpFechaFin.Location = new System.Drawing.Point(365, 79);
             this.dtpFechaFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFechaFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaFin.Name = "dtpFechaFin";
@@ -61,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(120, 50);
+            this.label1.Location = new System.Drawing.Point(58, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 14);
             this.label1.TabIndex = 2;
@@ -72,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(424, 50);
+            this.label2.Location = new System.Drawing.Point(362, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 14);
             this.label2.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(123, 273);
+            this.botonDeVolver.Location = new System.Drawing.Point(61, 206);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 15;
@@ -95,7 +95,7 @@
             this.btn_Generar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.btn_Generar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Generar.ForeColor = System.Drawing.Color.White;
-            this.btn_Generar.Location = new System.Drawing.Point(451, 273);
+            this.btn_Generar.Location = new System.Drawing.Point(389, 206);
             this.btn_Generar.Name = "btn_Generar";
             this.btn_Generar.Size = new System.Drawing.Size(176, 48);
             this.btn_Generar.TabIndex = 16;
@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(667, 364);
             this.Controls.Add(this.btn_Generar);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.label2);
@@ -115,7 +115,7 @@
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
             this.Name = "VerSalarioEmpleados";
-            this.Text = "Ver Salario";
+            this.Text = "Ver salarios";
             this.ResumeLayout(false);
             this.PerformLayout();
 

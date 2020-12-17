@@ -38,7 +38,7 @@
             this.botonDeAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeAdministrador.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeAdministrador.ForeColor = System.Drawing.Color.White;
-            this.botonDeAdministrador.Location = new System.Drawing.Point(172, 138);
+            this.botonDeAdministrador.Location = new System.Drawing.Point(125, 99);
             this.botonDeAdministrador.Name = "botonDeAdministrador";
             this.botonDeAdministrador.Size = new System.Drawing.Size(182, 79);
             this.botonDeAdministrador.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.botonDeEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeEmpleado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeEmpleado.ForeColor = System.Drawing.Color.White;
-            this.botonDeEmpleado.Location = new System.Drawing.Point(418, 138);
+            this.botonDeEmpleado.Location = new System.Drawing.Point(371, 99);
             this.botonDeEmpleado.Name = "botonDeEmpleado";
             this.botonDeEmpleado.Size = new System.Drawing.Size(182, 79);
             this.botonDeEmpleado.TabIndex = 1;
@@ -61,13 +61,13 @@
             // 
             // MenuInicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 415);
+            this.ClientSize = new System.Drawing.Size(733, 303);
             this.Controls.Add(this.botonDeEmpleado);
             this.Controls.Add(this.botonDeAdministrador);
-            this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuInicial";

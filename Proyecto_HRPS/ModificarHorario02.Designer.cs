@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.labelDeHorarioActual = new System.Windows.Forms.Label();
-            this.textBoxDeHorarioActual = new System.Windows.Forms.TextBox();
             this.labelDeHorarioNuevo = new System.Windows.Forms.Label();
             this.textBoxDeHorarioNuevo = new System.Windows.Forms.TextBox();
             this.botonDeVolver = new System.Windows.Forms.Button();
@@ -47,13 +46,6 @@
             this.labelDeHorarioActual.TabIndex = 6;
             this.labelDeHorarioActual.Text = "HORARIO ACTUAL";
             // 
-            // textBoxDeHorarioActual
-            // 
-            this.textBoxDeHorarioActual.Location = new System.Drawing.Point(178, 57);
-            this.textBoxDeHorarioActual.Name = "textBoxDeHorarioActual";
-            this.textBoxDeHorarioActual.Size = new System.Drawing.Size(176, 21);
-            this.textBoxDeHorarioActual.TabIndex = 7;
-            // 
             // labelDeHorarioNuevo
             // 
             this.labelDeHorarioNuevo.AutoSize = true;
@@ -70,7 +62,7 @@
             // 
             this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(178, 106);
             this.textBoxDeHorarioNuevo.Name = "textBoxDeHorarioNuevo";
-            this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(176, 21);
+            this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeHorarioNuevo.TabIndex = 9;
             // 
             // botonDeVolver
@@ -99,7 +91,7 @@
             // 
             // ModificarHorario02
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(551, 298);
@@ -107,9 +99,8 @@
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.textBoxDeHorarioNuevo);
             this.Controls.Add(this.labelDeHorarioNuevo);
-            this.Controls.Add(this.textBoxDeHorarioActual);
             this.Controls.Add(this.labelDeHorarioActual);
-            this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModificarHorario02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -122,7 +113,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelDeHorarioActual;
-        private System.Windows.Forms.TextBox textBoxDeHorarioActual;
         private System.Windows.Forms.Label labelDeHorarioNuevo;
         private System.Windows.Forms.TextBox textBoxDeHorarioNuevo;
         private System.Windows.Forms.Button botonDeVolver;

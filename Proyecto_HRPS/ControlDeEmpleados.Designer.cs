@@ -71,14 +71,14 @@
             // 
             // ControlDeEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 415);
+            this.ClientSize = new System.Drawing.Size(788, 330);
             this.Controls.Add(this.enlaceDeVolver);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.enlaceDeCrearPerfilDeUsuario);
-            this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ControlDeEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
