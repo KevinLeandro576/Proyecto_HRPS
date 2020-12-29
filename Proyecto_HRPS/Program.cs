@@ -16,7 +16,7 @@ namespace Proyecto_HRPS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Solicitudes());
+            Application.Run(new CrearPerfilDeUsuario());
         }
     }
 }

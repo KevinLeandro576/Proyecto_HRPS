@@ -46,6 +46,8 @@
             this.textBoxDeSalario = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioPorHora = new System.Windows.Forms.TextBox();
             this.textBoxDePuesto = new System.Windows.Forms.TextBox();
+            this.labelDeRol = new System.Windows.Forms.Label();
+            this.textBoxDeIdDeRol = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeRegistrarUsuario
@@ -218,12 +220,32 @@
             this.textBoxDePuesto.Size = new System.Drawing.Size(200, 21);
             this.textBoxDePuesto.TabIndex = 18;
             // 
+            // labelDeRol
+            // 
+            this.labelDeRol.AutoSize = true;
+            this.labelDeRol.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.labelDeRol.Location = new System.Drawing.Point(41, 225);
+            this.labelDeRol.Name = "labelDeRol";
+            this.labelDeRol.Size = new System.Drawing.Size(31, 14);
+            this.labelDeRol.TabIndex = 19;
+            this.labelDeRol.Text = " ROL";
+            // 
+            // textBoxDeIdDeRol
+            // 
+            this.textBoxDeIdDeRol.Location = new System.Drawing.Point(167, 223);
+            this.textBoxDeIdDeRol.Name = "textBoxDeIdDeRol";
+            this.textBoxDeIdDeRol.Size = new System.Drawing.Size(200, 21);
+            this.textBoxDeIdDeRol.TabIndex = 20;
+            // 
             // CrearPerfilDeUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 415);
+            this.Controls.Add(this.textBoxDeIdDeRol);
+            this.Controls.Add(this.labelDeRol);
             this.Controls.Add(this.textBoxDePuesto);
             this.Controls.Add(this.textBoxDeSalarioPorHora);
             this.Controls.Add(this.textBoxDeSalario);
@@ -273,5 +295,7 @@
         private System.Windows.Forms.TextBox textBoxDeSalario;
         private System.Windows.Forms.TextBox textBoxDeSalarioPorHora;
         private System.Windows.Forms.TextBox textBoxDePuesto;
+        private System.Windows.Forms.Label labelDeRol;
+        private System.Windows.Forms.TextBox textBoxDeIdDeRol;
     }
 }
