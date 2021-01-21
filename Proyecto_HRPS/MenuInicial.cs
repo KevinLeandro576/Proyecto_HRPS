@@ -29,12 +29,16 @@ namespace Proyecto_HRPS
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
+            this.Hide();
+            empleadoInicioDeSesion.Show();
         }
 
         private void botonDeAdministrador_Click(object sender, EventArgs e)
         {
-
+            AdministradorInicioDeSesion administradorInicioDeSesion = new AdministradorInicioDeSesion();
+            administradorInicioDeSesion.Show();
+            this.Hide(); //Ocultar pantalla actual (menu inicial)            
         }
     }
 }

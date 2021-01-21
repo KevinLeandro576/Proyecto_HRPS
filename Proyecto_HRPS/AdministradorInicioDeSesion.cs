@@ -16,5 +16,19 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
+
+        private void botonDeIniciarSesion_Click(object sender, EventArgs e)
+        {
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            this.Hide();
+            menuDeAdministrador.Show();
+        }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            MenuInicial menuInicial = new MenuInicial();
+            this.Hide();
+            menuInicial.Show();
+        }
     }
 }

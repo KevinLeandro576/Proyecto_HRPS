@@ -17,9 +17,11 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void labelDeCedula_Click(object sender, EventArgs e)
+        private void botonDeVolver_Click(object sender, EventArgs e)
         {
-
+            PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
+            this.Hide();
+            perfilesDeUsuario.Show();
         }
     }
 }

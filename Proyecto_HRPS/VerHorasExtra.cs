@@ -17,11 +17,6 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void VerHorasExtra_Load(object sender, EventArgs e)
         {
 
@@ -29,10 +24,12 @@ namespace Proyecto_HRPS
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-
+            ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
+            this.Hide();
+            controlDeEmpleados.Show();
         }
 
-        private void labelDeSalarioNeto_Click(object sender, EventArgs e)
+        private void textBoxDeCedula_Enter(object sender, EventArgs e)
         {
 
         }

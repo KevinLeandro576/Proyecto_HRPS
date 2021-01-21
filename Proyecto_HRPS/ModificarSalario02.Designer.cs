@@ -64,6 +64,7 @@
             this.botonDeVolver.TabIndex = 11;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeGuardarCambios
             // 

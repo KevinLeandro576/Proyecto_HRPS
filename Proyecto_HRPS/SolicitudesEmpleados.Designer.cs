@@ -44,6 +44,7 @@
             this.enlaceDeSolicitarVacaciones.TabIndex = 6;
             this.enlaceDeSolicitarVacaciones.TabStop = true;
             this.enlaceDeSolicitarVacaciones.Text = "SOLICITAR VACACIONES";
+            this.enlaceDeSolicitarVacaciones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitarVacaciones_LinkClicked);
             // 
             // enlaceDeRegistrarHorasExtras
             // 
@@ -56,6 +57,7 @@
             this.enlaceDeRegistrarHorasExtras.TabIndex = 7;
             this.enlaceDeRegistrarHorasExtras.TabStop = true;
             this.enlaceDeRegistrarHorasExtras.Text = "REGISTRAR HORAS EXTRAS";
+            this.enlaceDeRegistrarHorasExtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeRegistrarHorasExtras_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -68,6 +70,7 @@
             this.enlaceDeVolver.TabIndex = 8;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // SolicitudesEmpleados
             // 
@@ -79,6 +82,7 @@
             this.Controls.Add(this.enlaceDeRegistrarHorasExtras);
             this.Controls.Add(this.enlaceDeSolicitarVacaciones);
             this.Name = "SolicitudesEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de solicitudes";
             this.ResumeLayout(false);
             this.PerformLayout();

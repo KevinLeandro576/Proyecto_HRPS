@@ -17,9 +17,11 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void botonDeVolver_Click(object sender, EventArgs e)
         {
-
+            SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
+            this.Hide();
+            solicitudesEmpleados.Show();
         }
     }
 }

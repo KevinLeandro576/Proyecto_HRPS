@@ -16,5 +16,33 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
+
+        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
+            this.Hide();
+            empleadoInicioDeSesion.Show();
+        }
+
+        private void enlaceDePerfiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+            this.Hide();
+            menuPerfilesEmpleado.Show();
+        }
+
+        private void enlaceDeVerHorasExtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmpleadoVerHorasExtra empleadoVerHorasExtra = new EmpleadoVerHorasExtra();
+            this.Hide();
+            empleadoVerHorasExtra.Show();
+        }
+
+        private void enlaceDeSolicitudes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
+            this.Hide();
+            solicitudesEmpleados.Show();
+        }
     }
 }

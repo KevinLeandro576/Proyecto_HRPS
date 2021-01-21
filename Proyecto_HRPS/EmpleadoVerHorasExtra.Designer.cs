@@ -46,6 +46,7 @@
             this.botonDeVolver.TabIndex = 17;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // label1
             // 
@@ -101,6 +102,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "EmpleadoVerHorasExtra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver horas extra";
             this.ResumeLayout(false);
             this.PerformLayout();

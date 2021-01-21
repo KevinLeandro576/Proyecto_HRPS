@@ -44,6 +44,7 @@
             this.enlaceDeCrearPerfilDeUsuario.TabIndex = 2;
             this.enlaceDeCrearPerfilDeUsuario.TabStop = true;
             this.enlaceDeCrearPerfilDeUsuario.Text = "VER HORAS EXTRA";
+            this.enlaceDeCrearPerfilDeUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeCrearPerfilDeUsuario_LinkClicked);
             // 
             // enlaceDeVerHorarios
             // 
@@ -56,6 +57,7 @@
             this.enlaceDeVerHorarios.TabIndex = 3;
             this.enlaceDeVerHorarios.TabStop = true;
             this.enlaceDeVerHorarios.Text = "VER HORARIOS";
+            this.enlaceDeVerHorarios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorarios_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -68,6 +70,7 @@
             this.enlaceDeVolver.TabIndex = 8;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // ControlDeEmpleados
             // 

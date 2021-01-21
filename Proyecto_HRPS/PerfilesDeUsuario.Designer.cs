@@ -61,6 +61,7 @@
             this.enlaceDeVerSalario.TabIndex = 2;
             this.enlaceDeVerSalario.TabStop = true;
             this.enlaceDeVerSalario.Text = "VER SALARIO";
+            this.enlaceDeVerSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalario_LinkClicked);
             // 
             // enlaceDeVerEmpleados
             // 
@@ -73,6 +74,7 @@
             this.enlaceDeVerEmpleados.TabIndex = 3;
             this.enlaceDeVerEmpleados.TabStop = true;
             this.enlaceDeVerEmpleados.Text = "VER EMPLEADOS";
+            this.enlaceDeVerEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerEmpleados_LinkClicked);
             // 
             // enlaceDeModificarHorario
             // 
@@ -85,6 +87,7 @@
             this.enlaceDeModificarHorario.TabIndex = 4;
             this.enlaceDeModificarHorario.TabStop = true;
             this.enlaceDeModificarHorario.Text = "MODIFICAR HORARIO";
+            this.enlaceDeModificarHorario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeModificarHorario_LinkClicked);
             // 
             // enlaceDeModificarSalario
             // 
@@ -97,6 +100,7 @@
             this.enlaceDeModificarSalario.TabIndex = 5;
             this.enlaceDeModificarSalario.TabStop = true;
             this.enlaceDeModificarSalario.Text = "MODIFICAR SALARIO";
+            this.enlaceDeModificarSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeModificarSalario_LinkClicked);
             // 
             // enlaceDeEliminarEmpleados
             // 
@@ -109,6 +113,7 @@
             this.enlaceDeEliminarEmpleados.TabIndex = 6;
             this.enlaceDeEliminarEmpleados.TabStop = true;
             this.enlaceDeEliminarEmpleados.Text = "ELIMINAR EMPLEADOS";
+            this.enlaceDeEliminarEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeEliminarEmpleados_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -121,6 +126,7 @@
             this.enlaceDeVolver.TabIndex = 7;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // PerfilesDeUsuario
             // 

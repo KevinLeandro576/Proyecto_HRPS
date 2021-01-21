@@ -16,5 +16,12 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            this.Hide();
+            menuDeAdministrador.Show();
+        }
     }
 }

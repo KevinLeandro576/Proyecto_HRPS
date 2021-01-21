@@ -45,6 +45,7 @@
             this.enlaceDeVerSalariosDeEmpleados.TabIndex = 0;
             this.enlaceDeVerSalariosDeEmpleados.TabStop = true;
             this.enlaceDeVerSalariosDeEmpleados.Text = "VER SALARIOS DE EMPLEADOS";
+            this.enlaceDeVerSalariosDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalariosDeEmpleados_LinkClicked);
             // 
             // enlaceDeVerReportesDiarios
             // 
@@ -57,6 +58,7 @@
             this.enlaceDeVerReportesDiarios.TabIndex = 1;
             this.enlaceDeVerReportesDiarios.TabStop = true;
             this.enlaceDeVerReportesDiarios.Text = "VER REPORTES DIARIOS";
+            this.enlaceDeVerReportesDiarios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerReportesDiarios_LinkClicked);
             // 
             // enlaceDeVerVacacionesDeEmpleados
             // 
@@ -69,6 +71,7 @@
             this.enlaceDeVerVacacionesDeEmpleados.TabIndex = 2;
             this.enlaceDeVerVacacionesDeEmpleados.TabStop = true;
             this.enlaceDeVerVacacionesDeEmpleados.Text = "VER VACACIONES DE LOS EMPLEADOS";
+            this.enlaceDeVerVacacionesDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerVacacionesDeEmpleados_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -81,6 +84,7 @@
             this.enlaceDeVolver.TabIndex = 3;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // Reportes
             // 
@@ -93,6 +97,7 @@
             this.Controls.Add(this.enlaceDeVerReportesDiarios);
             this.Controls.Add(this.enlaceDeVerSalariosDeEmpleados);
             this.Name = "Reportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de reportes";
             this.ResumeLayout(false);
             this.PerformLayout();

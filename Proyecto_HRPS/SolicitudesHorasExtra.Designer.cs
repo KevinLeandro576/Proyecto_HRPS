@@ -50,6 +50,7 @@
             this.botonDeVolver.TabIndex = 7;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeEnviar
             // 
@@ -73,7 +74,6 @@
             this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 9;
             this.label1.Text = "NOMBRE";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -138,6 +138,7 @@
             this.Controls.Add(this.botonDeEnviar);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "SolicitudesHorasExtra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de horas extra";
             ((System.ComponentModel.ISupportInitialize)(this.numericDeCantidadDeHorasExtra)).EndInit();
             this.ResumeLayout(false);

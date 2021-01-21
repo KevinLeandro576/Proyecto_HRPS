@@ -50,6 +50,7 @@
             this.botonDeVolver.TabIndex = 16;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // label1
             // 
@@ -130,6 +131,7 @@
             this.botonDeGuardar.TabIndex = 24;
             this.botonDeGuardar.Text = "GUARDAR";
             this.botonDeGuardar.UseVisualStyleBackColor = false;
+            this.botonDeGuardar.Click += new System.EventHandler(this.botonDeGuardar_Click);
             // 
             // EmpleadoVerPerfil
             // 
@@ -147,6 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "EmpleadoVerPerfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver perfil";
             this.ResumeLayout(false);
             this.PerformLayout();

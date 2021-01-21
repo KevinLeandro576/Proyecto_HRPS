@@ -21,5 +21,12 @@ namespace Proyecto_HRPS
         {
 
         }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
+            this.Hide();
+            perfilesDeUsuario.Show();
+        }
     }
 }

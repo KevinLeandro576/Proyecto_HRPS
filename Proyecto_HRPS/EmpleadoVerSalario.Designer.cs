@@ -48,6 +48,7 @@
             this.botonDeVolver.TabIndex = 16;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // label1
             // 
@@ -128,6 +129,7 @@
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Arial", 8.25F);
             this.Name = "EmpleadoVerSalario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Salario";
             this.ResumeLayout(false);
             this.PerformLayout();

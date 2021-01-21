@@ -73,6 +73,7 @@
             this.botonDeVolver.TabIndex = 2;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // labelDeCedula
             // 
@@ -84,7 +85,7 @@
             this.labelDeCedula.Size = new System.Drawing.Size(48, 14);
             this.labelDeCedula.TabIndex = 3;
             this.labelDeCedula.Text = "CÉDULA";
-            this.labelDeCedula.Click += new System.EventHandler(this.labelDeCedula_Click);
+
             // 
             // labelDeNombre
             // 

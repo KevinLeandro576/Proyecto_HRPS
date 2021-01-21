@@ -45,6 +45,7 @@
             this.enlaceDePerfiles.TabIndex = 0;
             this.enlaceDePerfiles.TabStop = true;
             this.enlaceDePerfiles.Text = "PERFIL";
+            this.enlaceDePerfiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDePerfiles_LinkClicked);
             // 
             // enlaceDeVerHorasExtras
             // 
@@ -57,6 +58,7 @@
             this.enlaceDeVerHorasExtras.TabIndex = 1;
             this.enlaceDeVerHorasExtras.TabStop = true;
             this.enlaceDeVerHorasExtras.Text = "VER HORAS EXTRAS";
+            this.enlaceDeVerHorasExtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorasExtras_LinkClicked);
             // 
             // enlaceDeSolicitudes
             // 
@@ -69,6 +71,7 @@
             this.enlaceDeSolicitudes.TabIndex = 2;
             this.enlaceDeSolicitudes.TabStop = true;
             this.enlaceDeSolicitudes.Text = "SOLICITUDES";
+            this.enlaceDeSolicitudes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitudes_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -81,6 +84,7 @@
             this.enlaceDeVolver.TabIndex = 9;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // MenuDeEmpleado
             // 
@@ -93,6 +97,7 @@
             this.Controls.Add(this.enlaceDeVerHorasExtras);
             this.Controls.Add(this.enlaceDePerfiles);
             this.Name = "MenuDeEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de empleado";
             this.ResumeLayout(false);
             this.PerformLayout();

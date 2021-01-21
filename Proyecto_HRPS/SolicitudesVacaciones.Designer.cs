@@ -49,6 +49,7 @@
             this.botonDeVolver.TabIndex = 6;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeEnviar
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.botonDeEnviar);
             this.Controls.Add(this.botonDeVolver);
             this.Name = "SolicitudesVacaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitar vacaciones";
             this.ResumeLayout(false);
             this.PerformLayout();

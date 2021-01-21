@@ -45,6 +45,7 @@
             this.enlaceDeVolver.TabIndex = 10;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // enlaceDeVerSalario
             // 
@@ -57,6 +58,7 @@
             this.enlaceDeVerSalario.TabIndex = 11;
             this.enlaceDeVerSalario.TabStop = true;
             this.enlaceDeVerSalario.Text = "VER SALARIO";
+            this.enlaceDeVerSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalario_LinkClicked);
             // 
             // enlaceDeVerPerfil
             // 
@@ -69,6 +71,7 @@
             this.enlaceDeVerPerfil.TabIndex = 12;
             this.enlaceDeVerPerfil.TabStop = true;
             this.enlaceDeVerPerfil.Text = "VER PERFIL";
+            this.enlaceDeVerPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerPerfil_LinkClicked);
             // 
             // enlaceDeVerHorario
             // 
@@ -81,6 +84,7 @@
             this.enlaceDeVerHorario.TabIndex = 13;
             this.enlaceDeVerHorario.TabStop = true;
             this.enlaceDeVerHorario.Text = "VER HORARIO";
+            this.enlaceDeVerHorario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorario_LinkClicked);
             // 
             // MenuPerfilesEmpleado
             // 
@@ -93,6 +97,7 @@
             this.Controls.Add(this.enlaceDeVerSalario);
             this.Controls.Add(this.enlaceDeVolver);
             this.Name = "MenuPerfilesEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de perfil";
             this.ResumeLayout(false);
             this.PerformLayout();

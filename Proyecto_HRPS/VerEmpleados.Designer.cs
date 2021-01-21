@@ -43,6 +43,7 @@
             this.botonDeVolver.TabIndex = 3;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeVerEmpleadosInactivos
             // 

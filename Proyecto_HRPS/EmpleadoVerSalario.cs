@@ -21,5 +21,12 @@ namespace Proyecto_HRPS
         {
 
         }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+            this.Hide();
+            menuPerfilesEmpleado.Show();
+        }
     }
 }

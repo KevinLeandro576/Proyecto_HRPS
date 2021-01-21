@@ -68,6 +68,7 @@
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(200, 21);
             this.textBoxDeCedula.TabIndex = 13;
+            this.textBoxDeCedula.Enter += new System.EventHandler(this.textBoxDeCedula_Enter);
             // 
             // botonDeVolver
             // 
@@ -114,7 +115,7 @@
             this.labelDeSalarioBruto.Size = new System.Drawing.Size(91, 14);
             this.labelDeSalarioBruto.TabIndex = 18;
             this.labelDeSalarioBruto.Text = "SALARIO BRUTO";
-            this.labelDeSalarioBruto.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // labelDeSalarioPorHora
             // 
@@ -181,7 +182,7 @@
             this.labelDeSalarioNeto.Size = new System.Drawing.Size(83, 14);
             this.labelDeSalarioNeto.TabIndex = 24;
             this.labelDeSalarioNeto.Text = "SALARIO NETO";
-            this.labelDeSalarioNeto.Click += new System.EventHandler(this.labelDeSalarioNeto_Click);
+
             // 
             // textBoxDeNombre
             // 

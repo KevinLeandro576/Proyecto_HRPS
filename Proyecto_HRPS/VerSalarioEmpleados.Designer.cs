@@ -89,6 +89,7 @@
             this.botonDeVolver.TabIndex = 15;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeGenerar
             // 
@@ -115,6 +116,7 @@
             this.Controls.Add(this.dateTimePickerDeFechaDeFinalizacion);
             this.Controls.Add(this.dateTimePickerDeFechaDeInicio);
             this.Name = "VerSalarioEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver salarios";
             this.ResumeLayout(false);
             this.PerformLayout();

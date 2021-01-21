@@ -16,5 +16,26 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
+
+        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            this.Hide();
+            menuDeAdministrador.Show();
+        }
+
+        private void enlaceDeCrearPerfilDeUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            VerHorasExtra verHorasExtra = new VerHorasExtra();
+            this.Hide();
+            verHorasExtra.Show();
+        }
+
+        private void enlaceDeVerHorarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ModificarHorario modificarHorario = new ModificarHorario();
+            this.Hide();
+            modificarHorario.Show();
+        }
     }
 }

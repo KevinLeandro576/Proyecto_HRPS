@@ -59,6 +59,7 @@
             this.enlaceDeControlDeEmpleados.TabIndex = 1;
             this.enlaceDeControlDeEmpleados.TabStop = true;
             this.enlaceDeControlDeEmpleados.Text = "CONTROL DE EMPLEADOS";
+            this.enlaceDeControlDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeControlDeEmpleados_LinkClicked);
             // 
             // enlaceDeSolicitudes
             // 
@@ -71,6 +72,7 @@
             this.enlaceDeSolicitudes.TabIndex = 2;
             this.enlaceDeSolicitudes.TabStop = true;
             this.enlaceDeSolicitudes.Text = "SOLICITUDES";
+            this.enlaceDeSolicitudes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitudes_LinkClicked);
             // 
             // enlaceDeReportes
             // 
@@ -83,6 +85,7 @@
             this.enlaceDeReportes.TabIndex = 3;
             this.enlaceDeReportes.TabStop = true;
             this.enlaceDeReportes.Text = "REPORTES";
+            this.enlaceDeReportes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeReportes_LinkClicked);
             // 
             // enlaceDeVolver
             // 
@@ -95,6 +98,7 @@
             this.enlaceDeVolver.TabIndex = 4;
             this.enlaceDeVolver.TabStop = true;
             this.enlaceDeVolver.Text = "VOLVER";
+            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
             // 
             // MenuDeAdministrador
             // 

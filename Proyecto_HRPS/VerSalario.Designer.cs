@@ -63,6 +63,7 @@
             this.botonDeVolver.TabIndex = 13;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDeBuscar
             // 
