@@ -48,6 +48,8 @@
             this.textBoxDePuesto = new System.Windows.Forms.TextBox();
             this.labelDeRol = new System.Windows.Forms.Label();
             this.textBoxDeIdDeRol = new System.Windows.Forms.TextBox();
+            this.textBoxDeContrasena = new System.Windows.Forms.TextBox();
+            this.labelDeContrasena = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // botonDeRegistrarUsuario
@@ -61,6 +63,7 @@
             this.botonDeRegistrarUsuario.TabIndex = 1;
             this.botonDeRegistrarUsuario.Text = "REGISTRAR USUARIO";
             this.botonDeRegistrarUsuario.UseVisualStyleBackColor = false;
+            this.botonDeRegistrarUsuario.Click += new System.EventHandler(this.botonDeRegistrarUsuario_Click);
             // 
             // botonDeVolver
             // 
@@ -85,7 +88,6 @@
             this.labelDeCedula.Size = new System.Drawing.Size(48, 14);
             this.labelDeCedula.TabIndex = 3;
             this.labelDeCedula.Text = "CÉDULA";
-
             // 
             // labelDeNombre
             // 
@@ -239,12 +241,32 @@
             this.textBoxDeIdDeRol.Size = new System.Drawing.Size(200, 21);
             this.textBoxDeIdDeRol.TabIndex = 20;
             // 
+            // textBoxDeContrasena
+            // 
+            this.textBoxDeContrasena.Location = new System.Drawing.Point(623, 225);
+            this.textBoxDeContrasena.Name = "textBoxDeContrasena";
+            this.textBoxDeContrasena.Size = new System.Drawing.Size(200, 21);
+            this.textBoxDeContrasena.TabIndex = 21;
+            // 
+            // labelDeContrasena
+            // 
+            this.labelDeContrasena.AutoSize = true;
+            this.labelDeContrasena.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.labelDeContrasena.Location = new System.Drawing.Point(433, 232);
+            this.labelDeContrasena.Name = "labelDeContrasena";
+            this.labelDeContrasena.Size = new System.Drawing.Size(78, 14);
+            this.labelDeContrasena.TabIndex = 22;
+            this.labelDeContrasena.Text = "CONTRASEÑA";
+            // 
             // CrearPerfilDeUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 415);
+            this.Controls.Add(this.labelDeContrasena);
+            this.Controls.Add(this.textBoxDeContrasena);
             this.Controls.Add(this.textBoxDeIdDeRol);
             this.Controls.Add(this.labelDeRol);
             this.Controls.Add(this.textBoxDePuesto);
@@ -298,5 +320,7 @@
         private System.Windows.Forms.TextBox textBoxDePuesto;
         private System.Windows.Forms.Label labelDeRol;
         private System.Windows.Forms.TextBox textBoxDeIdDeRol;
+        private System.Windows.Forms.TextBox textBoxDeContrasena;
+        private System.Windows.Forms.Label labelDeContrasena;
     }
 }

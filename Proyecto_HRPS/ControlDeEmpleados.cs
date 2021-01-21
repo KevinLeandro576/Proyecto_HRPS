@@ -33,9 +33,7 @@ namespace Proyecto_HRPS
 
         private void enlaceDeVerHorarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ModificarHorario modificarHorario = new ModificarHorario();
-            this.Hide();
-            modificarHorario.Show();
+            
         }
     }
 }
