@@ -50,6 +50,8 @@
             this.textBoxDeIdDeRol = new System.Windows.Forms.TextBox();
             this.textBoxDeContrasena = new System.Windows.Forms.TextBox();
             this.labelDeContrasena = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxDeCorreoElectronico = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeRegistrarUsuario
@@ -57,7 +59,7 @@
             this.botonDeRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeRegistrarUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeRegistrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.botonDeRegistrarUsuario.Location = new System.Drawing.Point(476, 299);
+            this.botonDeRegistrarUsuario.Location = new System.Drawing.Point(478, 340);
             this.botonDeRegistrarUsuario.Name = "botonDeRegistrarUsuario";
             this.botonDeRegistrarUsuario.Size = new System.Drawing.Size(176, 48);
             this.botonDeRegistrarUsuario.TabIndex = 1;
@@ -70,7 +72,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(177, 299);
+            this.botonDeVolver.Location = new System.Drawing.Point(167, 340);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 2;
@@ -259,12 +261,32 @@
             this.labelDeContrasena.TabIndex = 22;
             this.labelDeContrasena.Text = "CONTRASEÑA";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(41, 269);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 14);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "CORREO ELECTRÓNICO";
+            // 
+            // textBoxDeCorreoElectronico
+            // 
+            this.textBoxDeCorreoElectronico.Location = new System.Drawing.Point(167, 262);
+            this.textBoxDeCorreoElectronico.Name = "textBoxDeCorreoElectronico";
+            this.textBoxDeCorreoElectronico.Size = new System.Drawing.Size(200, 21);
+            this.textBoxDeCorreoElectronico.TabIndex = 24;
+            // 
             // CrearPerfilDeUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 415);
+            this.Controls.Add(this.textBoxDeCorreoElectronico);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelDeContrasena);
             this.Controls.Add(this.textBoxDeContrasena);
             this.Controls.Add(this.textBoxDeIdDeRol);
@@ -322,5 +344,7 @@
         private System.Windows.Forms.TextBox textBoxDeIdDeRol;
         private System.Windows.Forms.TextBox textBoxDeContrasena;
         private System.Windows.Forms.Label labelDeContrasena;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxDeCorreoElectronico;
     }
 }

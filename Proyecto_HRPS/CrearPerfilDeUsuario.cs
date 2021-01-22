@@ -44,7 +44,8 @@ namespace Proyecto_HRPS
                                                                                             decimal.Parse(textBoxDeSalarioPorHora.Text),
                                                                                             textBoxDeTiempo.Text,
                                                                                             textBoxDeContrasena.Text,
-                                                                                            int.Parse(textBoxDeIdDeRol.Text));
+                                                                                            int.Parse(textBoxDeIdDeRol.Text),
+                                                                                             textBoxDeCorreoElectronico.Text);
             conexion.ExecuteNonQuery(comando);
         }
     }

@@ -37,6 +37,10 @@
             this.textBoxDeNombre = new System.Windows.Forms.TextBox();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.botonDeGuardar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxDeCorreoElectronico = new System.Windows.Forms.TextBox();
+            this.textBoxDeContraseña = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -44,7 +48,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(34, 212);
+            this.botonDeVolver.Location = new System.Drawing.Point(34, 292);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 16;
@@ -79,7 +83,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(34, 149);
+            this.label3.Location = new System.Drawing.Point(34, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 14);
             this.label3.TabIndex = 19;
@@ -99,7 +103,7 @@
             // dateTimePickerDeFechaDeNacimiento
             // 
             this.dateTimePickerDeFechaDeNacimiento.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(157, 108);
+            this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(194, 113);
             this.dateTimePickerDeFechaDeNacimiento.Name = "dateTimePickerDeFechaDeNacimiento";
             this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(176, 20);
             this.dateTimePickerDeFechaDeNacimiento.TabIndex = 21;
@@ -107,7 +111,7 @@
             // textBoxDeNombre
             // 
             this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxDeNombre.Location = new System.Drawing.Point(157, 75);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(194, 75);
             this.textBoxDeNombre.Name = "textBoxDeNombre";
             this.textBoxDeNombre.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeNombre.TabIndex = 22;
@@ -115,7 +119,7 @@
             // textBoxDeCedula
             // 
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxDeCedula.Location = new System.Drawing.Point(157, 43);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(194, 43);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeCedula.TabIndex = 23;
@@ -125,7 +129,7 @@
             this.botonDeGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeGuardar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeGuardar.ForeColor = System.Drawing.Color.White;
-            this.botonDeGuardar.Location = new System.Drawing.Point(260, 212);
+            this.botonDeGuardar.Location = new System.Drawing.Point(289, 292);
             this.botonDeGuardar.Name = "botonDeGuardar";
             this.botonDeGuardar.Size = new System.Drawing.Size(176, 48);
             this.botonDeGuardar.TabIndex = 24;
@@ -133,12 +137,54 @@
             this.botonDeGuardar.UseVisualStyleBackColor = false;
             this.botonDeGuardar.Click += new System.EventHandler(this.botonDeGuardar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.label5.Location = new System.Drawing.Point(31, 191);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 14);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "CONTRASEÑA";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.label6.Location = new System.Drawing.Point(31, 152);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 14);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "CORREO ELECTRÓNICO";
+            // 
+            // textBoxDeCorreoElectronico
+            // 
+            this.textBoxDeCorreoElectronico.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeCorreoElectronico.Location = new System.Drawing.Point(194, 149);
+            this.textBoxDeCorreoElectronico.Name = "textBoxDeCorreoElectronico";
+            this.textBoxDeCorreoElectronico.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeCorreoElectronico.TabIndex = 27;
+            // 
+            // textBoxDeContraseña
+            // 
+            this.textBoxDeContraseña.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeContraseña.Location = new System.Drawing.Point(194, 188);
+            this.textBoxDeContraseña.Name = "textBoxDeContraseña";
+            this.textBoxDeContraseña.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeContraseña.TabIndex = 28;
+            // 
             // EmpleadoVerPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(509, 315);
+            this.ClientSize = new System.Drawing.Size(554, 386);
+            this.Controls.Add(this.textBoxDeContraseña);
+            this.Controls.Add(this.textBoxDeCorreoElectronico);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.botonDeGuardar);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.textBoxDeNombre);
@@ -167,5 +213,9 @@
         private System.Windows.Forms.TextBox textBoxDeNombre;
         private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.Button botonDeGuardar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxDeCorreoElectronico;
+        private System.Windows.Forms.TextBox textBoxDeContraseña;
     }
 }
