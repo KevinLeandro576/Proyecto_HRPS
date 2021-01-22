@@ -49,6 +49,7 @@
             this.textBoxDePagoPorHorasExtra = new System.Windows.Forms.TextBox();
             this.textBoxDeDeducciones = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioNeto = new System.Windows.Forms.TextBox();
+            this.botonDeBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelDeCedula
@@ -68,14 +69,13 @@
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(200, 21);
             this.textBoxDeCedula.TabIndex = 13;
-            this.textBoxDeCedula.Enter += new System.EventHandler(this.textBoxDeCedula_Enter);
             // 
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(362, 308);
+            this.botonDeVolver.Location = new System.Drawing.Point(203, 302);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
             this.botonDeVolver.TabIndex = 14;
@@ -115,7 +115,6 @@
             this.labelDeSalarioBruto.Size = new System.Drawing.Size(91, 14);
             this.labelDeSalarioBruto.TabIndex = 18;
             this.labelDeSalarioBruto.Text = "SALARIO BRUTO";
-
             // 
             // labelDeSalarioPorHora
             // 
@@ -182,7 +181,6 @@
             this.labelDeSalarioNeto.Size = new System.Drawing.Size(83, 14);
             this.labelDeSalarioNeto.TabIndex = 24;
             this.labelDeSalarioNeto.Text = "SALARIO NETO";
-
             // 
             // textBoxDeNombre
             // 
@@ -247,12 +245,26 @@
             this.textBoxDeSalarioNeto.Size = new System.Drawing.Size(200, 21);
             this.textBoxDeSalarioNeto.TabIndex = 33;
             // 
+            // botonDeBuscar
+            // 
+            this.botonDeBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeBuscar.ForeColor = System.Drawing.Color.White;
+            this.botonDeBuscar.Location = new System.Drawing.Point(458, 302);
+            this.botonDeBuscar.Name = "botonDeBuscar";
+            this.botonDeBuscar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeBuscar.TabIndex = 34;
+            this.botonDeBuscar.Text = "BUSCAR";
+            this.botonDeBuscar.UseVisualStyleBackColor = false;
+            this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
+            // 
             // VerHorasExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(907, 415);
+            this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeSalarioNeto);
             this.Controls.Add(this.textBoxDeDeducciones);
             this.Controls.Add(this.textBoxDePagoPorHorasExtra);
@@ -308,5 +320,6 @@
         private System.Windows.Forms.TextBox textBoxDePagoPorHorasExtra;
         private System.Windows.Forms.TextBox textBoxDeDeducciones;
         private System.Windows.Forms.TextBox textBoxDeSalarioNeto;
+        private System.Windows.Forms.Button botonDeBuscar;
     }
 }

@@ -18,11 +18,6 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
             MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
@@ -39,11 +34,15 @@ namespace Proyecto_HRPS
             {
                 if (informacionEncontrada.Read())
                 {
-                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    int salario = informacionEncontrada.GetInt32(0); //ERROR AQUI DE CONVERSION DE GRUPO DE VARIABLE
                     textBoxDeSalarioBruto.Text = salario.ToString();
+                    decimal horasExtraDelMes = informacionEncontrada.GetDecimal(1);
+                    decimal salarioPorHora = informacionEncontrada.GetDecimal(2);
+                    decimal pagoDeHorasExtra = horasExtraDelMes * (salarioPorHora * 1.5M);
+                    textBoxDePagoDeHorasExtra.Text = pagoDeHorasExtra.ToString();
                     decimal deducciones = salario * 0.13M;
                     textBoxDeDeducciones.Text = deducciones.ToString();
-                    decimal salarioNeto = salario - (salario * 0.13M);
+                    decimal salarioNeto = salario + pagoDeHorasExtra - (deducciones);
                     textBoxDeSalarioNeto.Text = salarioNeto.ToString();
                 }
             }
@@ -57,6 +56,7 @@ namespace Proyecto_HRPS
         private void EmpleadoVerSalario_Load(object sender, EventArgs e)
         {
             textBoxDeSalarioBruto.Enabled = false;
+            textBoxDePagoDeHorasExtra.Enabled = false;
             textBoxDeDeducciones.Enabled = false;
             textBoxDeSalarioNeto.Enabled = false;
         }
