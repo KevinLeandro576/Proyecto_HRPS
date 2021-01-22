@@ -38,9 +38,9 @@ namespace Proyecto_HRPS
 
         private void enlaceDeVerSalario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            VerSalario verSalario = new VerSalario();
+            EmpleadoVerSalario empleadoVerSalario = new EmpleadoVerSalario();
             this.Hide();
-            verSalario.Show();
+            empleadoVerSalario.Show();
         }
 
         private void enlaceDeVerEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

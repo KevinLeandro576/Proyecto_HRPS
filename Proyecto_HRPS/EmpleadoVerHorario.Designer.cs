@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.botonDeBuscar = new System.Windows.Forms.Button();
+            this.textBoxDeHorario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -89,6 +90,14 @@
             this.botonDeBuscar.TabIndex = 20;
             this.botonDeBuscar.Text = "BUSCAR";
             this.botonDeBuscar.UseVisualStyleBackColor = false;
+            this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
+            // 
+            // textBoxDeHorario
+            // 
+            this.textBoxDeHorario.Location = new System.Drawing.Point(165, 105);
+            this.textBoxDeHorario.Name = "textBoxDeHorario";
+            this.textBoxDeHorario.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeHorario.TabIndex = 21;
             // 
             // EmpleadoVerHorario
             // 
@@ -96,6 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(556, 281);
+            this.Controls.Add(this.textBoxDeHorario);
             this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.label2);
@@ -116,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.Button botonDeBuscar;
+        private System.Windows.Forms.TextBox textBoxDeHorario;
     }
 }

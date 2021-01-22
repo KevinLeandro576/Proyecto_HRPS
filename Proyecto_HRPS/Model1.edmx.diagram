@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ca1bc128618496b983b6675789e6f22" Name="Diagram1">
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.HORAS_EXTRAS" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.ROLES" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.USUARIOS" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.VACACIONES" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HR_PAYROLL_SYSTEMModel.database_firewall_rules" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HR_PAYROLL_SYSTEMModel.FK__HORAS_EXT__FK_CE__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="HR_PAYROLL_SYSTEMModel.FK__USUARIOS__FK_ROL__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="HR_PAYROLL_SYSTEMModel.FK__VACACIONE__FK_CE__7A672E12" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

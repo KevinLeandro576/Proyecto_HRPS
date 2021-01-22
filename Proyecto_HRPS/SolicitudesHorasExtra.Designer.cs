@@ -63,6 +63,7 @@
             this.botonDeEnviar.TabIndex = 8;
             this.botonDeEnviar.Text = "ENVIAR";
             this.botonDeEnviar.UseVisualStyleBackColor = false;
+            this.botonDeEnviar.Click += new System.EventHandler(this.botonDeEnviar_Click);
             // 
             // label1
             // 

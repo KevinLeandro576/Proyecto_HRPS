@@ -39,7 +39,9 @@ namespace Proyecto_HRPS
                 {
                     int i = 0;
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                    //decimal cedula = decimal.Parse(informacionEncontrada["PK_CEDULA"].ToString());
                     string nombre = informacionEncontrada["NOMBRE"].ToString();
+                    //string puesto = informacionEncontrada["PUESTO"].ToString();
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre);
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
                     boton.Click += new System.EventHandler(this.clickAboton);
@@ -50,8 +52,25 @@ namespace Proyecto_HRPS
         private void clickAboton(object sender, EventArgs e)
         {
             Button botonActual = (Button)sender;
-            MessageBox.Show("Hola");
             //Borrar empleado (ponerlo inactivo)
+            const string message = "Borrar?";
+            const string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNoCancel,
+                                         MessageBoxIcon.Question);
+            // Seleccionar no
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("No se borra");
+            }
+            else if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Se borra");
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("Volver");
+            }
         }
         Button agregarBoton(int i, int start, int end, string cedula, string nombre)
         {
@@ -68,7 +87,6 @@ namespace Proyecto_HRPS
             botonConEmpleado.TextAlign = ContentAlignment.MiddleCenter;
             botonConEmpleado.Margin = new Padding(5);
             return botonConEmpleado;
-
         }
 
         //POR CADA FORMULARIO CON CRUD

@@ -35,6 +35,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.botonDeBuscar = new System.Windows.Forms.Button();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
+            this.textBoxDeSalarioBruto = new System.Windows.Forms.TextBox();
+            this.textBoxDeSalarioNeto = new System.Windows.Forms.TextBox();
+            this.textBoxDeDeducciones = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -66,7 +69,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(52, 173);
+            this.label2.Location = new System.Drawing.Point(52, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 14);
             this.label2.TabIndex = 18;
@@ -77,7 +80,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(52, 135);
+            this.label3.Location = new System.Drawing.Point(52, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 14);
             this.label3.TabIndex = 19;
@@ -105,6 +108,7 @@
             this.botonDeBuscar.TabIndex = 21;
             this.botonDeBuscar.Text = "BUSCAR";
             this.botonDeBuscar.UseVisualStyleBackColor = false;
+            this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
             // 
             // textBoxDeCedula
             // 
@@ -114,12 +118,39 @@
             this.textBoxDeCedula.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeCedula.TabIndex = 22;
             // 
+            // textBoxDeSalarioBruto
+            // 
+            this.textBoxDeSalarioBruto.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeSalarioBruto.Location = new System.Drawing.Point(184, 97);
+            this.textBoxDeSalarioBruto.Name = "textBoxDeSalarioBruto";
+            this.textBoxDeSalarioBruto.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeSalarioBruto.TabIndex = 23;
+            // 
+            // textBoxDeSalarioNeto
+            // 
+            this.textBoxDeSalarioNeto.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeSalarioNeto.Location = new System.Drawing.Point(184, 167);
+            this.textBoxDeSalarioNeto.Name = "textBoxDeSalarioNeto";
+            this.textBoxDeSalarioNeto.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeSalarioNeto.TabIndex = 24;
+            // 
+            // textBoxDeDeducciones
+            // 
+            this.textBoxDeDeducciones.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeDeducciones.Location = new System.Drawing.Point(184, 135);
+            this.textBoxDeDeducciones.Name = "textBoxDeDeducciones";
+            this.textBoxDeDeducciones.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeDeducciones.TabIndex = 25;
+            // 
             // EmpleadoVerSalario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(528, 341);
+            this.Controls.Add(this.textBoxDeDeducciones);
+            this.Controls.Add(this.textBoxDeSalarioNeto);
+            this.Controls.Add(this.textBoxDeSalarioBruto);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.label4);
@@ -131,6 +162,7 @@
             this.Name = "EmpleadoVerSalario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Salario";
+            this.Load += new System.EventHandler(this.EmpleadoVerSalario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +177,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button botonDeBuscar;
         private System.Windows.Forms.TextBox textBoxDeCedula;
+        private System.Windows.Forms.TextBox textBoxDeSalarioBruto;
+        private System.Windows.Forms.TextBox textBoxDeSalarioNeto;
+        private System.Windows.Forms.TextBox textBoxDeDeducciones;
     }
 }

@@ -48,6 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
@@ -55,7 +61,10 @@
       <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +82,33 @@
     <Compile Include="AdministradorInicioDeSesion.Designer.cs">
       <DependentUpon>AdministradorInicioDeSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_EMPLEADOS_A_BORRAR_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_EMPLEADOS_INACTIVOS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_EMPLEADOS_PARA_HORARIOS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_EMPLEADOS_PARA_SALARIOS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_HORARIOS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_HORAS_EXTRAS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_SOLICITUDES_DE_HORAS_EXTRAS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR_VER_SOLICITUDES_DE_VACACIONES_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ControlDeEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +120,9 @@
     </Compile>
     <Compile Include="CrearPerfilDeUsuario.Designer.cs">
       <DependentUpon>CrearPerfilDeUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EliminarEmpleados.cs">
       <SubType>Form</SubType>
@@ -121,6 +160,9 @@
     <Compile Include="EmpleadoVerSalario.Designer.cs">
       <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
     </Compile>
+    <Compile Include="HORAS_EXTRAS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="MenuDeAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +186,21 @@
     </Compile>
     <Compile Include="MenuPerfilesEmpleado.Designer.cs">
       <DependentUpon>MenuPerfilesEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModificarHorario.cs">
       <SubType>Form</SubType>
@@ -177,6 +234,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REPORTE_DE_HORAS_EXTRA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE_DE_SALARIO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE_VACACIONES_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ROLES.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="SolicitudesHorasExtra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +276,21 @@
     <Compile Include="SolicitudesEmpleados.Designer.cs">
       <DependentUpon>SolicitudesEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VACACIONES.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="VerEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,12 +302,6 @@
     </Compile>
     <Compile Include="VerHorasExtra.Designer.cs">
       <DependentUpon>VerHorasExtra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VerSalario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VerSalario.Designer.cs">
-      <DependentUpon>VerSalario.cs</DependentUpon>
     </Compile>
     <Compile Include="VerSalarioEmpleados.cs">
       <SubType>Form</SubType>
@@ -315,12 +393,16 @@
     <EmbeddedResource Include="VerHorasExtra.resx">
       <DependentUpon>VerHorasExtra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerSalario.resx">
-      <DependentUpon>VerSalario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VerSalarioEmpleados.resx">
       <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -346,6 +428,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

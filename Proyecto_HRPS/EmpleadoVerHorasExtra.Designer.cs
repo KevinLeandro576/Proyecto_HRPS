@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.botonDeBuscar = new System.Windows.Forms.Button();
+            this.textBoxDeHorasExtra = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -89,6 +90,15 @@
             this.botonDeBuscar.TabIndex = 21;
             this.botonDeBuscar.Text = "BUSCAR";
             this.botonDeBuscar.UseVisualStyleBackColor = false;
+            this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
+            // 
+            // textBoxDeHorasExtra
+            // 
+            this.textBoxDeHorasExtra.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDeHorasExtra.Location = new System.Drawing.Point(175, 107);
+            this.textBoxDeHorasExtra.Name = "textBoxDeHorasExtra";
+            this.textBoxDeHorasExtra.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDeHorasExtra.TabIndex = 22;
             // 
             // EmpleadoVerHorasExtra
             // 
@@ -96,6 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(564, 293);
+            this.Controls.Add(this.textBoxDeHorasExtra);
             this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.label2);
@@ -104,6 +115,7 @@
             this.Name = "EmpleadoVerHorasExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver horas extra";
+            this.Load += new System.EventHandler(this.EmpleadoVerHorasExtra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +128,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.Button botonDeBuscar;
+        private System.Windows.Forms.TextBox textBoxDeHorasExtra;
     }
 }
