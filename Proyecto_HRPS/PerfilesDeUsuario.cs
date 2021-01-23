@@ -53,61 +53,94 @@ namespace Proyecto_HRPS
         private void enlaceDeVerEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
+            {                
+                
+                PdfPTable tabla = CrearTablaPDFEmpleados();
+                CrearReportePDFEmpleados(tabla);
+               
+                /*VerEmpleados verEmpleados = new VerEmpleados();
+                this.Hide();
+                verEmpleados.Show();*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cierra el reporte de empleados activos" + ex.Message);
+            }
+        }
+
+        private PdfPTable CrearTablaPDFEmpleados()
+        {
+            PdfPTable tabla;
+
+            try
             {
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS");
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE.pdf";
+                
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    tabla = new PdfPTable(numeroColumas);
+
+                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDePuesto = new Paragraph("PUESTO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeCorreo = new Paragraph("CORREO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+
+                    tabla.AddCell(encabezadoDeCedula);
+                    tabla.AddCell(encabezadoDeNombre);
+                    tabla.AddCell(encabezadoDePuesto);
+                    tabla.AddCell(encabezadoDeCorreo);
+
+                    while (informacionEncontrada.Read())
+                    {
+                        string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                        string nombre = informacionEncontrada["NOMBRE"].ToString();
+                        string puesto = informacionEncontrada["PUESTO"].ToString();
+                        string correo = informacionEncontrada["CORREO"].ToString();
+
+                        tabla.AddCell(cedula);
+                        tabla.AddCell(nombre);
+                        tabla.AddCell(puesto);
+                        tabla.AddCell(correo);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return tabla;
+
+        }
+
+        private bool CrearReportePDFEmpleados(PdfPTable tabla)
+        {
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_')  + ".pdf";
+
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
+
                 using (FileStream FS = File.Create(path))
                 {
                     PdfWriter.GetInstance(DC, FS);
                     DC.Open();
-                    int x = 0;
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                    {
-                        while (informacionEncontrada.Read())
-                        {
-                            string cedula = informacionEncontrada["PK_CEDULA"].ToString();
-                            string nombre = informacionEncontrada["NOMBRE"].ToString();
-                            string puesto = informacionEncontrada["PUESTO"].ToString();
+                    
+                    iTextSharp.text.Image jpeg01 = iTextSharp.text.Image.GetInstance(Properties.Resources.iconoDeUREBA, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-                            string todo = cedula + " " + nombre + " " + puesto;
-
-                            //DC.Add(new Paragraph(todo));
-                            x = x + 1;
-                        }
-                    }
-                    string imageURL01 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/icono01.jpeg";
-                    iTextSharp.text.Image jpeg01 = iTextSharp.text.Image.GetInstance(imageURL01);
                     jpeg01.ScaleToFit(500f, 500f);
                     jpeg01.SpacingBefore = 10f;
                     jpeg01.SpacingAfter = 1f;
                     jpeg01.Alignment = Element.ALIGN_CENTER;
                     DC.Add(jpeg01);
-                    PdfPTable tabla = new PdfPTable(x);
+
                     Paragraph para = new Paragraph("EMPLEADOS ACTIVOS" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
                     para.Alignment = Element.ALIGN_CENTER;
                     para.SpacingAfter = 18f;
-                    DC.Add(para);
-                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDePuesto = new Paragraph("PUESTO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    tabla.AddCell(encabezadoDeCedula);
-                    tabla.AddCell(encabezadoDeNombre);
-                    tabla.AddCell(encabezadoDePuesto);
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                    {
-                        while (informacionEncontrada.Read())
-                        {
-                            string cedula = informacionEncontrada["PK_CEDULA"].ToString();
-                            string nombre = informacionEncontrada["NOMBRE"].ToString();
-                            string puesto = informacionEncontrada["PUESTO"].ToString();
+                    DC.Add(para);                  
 
-                            tabla.AddCell(cedula);
-                            tabla.AddCell(nombre);
-                            tabla.AddCell(puesto);
-                        }
-                    }
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
                     string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
@@ -120,14 +153,13 @@ namespace Proyecto_HRPS
                     FS.Dispose();
 
                 }
-                /*VerEmpleados verEmpleados = new VerEmpleados();
-                this.Hide();
-                verEmpleados.Show();*/
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Cierra el reporte de empleados activos");
+                throw;
             }
+
+            return true;
         }
 
         private void enlaceDeModificarHorario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -32,6 +32,29 @@ namespace Proyecto_HRPS
                                                                                                    dateTimePickerDeDiaTrabajado.Value,
                                                                                                    numericDeCantidadDeHorasExtra.Value);
             conexion.ExecuteNonQuery(comando);
+            //ENVIA UN CORREO
+            AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+            builder.Append("<tr>");
+            builder.Append("<th>NOMBRE</th>");
+            builder.Append("<th>FECHA DE SOLICITUD</th>");
+            builder.Append("<th>CANTIDAD DE HORAS</th>");
+            builder.Append("<th>ESTADO DE SOLICITUD</th>");
+            builder.Append("</tr>");
+
+            builder.Append("<tr>");
+            builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
+            builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString() + "</td>");
+            builder.Append("<td>" + numericDeCantidadDeHorasExtra.Value.ToString() + "</td>");
+            builder.Append("<td>" + "PENDIENTE" + "</td>");
+            builder.Append("</tr>");
+            builder.Append("</table>");
+
+            administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "José Gabriel", new List<string>() { "joseg1037@yandex.com", "1037joseg@gmail.com" });
+
         }
         public Database AbrirBaseDeDatos()
         {
