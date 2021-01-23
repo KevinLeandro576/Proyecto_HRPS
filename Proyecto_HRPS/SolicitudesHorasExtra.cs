@@ -41,7 +41,7 @@ namespace Proyecto_HRPS
             builder.Append("<tr>");
             builder.Append("<th>NOMBRE</th>");
             builder.Append("<th>FECHA DE SOLICITUD</th>");
-            builder.Append("<th>CANTIDAD DE HORAS</th>");
+            builder.Append("<th>CANTIDAD DE HORAS</th>"); 
             builder.Append("<th>ESTADO DE SOLICITUD</th>");
             builder.Append("</tr>");
 
