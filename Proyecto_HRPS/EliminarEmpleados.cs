@@ -44,12 +44,13 @@ namespace Proyecto_HRPS
                     //string puesto = informacionEncontrada["PUESTO"].ToString();
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre);
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
-                    boton.Click += new System.EventHandler(this.clickAboton);
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
+                    //boton.Click += new System.EventHandler(this.clickAboton);
                     endposition += 100;
                 }
             }
         }
-        private void clickAboton(object sender, EventArgs e)
+        private void clickAboton(object sender, EventArgs e, string cedula)
         {
             Button botonActual = (Button)sender;
             //Borrar empleado (ponerlo inactivo)
@@ -61,11 +62,13 @@ namespace Proyecto_HRPS
             // Seleccionar no
             if (result == DialogResult.No)
             {
-                MessageBox.Show("No se borra");
+                MessageBox.Show("Empleado no borrado");
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Se borra");
+                MessageBox.Show("Empleado borrado");
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", cedula);
             }
             else if (result == DialogResult.Cancel)
             {

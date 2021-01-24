@@ -33,6 +33,7 @@
             this.textBoxDeHorarioNuevo = new System.Windows.Forms.TextBox();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeGuardarCambios = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelDeHorarioActual
@@ -40,7 +41,7 @@
             this.labelDeHorarioActual.AutoSize = true;
             this.labelDeHorarioActual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeHorarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeHorarioActual.Location = new System.Drawing.Point(38, 64);
+            this.labelDeHorarioActual.Location = new System.Drawing.Point(115, 62);
             this.labelDeHorarioActual.Name = "labelDeHorarioActual";
             this.labelDeHorarioActual.Size = new System.Drawing.Size(98, 14);
             this.labelDeHorarioActual.TabIndex = 6;
@@ -51,7 +52,7 @@
             this.labelDeHorarioNuevo.AutoSize = true;
             this.labelDeHorarioNuevo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeHorarioNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeHorarioNuevo.Location = new System.Drawing.Point(38, 113);
+            this.labelDeHorarioNuevo.Location = new System.Drawing.Point(115, 111);
             this.labelDeHorarioNuevo.Name = "labelDeHorarioNuevo";
             this.labelDeHorarioNuevo.Size = new System.Drawing.Size(93, 14);
             this.labelDeHorarioNuevo.TabIndex = 8;
@@ -60,7 +61,7 @@
             // 
             // textBoxDeHorarioNuevo
             // 
-            this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(178, 106);
+            this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(255, 104);
             this.textBoxDeHorarioNuevo.Name = "textBoxDeHorarioNuevo";
             this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeHorarioNuevo.TabIndex = 9;
@@ -89,6 +90,15 @@
             this.botonDeGuardarCambios.TabIndex = 11;
             this.botonDeGuardarCambios.Text = "GUARDAR CAMBIOS";
             this.botonDeGuardarCambios.UseVisualStyleBackColor = false;
+            this.botonDeGuardarCambios.Click += new System.EventHandler(this.botonDeGuardarCambios_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(255, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 12;
             // 
             // ModificarHorario02
             // 
@@ -96,6 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(551, 298);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeGuardarCambios);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.textBoxDeHorarioNuevo);
@@ -118,5 +129,6 @@
         private System.Windows.Forms.TextBox textBoxDeHorarioNuevo;
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Button botonDeGuardarCambios;
+        private System.Windows.Forms.Label label1;
     }
 }

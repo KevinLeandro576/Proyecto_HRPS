@@ -49,10 +49,12 @@ namespace Proyecto_HRPS
                     string cedula = informacionEncontrada["FK_CEDULA"].ToString();
                     Button boton = agregarBotonDeHorasExtra(i, startposition, endposition, identificador, dia, cantidadDeHoras, cedula);
                     panelDeFlujoDeSolicitudesDeHorasExtra.Controls.Add(boton);
-                    boton.Click += new System.EventHandler(this.clickAboton);
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton1(sender1, e1, identificador); };
+                    //boton.Click += new System.EventHandler(this.clickAboton1);
                     endposition += 100;
                 }
             }
+
             var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_SOLICITUDES_DE_VACACIONES");
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
             {
@@ -68,7 +70,8 @@ namespace Proyecto_HRPS
 
                     Button boton = agregarBotonDeVacaciones(i, startposition, endposition, identificador, diaDeInicio, diaDeFin, cantidadDeDias, cedula);
                     panelDeFlujoDeSolicitudesDeVacaciones.Controls.Add(boton);
-                    boton.Click += new System.EventHandler(this.clickAboton);
+                    boton.Click += delegate (object sender2, EventArgs e2) { clickAboton2(sender2, e2, identificador); };
+                    //boton.Click += new System.EventHandler(this.clickAboton2);
                     endposition += 100;
                 }
             }
@@ -110,7 +113,8 @@ namespace Proyecto_HRPS
             botonConEmpleado.Margin = new Padding(5);
             return botonConEmpleado;
         }
-        private void clickAboton(object sender, EventArgs e)
+        //Solicitud de horas exta
+        private void clickAboton1(object sender, EventArgs e, int identificador)
         {
             Button botonActual = (Button)sender;
             //Borrar empleado (ponerlo inactivo)
@@ -122,11 +126,39 @@ namespace Proyecto_HRPS
             // Seleccionar no
             if (result == DialogResult.No)
             {
-                MessageBox.Show("Se negaria");
+                MessageBox.Show("Solicitud negada");
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Se aceptaria");
+                MessageBox.Show("Solicitud aceptada");
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador);
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("Volver");
+            }
+        }
+        //Solicitud de vacaciones
+        private void clickAboton2(object sender, EventArgs e, int identificador)
+        {
+            Button botonActual = (Button)sender;
+            //Borrar empleado (ponerlo inactivo)
+            const string message = "Aceptar o negar?";
+            const string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNoCancel,
+                                         MessageBoxIcon.Question);
+            // Seleccionar no
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("Solicitud negada");
+            }
+            else if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Solicitud aceptada");
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador);
             }
             else if (result == DialogResult.Cancel)
             {
