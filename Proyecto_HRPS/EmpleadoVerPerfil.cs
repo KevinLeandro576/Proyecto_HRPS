@@ -27,7 +27,8 @@ namespace Proyecto_HRPS
 
         private void EmpleadoVerPerfil_Load(object sender, EventArgs e)
         {
-            //info_cedula = valor de cedula;
+            //info_cedula = login.valor_de_cedula;
+            info_cedula = "123465789";
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", info_cedula);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
