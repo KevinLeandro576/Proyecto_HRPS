@@ -164,7 +164,7 @@ namespace Proyecto_HRPS
                 estado = "NEGADO";
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
-                conexion.ExecuteNonQuery(comando);
+                conexion.ExecuteNonQuery(comando);//
                 }
             else if (result == DialogResult.Yes)
             {
