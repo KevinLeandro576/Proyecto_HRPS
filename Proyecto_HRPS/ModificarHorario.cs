@@ -75,6 +75,7 @@ namespace Proyecto_HRPS
                 while (informacionEncontrada.Read())
                 {
                     int i = 0;
+                    MessageBox.Show("Intento: " + i.ToString());
                     //string cedula = informacionEncontrada.GetString(0);
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
                     string nombre = informacionEncontrada.GetString(1);
@@ -83,6 +84,7 @@ namespace Proyecto_HRPS
                     panelDeFlujoDeHorarios.Controls.Add(boton);
                     boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, nombre, horario); };
                     endposition += 100;
+                    i++;
                 }
             }
         }

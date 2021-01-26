@@ -41,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDeCorreoElectronico = new System.Windows.Forms.TextBox();
             this.textBoxDeContraseña = new System.Windows.Forms.TextBox();
+            this.textBoxDePuesto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -175,12 +176,22 @@
             this.textBoxDeContraseña.Size = new System.Drawing.Size(176, 20);
             this.textBoxDeContraseña.TabIndex = 28;
             // 
+            // textBoxDePuesto
+            // 
+            this.textBoxDePuesto.Enabled = false;
+            this.textBoxDePuesto.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.textBoxDePuesto.Location = new System.Drawing.Point(268, 222);
+            this.textBoxDePuesto.Name = "textBoxDePuesto";
+            this.textBoxDePuesto.Size = new System.Drawing.Size(176, 20);
+            this.textBoxDePuesto.TabIndex = 29;
+            // 
             // EmpleadoVerPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(554, 386);
+            this.Controls.Add(this.textBoxDePuesto);
             this.Controls.Add(this.textBoxDeContraseña);
             this.Controls.Add(this.textBoxDeCorreoElectronico);
             this.Controls.Add(this.label6);
@@ -197,6 +208,7 @@
             this.Name = "EmpleadoVerPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver perfil";
+            this.Load += new System.EventHandler(this.EmpleadoVerPerfil_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDeCorreoElectronico;
         private System.Windows.Forms.TextBox textBoxDeContraseña;
+        private System.Windows.Forms.TextBox textBoxDePuesto;
     }
 }
