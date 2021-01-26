@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using Syncfusion.Pdf.Grid;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
@@ -61,7 +52,7 @@ namespace Proyecto_HRPS
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
-                    { 
+                    {
                         MessageBox.Show("No hay empleados activos", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -84,7 +75,6 @@ namespace Proyecto_HRPS
         private PdfPTable CrearTablaPDFEmpleados()
         {
             PdfPTable tabla;
-
             try
             {
                 var conexion = AbrirBaseDeDatos();

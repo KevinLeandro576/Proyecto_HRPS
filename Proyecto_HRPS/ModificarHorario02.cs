@@ -29,7 +29,7 @@ namespace Proyecto_HRPS
 
         private void ModificarHorario02_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)

@@ -53,8 +53,32 @@ namespace Proyecto_HRPS
             builder.Append("</tr>");
             builder.Append("</table>");
 
-            administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string>() { "joseg1037@yandex.com", "1037joseg@gmail.com", "leandrokevin576@gmail.com" });
 
+            var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", textBoxDeNombre.Text);
+            string correoDeEmpleado = "";
+            string correoDeAdministrador;
+            List<string> listaDeCorreos = new List<string>();
+            listaDeCorreos.Add("1037joseg@gmail.com");
+            listaDeCorreos.Add("leandrokevin576@gmail.com");
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    correoDeEmpleado = informacionEncontrada.GetString(0);
+                }
+            }
+            var comando03 = conexion.GetStoredProcCommand("[SACAR_CORREOS_DE_ADMINISTRADORES]");
+
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando03))
+            {
+                while (informacionEncontrada.Read())
+                {
+                    correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
+                    listaDeCorreos.Add(correoDeAdministrador);
+                }
+            }
+            administradorDeCorreo.EnviarCorreo("<h1>Ha enviado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+            administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
         }
         public Database AbrirBaseDeDatos()
         {
