@@ -38,7 +38,7 @@ namespace Proyecto_HRPS
                         this.Hide();
                         verEmpleados.Show();
                     }
-                }
+                } 
             }
             catch (Exception ex)
             {
