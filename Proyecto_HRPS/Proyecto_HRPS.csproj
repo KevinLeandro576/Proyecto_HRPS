@@ -116,6 +116,7 @@
     <Compile Include="EliminarEmpleados.Designer.cs">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoInicioDeSesion.cs">
       <SubType>Form</SubType>
     </Compile>

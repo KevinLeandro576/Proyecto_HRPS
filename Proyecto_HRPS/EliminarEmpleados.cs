@@ -46,7 +46,7 @@ namespace Proyecto_HRPS
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
                     boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
                     //boton.Click += new System.EventHandler(this.clickAboton);
-                    infoCedula = cedula;
+                    //infoCedula = cedula;
                     endposition += 100;
                 }
             }

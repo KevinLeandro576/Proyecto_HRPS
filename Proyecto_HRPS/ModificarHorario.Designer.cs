@@ -47,7 +47,7 @@
             // 
             // panelDeFlujoDeHorarios
             // 
-            this.panelDeFlujoDeHorarios.BackColor = System.Drawing.Color.Gray;
+            this.panelDeFlujoDeHorarios.BackColor = System.Drawing.Color.White;
             this.panelDeFlujoDeHorarios.Location = new System.Drawing.Point(12, 12);
             this.panelDeFlujoDeHorarios.Name = "panelDeFlujoDeHorarios";
             this.panelDeFlujoDeHorarios.Size = new System.Drawing.Size(684, 248);
