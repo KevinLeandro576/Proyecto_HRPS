@@ -75,7 +75,6 @@ namespace Proyecto_HRPS
                 while (informacionEncontrada.Read())
                 {
                     int i = 0;
-                    MessageBox.Show("Intento: " + i.ToString());
                     //string cedula = informacionEncontrada.GetString(0);
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
                     string nombre = informacionEncontrada.GetString(1);
