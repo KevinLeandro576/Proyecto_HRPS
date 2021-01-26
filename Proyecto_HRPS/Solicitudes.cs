@@ -20,7 +20,7 @@ namespace Proyecto_HRPS
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador(); 
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
             this.Hide();
             menuDeAdministrador.Show();
         }
