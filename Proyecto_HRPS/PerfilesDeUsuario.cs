@@ -61,7 +61,7 @@ namespace Proyecto_HRPS
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
-                    {
+                    { 
                         MessageBox.Show("No hay empleados activos", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
