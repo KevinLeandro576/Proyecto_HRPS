@@ -62,7 +62,7 @@ namespace Proyecto_HRPS
                 MessageBox.Show("Cambios guardados");
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
-                conexion.ExecuteNonQuery(comando);
+                conexion.ExecuteNonQuery(comando); 
                 //volverVistaDeHorarios();
             }
             else if (result == DialogResult.Cancel)
