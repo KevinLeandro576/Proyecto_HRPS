@@ -116,6 +116,7 @@
             this.Name = "ModificarSalario02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar salario";
+            this.Load += new System.EventHandler(this.ModificarSalario02_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,9 +18,9 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        static string info_cedula = "";
-        static string info_horario = "";
-        static string horario_nuevo = "";
+        static string infoCedula = "";
+        static string infoHorario = "";
+        static string horarioNuevo = "";
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,9 +29,7 @@ namespace Proyecto_HRPS
 
         private void ModificarHorario02_Load(object sender, EventArgs e)
         {
-            info_cedula = ModificarHorario.info_cedula;
-            info_horario = ModificarHorario.info_horario;
-            Label label = agregarLabel(info_cedula, info_horario);
+            
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -82,12 +80,19 @@ namespace Proyecto_HRPS
             {
                 MessageBox.Show("Cambios guardados");
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", info_cedula, horario_nuevo);
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
             }
             else if (result == DialogResult.Cancel)
             {
                 MessageBox.Show("Volver");
             }
+        }
+
+        private void ModificarHorario02_Load_1(object sender, EventArgs e)
+        {
+            infoCedula = ModificarHorario.infoCedula;
+            infoHorario = ModificarHorario.infoHorario;
+            Label label = agregarLabel(infoCedula, infoHorario);
         }
     }
 }

@@ -18,33 +18,33 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        static string info_cedula = "";
-        static string info_nombre = "";
-        static DateTime info_nacimiento;
-        static string info_correo = "";
-        static string info_contraseña = "";
-        static string info_puesto = "";
+        static string infoCedula = "";
+        static string infoNombre = "";
+        static DateTime infoNacimiento;
+        static string infoCorreo = "";
+        static string infoContraseña = "";
+        static string infoPuesto = "";
 
         private void EmpleadoVerPerfil_Load(object sender, EventArgs e)
         {
             //info_cedula = login.valor_de_cedula;
-            info_cedula = "123465789";
+            infoCedula = "123465789";
             var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", info_cedula);
+            var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", infoCedula);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
-                info_nombre = informacionEncontrada["NOMBRE"].ToString();
-                info_nacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
-                info_contraseña = informacionEncontrada["CORREO"].ToString();
-                info_contraseña = informacionEncontrada["CONTRASENNA"].ToString();
-                info_puesto = informacionEncontrada["PUESTO"].ToString();
+                infoNombre = informacionEncontrada["NOMBRE"].ToString();
+                infoNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                infoCorreo = informacionEncontrada["CORREO"].ToString();
+                infoContraseña = informacionEncontrada["CONTRASENNA"].ToString();
+                infoPuesto = informacionEncontrada["PUESTO"].ToString();
             }
-            Label label = agregarLabel(info_puesto);
-            textBoxDeCedula.Text = info_cedula;
-            textBoxDeNombre.Text = info_nombre;
-            dateTimePickerDeFechaDeNacimiento.Value = info_nacimiento;
-            textBoxDeCorreoElectronico.Text = info_correo;
-            textBoxDeContraseña.Text = info_contraseña;
+            Label label = agregarLabel(infoPuesto);
+            textBoxDeCedula.Text = infoCedula;
+            textBoxDeNombre.Text = infoNombre;
+            dateTimePickerDeFechaDeNacimiento.Value = infoNacimiento;
+            textBoxDeCorreoElectronico.Text = infoCorreo;
+            textBoxDeContraseña.Text = infoContraseña;
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -80,18 +80,18 @@ namespace Proyecto_HRPS
 
         private void guardarCambios()
         {
-            info_cedula = textBoxDeCedula.Text;
-            info_nombre = textBoxDeNombre.Text;
-            info_nacimiento = dateTimePickerDeFechaDeNacimiento.Value;
-            info_correo = textBoxDeCorreoElectronico.Text;
-            info_contraseña = textBoxDeContraseña.Text;
+            infoCedula = textBoxDeCedula.Text;
+            infoNombre = textBoxDeNombre.Text;
+            infoNacimiento = dateTimePickerDeFechaDeNacimiento.Value;
+            infoCorreo = textBoxDeCorreoElectronico.Text;
+            infoContraseña = textBoxDeContraseña.Text;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_ACTUALIZAR_DATOS",
-                                                            info_cedula,
-                                                            info_nombre,
-                                                            info_nacimiento,
-                                                            info_correo,
-                                                            info_contraseña);
+                                                            infoCedula,
+                                                            infoNombre,
+                                                            infoNacimiento,
+                                                            infoCorreo,
+                                                            infoContraseña);
             conexion.ExecuteNonQuery(comando);
         }
 

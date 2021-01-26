@@ -117,6 +117,7 @@ namespace Proyecto_HRPS
         private void clickAboton1(object sender, EventArgs e, int identificador)
         {
             Button botonActual = (Button)sender;
+            string estado = "";
             //Borrar empleado (ponerlo inactivo)
             const string message = "Aceptar o negar?";
             const string caption = "Form Closing";
@@ -127,12 +128,18 @@ namespace Proyecto_HRPS
             if (result == DialogResult.No)
             {
                 MessageBox.Show("Solicitud negada");
+                estado = "NEGADO";
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
+                conexion.ExecuteNonQuery(comando);
             }
             else if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Solicitud aceptada");
+                estado = "ACEPTADO";
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador);
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
+                conexion.ExecuteNonQuery(comando);
             }
             else if (result == DialogResult.Cancel)
             {
@@ -143,6 +150,7 @@ namespace Proyecto_HRPS
         private void clickAboton2(object sender, EventArgs e, int identificador)
         {
             Button botonActual = (Button)sender;
+            string estado = "";
             //Borrar empleado (ponerlo inactivo)
             const string message = "Aceptar o negar?";
             const string caption = "Form Closing";
@@ -153,12 +161,19 @@ namespace Proyecto_HRPS
             if (result == DialogResult.No)
             {
                 MessageBox.Show("Solicitud negada");
-            }
+                estado = "NEGADO";
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
+                conexion.ExecuteNonQuery(comando);
+                }
             else if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Solicitud aceptada");
+                estado = "ACEPTADO";
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador);
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
+                //conexion.ExecuteNonQuery(comando);
+                comando.ExecuteNonQuery();
             }
             else if (result == DialogResult.Cancel)
             {

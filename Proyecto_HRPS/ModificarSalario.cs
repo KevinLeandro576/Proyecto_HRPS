@@ -18,8 +18,8 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        public static string info_cedula = "";
-        public static int info_salario = 0;
+        public static string infoCedula = "";
+        public static int infoSalario = 0;
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -65,8 +65,8 @@ namespace Proyecto_HRPS
 
         private void clickAboton(object sender, EventArgs e, string cedula, int salario)
         {
-            info_cedula = cedula;
-            info_salario = salario;
+            infoCedula = cedula;
+            infoSalario = salario;
             ModificarSalario02 modificarSalario02 = new ModificarSalario02();
             this.Hide();
             modificarSalario02.Show();

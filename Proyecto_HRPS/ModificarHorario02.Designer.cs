@@ -117,6 +117,7 @@
             this.Name = "ModificarHorario02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar horario";
+            this.Load += new System.EventHandler(this.ModificarHorario02_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

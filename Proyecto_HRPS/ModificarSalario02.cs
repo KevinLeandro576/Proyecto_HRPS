@@ -18,9 +18,9 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        static string info_cedula = "";
-        static int info_salario = 0;
-        static int salario_nuevo = 0;
+        static string infoCedula = "";
+        static int infoSalario = 0;
+        static int salarioNuevo = 0;
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -31,9 +31,9 @@ namespace Proyecto_HRPS
 
         private void ModificarSalario02_Load(object sender, EventArgs e)
         {
-            info_cedula = ModificarSalario.info_cedula;
-            info_salario = ModificarSalario.info_salario;
-            Label label = agregarLabel(info_cedula, info_salario);
+            infoCedula = ModificarSalario.infoCedula;
+            infoSalario = ModificarSalario.infoSalario;
+            Label label = agregarLabel(infoCedula, infoSalario);
         }
 
         Label agregarLabel(string cedula, int salario)
@@ -83,6 +83,13 @@ namespace Proyecto_HRPS
             {
                 MessageBox.Show("Volver");
             }
+        }
+
+        private void ModificarSalario02_Load_1(object sender, EventArgs e)
+        {
+            infoCedula = ModificarSalario.infoCedula;
+            infoSalario = ModificarSalario.infoSalario;
+            Label label = agregarLabel(infoCedula, infoSalario);
         }
     }
 }

@@ -25,6 +25,9 @@ namespace Proyecto_HRPS
             perfilesDeUsuario.Show();
         }
 
+        static List<int> iterador = new List<int>();
+        static string infoCedula = "";
+
         private void EliminarEmpleados_Load(object sender, EventArgs e)
         {
             //Hace botones de manera dinamica, hacer que se hagan por cada empleado registrado
@@ -35,22 +38,23 @@ namespace Proyecto_HRPS
 
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
+                int i = 0;
                 while (informacionEncontrada.Read())
                 {
-                    int i = 0;
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
                     //decimal cedula = decimal.Parse(informacionEncontrada["PK_CEDULA"].ToString());
                     string nombre = informacionEncontrada["NOMBRE"].ToString();
                     //string puesto = informacionEncontrada["PUESTO"].ToString();
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre);
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
-                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
-                    //boton.Click += new System.EventHandler(this.clickAboton);
+                    //boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
+                    boton.Click += new System.EventHandler(this.clickAboton);
+                    infoCedula = cedula;
                     endposition += 100;
                 }
             }
         }
-        private void clickAboton(object sender, EventArgs e, string cedula)
+        private void clickAboton(object sender, EventArgs e)
         {
             Button botonActual = (Button)sender;
             //Borrar empleado (ponerlo inactivo)
@@ -68,8 +72,9 @@ namespace Proyecto_HRPS
             {
                 MessageBox.Show("Empleado borrado");
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", cedula);
-            }
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
+                conexion.ExecuteNonQuery(comando);
+                }
             else if (result == DialogResult.Cancel)
             {
                 MessageBox.Show("Volver");
