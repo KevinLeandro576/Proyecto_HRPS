@@ -41,7 +41,7 @@ namespace Proyecto_HRPS
             builder.Append("<tr>");
             builder.Append("<th>NOMBRE</th>");
             builder.Append("<th>FECHA DE SOLICITUD</th>");
-            builder.Append("<th>CANTIDAD DE HORAS</th>"); 
+            builder.Append("<th>CANTIDAD DE HORAS</th>");
             builder.Append("<th>ESTADO DE SOLICITUD</th>");
             builder.Append("</tr>");
 
@@ -53,7 +53,7 @@ namespace Proyecto_HRPS
             builder.Append("</tr>");
             builder.Append("</table>");
 
-            administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "José Gabriel", new List<string>() { "joseg1037@yandex.com", "1037joseg@gmail.com", "leandrokevin576@gmail.com" });
+            administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string>() { "joseg1037@yandex.com", "1037joseg@gmail.com", "leandrokevin576@gmail.com" });
 
         }
         public Database AbrirBaseDeDatos()
