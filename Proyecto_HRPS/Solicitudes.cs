@@ -130,6 +130,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                 conexion.ExecuteNonQuery(comando);
+                reiniciarPagina();
             }
             else if (result == DialogResult.Yes)
             {
@@ -138,6 +139,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                 conexion.ExecuteNonQuery(comando);
+                reiniciarPagina();
             }
             else if (result == DialogResult.Cancel)
             {
@@ -163,6 +165,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                 conexion.ExecuteNonQuery(comando);
+                reiniciarPagina();
             }
             else if (result == DialogResult.Yes)
             {
@@ -171,11 +174,19 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                 conexion.ExecuteNonQuery(comando);
+                reiniciarPagina();
             }
             else if (result == DialogResult.Cancel)
             {
                 MessageBox.Show("Volver");
             }
+        }
+
+        private void reiniciarPagina()
+        {
+            Solicitudes solicitudes = new Solicitudes();
+            this.Hide();
+            solicitudes.Show();
         }
 
     }

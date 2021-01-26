@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.botonDeVolver = new System.Windows.Forms.Button();
+            this.panelDeFlujoDeHorarios = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -44,12 +45,21 @@
             this.botonDeVolver.UseVisualStyleBackColor = false;
             this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
+            // panelDeFlujoDeHorarios
+            // 
+            this.panelDeFlujoDeHorarios.BackColor = System.Drawing.Color.Gray;
+            this.panelDeFlujoDeHorarios.Location = new System.Drawing.Point(12, 12);
+            this.panelDeFlujoDeHorarios.Name = "panelDeFlujoDeHorarios";
+            this.panelDeFlujoDeHorarios.Size = new System.Drawing.Size(684, 248);
+            this.panelDeFlujoDeHorarios.TabIndex = 4;
+            // 
             // ModificarHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(708, 343);
+            this.Controls.Add(this.panelDeFlujoDeHorarios);
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -64,5 +74,6 @@
         #endregion
 
         private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.FlowLayoutPanel panelDeFlujoDeHorarios;
     }
 }

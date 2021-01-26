@@ -20,6 +20,7 @@ namespace Proyecto_HRPS
 
         static string infoCedula = "";
         static string infoHorario = "";
+        static string infoNombre = "";
         static string horarioNuevo = "";
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,30 +28,9 @@ namespace Proyecto_HRPS
 
         }
 
-        private void ModificarHorario02_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            ModificarHorario modificarHorario = new ModificarHorario();
-            this.Hide();
-            modificarHorario.Show();
-        }
-
-        Label agregarLabel(string cedula, string horario)
-        {
-            Label labelConHorario = new Label();
-            labelConHorario.Name = "Empleado " + cedula;
-            labelConHorario.Text = horario;
-            labelConHorario.ForeColor = Color.Black;
-            labelConHorario.BackColor = Color.White;
-            labelConHorario.Font = new Font("Arial", 10, FontStyle.Regular);
-            labelConHorario.Width = 176;
-            labelConHorario.Height = 20;
-            labelConHorario.Location = new Point(255, 62);
-            return labelConHorario;
+            volverVistaDeHorarios();
         }
 
         public Database AbrirBaseDeDatos()
@@ -68,6 +48,7 @@ namespace Proyecto_HRPS
         {
             const string message = "¿Guardar cambios?";
             const string caption = "Form Closing";
+            horarioNuevo = textBoxDeHorarioNuevo.Text;
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
@@ -81,6 +62,8 @@ namespace Proyecto_HRPS
                 MessageBox.Show("Cambios guardados");
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
+                conexion.ExecuteNonQuery(comando);
+                volverVistaDeHorarios();
             }
             else if (result == DialogResult.Cancel)
             {
@@ -91,8 +74,22 @@ namespace Proyecto_HRPS
         private void ModificarHorario02_Load_1(object sender, EventArgs e)
         {
             infoCedula = ModificarHorario.infoCedula;
+            infoNombre = ModificarHorario.infoNombre;
             infoHorario = ModificarHorario.infoHorario;
-            Label label = agregarLabel(infoCedula, infoHorario);
+            mostrarInfo(infoNombre, infoHorario);
+        }
+
+        private void volverVistaDeHorarios()
+        {
+            ModificarHorario modificarHorario = new ModificarHorario();
+            this.Hide();
+            modificarHorario.Show();
+        }
+
+        private void mostrarInfo(string nombre, string horario)
+        {
+            textBoxDeNombre.Text = nombre;
+            textBoxDeHorarioActual.Text = horario;
         }
     }
 }

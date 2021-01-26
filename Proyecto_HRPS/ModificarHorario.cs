@@ -20,6 +20,7 @@ namespace Proyecto_HRPS
 
         public static string infoCedula = "";
         public static string infoHorario = "";
+        public static string infoNombre = "";
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -28,16 +29,12 @@ namespace Proyecto_HRPS
             perfilesDeUsuario.Show();
         }
 
-        private void ModificarHorario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clickAboton(object sender, EventArgs e, string cedula, string horario)
+        private void clickAboton(object sender, EventArgs e, string cedula, string nombre, string horario)
         {
             Button botonActual = (Button)sender;
-            infoCedula = "456987123";
-            infoHorario = "OTRO";
+            infoCedula = cedula;
+            infoNombre = nombre;
+            infoHorario = horario;
             ModificarHorario02 modificarHorario02 = new ModificarHorario02();
             this.Hide();
             modificarHorario02.Show();
@@ -78,11 +75,13 @@ namespace Proyecto_HRPS
                 while (informacionEncontrada.Read())
                 {
                     int i = 0;
+                    //string cedula = informacionEncontrada.GetString(0);
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
-                    string nombre = informacionEncontrada["NOMBRE"].ToString();
-                    string horario = informacionEncontrada["HORARIO"].ToString();
+                    string nombre = informacionEncontrada.GetString(1);
+                    string horario = informacionEncontrada.GetString(2);
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre, horario);
-                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, horario); };
+                    panelDeFlujoDeHorarios.Controls.Add(boton);
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, nombre, horario); };
                     endposition += 100;
                 }
             }

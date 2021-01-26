@@ -25,9 +25,6 @@ namespace Proyecto_HRPS
             perfilesDeUsuario.Show();
         }
 
-        static List<int> iterador = new List<int>();
-        static string infoCedula = "";
-
         private void EliminarEmpleados_Load(object sender, EventArgs e)
         {
             //Hace botones de manera dinamica, hacer que se hagan por cada empleado registrado
@@ -47,14 +44,14 @@ namespace Proyecto_HRPS
                     //string puesto = informacionEncontrada["PUESTO"].ToString();
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre);
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
-                    //boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
-                    boton.Click += new System.EventHandler(this.clickAboton);
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
+                    //boton.Click += new System.EventHandler(this.clickAboton);
                     infoCedula = cedula;
                     endposition += 100;
                 }
             }
         }
-        private void clickAboton(object sender, EventArgs e)
+        private void clickAboton(object sender, EventArgs e, string infoCedula)
         {
             Button botonActual = (Button)sender;
             //Borrar empleado (ponerlo inactivo)

@@ -19,35 +19,13 @@ namespace Proyecto_HRPS
         }
 
         static string infoCedula = "";
+        static string infoNombre = "";
         static int infoSalario = 0;
         static int salarioNuevo = 0;
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            ModificarSalario modificarSalario = new ModificarSalario();
-            this.Hide();
-            modificarSalario.Show();
-        }
-
-        private void ModificarSalario02_Load(object sender, EventArgs e)
-        {
-            infoCedula = ModificarSalario.infoCedula;
-            infoSalario = ModificarSalario.infoSalario;
-            Label label = agregarLabel(infoCedula, infoSalario);
-        }
-
-        Label agregarLabel(string cedula, int salario)
-        {
-            Label labelConSalario = new Label();
-            labelConSalario.Name = "Empleado " + cedula;
-            labelConSalario.Text = salario.ToString();
-            labelConSalario.ForeColor = Color.Black;
-            labelConSalario.BackColor = Color.White;
-            labelConSalario.Font = new Font("Arial", 10, FontStyle.Regular);
-            labelConSalario.Width = 176;
-            labelConSalario.Height = 20;
-            labelConSalario.Location = new Point(248, 65);
-            return labelConSalario;
+            volverVistaDeSalarios();
         }
 
         public Database AbrirBaseDeDatos()
@@ -65,6 +43,7 @@ namespace Proyecto_HRPS
         {
             const string message = "¿Guardar cambios?";
             const string caption = "Form Closing";
+            salarioNuevo = int.Parse(textBoxDeSalarioNuevo.Text);
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
@@ -78,6 +57,8 @@ namespace Proyecto_HRPS
                 MessageBox.Show("Cambios guardados");
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", infoCedula, salarioNuevo);
+                conexion.ExecuteNonQuery(comando);
+                volverVistaDeSalarios();
             }
             else if (result == DialogResult.Cancel)
             {
@@ -88,8 +69,22 @@ namespace Proyecto_HRPS
         private void ModificarSalario02_Load_1(object sender, EventArgs e)
         {
             infoCedula = ModificarSalario.infoCedula;
+            infoNombre = ModificarSalario.infoNombre;
             infoSalario = ModificarSalario.infoSalario;
-            Label label = agregarLabel(infoCedula, infoSalario);
+            mostrarInfo(infoNombre, infoSalario);
+        }
+
+        private void mostrarInfo(string nombre, int salario)
+        {
+            textBoxDeNombre.Text = nombre;
+            textBoxDeSalarioActual.Text = salario.ToString();
+        }
+
+        private void volverVistaDeSalarios()
+        {
+            ModificarSalario modificarSalario = new ModificarSalario();
+            this.Hide();
+            modificarSalario.Show();
         }
     }
 }
