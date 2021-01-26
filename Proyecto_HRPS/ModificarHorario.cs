@@ -30,16 +30,17 @@ namespace Proyecto_HRPS
 
         private void ModificarHorario_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void clickAboton(object sender, EventArgs e/*, string cedula, string horario*/)
+        private void clickAboton(object sender, EventArgs e, string cedula, string horario)
         {
+            Button botonActual = (Button)sender;
             infoCedula = "456987123";
             infoHorario = "OTRO";
             ModificarHorario02 modificarHorario02 = new ModificarHorario02();
             this.Hide();
-            modificarHorario02.Show();            
+            modificarHorario02.Show();
         }
 
         Button agregarBoton(int i, int start, int end, string cedula, string nombre, string horario)
@@ -81,8 +82,7 @@ namespace Proyecto_HRPS
                     string nombre = informacionEncontrada["NOMBRE"].ToString();
                     string horario = informacionEncontrada["HORARIO"].ToString();
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre, horario);
-                    //boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, horario); };
-                    boton.Click += new System.EventHandler(this.clickAboton());
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, horario); };
                     endposition += 100;
                 }
             }

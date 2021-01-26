@@ -77,7 +77,7 @@ namespace Proyecto_HRPS
             {
                 MessageBox.Show("Cambios guardados");
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", info_cedula, salario_nuevo);
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", infoCedula, salarioNuevo);
             }
             else if (result == DialogResult.Cancel)
             {

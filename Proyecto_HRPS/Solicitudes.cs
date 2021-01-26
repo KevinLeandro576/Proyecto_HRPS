@@ -50,7 +50,6 @@ namespace Proyecto_HRPS
                     Button boton = agregarBotonDeHorasExtra(i, startposition, endposition, identificador, dia, cantidadDeHoras, cedula);
                     panelDeFlujoDeSolicitudesDeHorasExtra.Controls.Add(boton);
                     boton.Click += delegate (object sender1, EventArgs e1) { clickAboton1(sender1, e1, identificador); };
-                    //boton.Click += new System.EventHandler(this.clickAboton1);
                     endposition += 100;
                 }
             }
@@ -71,7 +70,6 @@ namespace Proyecto_HRPS
                     Button boton = agregarBotonDeVacaciones(i, startposition, endposition, identificador, diaDeInicio, diaDeFin, cantidadDeDias, cedula);
                     panelDeFlujoDeSolicitudesDeVacaciones.Controls.Add(boton);
                     boton.Click += delegate (object sender2, EventArgs e2) { clickAboton2(sender2, e2, identificador); };
-                    //boton.Click += new System.EventHandler(this.clickAboton2);
                     endposition += 100;
                 }
             }
@@ -165,15 +163,14 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                 conexion.ExecuteNonQuery(comando);
-                }
+            }
             else if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Solicitud aceptada");
                 estado = "ACEPTADO";
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
-                //conexion.ExecuteNonQuery(comando);
-                comando.ExecuteNonQuery();
+                conexion.ExecuteNonQuery(comando);
             }
             else if (result == DialogResult.Cancel)
             {
