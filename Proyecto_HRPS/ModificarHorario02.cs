@@ -17,8 +17,8 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
-
         static string infoCedula = "";
+        string cedulaDeAdministrador = Empleado.Cedula;
         static string infoHorario = "";
         static string infoNombre = "";
         static string horarioNuevo = "";
@@ -59,10 +59,10 @@ namespace Proyecto_HRPS
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Cambios guardados");
+                MessageBox.Show("Cambios guardados, cedula de administrador: " + cedulaDeAdministrador);
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
-                conexion.ExecuteNonQuery(comando); 
+                conexion.ExecuteNonQuery(comando);
                 //volverVistaDeHorarios();
             }
             else if (result == DialogResult.Cancel)

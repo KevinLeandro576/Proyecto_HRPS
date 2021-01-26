@@ -20,6 +20,7 @@ namespace Proyecto_HRPS
         private void botonDeIniciarSesion_Click(object sender, EventArgs e)
         {
             MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            Empleado.Cedula = textBoxDeCedula.Text;
             this.Hide();
             menuDeAdministrador.Show();
         }
