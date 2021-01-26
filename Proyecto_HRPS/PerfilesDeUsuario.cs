@@ -53,14 +53,27 @@ namespace Proyecto_HRPS
         private void enlaceDeVerEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
-            {                
-                
-                PdfPTable tabla = CrearTablaPDFEmpleados();
-                CrearReportePDFEmpleados(tabla);
-               
-                /*VerEmpleados verEmpleados = new VerEmpleados();
-                this.Hide();
-                verEmpleados.Show();*/
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS]");
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    if (informacionEncontrada.Read() != true)
+                    {
+                        MessageBox.Show("No hay empleados activos", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        PdfPTable tabla = CrearTablaPDFEmpleados();
+                        CrearReportePDFEmpleados(tabla);
+                        VerEmpleados verEmpleados = new VerEmpleados();
+                        this.Hide();
+                        verEmpleados.Show();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -76,7 +89,7 @@ namespace Proyecto_HRPS
             {
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS");
-                
+
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
@@ -119,7 +132,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_')  + ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
 
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
 
@@ -127,7 +140,7 @@ namespace Proyecto_HRPS
                 {
                     PdfWriter.GetInstance(DC, FS);
                     DC.Open();
-                    
+
                     iTextSharp.text.Image jpeg01 = iTextSharp.text.Image.GetInstance(Properties.Resources.iconoDeUREBA, System.Drawing.Imaging.ImageFormat.Jpeg);
 
                     jpeg01.ScaleToFit(500f, 500f);
@@ -139,7 +152,7 @@ namespace Proyecto_HRPS
                     Paragraph para = new Paragraph("EMPLEADOS ACTIVOS" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
                     para.Alignment = Element.ALIGN_CENTER;
                     para.SpacingAfter = 18f;
-                    DC.Add(para);                  
+                    DC.Add(para);
 
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
