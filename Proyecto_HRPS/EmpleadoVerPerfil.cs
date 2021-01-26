@@ -27,8 +27,6 @@ namespace Proyecto_HRPS
 
         private void EmpleadoVerPerfil_Load(object sender, EventArgs e)
         {
-            //info_cedula = login.valor_de_cedula;
-            //infoCedula = "123465789";
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", infoCedula);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
@@ -71,6 +69,9 @@ namespace Proyecto_HRPS
             {
                 MessageBox.Show("Cambios guardados");
                 guardarCambios();
+                EmpleadoVerPerfil empleado = new EmpleadoVerPerfil();
+                this.Hide();
+                empleado.Show();
             }
             else if (result == DialogResult.Cancel)
             {
