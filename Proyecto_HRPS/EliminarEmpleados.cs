@@ -45,8 +45,6 @@ namespace Proyecto_HRPS
                     Button boton = agregarBoton(i, startposition, endposition, cedula, nombre);
                     panelDeFlujoDeEmpleados.Controls.Add(boton);
                     boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula); };
-                    //boton.Click += new System.EventHandler(this.clickAboton);
-                    infoCedula = cedula;
                     endposition += 100;
                 }
             }
@@ -71,6 +69,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
                 conexion.ExecuteNonQuery(comando);
+                reiniciarPagina();
                 }
             else if (result == DialogResult.Cancel)
             {
@@ -99,6 +98,13 @@ namespace Proyecto_HRPS
         {
             var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+        }
+
+        public void reiniciarPagina()
+        {
+            EliminarEmpleados eliminar = new EliminarEmpleados();
+            this.Hide();
+            eliminar.Show();
         }
     }
 }

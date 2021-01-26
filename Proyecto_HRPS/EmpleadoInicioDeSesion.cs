@@ -17,6 +17,8 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
+        public static string infoCedula = "";
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -31,6 +33,7 @@ namespace Proyecto_HRPS
 
         private void botonDeIniciarSesion_Click(object sender, EventArgs e)
         {
+            infoCedula = textBoxDeCedula.Text;
             MenuDeEmpleado menuDeEmpleado = new MenuDeEmpleado();
             this.Hide();
             menuDeEmpleado.Show();
