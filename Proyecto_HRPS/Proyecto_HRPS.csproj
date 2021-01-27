@@ -245,6 +245,12 @@
     <Compile Include="VerHorasExtra.Designer.cs">
       <DependentUpon>VerHorasExtra.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerReporteHorasExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerReporteHorasExtra.Designer.cs">
+      <DependentUpon>VerReporteHorasExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerSalarioEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VerHorasExtra.resx">
       <DependentUpon>VerHorasExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerReporteHorasExtra.resx">
+      <DependentUpon>VerReporteHorasExtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerSalarioEmpleados.resx">
       <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>

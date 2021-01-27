@@ -26,7 +26,9 @@ namespace Proyecto_HRPS
 
         private void enlaceDeVerReportesDiarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            VerReporteHorasExtra verReporteHorasExtra = new VerReporteHorasExtra();
+            this.Hide();
+            verReporteHorasExtra.Show();
         }
 
         private void enlaceDeVerVacacionesDeEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
