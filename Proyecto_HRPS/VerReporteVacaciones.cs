@@ -14,9 +14,9 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace Proyecto_HRPS
 {
-    public partial class VerSalarioEmpleados : Form
+    public partial class VerReporteVacaciones : Form
     {
-        public VerSalarioEmpleados()
+        public VerReporteVacaciones()
         {
             InitializeComponent();
         }
@@ -32,8 +32,11 @@ namespace Proyecto_HRPS
         {
             try
             {
+                DateTime fechaDeInicio = dateTimePickerDeFechaDeInicio.Value;
+                DateTime fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value;
+
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("REPORTE_DE_SALARIO");
+                var comando = conexion.GetStoredProcCommand("REPORTE_VACACIONES", fechaDeInicio, fechaDeFinalizacion);
 
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
@@ -45,8 +48,8 @@ namespace Proyecto_HRPS
                     }
                     else
                     {
-                        PdfPTable tabla = CrearTablaPDFSalarios();
-                        CrearReportePDFSalarios(tabla);
+                        PdfPTable tabla = CrearTablaPDFVacaciones();
+                        CrearReportePDFVacaciones(tabla);
                         Reportes reportes = new Reportes();
                         this.Hide();
                         reportes.Show();
@@ -55,17 +58,20 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cierra el reporte de salarios", ex.Message);
+                MessageBox.Show("Cierra el reporte de vacaciones", ex.Message);
             }
         }
 
-        private PdfPTable CrearTablaPDFSalarios()
+        private PdfPTable CrearTablaPDFVacaciones()
         {
             PdfPTable tabla;
             try
             {
+                var fechaDeInicio = dateTimePickerDeFechaDeInicio.Value;
+                var fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value;
+
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("REPORTE_DE_SALARIO");
+                var comando = conexion.GetStoredProcCommand("REPORTE_VACACIONES", fechaDeInicio, fechaDeFinalizacion);
 
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
@@ -75,29 +81,33 @@ namespace Proyecto_HRPS
 
                     Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeSalario = new Paragraph("SALARIO BASE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeTiempo = new Paragraph("TIEMPO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeHorario = new Paragraph("HORARIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeFechaDeInicio = new Paragraph("FECHA DE INICIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeFechaDeFin = new Paragraph("FECHA DE FINALIZACIÓN", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeCantidadDeDias = new Paragraph("CANTIDAD DE DÍAS", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeDiasLibres = new Paragraph("DÍAS LIBRES", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
 
                     tabla.AddCell(encabezadoDeCedula);
                     tabla.AddCell(encabezadoDeNombre);
-                    tabla.AddCell(encabezadoDeSalario);
-                    tabla.AddCell(encabezadoDeTiempo);
-                    tabla.AddCell(encabezadoDeHorario);
+                    tabla.AddCell(encabezadoDeFechaDeInicio);
+                    tabla.AddCell(encabezadoDeFechaDeFin);
+                    tabla.AddCell(encabezadoDeCantidadDeDias);
+                    tabla.AddCell(encabezadoDeDiasLibres);
 
                     while (informacionEncontrada.Read())
                     {
                         string cedula = informacionEncontrada.GetString(0);
                         string nombre = informacionEncontrada.GetString(1);
-                        string salario = informacionEncontrada.GetInt32(2).ToString();
-                        string tiempo = informacionEncontrada.GetString(3);
-                        string horario = informacionEncontrada.GetString(4);
+                        string inicio = informacionEncontrada.GetValue(2).ToString();
+                        string fin = informacionEncontrada.GetValue(3).ToString();
+                        string cantidadDeDias = informacionEncontrada.GetValue(4).ToString();
+                        string diasLibres = informacionEncontrada.GetValue(5).ToString();
 
                         tabla.AddCell(cedula);
                         tabla.AddCell(nombre);
-                        tabla.AddCell(salario);
-                        tabla.AddCell(tiempo);
-                        tabla.AddCell(horario);
+                        tabla.AddCell(inicio);
+                        tabla.AddCell(fin);
+                        tabla.AddCell(cantidadDeDias);
+                        tabla.AddCell(diasLibres);
                     }
                 }
             }
@@ -108,11 +118,11 @@ namespace Proyecto_HRPS
             return tabla;
         }
 
-        private bool CrearReportePDFSalarios(PdfPTable tabla)
+        private bool CrearReportePDFVacaciones(PdfPTable tabla)
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_SALARIO" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_VACACIONES_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
 
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
 
@@ -129,13 +139,21 @@ namespace Proyecto_HRPS
                     jpeg01.Alignment = Element.ALIGN_CENTER;
                     DC.Add(jpeg01);
 
-                    Paragraph para = new Paragraph("REPORTE DE SALARIOS" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
+                    Paragraph para = new Paragraph("REPORTE DE VACACIONES" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
                     para.Alignment = Element.ALIGN_CENTER;
                     para.SpacingAfter = 18f;
                     DC.Add(para);
 
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
+
+                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString();
+                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString();
+                    string rangoDeFechas = fechaDeInicio + " - " + fechaDeFinalizacion;
+                    Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generarión de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
+                    rangoDeFechasDeGeneracion.SpacingBefore = 20f;
+                    rangoDeFechasDeGeneracion.Alignment = Element.ALIGN_CENTER;
+                    DC.Add(rangoDeFechasDeGeneracion);
 
                     string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
                     Paragraph fechaYhoraDeGeneracion = new Paragraph("Fecha y hora de generación de reporte: " + fechaYhora, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));

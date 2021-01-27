@@ -117,6 +117,7 @@
             this.Controls.Add(this.labelDeFechaDeFin);
             this.Controls.Add(this.labelDeFechaDeInicio);
             this.Name = "VerReporteHorasExtra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerReporteHorasExtra";
             this.ResumeLayout(false);
             this.PerformLayout();

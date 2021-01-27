@@ -102,6 +102,7 @@
             this.botonDeGenerar.TabIndex = 16;
             this.botonDeGenerar.Text = "GENERAR";
             this.botonDeGenerar.UseVisualStyleBackColor = false;
+            this.botonDeGenerar.Click += new System.EventHandler(this.botonDeGenerar_Click);
             // 
             // VerSalarioEmpleados
             // 

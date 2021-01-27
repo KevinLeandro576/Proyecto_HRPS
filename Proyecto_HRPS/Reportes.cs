@@ -33,7 +33,9 @@ namespace Proyecto_HRPS
 
         private void enlaceDeVerVacacionesDeEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            VerReporteVacaciones verReporteVacaciones = new VerReporteVacaciones();
+            this.Hide();
+            verReporteVacaciones.Show();
         }
 
         private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
