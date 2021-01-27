@@ -32,7 +32,7 @@ namespace Proyecto_HRPS
 
         private void Solicitudes_Load(object sender, EventArgs e)
         {
-            //Hace botones de manera dinamica, hacer que se hagan por cada empleado registrado
+            //Hace botones de manera dinamica
             int startposition = 100;
             int endposition = 10;
             var conexion = AbrirBaseDeDatos();
@@ -46,10 +46,10 @@ namespace Proyecto_HRPS
                     int identificador = int.Parse(informacionEncontrada["PK_ID_SOLICITUD"].ToString());
                     DateTime dia = DateTime.Parse(informacionEncontrada["DIA_SOLICITUD"].ToString());
                     decimal cantidadDeHoras = decimal.Parse(informacionEncontrada["CANT_HORAS"].ToString());
-                    string cedula = informacionEncontrada["FK_CEDULA"].ToString();
-                    Button boton = agregarBotonDeHorasExtra(i, startposition, endposition, identificador, dia, cantidadDeHoras, cedula);
+                    string cedulaDeEmpleado = informacionEncontrada["FK_CEDULA"].ToString();
+                    Button boton = agregarBotonDeHorasExtra(i, startposition, endposition, identificador, dia, cantidadDeHoras, cedulaDeEmpleado);
                     panelDeFlujoDeSolicitudesDeHorasExtra.Controls.Add(boton);
-                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton1(sender1, e1, identificador); };
+                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton1(sender1, e1, identificador, cedulaDeEmpleado, dia, cantidadDeHoras); };
                     endposition += 100;
                 }
             }
@@ -64,10 +64,8 @@ namespace Proyecto_HRPS
                     DateTime diaDeInicio = DateTime.Parse(informacionEncontrada["FECHA_INICIO"].ToString());
                     DateTime diaDeFin = DateTime.Parse(informacionEncontrada["FECHA_FIN"].ToString());
                     int cantidadDeDias = int.Parse(informacionEncontrada["CANT_DIAS"].ToString());
-
-                    string cedula = informacionEncontrada["FK_CEDULA"].ToString();
-
-                    Button boton = agregarBotonDeVacaciones(i, startposition, endposition, identificador, diaDeInicio, diaDeFin, cantidadDeDias, cedula);
+                    string cedulaDeEmpleado = informacionEncontrada["FK_CEDULA"].ToString();
+                    Button boton = agregarBotonDeVacaciones(i, startposition, endposition, identificador, diaDeInicio, diaDeFin, cantidadDeDias, cedulaDeEmpleado);
                     panelDeFlujoDeSolicitudesDeVacaciones.Controls.Add(boton);
                     boton.Click += delegate (object sender2, EventArgs e2) { clickAboton2(sender2, e2, identificador); };
                     endposition += 100;
@@ -111,8 +109,8 @@ namespace Proyecto_HRPS
             botonConEmpleado.Margin = new Padding(5);
             return botonConEmpleado;
         }
-        //Solicitud de horas exta
-        private void clickAboton1(object sender, EventArgs e, int identificador)
+        //Solicitud de horas extra
+        private void clickAboton1(object sender, EventArgs e, int identificador, string cedulaDeEmpleado, DateTime fechaDeSolicitud, decimal cantidadDeHoras)
         {
             Button botonActual = (Button)sender;
             string estado = "";
@@ -122,23 +120,75 @@ namespace Proyecto_HRPS
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
+            string correoDeEmpleado = "";
+            string correoDeAdministrador = "";
+            string nombreDeEmpleado = "";
+            List<string> listaDeCorreos = new List<string>();
+            listaDeCorreos.Add("leandrokevin576@gmail.com");
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRE_DE_EMPLEADO_CON_CEDULA]", cedulaDeEmpleado);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    nombreDeEmpleado = informacionEncontrada["NOMBRE"].ToString();
+                }
+            }
+            AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+            builder.Append("<tr>");
+            builder.Append("<th>NOMBRE</th>");
+            builder.Append("<th>FECHA DE SOLICITUD</th>");
+            builder.Append("<th>CANTIDAD DE HORAS</th>");
+            builder.Append("<th>ESTADO DE SOLICITUD</th>");
+            builder.Append("</tr>");
+
+            builder.Append("<tr align= center>");
+            builder.Append("<td>" + nombreDeEmpleado + "</td>");
+            builder.Append("<td>" + fechaDeSolicitud + "</td>");
+            builder.Append("<td>" + cantidadDeHoras + "</td>");
+            builder.Append("<td>" + "REVISADA" + "</td>");
+            builder.Append("</tr>");
+            builder.Append("</table>");
+            var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_CEDULA]", cedulaDeEmpleado);
+
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    correoDeEmpleado = informacionEncontrada.GetString(0);
+                }
+            }
+            var comando03 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_CEDULA]", Empleado.Cedula);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando03))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
+                    listaDeCorreos.Add(correoDeAdministrador);
+                }
+            }
             // Seleccionar no
             if (result == DialogResult.No)
             {
-                MessageBox.Show("Solicitud negada");
                 estado = "NEGADO";
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
-                conexion.ExecuteNonQuery(comando);
+                var comando04 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
+                conexion.ExecuteNonQuery(comando04);
+                MessageBox.Show("Solicitud negada");
+                administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                 reiniciarPagina();
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Solicitud aceptada");
                 estado = "ACEPTADO";
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
-                conexion.ExecuteNonQuery(comando);
+                var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
+                conexion.ExecuteNonQuery(comando05);
+                MessageBox.Show("Solicitud aceptada");
+                administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                 reiniciarPagina();
             }
             else if (result == DialogResult.Cancel)

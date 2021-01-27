@@ -84,6 +84,7 @@ namespace Proyecto_HRPS
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
                     tabla = new PdfPTable(numeroColumas);
+                    tabla.WidthPercentage = 100f;
 
                     Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
@@ -117,7 +118,6 @@ namespace Proyecto_HRPS
             return tabla;
 
         }
-
         private bool CrearReportePDFEmpleados(PdfPTable tabla)
         {
             try

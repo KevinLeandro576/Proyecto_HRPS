@@ -45,7 +45,7 @@ namespace Proyecto_HRPS
             builder.Append("<th>ESTADO DE SOLICITUD</th>");
             builder.Append("</tr>");
 
-            builder.Append("<tr>");
+            builder.Append("<tr align= center>");
             builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
             builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString() + "</td>");
             builder.Append("<td>" + numericDeCantidadDeHorasExtra.Value.ToString() + "</td>");
@@ -58,7 +58,6 @@ namespace Proyecto_HRPS
             string correoDeEmpleado = "";
             string correoDeAdministrador;
             List<string> listaDeCorreos = new List<string>();
-            listaDeCorreos.Add("1037joseg@gmail.com");
             listaDeCorreos.Add("leandrokevin576@gmail.com");
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
             {

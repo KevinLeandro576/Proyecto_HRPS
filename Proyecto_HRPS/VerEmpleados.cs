@@ -38,7 +38,7 @@ namespace Proyecto_HRPS
                         this.Hide();
                         verEmpleados.Show();
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -65,6 +65,7 @@ namespace Proyecto_HRPS
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
                     tabla = new PdfPTable(numeroColumas);
+                    tabla.WidthPercentage = 80;
 
                     Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));

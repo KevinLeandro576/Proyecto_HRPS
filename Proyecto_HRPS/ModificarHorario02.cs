@@ -18,7 +18,6 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
         static string infoCedula = "";
-        string cedulaDeAdministrador = Empleado.Cedula;
         static string infoHorario = "";
         static string infoNombre = "";
         static string horarioNuevo = "";
@@ -46,6 +45,7 @@ namespace Proyecto_HRPS
 
         private void guardarCambios()
         {
+            var conexion = AbrirBaseDeDatos();
             const string message = "¿Guardar cambios?";
             const string caption = "Form Closing";
             horarioNuevo = textBoxDeHorarioNuevo.Text;
@@ -59,10 +59,35 @@ namespace Proyecto_HRPS
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Cambios guardados, cedula de administrador: " + cedulaDeAdministrador);
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
-                conexion.ExecuteNonQuery(comando);
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                StringBuilder builder = new StringBuilder();
+
+                builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+                builder.Append("<tr>");
+                builder.Append("<th>HORARIO NUEVO</th>");
+                builder.Append("</tr>");
+                builder.Append("<tr>");
+                builder.Append("<td align=center>" + horarioNuevo + "</td>");
+                builder.Append("</tr>");
+                builder.Append("</table>");
+
+
+                var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", infoNombre);
+                string correoDeEmpleado = "";
+                List<string> listaDeCorreos = new List<string>();
+                listaDeCorreos.Add("1037joseg@gmail.com");
+                listaDeCorreos.Add("leandrokevin576@gmail.com");
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    if (informacionEncontrada.Read())
+                    {
+                        correoDeEmpleado = informacionEncontrada.GetString(0);
+                    }
+                }
+                administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                MessageBox.Show("Cambios guardados");
+                var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
+                conexion.ExecuteNonQuery(comando02);
                 //volverVistaDeHorarios();
             }
             else if (result == DialogResult.Cancel)

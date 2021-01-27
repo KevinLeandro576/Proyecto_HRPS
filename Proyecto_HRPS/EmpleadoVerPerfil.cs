@@ -25,7 +25,7 @@ namespace Proyecto_HRPS
         static string infoContraseña = "";
         static string infoPuesto = "";
 
-        private void EmpleadoVerPerfil_Load(object sender, EventArgs e)
+       /* private void EmpleadoVerPerfil_Load(object sender, EventArgs e)
         {
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", infoCedula);
@@ -43,7 +43,7 @@ namespace Proyecto_HRPS
             textBoxDeCorreoElectronico.Text = infoCorreo;
             textBoxDeContraseña.Text = infoContraseña;
             textBoxDePuesto.Text = infoPuesto;
-        }
+        }*/
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -104,7 +104,7 @@ namespace Proyecto_HRPS
 
         private void EmpleadoVerPerfil_Load_1(object sender, EventArgs e)
         {
-            infoCedula = EmpleadoInicioDeSesion.infoCedula;
+            infoCedula = Empleado.Cedula;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_PERFIL", infoCedula);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
