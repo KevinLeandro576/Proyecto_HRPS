@@ -55,27 +55,27 @@ namespace Proyecto_HRPS
         {
             Button botonActual = (Button)sender;
             //Borrar empleado (ponerlo inactivo)
-            const string message = "Borrar?";
-            const string caption = "Form Closing";
+            const string message = "Desea borrar el empleado seleccionado?";
+            const string caption = "Eliminación de Empleado";
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
             // Seleccionar no
             if (result == DialogResult.No)
             {
-                MessageBox.Show("Empleado no borrado");
+                MessageBox.Show("Empleado no borrado", "Eliminación de Empleado");
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Empleado borrado");
+                MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
                 conexion.ExecuteNonQuery(comando);
                 reiniciarPagina();
-                }
+            }
             else if (result == DialogResult.Cancel)
             {
-                MessageBox.Show("Volver");
+                MessageBox.Show("Regresando", "Eliminación de Empleado");
             }
         }
         Button agregarBoton(int i, int start, int end, string cedula, string nombre)
