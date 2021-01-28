@@ -59,7 +59,7 @@ namespace Proyecto_HRPS
                     int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
                     string puesto = informacionEncontrada["PUESTO"].ToString();
                     int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
-                    empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto()
+                    empleadoEnObjetoBindingSource2.Add(new EmpleadoEnObjeto()
                     {
                         Cedula = cedula,
                         Nombre = nombre,
@@ -76,7 +76,6 @@ namespace Proyecto_HRPS
             boton.FlatStyle = FlatStyle.Popup;
             boton.DefaultCellStyle.ForeColor = Color.White;
             boton.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
-
             cargarAltura();
         }
 
@@ -84,11 +83,10 @@ namespace Proyecto_HRPS
         {
             if (dataGridViewDeEmpleados.Columns[e.ColumnIndex].Name == "Modificar")
             {
-
                 DataGridViewRow fila = this.dataGridViewDeEmpleados.Rows[e.RowIndex];
-                infoCedula = fila.Cells["cedulaDataGridViewTextBoxColumn"].Value.ToString();
-                infoNombre = fila.Cells["nombreDataGridViewTextBoxColumn"].Value.ToString();
-                infoHorario = fila.Cells["horarioDataGridViewTextBoxColumn"].Value.ToString();
+                infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
+                infoNombre = fila.Cells["dataGridViewTextBoxColumnNombre"].Value.ToString();
+                infoHorario = fila.Cells["dataGridViewTextBoxColumnHorario"].Value.ToString();
                 ModificarHorario02 modificarHorario02 = new ModificarHorario02();
                 this.Hide();
                 modificarHorario02.Show();
@@ -111,8 +109,8 @@ namespace Proyecto_HRPS
                     int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
                     string puesto = informacionEncontrada["PUESTO"].ToString();
                     int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
-                    empleadoEnObjetoBindingSource.Clear();
-                    empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto()
+                    empleadoEnObjetoBindingSource2.Clear();
+                    empleadoEnObjetoBindingSource2.Add(new EmpleadoEnObjeto()
                     {
                         Cedula = cedula,
                         Nombre = nombre,
@@ -126,7 +124,7 @@ namespace Proyecto_HRPS
                 }
                 else
                 {
-                    empleadoEnObjetoBindingSource.Clear();
+                    empleadoEnObjetoBindingSource2.Clear();
                     cargarDataGridView();
                 }
             }

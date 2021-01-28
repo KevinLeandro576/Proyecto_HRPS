@@ -29,7 +29,7 @@ namespace Proyecto_HRPS
             perfilesDeUsuario.Show();
         }
 
-        Button agregarBoton(int i, int start, int end, string cedula, string nombre, int salario)
+        /*Button agregarBoton(int i, int start, int end, string cedula, string nombre, int salario)
         {
             Button botonConSalario = new Button();
             botonConSalario.Name = "Empleado " + i.ToString();
@@ -53,7 +53,7 @@ namespace Proyecto_HRPS
             ModificarSalario02 modificarSalario02 = new ModificarSalario02();
             this.Hide();
             modificarSalario02.Show();
-        }
+        }*/
 
 
 
@@ -65,7 +65,8 @@ namespace Proyecto_HRPS
 
         private void ModificarSalario_Load_1(object sender, EventArgs e)
         {
-            int startposition = 100;
+            cargarDataGridView();
+            /*int startposition = 100;
             int endposition = 10;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_PARA_SALARIOS");
@@ -86,7 +87,68 @@ namespace Proyecto_HRPS
                     boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, nombre, salario); };
                     endposition += 100;
                 }
+            }*/
+        }
+
+        private void cargarDataGridView()
+        {
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[VER_EMPLEADOS]");
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                while (informacionEncontrada.Read())
+                {
+                    string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                    string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                    string horario = informacionEncontrada["HORARIO"].ToString();
+                    string tiempo = informacionEncontrada["TIEMPO"].ToString();
+                    DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    string puesto = informacionEncontrada["PUESTO"].ToString();
+                    int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
+                    empleadoEnObjetoBindingSource1.Add(new EmpleadoEnObjeto()
+                    {
+                        Cedula = cedula,
+                        Nombre = nombre,
+                        Horario = horario,
+                        Tiempo = tiempo,
+                        FechaDeNacimiento = fechaDeNacimiento,
+                        Salario = salario,
+                        Puesto = puesto,
+                        CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
+                    });
+                }
             }
+            DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["Modificar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
+            boton.FlatStyle = FlatStyle.Popup;
+            boton.DefaultCellStyle.ForeColor = Color.White;
+            boton.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
+
+            cargarAltura();
+        }
+        private void dataGridViewDeEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewDeEmpleados.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+
+                DataGridViewRow fila = this.dataGridViewDeEmpleados.Rows[e.RowIndex];
+                infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
+                infoNombre = fila.Cells["dataGridViewTextBoxColumnNombre"].Value.ToString();
+                infoSalario = int.Parse(fila.Cells["dataGridViewTextBoxColumnSalario"].Value.ToString());
+                ModificarHorario02 modificarHorario02 = new ModificarHorario02();
+                this.Hide();
+                modificarHorario02.Show();
+            }
+        }
+
+        private void cargarAltura()
+        {
+            var height = 40;
+            foreach (DataGridViewRow dr in dataGridViewDeEmpleados.Rows)
+            {
+                height += dr.Height;
+            }
+            dataGridViewDeEmpleados.Height = height;
         }
     }
 }
