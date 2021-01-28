@@ -12,6 +12,8 @@ namespace Proyecto_HRPS
 {
     public partial class ControlDeEmpleados : Form
     {
+        private DataGridView dataGridViewDeHorarios = new DataGridView();
+
         public ControlDeEmpleados()
         {
             InitializeComponent();
@@ -33,7 +35,9 @@ namespace Proyecto_HRPS
 
         private void enlaceDeVerHorarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            VerHorarios verHorarios = new VerHorarios();
+            verHorarios.Show();
+            this.Hide();
         }
     }
 }

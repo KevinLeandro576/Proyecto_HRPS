@@ -170,9 +170,10 @@
             // 
             // textBoxDeCedula
             // 
+            this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeCedula.Location = new System.Drawing.Point(167, 57);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(200, 21);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(200, 26);
             this.textBoxDeCedula.TabIndex = 11;
             // 
             // textBoxDeNombre

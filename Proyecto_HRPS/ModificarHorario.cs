@@ -13,6 +13,7 @@ namespace Proyecto_HRPS
 {
     public partial class ModificarHorario : Form
     {
+
         public ModificarHorario()
         {
             InitializeComponent();
@@ -29,34 +30,6 @@ namespace Proyecto_HRPS
             perfilesDeUsuario.Show();
         }
 
-        private void clickAboton(object sender, EventArgs e, string cedula, string nombre, string horario)
-        {
-            Button botonActual = (Button)sender;
-            infoCedula = cedula;
-            infoNombre = nombre;
-            infoHorario = horario;
-            ModificarHorario02 modificarHorario02 = new ModificarHorario02();
-            this.Hide();
-            modificarHorario02.Show();
-        }
-
-        Button agregarBoton(int i, int start, int end, string cedula, string nombre, string horario)
-        {
-            Button botonConEmpleado = new Button();
-            botonConEmpleado.Name = "Empleado " + i.ToString();
-            botonConEmpleado.Text = "" + cedula + "\n" + nombre + "\n" + horario;
-            botonConEmpleado.ForeColor = Color.Black;
-            botonConEmpleado.BackColor = Color.White;
-            botonConEmpleado.Font = new Font("Arial", 10, FontStyle.Regular);
-            botonConEmpleado.Width = 200;
-            botonConEmpleado.Height = 60;
-            botonConEmpleado.Location = new Point(start, end);
-            botonConEmpleado.TextAlign = ContentAlignment.MiddleCenter;
-            botonConEmpleado.Margin = new Padding(5);
-            return botonConEmpleado;
-        }
-
-
         public Database AbrirBaseDeDatos()
         {
             var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -65,27 +38,108 @@ namespace Proyecto_HRPS
 
         private void ModificarHorario_Load_1(object sender, EventArgs e)
         {
-            int startposition = 100;
-            int endposition = 10;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_PARA_HORARIOS");
 
+            cargarDataGridView();
+        }
+
+        private void cargarDataGridView()
+        {
+
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[VER_EMPLEADOS]");
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
                 while (informacionEncontrada.Read())
                 {
-                    int i = 0;
-                    //string cedula = informacionEncontrada.GetString(0);
                     string cedula = informacionEncontrada["PK_CEDULA"].ToString();
-                    string nombre = informacionEncontrada.GetString(1);
-                    string horario = informacionEncontrada.GetString(2);
-                    Button boton = agregarBoton(i, startposition, endposition, cedula, nombre, horario);
-                    panelDeFlujoDeHorarios.Controls.Add(boton);
-                    boton.Click += delegate (object sender1, EventArgs e1) { clickAboton(sender1, e1, cedula, nombre, horario); };
-                    endposition += 100;
-                    i++;
+                    string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                    string horario = informacionEncontrada["HORARIO"].ToString();
+                    string tiempo = informacionEncontrada["TIEMPO"].ToString();
+                    DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    string puesto = informacionEncontrada["PUESTO"].ToString();
+                    int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
+                    empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto()
+                    {
+                        Cedula = cedula,
+                        Nombre = nombre,
+                        Horario = horario,
+                        Tiempo = tiempo,
+                        FechaDeNacimiento = fechaDeNacimiento,
+                        Salario = salario,
+                        Puesto = puesto,
+                        CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
+                    });
                 }
             }
+            DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["Modificar"];
+            boton.FlatStyle = FlatStyle.Popup;
+            boton.DefaultCellStyle.ForeColor = Color.White;
+            boton.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
+
+            cargarAltura();
+        }
+
+        private void dataGridViewDeEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewDeEmpleados.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+
+                DataGridViewRow fila = this.dataGridViewDeEmpleados.Rows[e.RowIndex];
+                infoCedula = fila.Cells["cedulaDataGridViewTextBoxColumn"].Value.ToString();
+                infoNombre = fila.Cells["nombreDataGridViewTextBoxColumn"].Value.ToString();
+                infoHorario = fila.Cells["horarioDataGridViewTextBoxColumn"].Value.ToString();
+                ModificarHorario02 modificarHorario02 = new ModificarHorario02();
+                this.Hide();
+                modificarHorario02.Show();
+            }
+        }
+
+        private void textBoxDeCedula_TextChanged(object sender, EventArgs e)
+        {
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[SACAR_EMPLEADO_POR_CEDULA]", textBoxDeCedula.Text);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                    string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                    string horario = informacionEncontrada["HORARIO"].ToString();
+                    string tiempo = informacionEncontrada["TIEMPO"].ToString();
+                    DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    string puesto = informacionEncontrada["PUESTO"].ToString();
+                    int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
+                    empleadoEnObjetoBindingSource.Clear();
+                    empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto()
+                    {
+                        Cedula = cedula,
+                        Nombre = nombre,
+                        Horario = horario,
+                        Tiempo = tiempo,
+                        FechaDeNacimiento = fechaDeNacimiento,
+                        Salario = salario,
+                        Puesto = puesto,
+                        CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
+                    });
+                }
+                else
+                {
+                    empleadoEnObjetoBindingSource.Clear();
+                    cargarDataGridView();
+                }
+            }
+        }
+        private void cargarAltura()
+        {
+            var height = 40;
+            foreach (DataGridViewRow dr in dataGridViewDeEmpleados.Rows)
+            {
+                height += dr.Height;
+            }
+
+            dataGridViewDeEmpleados.Height = height;
         }
     }
 }

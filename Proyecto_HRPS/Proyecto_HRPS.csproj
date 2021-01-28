@@ -117,6 +117,7 @@
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleado.cs" />
+    <Compile Include="EmpleadoEnObjeto.cs" />
     <Compile Include="EmpleadoInicioDeSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +147,11 @@
     </Compile>
     <Compile Include="EmpleadoVerSalario.Designer.cs">
       <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HR_PAYROLL_SYSTEMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_PAYROLL_SYSTEMDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MenuDeAdministrador.cs">
       <SubType>Form</SubType>
@@ -238,6 +244,12 @@
     </Compile>
     <Compile Include="VerEmpleados.Designer.cs">
       <DependentUpon>VerEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerHorarios.Designer.cs">
+      <DependentUpon>VerHorarios.cs</DependentUpon>
     </Compile>
     <Compile Include="VerHorasExtra.cs">
       <SubType>Form</SubType>
@@ -345,6 +357,9 @@
     <EmbeddedResource Include="VerEmpleados.resx">
       <DependentUpon>VerEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VerHorarios.resx">
+      <DependentUpon>VerHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerHorasExtra.resx">
       <DependentUpon>VerHorasExtra.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,7 +372,20 @@
     <EmbeddedResource Include="VerSalarioEmpleados.resx">
       <DependentUpon>VerSalarioEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HR_PAYROLL_SYSTEMDataSet.xsc">
+      <DependentUpon>HR_PAYROLL_SYSTEMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HR_PAYROLL_SYSTEMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HR_PAYROLL_SYSTEMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HR_PAYROLL_SYSTEMDataSet.xss">
+      <DependentUpon>HR_PAYROLL_SYSTEMDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Empleado.datasource" />
+    <None Include="Properties\DataSources\EmpleadoEnObjeto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

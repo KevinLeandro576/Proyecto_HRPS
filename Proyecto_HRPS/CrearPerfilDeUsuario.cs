@@ -34,7 +34,7 @@ namespace Proyecto_HRPS
         //POR CADA INSERT   
         private void botonDeRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            var conexion = AbrirBaseDeDatos();
+            /*var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INSERTAR_EMPLEADO", textBoxDeCedula.Text,
                                                                                             textBoxDeNombre.Text,
                                                                                             textBoxDeHorario.Text,
@@ -46,7 +46,13 @@ namespace Proyecto_HRPS
                                                                                             textBoxDeContrasena.Text,
                                                                                             int.Parse(textBoxDeIdDeRol.Text),
                                                                                              textBoxDeCorreoElectronico.Text);
-            conexion.ExecuteNonQuery(comando);
+            conexion.ExecuteNonQuery(comando);*/
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

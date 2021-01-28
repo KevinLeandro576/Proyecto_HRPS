@@ -19,7 +19,5 @@ namespace Proyecto_HRPS
         public static int CantidadDeDiasUsados { get; set; }
         public static double CantidadDeHorasExtra { get; set; }
         public static DateTime FechaDeInicio { get; set; }
-
-
-    }
+    }    
 }
