@@ -32,14 +32,7 @@ namespace Proyecto_HRPS
             MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
             this.Hide();
             menuDeAdministrador.Show();
-        }
-
-        private void enlaceDeVerSalario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            EmpleadoVerSalario empleadoVerSalario = new EmpleadoVerSalario();
-            this.Hide();
-            empleadoVerSalario.Show();
-        }
+        }        
 
         private void enlaceDeVerEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

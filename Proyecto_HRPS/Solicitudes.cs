@@ -115,8 +115,8 @@ namespace Proyecto_HRPS
             Button botonActual = (Button)sender;
             string estado = "";
             //Borrar empleado (ponerlo inactivo)
-            const string message = "Aceptar o negar?";
-            const string caption = "Form Closing";
+            const string message = "Desea aceptar o negar la solicitud de horas extra seleccionada?";
+            const string caption = "Opciones de Solicitud";
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
@@ -176,7 +176,7 @@ namespace Proyecto_HRPS
                 estado = "NEGADO";
                 var comando04 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                 conexion.ExecuteNonQuery(comando04);
-                MessageBox.Show("Solicitud negada");
+                MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
                 administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                 administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                 reiniciarPagina();
@@ -186,14 +186,14 @@ namespace Proyecto_HRPS
                 estado = "ACEPTADO";
                 var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                 conexion.ExecuteNonQuery(comando05);
-                MessageBox.Show("Solicitud aceptada");
+                MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
                 administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                 administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                 reiniciarPagina();
             }
             else if (result == DialogResult.Cancel)
             {
-                MessageBox.Show("Volver");
+                MessageBox.Show("Regresando", "Opciones de Solicitud");
             }
         }
         //Solicitud de vacaciones
@@ -202,15 +202,15 @@ namespace Proyecto_HRPS
             Button botonActual = (Button)sender;
             string estado = "";
             //Borrar empleado (ponerlo inactivo)
-            const string message = "Aceptar o negar?";
-            const string caption = "Form Closing";
+            const string message = "Desea aceptar o negar la solicitud de vacaciones seleccionada?";
+            const string caption = "Opciones de Solicitud";
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
             // Seleccionar no
             if (result == DialogResult.No)
             {
-                MessageBox.Show("Solicitud negada");
+                MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
                 estado = "NEGADO";
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
@@ -219,7 +219,7 @@ namespace Proyecto_HRPS
             }
             else if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Solicitud aceptada");
+                MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
                 estado = "ACEPTADO";
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
@@ -228,7 +228,7 @@ namespace Proyecto_HRPS
             }
             else if (result == DialogResult.Cancel)
             {
-                MessageBox.Show("Volver");
+                MessageBox.Show("Regresando", "Opciones de Solicitud");
             }
         }
 

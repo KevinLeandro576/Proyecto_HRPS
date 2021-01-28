@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.enlaceDeCrearPerfilDeUsuario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerSalario = new System.Windows.Forms.LinkLabel();
             this.enlaceDeVerEmpleados = new System.Windows.Forms.LinkLabel();
             this.enlaceDeModificarHorario = new System.Windows.Forms.LinkLabel();
             this.enlaceDeModificarSalario = new System.Windows.Forms.LinkLabel();
@@ -50,25 +49,12 @@
             this.enlaceDeCrearPerfilDeUsuario.Text = "CREAR PERFIL DE USUARIO";
             this.enlaceDeCrearPerfilDeUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDePerfilesDeUsuario_LinkClicked);
             // 
-            // enlaceDeVerSalario
-            // 
-            this.enlaceDeVerSalario.AutoSize = true;
-            this.enlaceDeVerSalario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerSalario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerSalario.Location = new System.Drawing.Point(175, 30);
-            this.enlaceDeVerSalario.Name = "enlaceDeVerSalario";
-            this.enlaceDeVerSalario.Size = new System.Drawing.Size(77, 14);
-            this.enlaceDeVerSalario.TabIndex = 2;
-            this.enlaceDeVerSalario.TabStop = true;
-            this.enlaceDeVerSalario.Text = "VER SALARIO";
-            this.enlaceDeVerSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalario_LinkClicked);
-            // 
             // enlaceDeVerEmpleados
             // 
             this.enlaceDeVerEmpleados.AutoSize = true;
             this.enlaceDeVerEmpleados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enlaceDeVerEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerEmpleados.Location = new System.Drawing.Point(274, 30);
+            this.enlaceDeVerEmpleados.Location = new System.Drawing.Point(198, 30);
             this.enlaceDeVerEmpleados.Name = "enlaceDeVerEmpleados";
             this.enlaceDeVerEmpleados.Size = new System.Drawing.Size(93, 14);
             this.enlaceDeVerEmpleados.TabIndex = 3;
@@ -81,7 +67,7 @@
             this.enlaceDeModificarHorario.AutoSize = true;
             this.enlaceDeModificarHorario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enlaceDeModificarHorario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeModificarHorario.Location = new System.Drawing.Point(389, 30);
+            this.enlaceDeModificarHorario.Location = new System.Drawing.Point(338, 30);
             this.enlaceDeModificarHorario.Name = "enlaceDeModificarHorario";
             this.enlaceDeModificarHorario.Size = new System.Drawing.Size(112, 14);
             this.enlaceDeModificarHorario.TabIndex = 4;
@@ -94,7 +80,7 @@
             this.enlaceDeModificarSalario.AutoSize = true;
             this.enlaceDeModificarSalario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enlaceDeModificarSalario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeModificarSalario.Location = new System.Drawing.Point(525, 30);
+            this.enlaceDeModificarSalario.Location = new System.Drawing.Point(486, 30);
             this.enlaceDeModificarSalario.Name = "enlaceDeModificarSalario";
             this.enlaceDeModificarSalario.Size = new System.Drawing.Size(111, 14);
             this.enlaceDeModificarSalario.TabIndex = 5;
@@ -107,7 +93,7 @@
             this.enlaceDeEliminarEmpleados.AutoSize = true;
             this.enlaceDeEliminarEmpleados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enlaceDeEliminarEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeEliminarEmpleados.Location = new System.Drawing.Point(658, 30);
+            this.enlaceDeEliminarEmpleados.Location = new System.Drawing.Point(637, 30);
             this.enlaceDeEliminarEmpleados.Name = "enlaceDeEliminarEmpleados";
             this.enlaceDeEliminarEmpleados.Size = new System.Drawing.Size(118, 14);
             this.enlaceDeEliminarEmpleados.TabIndex = 6;
@@ -120,7 +106,7 @@
             this.enlaceDeVolver.AutoSize = true;
             this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(12, 61);
+            this.enlaceDeVolver.Location = new System.Drawing.Point(12, 58);
             this.enlaceDeVolver.Name = "enlaceDeVolver";
             this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
             this.enlaceDeVolver.TabIndex = 7;
@@ -139,7 +125,6 @@
             this.Controls.Add(this.enlaceDeModificarSalario);
             this.Controls.Add(this.enlaceDeModificarHorario);
             this.Controls.Add(this.enlaceDeVerEmpleados);
-            this.Controls.Add(this.enlaceDeVerSalario);
             this.Controls.Add(this.enlaceDeCrearPerfilDeUsuario);
             this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -154,7 +139,6 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel enlaceDeCrearPerfilDeUsuario;
-        private System.Windows.Forms.LinkLabel enlaceDeVerSalario;
         private System.Windows.Forms.LinkLabel enlaceDeVerEmpleados;
         private System.Windows.Forms.LinkLabel enlaceDeModificarHorario;
         private System.Windows.Forms.LinkLabel enlaceDeModificarSalario;
