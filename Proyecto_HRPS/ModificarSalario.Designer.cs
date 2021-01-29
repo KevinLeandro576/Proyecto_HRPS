@@ -32,18 +32,18 @@
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.panelDeBorde = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewDeEmpleados = new System.Windows.Forms.DataGridView();
-            this.empleadoEnObjetoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.empleadoEnObjetoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
+            this.botonDeModificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botonDeModificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.empleadoEnObjetoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panelDeBorde.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -66,7 +66,7 @@
             this.panelDeBorde.Location = new System.Drawing.Point(50, 141);
             this.panelDeBorde.Margin = new System.Windows.Forms.Padding(4);
             this.panelDeBorde.Name = "panelDeBorde";
-            this.panelDeBorde.Size = new System.Drawing.Size(525, 338);
+            this.panelDeBorde.Size = new System.Drawing.Size(550, 338);
             this.panelDeBorde.TabIndex = 5;
             // 
             // dataGridViewDeEmpleados
@@ -90,13 +90,9 @@
             this.dataGridViewDeEmpleados.Name = "dataGridViewDeEmpleados";
             this.dataGridViewDeEmpleados.ReadOnly = true;
             this.dataGridViewDeEmpleados.RowHeadersVisible = false;
-            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(520, 332);
+            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(543, 332);
             this.dataGridViewDeEmpleados.TabIndex = 6;
             this.dataGridViewDeEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
-            // 
-            // empleadoEnObjetoBindingSource1
-            // 
-            this.empleadoEnObjetoBindingSource1.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
             // 
             // labelDeCedula
             // 
@@ -117,6 +113,15 @@
             this.textBoxDeCedula.TabIndex = 9;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
             // 
+            // botonDeModificar
+            // 
+            this.botonDeModificar.DataPropertyName = "botonDeModificar";
+            this.botonDeModificar.HeaderText = "";
+            this.botonDeModificar.Name = "botonDeModificar";
+            this.botonDeModificar.ReadOnly = true;
+            this.botonDeModificar.Text = "Modificar";
+            this.botonDeModificar.UseColumnTextForButtonValue = true;
+            // 
             // dataGridViewTextBoxColumnCedula
             // 
             this.dataGridViewTextBoxColumnCedula.DataPropertyName = "Cedula";
@@ -130,6 +135,7 @@
             this.dataGridViewTextBoxColumnNombre.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumnNombre.Name = "dataGridViewTextBoxColumnNombre";
             this.dataGridViewTextBoxColumnNombre.ReadOnly = true;
+            this.dataGridViewTextBoxColumnNombre.Width = 200;
             // 
             // dataGridViewTextBoxColumnSalario
             // 
@@ -137,22 +143,18 @@
             this.dataGridViewTextBoxColumnSalario.HeaderText = "Salario";
             this.dataGridViewTextBoxColumnSalario.Name = "dataGridViewTextBoxColumnSalario";
             this.dataGridViewTextBoxColumnSalario.ReadOnly = true;
+            this.dataGridViewTextBoxColumnSalario.Width = 140;
             // 
-            // botonDeModificar
+            // empleadoEnObjetoBindingSource1
             // 
-            this.botonDeModificar.DataPropertyName = "botonDeModificar";
-            this.botonDeModificar.HeaderText = "";
-            this.botonDeModificar.Name = "botonDeModificar";
-            this.botonDeModificar.ReadOnly = true;
-            this.botonDeModificar.Text = "Modificar";
-            this.botonDeModificar.UseColumnTextForButtonValue = true;
+            this.empleadoEnObjetoBindingSource1.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
             // 
             // ModificarSalario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 622);
+            this.ClientSize = new System.Drawing.Size(682, 622);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.panelDeBorde);
@@ -166,8 +168,8 @@
             this.Load += new System.EventHandler(this.ModificarSalario_Load_1);
             this.panelDeBorde.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

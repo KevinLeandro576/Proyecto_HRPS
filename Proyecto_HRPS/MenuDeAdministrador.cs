@@ -45,9 +45,9 @@ namespace Proyecto_HRPS
 
         private void enlaceDeSolicitudes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Solicitudes solicitudes = new Solicitudes();
+            AdminstradorEscogerSolicitud adminstradorEscogerSolicitud = new AdminstradorEscogerSolicitud();
             this.Hide();
-            solicitudes.Show();
+            adminstradorEscogerSolicitud.Show();
         }
 
         private void enlaceDeReportes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

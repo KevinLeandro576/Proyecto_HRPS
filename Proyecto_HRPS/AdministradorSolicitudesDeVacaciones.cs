@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
-    public partial class Solicitudes : Form
+    public partial class AdministradorSolicitudesDeVacaciones : Form
     {
-        public Solicitudes()
+        public AdministradorSolicitudesDeVacaciones()
         {
             InitializeComponent();
         }
@@ -30,69 +30,69 @@ namespace Proyecto_HRPS
             return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
         }
 
-        private void Solicitudes_Load(object sender, EventArgs e)
+        private void AdministradorSolicitudesDeVacaciones_Load(object sender, EventArgs e)
         {
-            cargarDataGridViewDeHorasExtra();
-            //cargarDataGridViewDeVacaciones();
+            cargarDataGridViewDeVacaciones();
         }
-        private void cargarDataGridViewDeHorasExtra()
+        private void cargarDataGridViewDeVacaciones()
         {
             var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_SOLICITUDES_DE_HORAS_EXTRAS]");
+            var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_SOLICITUDES_DE_VACACIONES]");
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
                 while (informacionEncontrada.Read())
                 {
                     int identificador = int.Parse(informacionEncontrada["PK_ID_SOLICITUD"].ToString());
-                    DateTime dia = DateTime.Parse(informacionEncontrada["DIA_SOLICITUD"].ToString());
-                    decimal cantidadDeHoras = decimal.Parse(informacionEncontrada["CANT_HORAS"].ToString());
+                    DateTime diaDeInicio = DateTime.Parse(informacionEncontrada["FECHA_INICIO"].ToString());
+                    DateTime diaDeFin = DateTime.Parse(informacionEncontrada["FECHA_FIN"].ToString());
+                    int cantidadDeDias = int.Parse(informacionEncontrada["CANT_DIAS"].ToString());
                     string cedulaDeEmpleado = informacionEncontrada["FK_CEDULA"].ToString();
-                    solicitudDeHorasExtraBindingSource.Add(new SolicitudDeHorasExtra()
+                    solicitudDeVacacionesBindingSource.Add(new SolicitudDeVacaciones()
                     {
                         Identificador = identificador,
-                        Dia = dia,
-                        CantidadDeHoras = cantidadDeHoras,
+                        DiaDeInicio = diaDeInicio,
+                        DiaDeFin = diaDeFin,
+                        CantidadDeDias = cantidadDeDias,
                         CedulaDeEmpleado = cedulaDeEmpleado
                     });
                 }
             }
-            DataGridViewButtonColumn botonDeAceptar = (DataGridViewButtonColumn)dataGridViewDeSolicitudesDeHorasExtra.Columns["botonDeAceptar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
-            botonDeAceptar.FlatStyle = FlatStyle.Popup;
-            botonDeAceptar.DefaultCellStyle.ForeColor = Color.White;
-            botonDeAceptar.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
-            DataGridViewButtonColumn botonDeNegar = (DataGridViewButtonColumn)dataGridViewDeSolicitudesDeHorasExtra.Columns["botonDeNegar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
-            botonDeNegar.FlatStyle = FlatStyle.Popup;
-            botonDeNegar.DefaultCellStyle.ForeColor = Color.White;
-            botonDeNegar.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
-            if (dataGridViewDeSolicitudesDeHorasExtra == null || dataGridViewDeSolicitudesDeHorasExtra.Rows.Count == 0)
+            DataGridViewButtonColumn botonAceptar = (DataGridViewButtonColumn)dataGridViewDeSolicitudesDeVacaciones.Columns["botonAceptar"];
+            botonAceptar.FlatStyle = FlatStyle.Popup;
+            botonAceptar.DefaultCellStyle.ForeColor = Color.White;
+            botonAceptar.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
+            DataGridViewButtonColumn botonNegar = (DataGridViewButtonColumn)dataGridViewDeSolicitudesDeVacaciones.Columns["botonNegar"];
+            botonNegar.FlatStyle = FlatStyle.Popup;
+            botonNegar.DefaultCellStyle.ForeColor = Color.White;
+            botonNegar.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
+            if (dataGridViewDeSolicitudesDeVacaciones == null || dataGridViewDeSolicitudesDeVacaciones.Rows.Count == 0)
             {
-                labelHorasExtra.Text = "Sin solicitudes de horas extra";
-                dataGridViewDeSolicitudesDeHorasExtra.Visible = false;
+                labelVacaciones.Text = "Sin solicitudes de vacaciones";
+                dataGridViewDeSolicitudesDeVacaciones.Visible = false;
             }
             else
             {
-                labelHorasExtra.Text = "Solicitudes de Horas Extra";
-                dataGridViewDeSolicitudesDeHorasExtra.Visible = true;
+                labelVacaciones.Text = "Solicitudes de Vacaciones";
+                dataGridViewDeSolicitudesDeVacaciones.Visible = true;
             }
             cargarAltura();
         }
 
         private void cargarAltura()
         {
-            var height = 40;
-            foreach (DataGridViewRow dr in dataGridViewDeSolicitudesDeHorasExtra.Rows)
+            var height = 46;
+            foreach (DataGridViewRow dr in dataGridViewDeSolicitudesDeVacaciones.Rows)
             {
                 height += dr.Height;
             }
-            dataGridViewDeSolicitudesDeHorasExtra.Height = height;
+            dataGridViewDeSolicitudesDeVacaciones.Height = height;
         }
-
 
         private void textBoxDeCedula_TextChanged(object sender, EventArgs e)
         {
             bool hayFilas = false;
             var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("[SACAR_HORAS_EXTRA_POR_FECHA_O_CEDULA]", dateTimePickerDeFecha.Value, textBoxDeCedula.Text);
+            var comando = conexion.GetStoredProcCommand("[SACAR_VACACIONES_POR_FECHAS_O_CEDULA]", dateTimePickerInicio.Value, dateTimePickerFin.Value, textBoxDeCedula.Text);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
                 if (informacionEncontrada.Read())
@@ -104,44 +104,43 @@ namespace Proyecto_HRPS
             {
                 if (hayFilas)
                 {
-                    solicitudDeHorasExtraBindingSource.Clear();
+                    solicitudDeVacacionesBindingSource.Clear();
                     while (informacionEncontrada.Read())
                     {
                         int identificador = informacionEncontrada.GetInt32(0);
-                        DateTime dia = informacionEncontrada.GetDateTime(1);
-                        decimal cantidadDeHoras = informacionEncontrada.GetDecimal(2);
-                        string cedulaDeEmpleado = informacionEncontrada.GetString(3);
-                        solicitudDeHorasExtraBindingSource.Add(new SolicitudDeHorasExtra()
+                        DateTime fechaDeInicio = informacionEncontrada.GetDateTime(1);
+                        DateTime fechaDeFin = informacionEncontrada.GetDateTime(2);
+                        int cantidadDeDias = informacionEncontrada.GetInt32(3);
+                        string cedulaDeEmpleado = informacionEncontrada.GetString(4);
+                        solicitudDeVacacionesBindingSource.Add(new SolicitudDeVacaciones()
                         {
                             Identificador = identificador,
-                            Dia = dia,
-                            CantidadDeHoras = cantidadDeHoras,
+                            DiaDeInicio = fechaDeInicio,
+                            DiaDeFin = fechaDeFin,
+                            CantidadDeDias = cantidadDeDias,
                             CedulaDeEmpleado = cedulaDeEmpleado
                         });
                     }
                 }
                 else
                 {
-                    solicitudDeHorasExtraBindingSource.Clear();
-                    cargarDataGridViewDeHorasExtra();
+                    solicitudDeVacacionesBindingSource.Clear();
+                    cargarDataGridViewDeVacaciones();
                 }
             }
         }
-
-
-        private void dataGridViewDeEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewDeSolicitudesDeVacaciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             String estado = "";
-            if (dataGridViewDeSolicitudesDeHorasExtra.Columns[e.ColumnIndex].Name == "botonDeAceptar")
+            if (dataGridViewDeSolicitudesDeVacaciones.Columns[e.ColumnIndex].Name == "botonAceptar")
             {
-                DataGridViewRow fila = this.dataGridViewDeSolicitudesDeHorasExtra.Rows[e.RowIndex];
-                int identificador = int.Parse(fila.Cells["dataGridViewTextBoxColumnIdentificador"].Value.ToString());
-                String infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
-                DateTime fechaDeSolicitud = DateTime.Parse(fila.Cells["dataGridViewTextBoxColumnDia"].Value.ToString());
-                int cantidadDeHoras = int.Parse(fila.Cells["dataGridViewTextBoxColumnCantidadDeHoras"].Value.ToString());
+                DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
+                int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
+                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());                
+                int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
+                String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
-
-                const string message = "Desea aceptar la solicitud de horas extra seleccionada?";
+                const string message = "Desea aceptar la solicitud de vacaciones seleccionada?";
                 const string caption = "Opciones de Solicitud";
                 var result = MessageBox.Show(message, caption,
                                              MessageBoxButtons.YesNoCancel,
@@ -166,15 +165,15 @@ namespace Proyecto_HRPS
                 builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
                 builder.Append("<tr>");
                 builder.Append("<th>NOMBRE</th>");
-                builder.Append("<th>FECHA DE SOLICITUD</th>");
-                builder.Append("<th>CANTIDAD DE HORAS</th>");
+                builder.Append("<th>FECHA DE INICIO</th>");
+                builder.Append("<th>CANTIDAD DE DÍAS</th>");
                 builder.Append("<th>ESTADO DE SOLICITUD</th>");
                 builder.Append("</tr>");
 
                 builder.Append("<tr align= center>");
                 builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                builder.Append("<td>" + fechaDeSolicitud + "</td>");
-                builder.Append("<td>" + cantidadDeHoras + "</td>");
+                builder.Append("<td>" + diaDeInicio + "</td>");
+                builder.Append("<td>" + cantidadDeDias + "</td>");
                 builder.Append("<td>" + "REVISADA" + "</td>");
                 builder.Append("</tr>");
                 builder.Append("</table>");
@@ -199,11 +198,11 @@ namespace Proyecto_HRPS
                 if (result == DialogResult.Yes)
                 {
                     estado = "ACEPTADO";
-                    var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
+                    var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                     conexion.ExecuteNonQuery(comando05);
                     MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
-                    administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                    administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                    administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones aceptada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                     reiniciarPagina();
                 }
                 else if (result == DialogResult.Cancel)
@@ -216,16 +215,18 @@ namespace Proyecto_HRPS
                     MessageBox.Show("Regresando", "Opciones de Solicitud");
                 }
             }
-            if (dataGridViewDeSolicitudesDeHorasExtra.Columns[e.ColumnIndex].Name == "botonDeNegar")
+
+
+
+            if (dataGridViewDeSolicitudesDeVacaciones.Columns[e.ColumnIndex].Name == "botonNegar")
             {
-                DataGridViewRow fila = this.dataGridViewDeSolicitudesDeHorasExtra.Rows[e.RowIndex];
-                int identificador = int.Parse(fila.Cells["dataGridViewTextBoxColumnIdentificador"].Value.ToString());
-                String infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
-                DateTime fechaDeSolicitud = DateTime.Parse(fila.Cells["dataGridViewTextBoxColumnDia"].Value.ToString());
-                int cantidadDeHoras = int.Parse(fila.Cells["dataGridViewTextBoxColumnCantidadDeHoras"].Value.ToString());
+                DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
+                int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
+                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());                
+                int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
+                String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
-
-                const string message = "Desea negar la solicitud de horas extra seleccionada?";
+                const string message = "Desea negar la solicitud de vacaciones seleccionada?";
                 const string caption = "Opciones de Solicitud";
                 var result = MessageBox.Show(message, caption,
                                              MessageBoxButtons.YesNoCancel,
@@ -250,15 +251,15 @@ namespace Proyecto_HRPS
                 builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
                 builder.Append("<tr>");
                 builder.Append("<th>NOMBRE</th>");
-                builder.Append("<th>FECHA DE SOLICITUD</th>");
-                builder.Append("<th>CANTIDAD DE HORAS</th>");
+                builder.Append("<th>FECHA DE INICIO</th>");
+                builder.Append("<th>CANTIDAD DE DÍAS</th>");
                 builder.Append("<th>ESTADO DE SOLICITUD</th>");
                 builder.Append("</tr>");
 
                 builder.Append("<tr align= center>");
                 builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                builder.Append("<td>" + fechaDeSolicitud + "</td>");
-                builder.Append("<td>" + cantidadDeHoras + "</td>");
+                builder.Append("<td>" + diaDeInicio + "</td>");
+                builder.Append("<td>" + cantidadDeDias + "</td>");
                 builder.Append("<td>" + "REVISADA" + "</td>");
                 builder.Append("</tr>");
                 builder.Append("</table>");
@@ -283,11 +284,11 @@ namespace Proyecto_HRPS
                 if (result == DialogResult.Yes)
                 {
                     estado = "NEGADO";
-                    var comando04 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
-                    conexion.ExecuteNonQuery(comando04);
+                    var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
+                    conexion.ExecuteNonQuery(comando05);
                     MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
-                    administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                    administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                    administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones negada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                     reiniciarPagina();
                 }
                 else if (result == DialogResult.Cancel)
@@ -301,18 +302,21 @@ namespace Proyecto_HRPS
                 }
             }
         }
+
         private void reiniciarPagina()
         {
-            Solicitudes solicitudes = new Solicitudes();
+            AdministradorSolicitudesDeVacaciones administradorSolicitudesDeVacaciones = new AdministradorSolicitudesDeVacaciones();
             this.Hide();
-            solicitudes.Show();
+            administradorSolicitudesDeVacaciones.Show();
         }
-
-        private void dateTimePickerDeFecha_ValueChanged(object sender, EventArgs e)
+        private void dateTimePickerInicio_ValueChanged(object sender, EventArgs e)
         {
             textBoxDeCedula_TextChanged(sender, e);
         }
 
-
+        private void dateTimePickerFin_ValueChanged(object sender, EventArgs e)
+        {
+            textBoxDeCedula_TextChanged(sender, e);
+        }
     }
 }
