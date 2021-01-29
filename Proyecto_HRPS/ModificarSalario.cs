@@ -119,7 +119,7 @@ namespace Proyecto_HRPS
                     });
                 }
             }
-            DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["Modificar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
+            DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["botonDeModificar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
             boton.FlatStyle = FlatStyle.Popup;
             boton.DefaultCellStyle.ForeColor = Color.White;
             boton.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
@@ -128,19 +128,53 @@ namespace Proyecto_HRPS
         }
         private void dataGridViewDeEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewDeEmpleados.Columns[e.ColumnIndex].Name == "Modificar")
+            if (dataGridViewDeEmpleados.Columns[e.ColumnIndex].Name == "botonDeModificar")
             {
-
                 DataGridViewRow fila = this.dataGridViewDeEmpleados.Rows[e.RowIndex];
                 infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
                 infoNombre = fila.Cells["dataGridViewTextBoxColumnNombre"].Value.ToString();
                 infoSalario = int.Parse(fila.Cells["dataGridViewTextBoxColumnSalario"].Value.ToString());
-                ModificarHorario02 modificarHorario02 = new ModificarHorario02();
+                ModificarSalario02 modificarSalario02 = new ModificarSalario02();
                 this.Hide();
-                modificarHorario02.Show();
+                modificarSalario02.Show();
             }
         }
-
+        private void textBoxDeCedula_TextChanged(object sender, EventArgs e)
+        {
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[SACAR_EMPLEADO_POR_CEDULA]", textBoxDeCedula.Text);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                    string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                    string horario = informacionEncontrada["HORARIO"].ToString();
+                    string tiempo = informacionEncontrada["TIEMPO"].ToString();
+                    DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    string puesto = informacionEncontrada["PUESTO"].ToString();
+                    int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
+                    empleadoEnObjetoBindingSource1.Clear();
+                    empleadoEnObjetoBindingSource1.Add(new EmpleadoEnObjeto()
+                    {
+                        Cedula = cedula,
+                        Nombre = nombre,
+                        Horario = horario,
+                        Tiempo = tiempo,
+                        FechaDeNacimiento = fechaDeNacimiento,
+                        Salario = salario,
+                        Puesto = puesto,
+                        CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
+                    });
+                }
+                else
+                {
+                    empleadoEnObjetoBindingSource1.Clear();
+                    cargarDataGridView();
+                }
+            }
+        }
         private void cargarAltura()
         {
             var height = 40;

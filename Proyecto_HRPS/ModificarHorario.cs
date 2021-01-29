@@ -136,7 +136,6 @@ namespace Proyecto_HRPS
             {
                 height += dr.Height;
             }
-
             dataGridViewDeEmpleados.Height = height;
         }
     }
