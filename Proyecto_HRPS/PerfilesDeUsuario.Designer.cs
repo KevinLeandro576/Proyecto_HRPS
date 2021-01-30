@@ -131,6 +131,7 @@
             this.Name = "PerfilesDeUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfiles de usuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilesDeUsuario_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

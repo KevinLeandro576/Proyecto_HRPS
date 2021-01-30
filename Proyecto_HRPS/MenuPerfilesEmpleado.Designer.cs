@@ -99,6 +99,7 @@
             this.Name = "MenuPerfilesEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de perfil";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPerfilesEmpleado_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

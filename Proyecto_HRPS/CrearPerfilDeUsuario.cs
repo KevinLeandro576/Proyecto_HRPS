@@ -104,17 +104,13 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Perfil");
                 }
                 // Seleccionar no
                 else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Perfil");
                 }
-            }
-            else
-            {
-                //ERROR
             }
         }
 
@@ -182,92 +178,92 @@ namespace Proyecto_HRPS
             {
                 textBoxDeCedula.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa cédula");
+                MessageBox.Show("Revisa cédula", "Opciones de Perfil");
             }
             else if (!soloTieneNumeros(textBoxDeCedula.Text))
             {
                 textBoxDeCedula.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa cédula");
+                MessageBox.Show("Revisa cédula", "Opciones de Perfil");
             }
             else if (string.IsNullOrEmpty(textBoxDeNombre.Text))
             {
                 textBoxDeNombre.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa nombre");
+                MessageBox.Show("Revisa nombre", "Opciones de Perfil");
             }
             else if (!soloTieneLetras(textBoxDeNombre.Text))
             {
                 textBoxDeNombre.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa nombre");
+                MessageBox.Show("Revisa nombre", "Opciones de Perfil");
             }
             else if (string.IsNullOrEmpty(textBoxDeHorario.Text))
             {
                 textBoxDeHorario.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa horario");
+                MessageBox.Show("Revisa horario", "Opciones de Perfil");
             }
             else if (!horarioEstaBien(textBoxDeHorario.Text))
             {
                 textBoxDeHorario.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa horario");
+                MessageBox.Show("Revisa horario", "Opciones de Perfil");
             }
             else if (!dateTimePickerDeFechaDeNacimiento.Checked)
             {
                 dateTimePickerDeFechaDeNacimiento.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa fecha de nacimiento");
+                MessageBox.Show("Revisa fecha de nacimiento", "Opciones de Perfil");
             }
             else if (comboBoxDeRol.SelectedIndex == -1)
             {
                 comboBoxDeRol.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa rol");
+                MessageBox.Show("Revisa rol", "Opciones de Perfil");
             }
             else if (numericUpDownDeSalario.Value < numericUpDownDeSalario.Minimum || numericUpDownDeSalario.Value > numericUpDownDeSalario.Maximum)
             {
                 numericUpDownDeSalario.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa salario");
+                MessageBox.Show("Revisa salario", "Opciones de Perfil");
             }
             else if (numericUpDownDeSalarioPorHora.Value < numericUpDownDeSalarioPorHora.Minimum || numericUpDownDeSalarioPorHora.Value > numericUpDownDeSalarioPorHora.Maximum)
             {
                 numericUpDownDeSalarioPorHora.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa salario por hora");
+                MessageBox.Show("Revisa salario por hora", "Opciones de Perfil");
             }
             else if (string.IsNullOrEmpty(textBoxDePuesto.Text))
             {
                 textBoxDePuesto.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa puesto");
+                MessageBox.Show("Revisa puesto", "Opciones de Perfil");
             }
             else if (!puestoEstaBienEscrito(textBoxDePuesto.Text))
             {
                 textBoxDePuesto.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa puesto");
+                MessageBox.Show("Revisa puesto", "Opciones de Perfil");
             }
             else if (comboBoxDeTiempo.SelectedIndex == -1)
             {
                 comboBoxDeTiempo.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa tiempo");
+                MessageBox.Show("Revisa tiempo", "Opciones de Perfil");
             }
             else if (string.IsNullOrEmpty(textBoxDeCorreoElectronico.Text))
             {
                 textBoxDeCorreoElectronico.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa correo electrónico");
+                MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
             }
 
             else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
             {
                 textBoxDeCorreoElectronico.Focus();
                 estaBien = false;
-                MessageBox.Show("Revisa correo electrónico");
+                MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
             }
             else
             {
@@ -311,6 +307,11 @@ namespace Proyecto_HRPS
         {
             bool bienEscrito = puesto.All(c => char.IsWhiteSpace(c) || char.IsLetter(c));
             return bienEscrito;
+        }
+
+        private void CrearPerfilDeUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

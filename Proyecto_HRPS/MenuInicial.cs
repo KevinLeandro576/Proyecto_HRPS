@@ -40,5 +40,10 @@ namespace Proyecto_HRPS
             administradorInicioDeSesion.Show();
             this.Hide(); //Ocultar pantalla actual (menu inicial)            
         }
+
+        private void MenuInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

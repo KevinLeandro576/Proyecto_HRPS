@@ -116,5 +116,10 @@ namespace Proyecto_HRPS
             textBoxDeNombre.Text = nombre;
             textBoxDeHorarioActual.Text = horario;
         }
+
+        private void ModificarHorario02_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

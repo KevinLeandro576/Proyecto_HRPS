@@ -56,5 +56,10 @@ namespace Proyecto_HRPS
             this.Hide();
             reportes.Show();
         }
+
+        private void MenuDeAdministrador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -20,8 +20,8 @@ namespace Proyecto_HRPS
 
         static string infoCedula = "";
         static string infoNombre = "";
-        static int infoSalario = 0;
-        static int salarioNuevo = 0;
+        static decimal infoSalario = 0;
+        static decimal salarioNuevo = 0;
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace Proyecto_HRPS
         {
             const string message = "¿Guardar cambios?";
             const string caption = "Form Closing";
-            salarioNuevo = int.Parse(textBoxDeSalarioNuevo.Text);
+            salarioNuevo = decimal.Parse(textBoxDeSalarioNuevo.Text);
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
@@ -74,7 +74,7 @@ namespace Proyecto_HRPS
             mostrarInfo(infoNombre, infoSalario);
         }
 
-        private void mostrarInfo(string nombre, int salario)
+        private void mostrarInfo(string nombre, decimal salario)
         {
             textBoxDeNombre.Text = nombre;
             textBoxDeSalarioActual.Text = salario.ToString();
@@ -85,6 +85,11 @@ namespace Proyecto_HRPS
             ModificarSalario modificarSalario = new ModificarSalario();
             this.Hide();
             modificarSalario.Show();
+        }
+
+        private void ModificarSalario02_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -57,10 +57,10 @@
             // botonDeRegistrarUsuario
             // 
             this.botonDeRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeRegistrarUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeRegistrarUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeRegistrarUsuario.ForeColor = System.Drawing.Color.White;
             this.botonDeRegistrarUsuario.Location = new System.Drawing.Point(689, 429);
-            this.botonDeRegistrarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonDeRegistrarUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeRegistrarUsuario.Name = "botonDeRegistrarUsuario";
             this.botonDeRegistrarUsuario.Size = new System.Drawing.Size(264, 72);
             this.botonDeRegistrarUsuario.TabIndex = 1;
@@ -71,10 +71,10 @@
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
             this.botonDeVolver.Location = new System.Drawing.Point(325, 429);
-            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(264, 72);
             this.botonDeVolver.TabIndex = 2;
@@ -182,7 +182,7 @@
             // 
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeCedula.Location = new System.Drawing.Point(270, 96);
-            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(298, 26);
             this.textBoxDeCedula.TabIndex = 11;
@@ -190,7 +190,7 @@
             // textBoxDeNombre
             // 
             this.textBoxDeNombre.Location = new System.Drawing.Point(270, 154);
-            this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeNombre.Name = "textBoxDeNombre";
             this.textBoxDeNombre.Size = new System.Drawing.Size(298, 26);
             this.textBoxDeNombre.TabIndex = 12;
@@ -198,7 +198,7 @@
             // textBoxDeHorario
             // 
             this.textBoxDeHorario.Location = new System.Drawing.Point(270, 217);
-            this.textBoxDeHorario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeHorario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeHorario.Name = "textBoxDeHorario";
             this.textBoxDeHorario.Size = new System.Drawing.Size(298, 26);
             this.textBoxDeHorario.TabIndex = 13;
@@ -207,7 +207,7 @@
             // 
             this.dateTimePickerDeFechaDeNacimiento.Font = new System.Drawing.Font("Arial", 12F);
             this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(270, 283);
-            this.dateTimePickerDeFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerDeFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDeFechaDeNacimiento.Name = "dateTimePickerDeFechaDeNacimiento";
             this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(298, 26);
             this.dateTimePickerDeFechaDeNacimiento.TabIndex = 14;
@@ -215,7 +215,7 @@
             // textBoxDePuesto
             // 
             this.textBoxDePuesto.Location = new System.Drawing.Point(969, 217);
-            this.textBoxDePuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDePuesto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDePuesto.Name = "textBoxDePuesto";
             this.textBoxDePuesto.Size = new System.Drawing.Size(300, 26);
             this.textBoxDePuesto.TabIndex = 18;
@@ -247,7 +247,7 @@
             // textBoxDeCorreoElectronico
             // 
             this.textBoxDeCorreoElectronico.Location = new System.Drawing.Point(969, 335);
-            this.textBoxDeCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeCorreoElectronico.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCorreoElectronico.Name = "textBoxDeCorreoElectronico";
             this.textBoxDeCorreoElectronico.Size = new System.Drawing.Size(300, 26);
             this.textBoxDeCorreoElectronico.TabIndex = 24;
@@ -260,7 +260,7 @@
             "Administrador",
             "Empleado"});
             this.comboBoxDeRol.Location = new System.Drawing.Point(270, 335);
-            this.comboBoxDeRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxDeRol.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDeRol.Name = "comboBoxDeRol";
             this.comboBoxDeRol.Size = new System.Drawing.Size(298, 26);
             this.comboBoxDeRol.TabIndex = 25;
@@ -274,7 +274,7 @@
             "MEDIO",
             "COMPLETO"});
             this.comboBoxDeTiempo.Location = new System.Drawing.Point(969, 282);
-            this.comboBoxDeTiempo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxDeTiempo.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDeTiempo.Name = "comboBoxDeTiempo";
             this.comboBoxDeTiempo.Size = new System.Drawing.Size(300, 26);
             this.comboBoxDeTiempo.TabIndex = 26;
@@ -285,7 +285,7 @@
             this.numericUpDownDeSalario.DecimalPlaces = 2;
             this.numericUpDownDeSalario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownDeSalario.Location = new System.Drawing.Point(969, 94);
-            this.numericUpDownDeSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownDeSalario.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownDeSalario.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -310,7 +310,7 @@
             this.numericUpDownDeSalarioPorHora.DecimalPlaces = 2;
             this.numericUpDownDeSalarioPorHora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownDeSalarioPorHora.Location = new System.Drawing.Point(969, 160);
-            this.numericUpDownDeSalarioPorHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownDeSalarioPorHora.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownDeSalarioPorHora.Maximum = new decimal(new int[] {
             2500,
             0,
@@ -361,10 +361,11 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CrearPerfilDeUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear perfil de usuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearPerfilDeUsuario_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDeSalario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDeSalarioPorHora)).EndInit();
             this.ResumeLayout(false);

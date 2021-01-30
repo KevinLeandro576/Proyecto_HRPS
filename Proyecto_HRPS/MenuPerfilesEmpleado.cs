@@ -44,5 +44,10 @@ namespace Proyecto_HRPS
             this.Hide();
             empleadoVerPerfil.Show();
         }
+
+        private void MenuPerfilesEmpleado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

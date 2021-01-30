@@ -44,5 +44,15 @@ namespace Proyecto_HRPS
             this.Hide();
             solicitudesEmpleados.Show();
         }
+
+        private void MenuDeEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuDeEmpleado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

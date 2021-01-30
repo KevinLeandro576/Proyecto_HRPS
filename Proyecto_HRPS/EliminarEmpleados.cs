@@ -42,7 +42,7 @@ namespace Proyecto_HRPS
                     string horario = informacionEncontrada["HORARIO"].ToString();
                     string tiempo = informacionEncontrada["TIEMPO"].ToString();
                     DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
-                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    decimal salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
                     string puesto = informacionEncontrada["PUESTO"].ToString();
                     int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
                     empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto()
@@ -78,7 +78,7 @@ namespace Proyecto_HRPS
                     string horario = informacionEncontrada["HORARIO"].ToString();
                     string tiempo = informacionEncontrada["TIEMPO"].ToString();
                     DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
-                    int salario = int.Parse(informacionEncontrada["SALARIO"].ToString());
+                    decimal salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
                     string puesto = informacionEncontrada["PUESTO"].ToString();
                     int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
                     empleadoEnObjetoBindingSource.Clear();
@@ -134,10 +134,10 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
                     var conexion = AbrirBaseDeDatos();
                     var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
                     conexion.ExecuteNonQuery(comando);
+                    MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
                     reiniciarPagina();
                 }
                 else if (result == DialogResult.Cancel)
@@ -151,6 +151,11 @@ namespace Proyecto_HRPS
             EliminarEmpleados eliminar = new EliminarEmpleados();
             this.Hide();
             eliminar.Show();
+        }
+
+        private void EliminarEmpleados_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

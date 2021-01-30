@@ -129,6 +129,12 @@
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleado.cs" />
+    <Compile Include="EmpleadoCambiarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoCambiarContrasena.Designer.cs">
+      <DependentUpon>EmpleadoCambiarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmpleadoEnObjeto.cs" />
     <Compile Include="EmpleadoInicioDeSesion.cs">
       <SubType>Form</SubType>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarEmpleados.resx">
       <DependentUpon>EliminarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadoCambiarContrasena.resx">
+      <DependentUpon>EmpleadoCambiarContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpleadoInicioDeSesion.resx">
       <DependentUpon>EmpleadoInicioDeSesion.cs</DependentUpon>

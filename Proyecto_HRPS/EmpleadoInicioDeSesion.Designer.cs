@@ -118,6 +118,7 @@
             this.Name = "EmpleadoInicioDeSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado inicio de sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmpleadoInicioDeSesion_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
