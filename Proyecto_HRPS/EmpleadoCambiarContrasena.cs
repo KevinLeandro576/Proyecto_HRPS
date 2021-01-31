@@ -15,6 +15,7 @@ namespace Proyecto_HRPS
 {
     public partial class EmpleadoCambiarContrasena : Form
     {
+
         public EmpleadoCambiarContrasena()
         {
             InitializeComponent();
@@ -132,6 +133,16 @@ namespace Proyecto_HRPS
             var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
         }
-
+        private void checkBoxDeContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDeContrasena.Checked)
+            {
+                textBoxDeContrasena.PasswordChar = '\0';
+            }
+            else
+            {
+                textBoxDeContrasena.PasswordChar = '*';
+            }
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Proyecto_HRPS
         public static string Tiempo { get; set; }
         public static DateTime FechaDeNacimiento { get; set; }
         public static decimal Salario { get; set; }
+        public static decimal SalarioPorHora { get; set; }
         public static string Puesto { get; set; }
         public static int CantidadDeDiasDisponibles { get; set; }
         public static int CantidadDeDiasUsados { get; set; }

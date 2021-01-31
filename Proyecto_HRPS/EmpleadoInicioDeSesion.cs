@@ -68,6 +68,7 @@ namespace Proyecto_HRPS
                     Empleado.Tiempo = informacionEncontrada["TIEMPO"].ToString();
                     Empleado.FechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
                     Empleado.Salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
+                    Empleado.SalarioPorHora = decimal.Parse(informacionEncontrada["SALARIO_HORA"].ToString());
                     Empleado.Puesto = informacionEncontrada["PUESTO"].ToString();
                     Empleado.Correo = informacionEncontrada["CORREO"].ToString();
                     Empleado.Contrasena = informacionEncontrada["CONTRASENNA"].ToString();

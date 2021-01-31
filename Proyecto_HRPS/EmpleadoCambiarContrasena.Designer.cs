@@ -34,6 +34,7 @@ namespace Proyecto_HRPS
             this.botonDeGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBoxDeContrasena = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelDeContrasena
@@ -54,8 +55,10 @@ namespace Proyecto_HRPS
             this.textBoxDeContrasena.Location = new System.Drawing.Point(281, 113);
             this.textBoxDeContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeContrasena.Name = "textBoxDeContrasena";
+            this.textBoxDeContrasena.PasswordChar = '*';
             this.textBoxDeContrasena.Size = new System.Drawing.Size(261, 26);
             this.textBoxDeContrasena.TabIndex = 24;
+            
             // 
             // botonDeGuardar
             // 
@@ -89,6 +92,17 @@ namespace Proyecto_HRPS
             this.label2.TabIndex = 27;
             this.label2.Text = "números y de 8 a 16 caracteres.";
             // 
+            // checkBoxDeContrasena
+            // 
+            this.checkBoxDeContrasena.AutoSize = true;
+            this.checkBoxDeContrasena.Location = new System.Drawing.Point(410, 146);
+            this.checkBoxDeContrasena.Name = "checkBoxDeContrasena";
+            this.checkBoxDeContrasena.Size = new System.Drawing.Size(132, 22);
+            this.checkBoxDeContrasena.TabIndex = 28;
+            this.checkBoxDeContrasena.Text = "Ver contraseña";
+            this.checkBoxDeContrasena.UseVisualStyleBackColor = true;
+            this.checkBoxDeContrasena.CheckedChanged += new System.EventHandler(this.checkBoxDeContrasena_CheckedChanged);
+            // 
             // EmpleadoCambiarContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -96,6 +110,7 @@ namespace Proyecto_HRPS
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(610, 378);
+            this.Controls.Add(this.checkBoxDeContrasena);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeGuardar);
@@ -119,5 +134,6 @@ namespace Proyecto_HRPS
         private System.Windows.Forms.Button botonDeGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBoxDeContrasena;
     }
 }

@@ -25,25 +25,43 @@ namespace Proyecto_HRPS
             menuPerfilesEmpleado.Show();
         }
 
-        private void botonDeBuscar_Click(object sender, EventArgs e)
+        private void VerSalario()
         {
-            string cedula = textBoxDeCedula.Text;
+            string cedula = Empleado.Cedula;
+            textBoxDeCedula.Text = cedula;
+
+            decimal salario = Empleado.Salario;
+            decimal salarioPorHora = Empleado.SalarioPorHora;
+            decimal horasExtraDelMes = 0.00M;
+            decimal pagoDeHorasExtra = 0.00M;
+            decimal deducciones = 0.00M;
+            decimal salarioNeto = 0.00M;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_SALARIO", cedula);
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
                 if (informacionEncontrada.Read())
                 {
-                    int salario = informacionEncontrada.GetInt32(0); //ERROR AQUI DE CONVERSION DE GRUPO DE VARIABLE
+                    salario = informacionEncontrada.GetDecimal(0);
                     textBoxDeSalarioBruto.Text = salario.ToString();
-                    decimal horasExtraDelMes = informacionEncontrada.GetDecimal(1);
-                    decimal salarioPorHora = informacionEncontrada.GetDecimal(2);
-                    decimal pagoDeHorasExtra = horasExtraDelMes * (salarioPorHora * 1.5M);
-                    textBoxDePagoDeHorasExtra.Text = pagoDeHorasExtra.ToString();
-                    decimal deducciones = salario * 0.13M;
-                    textBoxDeDeducciones.Text = deducciones.ToString();
-                    decimal salarioNeto = salario + pagoDeHorasExtra - (deducciones);
-                    textBoxDeSalarioNeto.Text = salarioNeto.ToString();
+                    horasExtraDelMes = informacionEncontrada.GetDecimal(1);
+                    pagoDeHorasExtra = horasExtraDelMes * (salarioPorHora * 1.5M);
+                    textBoxDePagoDeHorasExtra.Text = pagoDeHorasExtra.ToString("F2");
+                    deducciones = (salario + pagoDeHorasExtra) * 0.13M;
+                    textBoxDeDeducciones.Text = deducciones.ToString("F2");
+                    salarioNeto = salario + pagoDeHorasExtra - (deducciones);
+                    textBoxDeSalarioNeto.Text = salarioNeto.ToString("F2");
+                }
+                else
+                {
+                    textBoxDeSalarioBruto.Text = salario.ToString();
+                    horasExtraDelMes = 0;
+                    pagoDeHorasExtra = horasExtraDelMes * (salarioPorHora * 1.5M);
+                    textBoxDePagoDeHorasExtra.Text = pagoDeHorasExtra.ToString("F2");
+                    deducciones = salario * 0.13M;
+                    textBoxDeDeducciones.Text = deducciones.ToString("F2");
+                    salarioNeto = salario + pagoDeHorasExtra - (deducciones);
+                    textBoxDeSalarioNeto.Text = salarioNeto.ToString("F2");
                 }
             }
         }
@@ -55,10 +73,17 @@ namespace Proyecto_HRPS
 
         private void EmpleadoVerSalario_Load(object sender, EventArgs e)
         {
+            textBoxDeCedula.Enabled = false;
             textBoxDeSalarioBruto.Enabled = false;
             textBoxDePagoDeHorasExtra.Enabled = false;
             textBoxDeDeducciones.Enabled = false;
             textBoxDeSalarioNeto.Enabled = false;
+            VerSalario();
+        }
+
+        private void EmpleadoVerSalario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
