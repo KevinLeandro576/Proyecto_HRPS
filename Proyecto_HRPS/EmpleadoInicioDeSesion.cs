@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Proyecto_HRPS
 {
@@ -31,6 +32,28 @@ namespace Proyecto_HRPS
         }
 
         private void botonDeIniciarSesion_Click(object sender, EventArgs e)
+        {
+            comprobarContrasenna();
+        }
+        public Database AbrirBaseDeDatos()
+        {
+            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+        }
+
+        private void EmpleadoInicioDeSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void linkLabelDeRecuperarPW_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmpleadoRecuperarContrasenna recuperar = new EmpleadoRecuperarContrasenna();
+            this.Hide();
+            recuperar.Show();
+        }
+
+        private void iniciarSesion()
         {
             string cedula = textBoxDeCedula.Text;
             var conexion = AbrirBaseDeDatos();
@@ -60,15 +83,33 @@ namespace Proyecto_HRPS
                 }
             }
         }
-        public Database AbrirBaseDeDatos()
+
+        private void comprobarContrasenna()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            string cedula = textBoxDeCedula.Text;
+            string contrasenna = textBoxDeContrasena.Text;
+            string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("EMPLEADO_INICIO_SESION", cedula, contrasennaEncriptada);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    iniciarSesion();
+                }
+                else
+                {
+                    MessageBox.Show("Cédula o contraseña incorrectas, favor volver a intentar");
+                }
+            }
         }
 
-        private void EmpleadoInicioDeSesion_FormClosing(object sender, FormClosingEventArgs e)
+        public static string encriptarClaveAsha256(string clave)
         {
-            Application.Exit();
+            using (var sha256 = new SHA256Managed())
+            {
+                return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(clave))).Replace("-", "");
+            }
         }
     }
 }

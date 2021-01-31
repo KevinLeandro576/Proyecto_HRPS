@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,11 +21,7 @@ namespace Proyecto_HRPS
 
         private void botonDeIniciarSesion_Click(object sender, EventArgs e)
         {
-            generarCorreo();
-            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
-            Empleado.Cedula = textBoxDeCedula.Text;
-            this.Hide();
-            menuDeAdministrador.Show();
+            comprobarContrasenna();
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -40,7 +37,39 @@ namespace Proyecto_HRPS
             return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
         }
 
-        private void generarCorreo()
+        private void comprobarContrasenna()
+        {
+            string cedula = textBoxDeCedula.Text;
+            string contrasenna = textBoxDeContrasena.Text;
+            string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INICIO_SESION", cedula, contrasennaEncriptada);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    generarCorreoNotificacionDias();
+                    Empleado.Cedula = textBoxDeCedula.Text;
+                    MenuDeAdministrador menu = new MenuDeAdministrador();
+                    this.Hide();
+                    menu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Cédula o contraseña incorrectas, favor volver a intentar");
+                }
+            }
+        }
+
+        public static string encriptarClaveAsha256(string clave)
+        {
+            using (var sha256 = new SHA256Managed())
+            {
+                return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(clave))).Replace("-", "");
+            }
+        }
+
+        private void generarCorreoNotificacionDias()
         {
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("MOSTRAR_EMPLEADOS_CON_DIAS_LIBRES");
@@ -92,6 +121,13 @@ namespace Proyecto_HRPS
         private void AdministradorInicioDeSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void linkLabelDeRecuperarPW_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdministradorRecuperarContrasenna administrador = new AdministradorRecuperarContrasenna();
+            this.Hide();
+            administrador.Show();
         }
     }
 }
