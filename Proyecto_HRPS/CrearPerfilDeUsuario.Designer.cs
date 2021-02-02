@@ -135,7 +135,7 @@
             this.labelDeSalario.AutoSize = true;
             this.labelDeSalario.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDeSalario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeSalario.Location = new System.Drawing.Point(659, 96);
+            this.labelDeSalario.Location = new System.Drawing.Point(650, 96);
             this.labelDeSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeSalario.Name = "labelDeSalario";
             this.labelDeSalario.Size = new System.Drawing.Size(76, 18);

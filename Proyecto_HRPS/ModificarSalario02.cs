@@ -43,7 +43,7 @@ namespace Proyecto_HRPS
         {
             const string message = "¿Guardar cambios?";
             const string caption = "Form Closing";
-            salarioNuevo = decimal.Parse(textBoxDeSalarioNuevo.Text);
+            salarioNuevo = numericUpDownDeSalario.Value;
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNoCancel,
                                          MessageBoxIcon.Question);
@@ -62,7 +62,7 @@ namespace Proyecto_HRPS
             }
             else if (result == DialogResult.Cancel)
             {
-                MessageBox.Show("Volver");
+                MessageBox.Show("Regresando");
             }
         }
 
@@ -71,6 +71,8 @@ namespace Proyecto_HRPS
             infoCedula = ModificarSalario.infoCedula;
             infoNombre = ModificarSalario.infoNombre;
             infoSalario = ModificarSalario.infoSalario;
+            textBoxDeNombre.Enabled = false;
+            textBoxDeSalarioActual.Enabled = false;
             mostrarInfo(infoNombre, infoSalario);
         }
 
@@ -90,6 +92,21 @@ namespace Proyecto_HRPS
         private void ModificarSalario02_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+        public Boolean SalarioEstaBien()
+        {
+            bool estaBien = false;
+            if (numericUpDownDeSalario.Value < numericUpDownDeSalario.Minimum || numericUpDownDeSalario.Value > numericUpDownDeSalario.Maximum)
+            {
+                numericUpDownDeSalario.Focus();
+                estaBien = false;
+                MessageBox.Show("Revisa salario", "Opciones de Perfil");
+            }
+            else
+            {
+                estaBien = true;
+            }
+            return estaBien;
         }
     }
 }

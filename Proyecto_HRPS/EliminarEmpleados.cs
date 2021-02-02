@@ -122,27 +122,34 @@ namespace Proyecto_HRPS
                 DataGridViewRow fila = this.dataGridViewDeEmpleados.Rows[e.RowIndex];
                 String infoCedula = fila.Cells["dataGridViewTextBoxColumnCedula"].Value.ToString();
                 //Borrar empleado (ponerlo inactivo)
-                const string message = "Desea borrar el empleado seleccionado?";
-                const string caption = "Eliminación de Empleado";
-                var result = MessageBox.Show(message, caption,
-                                             MessageBoxButtons.YesNoCancel,
-                                             MessageBoxIcon.Question);
-                // Seleccionar no
-                if (result == DialogResult.No)
+                if (infoCedula.Equals(Empleado.Cedula))
                 {
-                    MessageBox.Show("Empleado no borrado", "Eliminación de Empleado");
+                    MessageBox.Show("No puede eliminarse a sí mismo", "Eliminación de Empleado");
                 }
-                else if (result == DialogResult.Yes)
+                else
                 {
-                    var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
-                    conexion.ExecuteNonQuery(comando);
-                    MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
-                    reiniciarPagina();
-                }
-                else if (result == DialogResult.Cancel)
-                {
-                    MessageBox.Show("Regresando", "Eliminación de Empleado");
+                    const string message = "Desea borrar el empleado seleccionado?";
+                    const string caption = "Eliminación de Empleado";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.YesNoCancel,
+                                                 MessageBoxIcon.Question);
+                    // Seleccionar no
+                    if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Empleado no borrado", "Eliminación de Empleado");
+                    }
+                    else if (result == DialogResult.Yes)
+                    {
+                        var conexion = AbrirBaseDeDatos();
+                        var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_BORRAR_EMPLEADO", infoCedula);
+                        conexion.ExecuteNonQuery(comando);
+                        MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
+                        reiniciarPagina();
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Regresando", "Eliminación de Empleado");
+                    }
                 }
             }
         }

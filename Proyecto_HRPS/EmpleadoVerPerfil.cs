@@ -37,30 +37,31 @@ namespace Proyecto_HRPS
 
         private void botonDeGuardar_Click(object sender, EventArgs e)
         {
-            Button botonActual = (Button)sender;
-            const string message = "¿Guadar cambios?";
-            const string caption = "Opciones de Perfil";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNoCancel,
-                                         MessageBoxIcon.Question);
-            // Seleccionar no
-            if (result == DialogResult.No)
+            if (ValidarTodo() == true)
             {
-                MessageBox.Show("Cambios descartados", "Opciones de Perfil");
-            }
-            else if (result == DialogResult.Yes)
-            {
-                if (ValidarTodo() == true)
+                Button botonActual = (Button)sender;
+                const string message = "¿Guardar cambios?";
+                const string caption = "Opciones de Perfil";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                // Seleccionar no
+                if (result == DialogResult.No)
                 {
+                    MessageBox.Show("Cambios descartados", "Opciones de Perfil");
+                }
+                else if (result == DialogResult.Yes)
+                {
+
                     guardarCambios();
                     MessageBox.Show("Cambios guardados", "Opciones de Perfil");
                     this.Hide();
                     ReiniciarPantalla();
                 }
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                MessageBox.Show("Regresando", "Opciones de Perfil");
+                else if (result == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Regresando", "Opciones de Perfil");
+                }
             }
         }
 
