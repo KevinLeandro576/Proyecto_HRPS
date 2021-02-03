@@ -48,11 +48,28 @@ namespace Proyecto_HRPS
             {
                 if (informacionEncontrada.Read())
                 {
-                    generarCorreoNotificacionDias();
-                    Empleado.Cedula = textBoxDeCedula.Text;
-                    MenuDeAdministrador menu = new MenuDeAdministrador();
-                    this.Hide();
-                    menu.Show();
+                    var comando02 = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
+                    using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
+                    {
+                        if (informacionEncontrada02.Read())
+                        {
+                            Empleado.Cedula = cedula;
+                            Empleado.Nombre = informacionEncontrada02["NOMBRE"].ToString();
+                            Empleado.Horario = informacionEncontrada02["HORARIO"].ToString();
+                            Empleado.Tiempo = informacionEncontrada02["TIEMPO"].ToString();
+                            Empleado.FechaDeNacimiento = DateTime.Parse(informacionEncontrada02["FECHA_NAC"].ToString());
+                            Empleado.Salario = decimal.Parse(informacionEncontrada02["SALARIO"].ToString());
+                            Empleado.SalarioPorHora = decimal.Parse(informacionEncontrada02["SALARIO_HORA"].ToString());
+                            Empleado.Puesto = informacionEncontrada02["PUESTO"].ToString();
+                            Empleado.Correo = informacionEncontrada02["CORREO"].ToString();
+                            Empleado.Contrasena = informacionEncontrada02["CONTRASENNA"].ToString();
+                            generarCorreoNotificacionDias();
+                            Empleado.Cedula = textBoxDeCedula.Text;
+                            MenuDeAdministrador menu = new MenuDeAdministrador();
+                            this.Hide();
+                            menu.Show();
+                        }
+                    }
                 }
                 else
                 {
