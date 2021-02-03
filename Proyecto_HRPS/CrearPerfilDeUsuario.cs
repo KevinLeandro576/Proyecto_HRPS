@@ -511,7 +511,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                                  metodoYclase);
-                ////////conexion.ExecuteNonQuery(comando);
+                conexion.ExecuteNonQuery(comando);
             }
         }
         private bool empleadoExiste()
