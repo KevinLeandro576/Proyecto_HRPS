@@ -47,7 +47,7 @@
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
             this.botonDeVolver.Location = new System.Drawing.Point(172, 367);
-            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(264, 67);
             this.botonDeVolver.TabIndex = 16;
@@ -105,36 +105,40 @@
             // 
             // textBoxDeCedula
             // 
+            this.textBoxDeCedula.Enabled = false;
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeCedula.Location = new System.Drawing.Point(295, 54);
-            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(262, 26);
             this.textBoxDeCedula.TabIndex = 22;
             // 
             // textBoxDeSalarioBruto
             // 
+            this.textBoxDeSalarioBruto.Enabled = false;
             this.textBoxDeSalarioBruto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeSalarioBruto.Location = new System.Drawing.Point(295, 106);
-            this.textBoxDeSalarioBruto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeSalarioBruto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeSalarioBruto.Name = "textBoxDeSalarioBruto";
             this.textBoxDeSalarioBruto.Size = new System.Drawing.Size(262, 26);
             this.textBoxDeSalarioBruto.TabIndex = 23;
             // 
             // textBoxDeSalarioNeto
             // 
+            this.textBoxDeSalarioNeto.Enabled = false;
             this.textBoxDeSalarioNeto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeSalarioNeto.Location = new System.Drawing.Point(295, 241);
-            this.textBoxDeSalarioNeto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeSalarioNeto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeSalarioNeto.Name = "textBoxDeSalarioNeto";
             this.textBoxDeSalarioNeto.Size = new System.Drawing.Size(262, 26);
             this.textBoxDeSalarioNeto.TabIndex = 24;
             // 
             // textBoxDeDeducciones
             // 
+            this.textBoxDeDeducciones.Enabled = false;
             this.textBoxDeDeducciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDeDeducciones.Location = new System.Drawing.Point(295, 198);
-            this.textBoxDeDeducciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDeDeducciones.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeDeducciones.Name = "textBoxDeDeducciones";
             this.textBoxDeDeducciones.Size = new System.Drawing.Size(262, 26);
             this.textBoxDeDeducciones.TabIndex = 25;
@@ -153,9 +157,10 @@
             // 
             // textBoxDePagoDeHorasExtra
             // 
+            this.textBoxDePagoDeHorasExtra.Enabled = false;
             this.textBoxDePagoDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDePagoDeHorasExtra.Location = new System.Drawing.Point(295, 152);
-            this.textBoxDePagoDeHorasExtra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDePagoDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDePagoDeHorasExtra.Name = "textBoxDePagoDeHorasExtra";
             this.textBoxDePagoDeHorasExtra.Size = new System.Drawing.Size(262, 26);
             this.textBoxDePagoDeHorasExtra.TabIndex = 27;
@@ -178,7 +183,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmpleadoVerSalario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver salario";

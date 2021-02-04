@@ -43,7 +43,7 @@
             this.labelDeHorarioActual.AutoSize = true;
             this.labelDeHorarioActual.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDeHorarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeHorarioActual.Location = new System.Drawing.Point(49, 118);
+            this.labelDeHorarioActual.Location = new System.Drawing.Point(49, 119);
             this.labelDeHorarioActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeHorarioActual.Name = "labelDeHorarioActual";
             this.labelDeHorarioActual.Size = new System.Drawing.Size(145, 18);
@@ -116,7 +116,7 @@
             // 
             this.textBoxDeHorarioActual.Enabled = false;
             this.textBoxDeHorarioActual.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeHorarioActual.Location = new System.Drawing.Point(329, 115);
+            this.textBoxDeHorarioActual.Location = new System.Drawing.Point(329, 116);
             this.textBoxDeHorarioActual.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeHorarioActual.Name = "textBoxDeHorarioActual";
             this.textBoxDeHorarioActual.Size = new System.Drawing.Size(225, 26);

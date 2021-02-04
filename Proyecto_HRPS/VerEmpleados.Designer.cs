@@ -35,11 +35,11 @@
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(44, 56);
+            this.botonDeVolver.Location = new System.Drawing.Point(35, 61);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(122, 50);
+            this.botonDeVolver.Size = new System.Drawing.Size(148, 72);
             this.botonDeVolver.TabIndex = 3;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -48,11 +48,11 @@
             // botonDeVerEmpleadosInactivos
             // 
             this.botonDeVerEmpleadosInactivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVerEmpleadosInactivos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerEmpleadosInactivos.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVerEmpleadosInactivos.ForeColor = System.Drawing.Color.White;
-            this.botonDeVerEmpleadosInactivos.Location = new System.Drawing.Point(200, 56);
+            this.botonDeVerEmpleadosInactivos.Location = new System.Drawing.Point(220, 61);
             this.botonDeVerEmpleadosInactivos.Name = "botonDeVerEmpleadosInactivos";
-            this.botonDeVerEmpleadosInactivos.Size = new System.Drawing.Size(122, 50);
+            this.botonDeVerEmpleadosInactivos.Size = new System.Drawing.Size(148, 72);
             this.botonDeVerEmpleadosInactivos.TabIndex = 4;
             this.botonDeVerEmpleadosInactivos.Text = "VER EMPLEADOS INACTIVOS";
             this.botonDeVerEmpleadosInactivos.UseVisualStyleBackColor = false;
@@ -60,13 +60,13 @@
             // 
             // VerEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(370, 169);
+            this.ClientSize = new System.Drawing.Size(404, 199);
             this.Controls.Add(this.botonDeVerEmpleadosInactivos);
             this.Controls.Add(this.botonDeVolver);
-            this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VerEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,7 +12,14 @@ namespace Proyecto_HRPS
     {
         public VerEmpleados()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                registrarError(ex);
+            }
         }
 
         private void botonDeVerEmpleadosInactivos_Click(object sender, EventArgs e)
@@ -43,14 +50,22 @@ namespace Proyecto_HRPS
             catch (Exception ex)
             {
                 MessageBox.Show("Cierra el reporte de empleados inactivos" + ex.Message);
+                registrarError(ex);
             }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
-            this.Hide();
-            perfilesDeUsuario.Show();
+            try
+            {
+                PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
+                this.Hide();
+                perfilesDeUsuario.Show();
+            }
+            catch (Exception ex)
+            {
+                registrarError(ex);
+            }
         }
 
         private PdfPTable CrearTablaPDFEmpleadosInactivos()
@@ -87,8 +102,9 @@ namespace Proyecto_HRPS
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                registrarError(ex);
                 throw;
             }
 
@@ -134,8 +150,9 @@ namespace Proyecto_HRPS
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                registrarError(ex);
                 throw;
             }
 
@@ -143,8 +160,26 @@ namespace Proyecto_HRPS
         }
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                registrarError(ex);
+                return null;
+            }
+        }
+
+        private void registrarError(Exception ex)
+        {
+            string texto = "Error: " + ex.ToString();
+            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
         }
     }
 }

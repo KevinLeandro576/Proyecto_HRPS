@@ -35,6 +35,7 @@ namespace Proyecto_HRPS
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBoxDeContrasena = new System.Windows.Forms.CheckBox();
+            this.botonDeVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelDeContrasena
@@ -58,17 +59,16 @@ namespace Proyecto_HRPS
             this.textBoxDeContrasena.PasswordChar = '*';
             this.textBoxDeContrasena.Size = new System.Drawing.Size(261, 26);
             this.textBoxDeContrasena.TabIndex = 24;
-            
             // 
             // botonDeGuardar
             // 
             this.botonDeGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeGuardar.ForeColor = System.Drawing.Color.White;
-            this.botonDeGuardar.Location = new System.Drawing.Point(165, 290);
+            this.botonDeGuardar.Location = new System.Drawing.Point(328, 289);
             this.botonDeGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGuardar.Name = "botonDeGuardar";
-            this.botonDeGuardar.Size = new System.Drawing.Size(265, 66);
+            this.botonDeGuardar.Size = new System.Drawing.Size(214, 66);
             this.botonDeGuardar.TabIndex = 25;
             this.botonDeGuardar.Text = "GUARDAR";
             this.botonDeGuardar.UseVisualStyleBackColor = false;
@@ -103,6 +103,20 @@ namespace Proyecto_HRPS
             this.checkBoxDeContrasena.UseVisualStyleBackColor = true;
             this.checkBoxDeContrasena.CheckedChanged += new System.EventHandler(this.checkBoxDeContrasena_CheckedChanged);
             // 
+            // botonDeVolver
+            // 
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(62, 289);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(214, 66);
+            this.botonDeVolver.TabIndex = 29;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
+            // 
             // EmpleadoCambiarContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -110,6 +124,7 @@ namespace Proyecto_HRPS
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(610, 378);
+            this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.checkBoxDeContrasena);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -135,5 +150,6 @@ namespace Proyecto_HRPS
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxDeContrasena;
+        private System.Windows.Forms.Button botonDeVolver;
     }
 }

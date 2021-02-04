@@ -120,7 +120,7 @@ namespace Proyecto_HRPS
                 var conexion = AbrirBaseDeDatos();
                 string claveTemporal = RandomString(8);
                 string claveTemporalEncriptada = encriptarClaveAsha256(claveTemporal);
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_CONTRASENNA", cedula, claveTemporalEncriptada);
+                var comando = conexion.GetStoredProcCommand("EMPLEADO_CAMBIAR_CONTRASENA", cedula, claveTemporalEncriptada);
                 conexion.ExecuteNonQuery(comando);
 
                 builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
