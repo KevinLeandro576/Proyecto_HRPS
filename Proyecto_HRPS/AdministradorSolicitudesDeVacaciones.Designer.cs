@@ -30,6 +30,7 @@ namespace Proyecto_HRPS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministradorSolicitudesDeVacaciones));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,16 +38,16 @@ namespace Proyecto_HRPS
             this.dateTimePickerFin = new System.Windows.Forms.DateTimePicker();
             this.panelDeFlujoDeSolicitudesDeVacaciones = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewDeSolicitudesDeVacaciones = new System.Windows.Forms.DataGridView();
-            this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.labelVacaciones = new System.Windows.Forms.Label();
-            this.labelDeCedula = new System.Windows.Forms.Label();
-            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDeInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDeDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDeEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.solicitudDeVacacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelVacaciones = new System.Windows.Forms.Label();
+            this.labelDeCedula = new System.Windows.Forms.Label();
+            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.panelDeFlujoDeSolicitudesDeVacaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeVacaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeVacacionesBindingSource)).BeginInit();
@@ -143,6 +144,31 @@ namespace Proyecto_HRPS
             this.dataGridViewDeSolicitudesDeVacaciones.TabIndex = 0;
             this.dataGridViewDeSolicitudesDeVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeSolicitudesDeVacaciones_CellClick);
             // 
+            // identificadorDataGridViewTextBoxColumn
+            // 
+            this.identificadorDataGridViewTextBoxColumn.DataPropertyName = "Identificador";
+            this.identificadorDataGridViewTextBoxColumn.HeaderText = "Identificador";
+            this.identificadorDataGridViewTextBoxColumn.Name = "identificadorDataGridViewTextBoxColumn";
+            // 
+            // diaDeInicioDataGridViewTextBoxColumn
+            // 
+            this.diaDeInicioDataGridViewTextBoxColumn.DataPropertyName = "DiaDeInicio";
+            this.diaDeInicioDataGridViewTextBoxColumn.HeaderText = "Día De Inicio";
+            this.diaDeInicioDataGridViewTextBoxColumn.Name = "diaDeInicioDataGridViewTextBoxColumn";
+            // 
+            // cantidadDeDiasDataGridViewTextBoxColumn
+            // 
+            this.cantidadDeDiasDataGridViewTextBoxColumn.DataPropertyName = "CantidadDeDias";
+            this.cantidadDeDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad De Días";
+            this.cantidadDeDiasDataGridViewTextBoxColumn.Name = "cantidadDeDiasDataGridViewTextBoxColumn";
+            // 
+            // cedulaDeEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "CedulaDeEmpleado";
+            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.HeaderText = "Cédula De Empleado";
+            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.Name = "cedulaDeEmpleadoDataGridViewTextBoxColumn";
+            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.Width = 180;
+            // 
             // botonAceptar
             // 
             this.botonAceptar.DataPropertyName = "botonAceptar";
@@ -158,6 +184,10 @@ namespace Proyecto_HRPS
             this.botonNegar.Name = "botonNegar";
             this.botonNegar.Text = "Negar";
             this.botonNegar.UseColumnTextForButtonValue = true;
+            // 
+            // solicitudDeVacacionesBindingSource
+            // 
+            this.solicitudDeVacacionesBindingSource.DataSource = typeof(Proyecto_HRPS.SolicitudDeVacaciones);
             // 
             // labelVacaciones
             // 
@@ -189,35 +219,6 @@ namespace Proyecto_HRPS
             this.textBoxDeCedula.TabIndex = 26;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
             // 
-            // identificadorDataGridViewTextBoxColumn
-            // 
-            this.identificadorDataGridViewTextBoxColumn.DataPropertyName = "Identificador";
-            this.identificadorDataGridViewTextBoxColumn.HeaderText = "Identificador";
-            this.identificadorDataGridViewTextBoxColumn.Name = "identificadorDataGridViewTextBoxColumn";
-            // 
-            // diaDeInicioDataGridViewTextBoxColumn
-            // 
-            this.diaDeInicioDataGridViewTextBoxColumn.DataPropertyName = "DiaDeInicio";
-            this.diaDeInicioDataGridViewTextBoxColumn.HeaderText = "Día De Inicio";
-            this.diaDeInicioDataGridViewTextBoxColumn.Name = "diaDeInicioDataGridViewTextBoxColumn";
-            // 
-            // cantidadDeDiasDataGridViewTextBoxColumn
-            // 
-            this.cantidadDeDiasDataGridViewTextBoxColumn.DataPropertyName = "CantidadDeDias";
-            this.cantidadDeDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad De Días";
-            this.cantidadDeDiasDataGridViewTextBoxColumn.Name = "cantidadDeDiasDataGridViewTextBoxColumn";
-            // 
-            // cedulaDeEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "CedulaDeEmpleado";
-            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.HeaderText = "Cédula De Empleado";
-            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.Name = "cedulaDeEmpleadoDataGridViewTextBoxColumn";
-            this.cedulaDeEmpleadoDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // solicitudDeVacacionesBindingSource
-            // 
-            this.solicitudDeVacacionesBindingSource.DataSource = typeof(Proyecto_HRPS.SolicitudDeVacaciones);
-            // 
             // AdministradorSolicitudesDeVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -236,6 +237,7 @@ namespace Proyecto_HRPS
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdministradorSolicitudesDeVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

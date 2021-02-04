@@ -457,5 +457,8 @@
   <ItemGroup>
     <None Include="Resources\icono01.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\favicon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,6 +29,7 @@ namespace Proyecto_HRPS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminstradorEscogerSolicitud));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeHorasExtra = new System.Windows.Forms.Button();
             this.botonDeVacaciones = new System.Windows.Forms.Button();
@@ -85,6 +86,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.botonDeVacaciones);
             this.Controls.Add(this.botonDeHorasExtra);
             this.Controls.Add(this.botonDeVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminstradorEscogerSolicitud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escoger solicitud";

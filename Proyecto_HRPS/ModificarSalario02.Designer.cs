@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarSalario02));
             this.labelDeSalarioNuevo = new System.Windows.Forms.Label();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeGuardarCambios = new System.Windows.Forms.Button();
@@ -176,6 +177,7 @@
             this.Controls.Add(this.labelDeSalarioActual);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ModificarSalario02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

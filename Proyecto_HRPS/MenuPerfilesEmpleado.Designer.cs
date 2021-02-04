@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPerfilesEmpleado));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeVerHorario = new System.Windows.Forms.Button();
             this.botonDeVerPerfil = new System.Windows.Forms.Button();
@@ -100,6 +101,7 @@
             this.Controls.Add(this.botonDeVerPerfil);
             this.Controls.Add(this.botonDeVerHorario);
             this.Controls.Add(this.botonDeVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPerfilesEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de perfil";

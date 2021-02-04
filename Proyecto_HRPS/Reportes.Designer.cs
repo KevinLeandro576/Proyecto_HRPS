@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeVerSalariosDeEmpleados = new System.Windows.Forms.Button();
             this.botonDeVevReportesDiarios = new System.Windows.Forms.Button();
@@ -100,6 +101,7 @@
             this.Controls.Add(this.botonDeVevReportesDiarios);
             this.Controls.Add(this.botonDeVerSalariosDeEmpleados);
             this.Controls.Add(this.botonDeVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de reportes";

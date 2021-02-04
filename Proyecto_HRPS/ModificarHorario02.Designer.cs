@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarHorario02));
             this.labelDeHorarioActual = new System.Windows.Forms.Label();
             this.labelDeHorarioNuevo = new System.Windows.Forms.Label();
             this.textBoxDeHorarioNuevo = new System.Windows.Forms.TextBox();
@@ -147,6 +148,7 @@
             this.Controls.Add(this.labelDeHorarioActual);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ModificarHorario02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

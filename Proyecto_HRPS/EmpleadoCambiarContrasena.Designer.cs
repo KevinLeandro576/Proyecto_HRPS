@@ -29,6 +29,7 @@ namespace Proyecto_HRPS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadoCambiarContrasena));
             this.labelDeContrasena = new System.Windows.Forms.Label();
             this.textBoxDeContrasena = new System.Windows.Forms.TextBox();
             this.botonDeGuardar = new System.Windows.Forms.Button();
@@ -133,6 +134,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.labelDeContrasena);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmpleadoCambiarContrasena";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

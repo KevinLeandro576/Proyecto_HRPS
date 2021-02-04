@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministradorRecuperarContrasenna));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
@@ -89,6 +90,7 @@
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.botonDeVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdministradorRecuperarContrasenna";
             this.Text = "AdministradorRecuperarContrasenna";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorRecuperarContrasenna_FormClosing);

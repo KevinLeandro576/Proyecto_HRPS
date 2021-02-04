@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearPerfilDeUsuario));
             this.botonDeRegistrarUsuario = new System.Windows.Forms.Button();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.labelDeCedula = new System.Windows.Forms.Label();
@@ -361,6 +362,7 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CrearPerfilDeUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

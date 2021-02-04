@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolicitudesEmpleados));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeRegistrarHorasExtra = new System.Windows.Forms.Button();
             this.botonDeSolicitarVacaciones = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@
             this.Controls.Add(this.botonDeSolicitarVacaciones);
             this.Controls.Add(this.botonDeRegistrarHorasExtra);
             this.Controls.Add(this.botonDeVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SolicitudesEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de solicitudes";

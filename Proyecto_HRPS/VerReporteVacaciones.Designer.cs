@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerReporteVacaciones));
             this.botonDeGenerar = new System.Windows.Forms.Button();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.dateTimePickerDeFechaDeFinalizacion = new System.Windows.Forms.DateTimePicker();
@@ -123,6 +124,7 @@
             this.Controls.Add(this.labelDeFechaDeFin);
             this.Controls.Add(this.labelDeFechaDeInicio);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerReporteVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
