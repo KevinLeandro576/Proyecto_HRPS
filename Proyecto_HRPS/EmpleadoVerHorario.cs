@@ -15,37 +15,92 @@ namespace Proyecto_HRPS
     {
         public EmpleadoVerHorario()
         {
-            InitializeComponent();
-            textBoxDeHorario.Enabled = false;
+            try
+            {
+                InitializeComponent();
+                textBoxDeHorario.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                string texto = "Error: " + ex.ToString();
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                                 metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
-            this.Hide();
-            menuPerfilesEmpleado.Show();
+            try
+            {
+                MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+                this.Hide();
+                menuPerfilesEmpleado.Show();
+            }
+            catch (Exception ex)
+            {
+                string texto = "Error: " + ex.ToString();
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                                 metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
         }
-
-        private void botonDeBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string texto = "Error: " + ex.ToString();
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                                 metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+                return null;
+            }
         }
 
         private void EmpleadoVerHorario_Load(object sender, EventArgs e)
         {
-            textBoxDeCedula.Text = Empleado.Cedula;
-            textBoxDeHorario.Text = Empleado.Horario;
+            try
+            {
+                textBoxDeCedula.Text = Empleado.Cedula;
+                textBoxDeHorario.Text = Empleado.Horario;
+            }
+            catch (Exception ex)
+            {
+                string texto = "Error: " + ex.ToString();
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                                 metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
         }
 
         private void EmpleadoVerHorario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                string texto = "Error: " + ex.ToString();
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                                 metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
         }
     }
 }

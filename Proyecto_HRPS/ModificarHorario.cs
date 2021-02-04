@@ -22,7 +22,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -40,7 +41,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -53,7 +55,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -66,7 +69,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -109,7 +113,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -130,7 +135,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -174,7 +180,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
         private void cargarAltura()
@@ -190,7 +197,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -202,14 +210,14 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);

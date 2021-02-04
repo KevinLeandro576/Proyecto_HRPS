@@ -24,7 +24,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -36,7 +37,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -69,7 +71,7 @@ namespace Proyecto_HRPS
                 }
                 else if (contrasenaEnHash.Equals(contrasenaAnterior))
                 {
-                    MessageBox.Show("Contraseña igual a la anterior, cambiar.", "Opciones de Contraseña");
+                    MessageBox.Show("Contraseña igual a la anterior, por favor usar otra.", "Opciones de Contraseña");
                 }
                 else
                 {
@@ -109,7 +111,8 @@ namespace Proyecto_HRPS
                         listaDeCorreos.Add("leandrokevin576@gmail.com");
 
                         string evento = "El empleado: " + Empleado.Nombre + "; ha actualizado su contraseña.";
-                        registrarEvento(evento);
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(evento, metodoYclase);
 
                         administradorDeCorreo.EnviarCorreo("<h1>Ha hecho un cambio de contraseña</h1> <br/> " + builder.ToString(), "Cambio de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
                         this.Hide();
@@ -123,7 +126,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
         public string encriptarClaveAsha256(string clave)
@@ -137,7 +141,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -162,11 +167,12 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
-        
+
         public Database AbrirBaseDeDatos()
         {
             try
@@ -176,7 +182,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -196,27 +203,34 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
 
-        private void registrarEvento(string evento)
+        private void registrarEvento(string evento, string metodoYclase)
         {
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
-                                                                             metodoYclase);
-            conexion.ExecuteNonQuery(comando);
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -229,7 +243,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
     }

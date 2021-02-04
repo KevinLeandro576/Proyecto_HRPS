@@ -135,6 +135,7 @@ namespace Proyecto_HRPS
                 string cedula = textBoxDeCedula.Text;
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
+                contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("EMPLEADO_INICIO_SESION", cedula, contrasennaEncriptada);
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
@@ -155,7 +156,7 @@ namespace Proyecto_HRPS
             }
         }
 
-        public  string encriptarClaveAsha256(string clave)
+        public string encriptarClaveAsha256(string clave)
         {
             try
             {

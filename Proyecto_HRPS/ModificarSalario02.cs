@@ -15,7 +15,15 @@ namespace Proyecto_HRPS
     {
         public ModificarSalario02()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         static string infoCedula = "";
@@ -25,88 +33,188 @@ namespace Proyecto_HRPS
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            volverVistaDeSalarios();
+            try
+            {
+                volverVistaDeSalarios();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return null;
+            }
         }
 
         private void botonDeGuardarCambios_Click(object sender, EventArgs e)
         {
-            guardarCambios();
+            try
+            {
+                guardarCambios();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void guardarCambios()
         {
-            const string message = "¿Guardar cambios?";
-            const string caption = "Form Closing";
-            salarioNuevo = numericUpDownDeSalario.Value;
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNoCancel,
-                                         MessageBoxIcon.Question);
-            // Seleccionar no
-            if (result == DialogResult.No)
+            try
             {
-                MessageBox.Show("Cambios descartados");
+                const string message = "¿Guardar cambios?";
+                const string caption = "Opciones de Salario";
+                salarioNuevo = numericUpDownDeSalario.Value;
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                // Seleccionar no
+                if (result == DialogResult.No)
+                {
+                    MessageBox.Show("Cambios descartados", caption);
+                }
+                else if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Cambios guardados", caption);
+                    var conexion = AbrirBaseDeDatos();
+                    var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", infoCedula, salarioNuevo);
+                    conexion.ExecuteNonQuery(comando);
+                    string evento = "El empleado " + Empleado.Nombre + " ha cambiado el salario del empleado " + infoNombre + ", del salario " + textBoxDeSalarioActual.Text + " al salario " + numericUpDownDeSalario.Value.ToString() + ".";
+                    string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                    registrarEvento(evento, metodoYclase);
+                    volverVistaDeSalarios();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Regresando", caption);
+                }
             }
-            else if (result == DialogResult.Yes)
+            catch (Exception ex)
             {
-                MessageBox.Show("Cambios guardados");
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", infoCedula, salarioNuevo);
-                conexion.ExecuteNonQuery(comando);
-                volverVistaDeSalarios();
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                MessageBox.Show("Regresando");
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
         private void ModificarSalario02_Load_1(object sender, EventArgs e)
         {
-            infoCedula = ModificarSalario.infoCedula;
-            infoNombre = ModificarSalario.infoNombre;
-            infoSalario = ModificarSalario.infoSalario;
-            textBoxDeNombre.Enabled = false;
-            textBoxDeSalarioActual.Enabled = false;
-            mostrarInfo(infoNombre, infoSalario);
+            try
+            {
+                infoCedula = ModificarSalario.infoCedula;
+                infoNombre = ModificarSalario.infoNombre;
+                infoSalario = ModificarSalario.infoSalario;
+                textBoxDeNombre.Enabled = false;
+                textBoxDeSalarioActual.Enabled = false;
+                mostrarInfo(infoNombre, infoSalario);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void mostrarInfo(string nombre, decimal salario)
         {
-            textBoxDeNombre.Text = nombre;
-            textBoxDeSalarioActual.Text = salario.ToString();
+            try
+            {
+                textBoxDeNombre.Text = nombre;
+                textBoxDeSalarioActual.Text = salario.ToString();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void volverVistaDeSalarios()
         {
-            ModificarSalario modificarSalario = new ModificarSalario();
-            this.Hide();
-            modificarSalario.Show();
+            try
+            {
+                ModificarSalario modificarSalario = new ModificarSalario();
+                this.Hide();
+                modificarSalario.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void ModificarSalario02_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
         public Boolean SalarioEstaBien()
         {
-            bool estaBien = false;
-            if (numericUpDownDeSalario.Value < numericUpDownDeSalario.Minimum || numericUpDownDeSalario.Value > numericUpDownDeSalario.Maximum)
+            try
             {
-                numericUpDownDeSalario.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa salario", "Opciones de Perfil");
+                bool estaBien = false;
+                if (numericUpDownDeSalario.Value < numericUpDownDeSalario.Minimum || numericUpDownDeSalario.Value > numericUpDownDeSalario.Maximum)
+                {
+                    numericUpDownDeSalario.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa salario", "Opciones de Salario");
+                }
+                else
+                {
+                    estaBien = true;
+                }
+                return estaBien;
             }
-            else
+            catch (Exception ex)
             {
-                estaBien = true;
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
             }
-            return estaBien;
+        }
+        private void registrarError(Exception ex, string metodoYclase)
+        {
+            string texto = "Error: " + ex.ToString();
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
+        }
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
         }
     }
 }

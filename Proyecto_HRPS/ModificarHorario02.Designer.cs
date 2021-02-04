@@ -61,7 +61,6 @@
             this.labelDeHorarioNuevo.Size = new System.Drawing.Size(139, 18);
             this.labelDeHorarioNuevo.TabIndex = 8;
             this.labelDeHorarioNuevo.Text = "HORARIO NUEVO";
-            this.labelDeHorarioNuevo.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxDeHorarioNuevo
             // 

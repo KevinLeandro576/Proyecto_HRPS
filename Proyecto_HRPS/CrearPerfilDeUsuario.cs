@@ -27,12 +27,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -46,12 +42,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
         //POR CADA FORMULARIO CON CRUD
@@ -64,12 +56,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -140,11 +128,9 @@ namespace Proyecto_HRPS
                         conexion.ExecuteNonQuery(comando);
                         MessageBox.Show("Empleado agregado exitosamente", "Opciones de Perfil");
                         administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text;
+                        string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                        var comando02 = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                        conexion.ExecuteNonQuery(comando02);
+                        registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
                     }
                     else if (result == DialogResult.Cancel)
@@ -160,12 +146,10 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
+                MessageBox.Show("Error", "Opciones de Perfil");
+                reiniciarPagina();
             }
 
         }
@@ -192,12 +176,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -212,12 +192,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -231,12 +207,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -256,12 +228,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -281,12 +249,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
         private Boolean validarTodo()
@@ -393,12 +357,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -416,12 +376,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -434,12 +390,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -452,12 +404,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -470,12 +418,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -488,12 +432,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -506,32 +446,60 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                string texto = "Error: " + ex.ToString();
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
-                                                                                 metodoYclase);
-                conexion.ExecuteNonQuery(comando);
+                registrarError(ex, metodoYclase);
             }
         }
         private bool empleadoExiste()
         {
-            bool yaExiste = true;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", textBoxDeCedula.Text);
-            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            try
             {
-                if (informacionEncontrada.Read())
+                bool yaExiste = true;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[SACAR_INFORMACION_PARA_VER_SI_EXISTE]", textBoxDeCedula.Text);
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
-                    MessageBox.Show("Cédula ya registrada, empleado no se puede agregar", "Opciones de Perfil");
-                    yaExiste = true;
-                    return yaExiste;
+                    if (informacionEncontrada.Read())
+                    {
+                        MessageBox.Show("Cédula ya registrada, empleado no se puede agregar", "Opciones de Perfil");
+                        yaExiste = true;
+                        return yaExiste;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
-                {
-                    yaExiste = false;
-                    return yaExiste;
-                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+
+        private void registrarError(Exception ex, string metodoYclase)
+        {
+            string texto = "Error: " + ex.ToString();
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
+        }
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
             }
         }
     }

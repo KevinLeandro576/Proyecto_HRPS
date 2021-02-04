@@ -102,7 +102,14 @@ namespace Proyecto_HRPS
 
         private void EmpleadoVerSalario_Load(object sender, EventArgs e)
         {
-            VerSalario();
+            try
+            {
+                VerSalario();
+            }
+            catch (Exception ex)
+            {
+                registrarError(ex);
+            }
         }
 
         private void EmpleadoVerSalario_FormClosing(object sender, FormClosingEventArgs e)

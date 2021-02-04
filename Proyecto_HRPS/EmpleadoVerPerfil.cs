@@ -18,7 +18,15 @@ namespace Proyecto_HRPS
 
         public EmpleadoVerPerfil()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         static string infoCedula = "";
@@ -30,17 +38,136 @@ namespace Proyecto_HRPS
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
-            this.Hide();
-            menuPerfilesEmpleado.Show();
+            try
+            {
+                MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+                this.Hide();
+                menuPerfilesEmpleado.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeGuardar_Click(object sender, EventArgs e)
         {
-            if (ValidarTodo() == true)
+            try
             {
-                Button botonActual = (Button)sender;
-                const string message = "¿Guardar cambios?";
+                if (ValidarTodo() == true)
+                {
+                    Button botonActual = (Button)sender;
+                    const string message = "¿Guardar cambios?";
+                    const string caption = "Opciones de Perfil";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.YesNoCancel,
+                                                 MessageBoxIcon.Question);
+                    // Seleccionar no
+                    if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Cambios descartados", "Opciones de Perfil");
+                    }
+                    else if (result == DialogResult.Yes)
+                    {
+
+                        guardarCambios();
+                        string texto = "El empleado: " + Empleado.Nombre + " ha cambiado datos.";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(texto, metodoYclase);
+                        MessageBox.Show("Cambios guardados", "Opciones de Perfil");
+                        this.Hide();
+                        ReiniciarPantalla();
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Regresando", "Opciones de Perfil");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void guardarCambios()
+        {
+            try
+            {
+                infoCedula = textBoxDeCedula.Text;
+                infoNombre = textBoxDeNombre.Text;
+                infoNacimiento = dateTimePickerDeFechaDeNacimiento.Value;
+                infoCorreo = textBoxDeCorreoElectronico.Text;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("EMPLEADO_ACTUALIZAR_DATOS",
+                                                                infoCedula,
+                                                                infoNombre,
+                                                                infoNacimiento,
+                                                                infoCorreo);
+                conexion.ExecuteNonQuery(comando);
+                Empleado.Nombre = infoNombre;
+                Empleado.FechaDeNacimiento = infoNacimiento;
+                Empleado.Correo = infoCorreo;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        public Database AbrirBaseDeDatos()
+        {
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return null;
+            }
+        }
+
+        private void EmpleadoVerPerfil_Load_1(object sender, EventArgs e)
+        {
+            try
+            {
+                textBoxDeCedula.Text = Empleado.Cedula;
+                textBoxDeCedula.Enabled = false;
+                textBoxDeNombre.Text = Empleado.Nombre;
+                dateTimePickerDeFechaDeNacimiento.Value = Empleado.FechaDeNacimiento;
+                textBoxDeCorreoElectronico.Text = Empleado.Correo;
+                textBoxDePuesto.Text = Empleado.Puesto;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        private void EmpleadoVerPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void linkLabelDeCambiarContrasena_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                const string message = "Al continuar deberá cambiar la contraseña, desea continuar?";
                 const string caption = "Opciones de Perfil";
                 var result = MessageBox.Show(message, caption,
                                              MessageBoxButtons.YesNoCancel,
@@ -48,140 +175,108 @@ namespace Proyecto_HRPS
                 // Seleccionar no
                 if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Cambios descartados", "Opciones de Perfil");
+                    MessageBox.Show("Regresando", "Opciones de Perfil");
                 }
                 else if (result == DialogResult.Yes)
                 {
-
-                    guardarCambios();
-                    MessageBox.Show("Cambios guardados", "Opciones de Perfil");
+                    EmpleadoCambiarContrasena empleadoCambiarContrasena = new EmpleadoCambiarContrasena();
                     this.Hide();
-                    ReiniciarPantalla();
+                    empleadoCambiarContrasena.Show();
                 }
                 else if (result == DialogResult.Cancel)
                 {
                     MessageBox.Show("Regresando", "Opciones de Perfil");
                 }
             }
-        }
-
-        private void guardarCambios()
-        {
-            infoCedula = textBoxDeCedula.Text;
-            infoNombre = textBoxDeNombre.Text;
-            infoNacimiento = dateTimePickerDeFechaDeNacimiento.Value;
-            infoCorreo = textBoxDeCorreoElectronico.Text;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("EMPLEADO_ACTUALIZAR_DATOS",
-                                                            infoCedula,
-                                                            infoNombre,
-                                                            infoNacimiento,
-                                                            infoCorreo);
-            conexion.ExecuteNonQuery(comando);
-            Empleado.Nombre = infoNombre;
-            Empleado.FechaDeNacimiento = infoNacimiento;
-            Empleado.Correo = infoCorreo;
-        }
-
-        public Database AbrirBaseDeDatos()
-        {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
-        }
-
-        private void EmpleadoVerPerfil_Load_1(object sender, EventArgs e)
-        {
-            textBoxDeCedula.Text = Empleado.Cedula;
-            textBoxDeCedula.Enabled = false;
-            textBoxDeNombre.Text = Empleado.Nombre;
-            dateTimePickerDeFechaDeNacimiento.Value = Empleado.FechaDeNacimiento;
-            textBoxDeCorreoElectronico.Text = Empleado.Correo;
-            textBoxDePuesto.Text = Empleado.Puesto;
-        }
-        private void EmpleadoVerPerfil_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void linkLabelDeCambiarContrasena_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            const string message = "Al continuar deberá cambiar la contraseña, desea continuar?";
-            const string caption = "Opciones de Perfil";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNoCancel,
-                                         MessageBoxIcon.Question);
-            // Seleccionar no
-            if (result == DialogResult.No)
+            catch (Exception ex)
             {
-                MessageBox.Show("Regresando", "Opciones de Perfil");
-            }
-            else if (result == DialogResult.Yes)
-            {
-                EmpleadoCambiarContrasena empleadoCambiarContrasena = new EmpleadoCambiarContrasena();
-                this.Hide();
-                empleadoCambiarContrasena.Show();
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                MessageBox.Show("Regresando", "Opciones de Perfil");
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
         private void ReiniciarPantalla()
         {
-            EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil();
-            this.Hide();
-            empleadoVerPerfil.Show();
+            try
+            {
+                EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil();
+                this.Hide();
+                empleadoVerPerfil.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
         private Boolean ValidarTodo()
         {
             bool estaBien = false;
-            if (string.IsNullOrEmpty(textBoxDeNombre.Text))
+            try
             {
-                textBoxDeNombre.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                if (string.IsNullOrEmpty(textBoxDeNombre.Text))
+                {
+                    textBoxDeNombre.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                }
+                else if (!soloTieneLetras(textBoxDeNombre.Text))
+                {
+                    textBoxDeNombre.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                }
+                else if (!dateTimePickerDeFechaDeNacimiento.Checked)
+                {
+                    dateTimePickerDeFechaDeNacimiento.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa fecha de nacimiento", "Opciones de Perfil");
+                }
+                else if (string.IsNullOrEmpty(textBoxDePuesto.Text))
+                {
+                    textBoxDePuesto.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa puesto", "Opciones de Perfil");
+                }
+                else if (string.IsNullOrEmpty(textBoxDeCorreoElectronico.Text))
+                {
+                    textBoxDeCorreoElectronico.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                }
+
+                else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
+                {
+                    textBoxDeCorreoElectronico.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                }
+                else
+                {
+                    estaBien = true;
+                }
+                return estaBien;
             }
-            else if (!soloTieneLetras(textBoxDeNombre.Text))
+            catch (Exception ex)
             {
-                textBoxDeNombre.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa nombre", "Opciones de Perfil");
-            }
-            else if (!dateTimePickerDeFechaDeNacimiento.Checked)
-            {
-                dateTimePickerDeFechaDeNacimiento.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa fecha de nacimiento", "Opciones de Perfil");
-            }
-            else if (string.IsNullOrEmpty(textBoxDePuesto.Text))
-            {
-                textBoxDePuesto.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa puesto", "Opciones de Perfil");
-            }
-            else if (string.IsNullOrEmpty(textBoxDeCorreoElectronico.Text))
-            {
-                textBoxDeCorreoElectronico.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
             }
 
-            else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
-            {
-                textBoxDeCorreoElectronico.Focus();
-                estaBien = false;
-                MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
-            }
-            else
-            {
-                estaBien = true;
-            }
-            return estaBien;
         }
         bool soloTieneLetras(String strToCheck)//LETRAS ESPACIO Y TILDES
         {
-            Regex objAlphaPattern = new Regex("^[a-z A-Z\u00C0-\u00FF]*$");
-            return objAlphaPattern.IsMatch(strToCheck);
+            try
+            {
+                Regex objAlphaPattern = new Regex("^[a-z A-Z\u00C0-\u00FF]*$");
+                return objAlphaPattern.IsMatch(strToCheck);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
         }
         bool esCorreo(string correo)
         {
@@ -190,9 +285,34 @@ namespace Proyecto_HRPS
                 var mail = new System.Net.Mail.MailAddress(correo);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return false;
+            }
+        }
+        private void registrarError(Exception ex, string metodoYclase)
+        {
+            string texto = "Error: " + ex.ToString();
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
+        }
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
             }
         }
     }

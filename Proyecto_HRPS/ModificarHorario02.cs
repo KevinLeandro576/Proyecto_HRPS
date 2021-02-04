@@ -22,7 +22,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -30,11 +31,6 @@ namespace Proyecto_HRPS
         static string infoHorario = "";
         static string infoNombre = "";
         static string horarioNuevo = "";
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
@@ -50,7 +46,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -68,7 +65,7 @@ namespace Proyecto_HRPS
                 {
                     var conexion = AbrirBaseDeDatos();
                     const string message = "¿Guardar cambios?";
-                    const string caption = "Form Closing";
+                    const string caption = "Opciones de Horario";
                     horarioNuevo = textBoxDeHorarioNuevo.Text;
                     var result = MessageBox.Show(message, caption,
                                                  MessageBoxButtons.YesNoCancel,
@@ -76,7 +73,7 @@ namespace Proyecto_HRPS
                     // Seleccionar no
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Cambios descartados");
+                        MessageBox.Show("Cambios descartados", caption);
                     }
                     else if (result == DialogResult.Yes)
                     {
@@ -106,24 +103,26 @@ namespace Proyecto_HRPS
                             }
                         }
                         administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        MessageBox.Show("Cambios guardados");
+                        MessageBox.Show("Cambios guardados", caption);
                         var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                         conexion.ExecuteNonQuery(comando02);
 
-                        string evento = "Se ha cambiado el horario del empleado: " + infoNombre + "; al horario: " + horarioNuevo ;
-                        registrarEvento(evento);
+                        string evento = "El empleado " + Empleado.Nombre + " ha cambiado el horario del empleado " + infoNombre + ", del horario " + textBoxDeHorarioActual.Text + " al horario " + horarioNuevo + ".";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(evento, metodoYclase);
 
                         volverVistaDeHorarios();
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando");
+                        MessageBox.Show("Regresando", caption);
                     }
                 }
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -140,7 +139,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -154,7 +154,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -167,7 +168,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -179,7 +181,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -192,13 +195,13 @@ namespace Proyecto_HRPS
                 {
                     textBoxDeHorarioNuevo.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Perfil");
+                    MessageBox.Show("Revisa horario", "Opciones de Horario");
                 }
                 else if (!horarioEstaBien(textBoxDeHorarioNuevo.Text))
                 {
                     textBoxDeHorarioNuevo.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Perfil");
+                    MessageBox.Show("Revisa horario", "Opciones de Horario");
                 }
                 else
                 {
@@ -208,7 +211,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
@@ -221,28 +225,35 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return false;
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
 
-        private void registrarEvento(string evento)
+        private void registrarEvento(string evento, string metodoYclase)
         {
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
-                                                                             metodoYclase);
-            conexion.ExecuteNonQuery(comando);
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
         }
     }
 }
