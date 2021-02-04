@@ -523,7 +523,7 @@ namespace Proyecto_HRPS
             {
                 if (informacionEncontrada.Read())
                 {
-                    MessageBox.Show("Cédua ya registrada, empleado no se puede agregar", "Opciones de Perfil");
+                    MessageBox.Show("Cédula ya registrada, empleado no se puede agregar", "Opciones de Perfil");
                     yaExiste = true;
                     return yaExiste;
                 }

@@ -50,7 +50,7 @@ namespace Proyecto_HRPS
             {
                 if (informacionEncontrada.Read())
                 {
-                    const string message = "¿Restablece contraseña?";
+                    const string message = "¿Restablecer contraseña?";
                     const string caption = "Form Closing";
                     var result = MessageBox.Show(message, caption,
                         MessageBoxButtons.YesNoCancel,
@@ -76,24 +76,29 @@ namespace Proyecto_HRPS
 
         private void enviarCorreoConContrasenna(string cedula, string correo)
         {
-            AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "leandrokevin576@gmail.com", "tontitowasd12", 587);
-
+            AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
             StringBuilder builder = new StringBuilder();
-            List<string> listaDeCorreos = new List<string>();
 
-            builder.Append("<table class=table table-bordered align=center border=1 cellpadding=3 cellspacing=0 width=100%>");
+            builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");
             builder.Append("<tr>");
-            builder.Append("<th>CÉDULA</th>");
             builder.Append("<th>CONTRASEÑA TEMPORAL</th>");
             builder.Append("</tr>");
 
             builder.Append("<tr align=center>");
-            builder.Append("<td>" + cedula + "</td>");
             builder.Append("<td>" + claveTemporal + "</td>");
             builder.Append("</tr>");
             builder.Append("</table>");
 
-            administradorDeCorreo.EnviarCorreo("<h1>Ha restablecido la contraseña</h1> <br/>" + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correo });
+
+
+            List<string> listaDeCorreos = new List<string>();
+            listaDeCorreos.Add("1037joseg@gmail.com");
+            listaDeCorreos.Add("leandrokevin576@gmail.com");
+
+            string evento = "El empleado: " + Empleado.Nombre + "; ha actualizado su contraseña.";
+            //registrarEvento(evento);
+
+            administradorDeCorreo.EnviarCorreo("<h1>Ha hecho un cambio de contraseña</h1> <br/> " + builder.ToString(), "Reestablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correo });
 
             MessageBox.Show("Se ha enviado una contraseña temporal a su correo");
         }
