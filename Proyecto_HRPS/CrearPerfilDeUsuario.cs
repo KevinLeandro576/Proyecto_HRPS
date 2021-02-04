@@ -126,7 +126,7 @@ namespace Proyecto_HRPS
                                                                                                     rol,
                                                                                                     textBoxDeCorreoElectronico.Text);
                         conexion.ExecuteNonQuery(comando);
-                        MessageBox.Show("Empleado agregado exitosamente", "Opciones de Perfil");
+                        MessageBox.Show("Empleado agregado exitosamente", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                         string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
@@ -135,12 +135,12 @@ namespace Proyecto_HRPS
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil");
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     // Seleccionar no
                     else if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil");
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
@@ -148,7 +148,7 @@ namespace Proyecto_HRPS
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
-                MessageBox.Show("Error", "Opciones de Perfil");
+                MessageBox.Show("Error", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 reiniciarPagina();
             }
 
@@ -262,92 +262,92 @@ namespace Proyecto_HRPS
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Opciones de Perfil");
+                    MessageBox.Show("Revise cédula", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneNumeros(textBoxDeCedula.Text))
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Opciones de Perfil");
+                    MessageBox.Show("Revise cédula", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeNombre.Text))
                 {
                     textBoxDeNombre.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                    MessageBox.Show("Revise nombre", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneLetras(textBoxDeNombre.Text))
                 {
                     textBoxDeNombre.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                    MessageBox.Show("Revise nombre", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeHorario.Text))
                 {
                     textBoxDeHorario.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Perfil");
+                    MessageBox.Show("Revise horario", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!horarioEstaBien(textBoxDeHorario.Text))
                 {
                     textBoxDeHorario.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Perfil");
+                    MessageBox.Show("Revise horario", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!dateTimePickerDeFechaDeNacimiento.Checked)
                 {
                     dateTimePickerDeFechaDeNacimiento.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa fecha de nacimiento", "Opciones de Perfil");
+                    MessageBox.Show("Revise fecha de nacimiento", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (comboBoxDeRol.SelectedIndex == -1)
                 {
                     comboBoxDeRol.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa rol", "Opciones de Perfil");
+                    MessageBox.Show("Revise rol", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (numericUpDownDeSalario.Value < numericUpDownDeSalario.Minimum || numericUpDownDeSalario.Value > numericUpDownDeSalario.Maximum)
                 {
                     numericUpDownDeSalario.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa salario", "Opciones de Perfil");
+                    MessageBox.Show("Revise salario", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (numericUpDownDeSalarioPorHora.Value < numericUpDownDeSalarioPorHora.Minimum || numericUpDownDeSalarioPorHora.Value > numericUpDownDeSalarioPorHora.Maximum)
                 {
                     numericUpDownDeSalarioPorHora.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa salario por hora", "Opciones de Perfil");
+                    MessageBox.Show("Revise salario por hora", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDePuesto.Text))
                 {
                     textBoxDePuesto.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa puesto", "Opciones de Perfil");
+                    MessageBox.Show("Revise puesto", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!puestoEstaBienEscrito(textBoxDePuesto.Text))
                 {
                     textBoxDePuesto.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa puesto", "Opciones de Perfil");
+                    MessageBox.Show("Revise puesto", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (comboBoxDeTiempo.SelectedIndex == -1)
                 {
                     comboBoxDeTiempo.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa tiempo", "Opciones de Perfil");
+                    MessageBox.Show("Revise tiempo", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeCorreoElectronico.Text))
                 {
                     textBoxDeCorreoElectronico.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                    MessageBox.Show("Revise correo electrónico", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
                 {
                     textBoxDeCorreoElectronico.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                    MessageBox.Show("Revise correo electrónico", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -461,7 +461,7 @@ namespace Proyecto_HRPS
                 {
                     if (informacionEncontrada.Read())
                     {
-                        MessageBox.Show("Cédula ya registrada, empleado no se puede agregar", "Opciones de Perfil");
+                        MessageBox.Show("Cédula ya registrada, empleado no se puede agregar", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         yaExiste = true;
                         return yaExiste;
                     }

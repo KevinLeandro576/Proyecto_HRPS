@@ -99,7 +99,7 @@
             this.dateTimePickerDeFechaDeNacimiento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(315, 150);
             this.dateTimePickerDeFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePickerDeFechaDeNacimiento.MaxDate = new System.DateTime(2021, 2, 4, 0, 0, 0, 0);
+            this.dateTimePickerDeFechaDeNacimiento.MaxDate = new System.DateTime(2021, 2, 4, 12, 12, 55, 0);
             this.dateTimePickerDeFechaDeNacimiento.Name = "dateTimePickerDeFechaDeNacimiento";
             this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(309, 26);
             this.dateTimePickerDeFechaDeNacimiento.TabIndex = 21;

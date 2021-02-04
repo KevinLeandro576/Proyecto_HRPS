@@ -54,69 +54,70 @@ namespace Proyecto_HRPS
 
         private void botonDeGuardarCambios_Click(object sender, EventArgs e)
         {
-            guardarCambios();
+            if (HorarioEstaBienEscrito() && horarioNoEsIgual() && horariosSonIguales() == false)//ERROR AQUI PORQUE NO SE SALDRIA DE IF
+            {
+                guardarCambios();
+            }
         }
 
         private void guardarCambios()
         {
             try
             {
-                if (HorarioEstaBienEscrito())
+
+                var conexion = AbrirBaseDeDatos();
+                const string message = "¿Guardar cambios?";
+                const string caption = "Opciones de Horario";
+                horarioNuevo = textBoxDeHorarioNuevo.Text;
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                // Seleccionar no
+                if (result == DialogResult.No)
                 {
-                    var conexion = AbrirBaseDeDatos();
-                    const string message = "¿Guardar cambios?";
-                    const string caption = "Opciones de Horario";
-                    horarioNuevo = textBoxDeHorarioNuevo.Text;
-                    var result = MessageBox.Show(message, caption,
-                                                 MessageBoxButtons.YesNoCancel,
-                                                 MessageBoxIcon.Question);
-                    // Seleccionar no
-                    if (result == DialogResult.No)
+                    MessageBox.Show("Cambios descartados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else if (result == DialogResult.Yes)
+                {
+                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                    StringBuilder builder = new StringBuilder();
+
+                    builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+                    builder.Append("<tr>");
+                    builder.Append("<th>HORARIO NUEVO</th>");
+                    builder.Append("</tr>");
+                    builder.Append("<tr>");
+                    builder.Append("<td align=center>" + horarioNuevo + "</td>");
+                    builder.Append("</tr>");
+                    builder.Append("</table>");
+
+
+                    var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", infoNombre);
+                    string correoDeEmpleado = "";
+                    List<string> listaDeCorreos = new List<string>();
+                    listaDeCorreos.Add("1037joseg@gmail.com");
+                    listaDeCorreos.Add("leandrokevin576@gmail.com");
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                     {
-                        MessageBox.Show("Cambios descartados", caption);
-                    }
-                    else if (result == DialogResult.Yes)
-                    {
-                        AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
-                        StringBuilder builder = new StringBuilder();
-
-                        builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");
-                        builder.Append("<tr>");
-                        builder.Append("<th>HORARIO NUEVO</th>");
-                        builder.Append("</tr>");
-                        builder.Append("<tr>");
-                        builder.Append("<td align=center>" + horarioNuevo + "</td>");
-                        builder.Append("</tr>");
-                        builder.Append("</table>");
-
-
-                        var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", infoNombre);
-                        string correoDeEmpleado = "";
-                        List<string> listaDeCorreos = new List<string>();
-                        listaDeCorreos.Add("1037joseg@gmail.com");
-                        listaDeCorreos.Add("leandrokevin576@gmail.com");
-                        using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                        if (informacionEncontrada.Read())
                         {
-                            if (informacionEncontrada.Read())
-                            {
-                                correoDeEmpleado = informacionEncontrada.GetString(0);
-                            }
+                            correoDeEmpleado = informacionEncontrada.GetString(0);
                         }
-                        administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        MessageBox.Show("Cambios guardados", caption);
-                        var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
-                        conexion.ExecuteNonQuery(comando02);
-
-                        string evento = "El empleado " + Empleado.Nombre + " ha cambiado el horario del empleado " + infoNombre + ", del horario " + textBoxDeHorarioActual.Text + " al horario " + horarioNuevo + ".";
-                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                        registrarEvento(evento, metodoYclase);
-
-                        volverVistaDeHorarios();
                     }
-                    else if (result == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Regresando", caption);
-                    }
+                    administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    MessageBox.Show("Cambios guardados", caption);
+                    var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
+                    conexion.ExecuteNonQuery(comando02);
+
+                    string evento = "El empleado " + Empleado.Nombre + " ha cambiado el horario del empleado " + infoNombre + ", del horario " + textBoxDeHorarioActual.Text + " al horario " + horarioNuevo + ".";
+                    string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                    registrarEvento(evento, metodoYclase);
+
+                    volverVistaDeHorarios();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Regresando", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             catch (Exception ex)
@@ -195,13 +196,13 @@ namespace Proyecto_HRPS
                 {
                     textBoxDeHorarioNuevo.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Horario");
+                    MessageBox.Show("Revise horario", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!horarioEstaBien(textBoxDeHorarioNuevo.Text))
                 {
                     textBoxDeHorarioNuevo.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa horario", "Opciones de Horario");
+                    MessageBox.Show("Revise horario", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -222,6 +223,54 @@ namespace Proyecto_HRPS
             {
                 Regex objAlphaPattern = new Regex("^[a-zA-Z0-9][a-zA-Z0-9 -]*$");
                 return objAlphaPattern.IsMatch(horario);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+        bool horarioNoEsIgual()
+        {
+            bool estaBien = false;
+            try
+            {
+                if (!(textBoxDeHorarioActual.Text.Equals(textBoxDeHorarioNuevo.Text)))
+                {
+                    estaBien = true;
+                }
+                else
+                {
+                    MessageBox.Show("Horario igual al anterior, cambiar", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    estaBien = false;
+                }
+                return estaBien;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+        bool horariosSonIguales()
+        {
+            try
+            {
+                bool sonIguales = false;
+                string horarioSinEspacios = textBoxDeHorarioActual.Text.Replace(" ", String.Empty);
+                string horarioNuevoSinEspacios = textBoxDeHorarioNuevo.Text.Replace(" ", String.Empty);
+                if (!horarioSinEspacios.Equals(horarioNuevoSinEspacios))
+                {
+                    sonIguales = false;
+                }
+                else
+                {
+                    sonIguales = true;
+                    MessageBox.Show("Horario igual al anterior, cambiar", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return sonIguales;
             }
             catch (Exception ex)
             {

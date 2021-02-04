@@ -184,7 +184,7 @@ namespace Proyecto_HRPS
                     //Borrar empleado (ponerlo inactivo)
                     if (infoCedula.Equals(Empleado.Cedula))
                     {
-                        MessageBox.Show("No puede eliminarse a sí mismo", "Eliminación de Empleado");
+                        MessageBox.Show("No puede eliminarse a sí mismo", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -196,7 +196,7 @@ namespace Proyecto_HRPS
                         // Seleccionar no
                         if (result == DialogResult.No)
                         {
-                            MessageBox.Show("Empleado no borrado", "Eliminación de Empleado");
+                            MessageBox.Show("Empleado no borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else if (result == DialogResult.Yes)
                         {
@@ -207,12 +207,12 @@ namespace Proyecto_HRPS
                             string texto = "El empleado: " + Empleado.Nombre + " ha eliminado al empleado " + nombreDeEmpleado + ".";
                             string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                             registrarEvento(texto, metodoYclase);
-                            MessageBox.Show("Empleado borrado", "Eliminación de Empleado");
+                            MessageBox.Show("Empleado borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             reiniciarPagina();
                         }
                         else if (result == DialogResult.Cancel)
                         {
-                            MessageBox.Show("Regresando", "Eliminación de Empleado");
+                            MessageBox.Show("Regresando", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                     }
                 }

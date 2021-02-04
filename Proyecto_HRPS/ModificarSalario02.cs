@@ -63,7 +63,10 @@ namespace Proyecto_HRPS
         {
             try
             {
-                guardarCambios();
+                if (salarioNoEsIgual())
+                {
+                    guardarCambios();
+                }
             }
             catch (Exception ex)
             {
@@ -85,22 +88,23 @@ namespace Proyecto_HRPS
                 // Seleccionar no
                 if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Cambios descartados", caption);
+                    MessageBox.Show("Cambios descartados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-                else if (result == DialogResult.Yes)
+                else if (result == DialogResult.Yes)//ERROR AQUI PORQUE NO SE SALDRIA DE IF
                 {
-                    MessageBox.Show("Cambios guardados", caption);
+
                     var conexion = AbrirBaseDeDatos();
                     var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_SALARIO", infoCedula, salarioNuevo);
                     conexion.ExecuteNonQuery(comando);
                     string evento = "El empleado " + Empleado.Nombre + " ha cambiado el salario del empleado " + infoNombre + ", del salario " + textBoxDeSalarioActual.Text + " al salario " + numericUpDownDeSalario.Value.ToString() + ".";
                     string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                     registrarEvento(evento, metodoYclase);
+                    MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     volverVistaDeSalarios();
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", caption);
+                    MessageBox.Show("Regresando", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             catch (Exception ex)
@@ -185,6 +189,27 @@ namespace Proyecto_HRPS
                     estaBien = true;
                 }
                 return estaBien;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+        bool salarioNoEsIgual()
+        {
+            try
+            {
+                if (!(textBoxDeSalarioActual.Text.Equals(numericUpDownDeSalario.Value.ToString() + ",00")))
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Salario igual al anterior, cambiar", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             catch (Exception ex)
             {

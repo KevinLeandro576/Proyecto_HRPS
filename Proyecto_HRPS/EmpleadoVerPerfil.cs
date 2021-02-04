@@ -66,7 +66,7 @@ namespace Proyecto_HRPS
                     // Seleccionar no
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Cambios descartados", "Opciones de Perfil");
+                        MessageBox.Show("Cambios descartados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else if (result == DialogResult.Yes)
                     {
@@ -75,13 +75,13 @@ namespace Proyecto_HRPS
                         string texto = "El empleado: " + Empleado.Nombre + " ha cambiado datos.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
-                        MessageBox.Show("Cambios guardados", "Opciones de Perfil");
+                        MessageBox.Show("Cambios guardados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         this.Hide();
                         ReiniciarPantalla();
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil");
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
@@ -175,7 +175,7 @@ namespace Proyecto_HRPS
                 // Seleccionar no
                 if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Perfil");
+                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if (result == DialogResult.Yes)
                 {
@@ -185,7 +185,7 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Perfil");
+                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             catch (Exception ex)
@@ -217,38 +217,38 @@ namespace Proyecto_HRPS
                 {
                     textBoxDeNombre.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                    MessageBox.Show("Revise nombre", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneLetras(textBoxDeNombre.Text))
                 {
                     textBoxDeNombre.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa nombre", "Opciones de Perfil");
+                    MessageBox.Show("Revise nombre", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!dateTimePickerDeFechaDeNacimiento.Checked)
                 {
                     dateTimePickerDeFechaDeNacimiento.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa fecha de nacimiento", "Opciones de Perfil");
+                    MessageBox.Show("Revise fecha de nacimiento", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDePuesto.Text))
                 {
                     textBoxDePuesto.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa puesto", "Opciones de Perfil");
+                    MessageBox.Show("Revise puesto", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeCorreoElectronico.Text))
                 {
                     textBoxDeCorreoElectronico.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                    MessageBox.Show("Revise correo electrónico", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
                 {
                     textBoxDeCorreoElectronico.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa correo electrónico", "Opciones de Perfil");
+                    MessageBox.Show("Revise correo electrónico", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

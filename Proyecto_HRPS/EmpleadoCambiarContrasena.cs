@@ -63,15 +63,15 @@ namespace Proyecto_HRPS
                 contrasenaEnHash = contrasenaEnHash.Substring(0, 24);
                 if (string.IsNullOrEmpty(contrasena))
                 {
-                    MessageBox.Show("Escriba contraseña", "Opciones de Contraseña");
+                    MessageBox.Show("Escriba contraseña", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!ValidarContrasena(contrasena))
                 {
-                    MessageBox.Show("Revise la contraseña", "Opciones de Contraseña");
+                    MessageBox.Show("Revise la contraseña", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (contrasenaEnHash.Equals(contrasenaAnterior))
                 {
-                    MessageBox.Show("Contraseña igual a la anterior, por favor usar otra.", "Opciones de Contraseña");
+                    MessageBox.Show("Contraseña igual a la anterior, por favor usar otra.", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace Proyecto_HRPS
                     // Seleccionar no
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Cambios descartados", "Opciones de Contraseña");
+                        MessageBox.Show("Cambios descartados", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else if (result == DialogResult.Yes)
                     {
@@ -120,7 +120,7 @@ namespace Proyecto_HRPS
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Contraseña");
+                        MessageBox.Show("Regresando", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
