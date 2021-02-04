@@ -43,7 +43,7 @@
             this.labelDeCedula.AutoSize = true;
             this.labelDeCedula.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDeCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeCedula.Location = new System.Drawing.Point(134, 46);
+            this.labelDeCedula.Location = new System.Drawing.Point(65, 44);
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(77, 18);
             this.labelDeCedula.TabIndex = 20;
@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(134, 89);
+            this.label1.Location = new System.Drawing.Point(65, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 18);
             this.label1.TabIndex = 22;
@@ -63,17 +63,17 @@
             // textBoxDeCedula
             // 
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeCedula.Location = new System.Drawing.Point(282, 41);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(261, 41);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(176, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(255, 26);
             this.textBoxDeCedula.TabIndex = 23;
             // 
             // textBoxDeContrasena
             // 
             this.textBoxDeContrasena.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeContrasena.Location = new System.Drawing.Point(282, 87);
+            this.textBoxDeContrasena.Location = new System.Drawing.Point(261, 87);
             this.textBoxDeContrasena.Name = "textBoxDeContrasena";
-            this.textBoxDeContrasena.Size = new System.Drawing.Size(176, 26);
+            this.textBoxDeContrasena.Size = new System.Drawing.Size(255, 26);
             this.textBoxDeContrasena.TabIndex = 24;
             // 
             // botonDeVolver
@@ -106,18 +106,18 @@
             // 
             this.labelDeRecuperarContrasenna.AutoSize = true;
             this.labelDeRecuperarContrasenna.Font = new System.Drawing.Font("Arial", 8F);
-            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(163, 148);
+            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(258, 148);
             this.labelDeRecuperarContrasenna.Name = "labelDeRecuperarContrasenna";
-            this.labelDeRecuperarContrasenna.Size = new System.Drawing.Size(216, 14);
+            this.labelDeRecuperarContrasenna.Size = new System.Drawing.Size(220, 14);
             this.labelDeRecuperarContrasenna.TabIndex = 28;
-            this.labelDeRecuperarContrasenna.Text = "SI OLVIDÓ SU CONTRASEÑA, HAGA CLICK";
+            this.labelDeRecuperarContrasenna.Text = "*SI OLVIDÓ SU CONTRASEÑA, HAGA CLICK";
             // 
             // linkLabelDeRecuperarPW
             // 
             this.linkLabelDeRecuperarPW.AutoSize = true;
             this.linkLabelDeRecuperarPW.Font = new System.Drawing.Font("Arial", 8F);
             this.linkLabelDeRecuperarPW.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(375, 148);
+            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(484, 148);
             this.linkLabelDeRecuperarPW.Name = "linkLabelDeRecuperarPW";
             this.linkLabelDeRecuperarPW.Size = new System.Drawing.Size(32, 14);
             this.linkLabelDeRecuperarPW.TabIndex = 27;
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 281);
+            this.ClientSize = new System.Drawing.Size(602, 266);
             this.Controls.Add(this.labelDeRecuperarContrasenna);
             this.Controls.Add(this.linkLabelDeRecuperarPW);
             this.Controls.Add(this.botonDeIniciarSesion);

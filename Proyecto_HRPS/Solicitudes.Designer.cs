@@ -54,12 +54,12 @@
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(48, 524);
+            this.botonDeVolver.Location = new System.Drawing.Point(56, 480);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(694, 41);
             this.botonDeVolver.TabIndex = 4;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -68,7 +68,8 @@
             // panelDeFlujoDeSolicitudesDeHorasExtra
             // 
             this.panelDeFlujoDeSolicitudesDeHorasExtra.Controls.Add(this.dataGridViewDeSolicitudesDeHorasExtra);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Location = new System.Drawing.Point(48, 262);
+            this.panelDeFlujoDeSolicitudesDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelDeFlujoDeSolicitudesDeHorasExtra.Location = new System.Drawing.Point(56, 197);
             this.panelDeFlujoDeSolicitudesDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
             this.panelDeFlujoDeSolicitudesDeHorasExtra.Name = "panelDeFlujoDeSolicitudesDeHorasExtra";
             this.panelDeFlujoDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(694, 228);
@@ -156,7 +157,7 @@
             // 
             this.labelDeCedula.AutoSize = true;
             this.labelDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeCedula.Location = new System.Drawing.Point(53, 157);
+            this.labelDeCedula.Location = new System.Drawing.Point(53, 105);
             this.labelDeCedula.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(112, 18);
@@ -165,10 +166,10 @@
             // 
             // textBoxDeCedula
             // 
-            this.textBoxDeCedula.Location = new System.Drawing.Point(358, 149);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(358, 102);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(318, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(381, 26);
             this.textBoxDeCedula.TabIndex = 11;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
             // 
@@ -176,7 +177,7 @@
             // 
             this.labelDeFecha.AutoSize = true;
             this.labelDeFecha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeFecha.Location = new System.Drawing.Point(53, 90);
+            this.labelDeFecha.Location = new System.Drawing.Point(53, 58);
             this.labelDeFecha.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelDeFecha.Name = "labelDeFecha";
             this.labelDeFecha.Size = new System.Drawing.Size(128, 18);
@@ -185,16 +186,17 @@
             // 
             // dateTimePickerDeFecha
             // 
-            this.dateTimePickerDeFecha.Location = new System.Drawing.Point(358, 84);
+            this.dateTimePickerDeFecha.Location = new System.Drawing.Point(358, 52);
             this.dateTimePickerDeFecha.Name = "dateTimePickerDeFecha";
-            this.dateTimePickerDeFecha.Size = new System.Drawing.Size(318, 26);
+            this.dateTimePickerDeFecha.Size = new System.Drawing.Size(381, 26);
             this.dateTimePickerDeFecha.TabIndex = 14;
             this.dateTimePickerDeFecha.ValueChanged += new System.EventHandler(this.dateTimePickerDeFecha_ValueChanged);
             // 
             // labelHorasExtra
             // 
             this.labelHorasExtra.AutoSize = true;
-            this.labelHorasExtra.Location = new System.Drawing.Point(339, 240);
+            this.labelHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHorasExtra.Location = new System.Drawing.Point(295, 175);
             this.labelHorasExtra.Name = "labelHorasExtra";
             this.labelHorasExtra.Size = new System.Drawing.Size(193, 18);
             this.labelHorasExtra.TabIndex = 15;
@@ -209,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(951, 603);
+            this.ClientSize = new System.Drawing.Size(824, 543);
             this.Controls.Add(this.labelHorasExtra);
             this.Controls.Add(this.dateTimePickerDeFecha);
             this.Controls.Add(this.labelDeFecha);

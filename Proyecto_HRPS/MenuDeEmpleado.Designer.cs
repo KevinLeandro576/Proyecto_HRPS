@@ -28,89 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDePerfiles = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerHorasExtras = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeSolicitudes = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDePerfil = new System.Windows.Forms.Button();
+            this.botonDeVerHorasExtra = new System.Windows.Forms.Button();
+            this.botonDeSolicitudes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDePerfiles
+            // botonDeVolver
             // 
-            this.enlaceDePerfiles.AutoSize = true;
-            this.enlaceDePerfiles.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDePerfiles.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDePerfiles.Location = new System.Drawing.Point(70, 37);
-            this.enlaceDePerfiles.Name = "enlaceDePerfiles";
-            this.enlaceDePerfiles.Size = new System.Drawing.Size(40, 14);
-            this.enlaceDePerfiles.TabIndex = 0;
-            this.enlaceDePerfiles.TabStop = true;
-            this.enlaceDePerfiles.Text = "PERFIL";
-            this.enlaceDePerfiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDePerfiles_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(66, 187);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 18;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeVerHorasExtras
+            // botonDePerfil
             // 
-            this.enlaceDeVerHorasExtras.AutoSize = true;
-            this.enlaceDeVerHorasExtras.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVerHorasExtras.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerHorasExtras.Location = new System.Drawing.Point(218, 37);
-            this.enlaceDeVerHorasExtras.Name = "enlaceDeVerHorasExtras";
-            this.enlaceDeVerHorasExtras.Size = new System.Drawing.Size(112, 14);
-            this.enlaceDeVerHorasExtras.TabIndex = 1;
-            this.enlaceDeVerHorasExtras.TabStop = true;
-            this.enlaceDeVerHorasExtras.Text = "VER HORAS EXTRAS";
-            this.enlaceDeVerHorasExtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorasExtras_LinkClicked);
+            this.botonDePerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDePerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDePerfil.ForeColor = System.Drawing.Color.White;
+            this.botonDePerfil.Location = new System.Drawing.Point(66, 40);
+            this.botonDePerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDePerfil.Name = "botonDePerfil";
+            this.botonDePerfil.Size = new System.Drawing.Size(325, 41);
+            this.botonDePerfil.TabIndex = 19;
+            this.botonDePerfil.Text = "PERFIL";
+            this.botonDePerfil.UseVisualStyleBackColor = false;
+            this.botonDePerfil.Click += new System.EventHandler(this.botonDePerfil_Click);
             // 
-            // enlaceDeSolicitudes
+            // botonDeVerHorasExtra
             // 
-            this.enlaceDeSolicitudes.AutoSize = true;
-            this.enlaceDeSolicitudes.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeSolicitudes.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeSolicitudes.Location = new System.Drawing.Point(445, 37);
-            this.enlaceDeSolicitudes.Name = "enlaceDeSolicitudes";
-            this.enlaceDeSolicitudes.Size = new System.Drawing.Size(72, 14);
-            this.enlaceDeSolicitudes.TabIndex = 2;
-            this.enlaceDeSolicitudes.TabStop = true;
-            this.enlaceDeSolicitudes.Text = "SOLICITUDES";
-            this.enlaceDeSolicitudes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitudes_LinkClicked);
+            this.botonDeVerHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerHorasExtra.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerHorasExtra.Location = new System.Drawing.Point(66, 89);
+            this.botonDeVerHorasExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerHorasExtra.Name = "botonDeVerHorasExtra";
+            this.botonDeVerHorasExtra.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerHorasExtra.TabIndex = 20;
+            this.botonDeVerHorasExtra.Text = "VER HORAS EXTRA";
+            this.botonDeVerHorasExtra.UseVisualStyleBackColor = false;
+            this.botonDeVerHorasExtra.Click += new System.EventHandler(this.botonDeVerHorasExtra_Click);
             // 
-            // enlaceDeVolver
+            // botonDeSolicitudes
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(652, 37);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 9;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeSolicitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeSolicitudes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeSolicitudes.ForeColor = System.Drawing.Color.White;
+            this.botonDeSolicitudes.Location = new System.Drawing.Point(66, 138);
+            this.botonDeSolicitudes.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeSolicitudes.Name = "botonDeSolicitudes";
+            this.botonDeSolicitudes.Size = new System.Drawing.Size(325, 41);
+            this.botonDeSolicitudes.TabIndex = 21;
+            this.botonDeSolicitudes.Text = "SOLICITUDES";
+            this.botonDeSolicitudes.UseVisualStyleBackColor = false;
+            this.botonDeSolicitudes.Click += new System.EventHandler(this.botonDeSolicitudes_Click);
             // 
             // MenuDeEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 317);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeSolicitudes);
-            this.Controls.Add(this.enlaceDeVerHorasExtras);
-            this.Controls.Add(this.enlaceDePerfiles);
+            this.ClientSize = new System.Drawing.Size(480, 271);
+            this.Controls.Add(this.botonDeSolicitudes);
+            this.Controls.Add(this.botonDeVerHorasExtra);
+            this.Controls.Add(this.botonDePerfil);
+            this.Controls.Add(this.botonDeVolver);
             this.Name = "MenuDeEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de empleado";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuDeEmpleado_FormClosing);
-            this.Load += new System.EventHandler(this.MenuDeEmpleado_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel enlaceDePerfiles;
-        private System.Windows.Forms.LinkLabel enlaceDeVerHorasExtras;
-        private System.Windows.Forms.LinkLabel enlaceDeSolicitudes;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDePerfil;
+        private System.Windows.Forms.Button botonDeVerHorasExtra;
+        private System.Windows.Forms.Button botonDeSolicitudes;
     }
 }

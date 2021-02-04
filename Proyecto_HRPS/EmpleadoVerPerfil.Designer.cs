@@ -48,10 +48,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(93, 404);
+            this.botonDeVolver.Location = new System.Drawing.Point(68, 388);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(265, 66);
+            this.botonDeVolver.Size = new System.Drawing.Size(265, 41);
             this.botonDeVolver.TabIndex = 16;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -62,7 +62,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(86, 109);
+            this.label2.Location = new System.Drawing.Point(61, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 18);
@@ -74,7 +74,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(86, 253);
+            this.label3.Location = new System.Drawing.Point(65, 253);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 18);
@@ -86,7 +86,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label4.Location = new System.Drawing.Point(86, 156);
+            this.label4.Location = new System.Drawing.Point(61, 158);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 18);
@@ -96,28 +96,30 @@
             // dateTimePickerDeFechaDeNacimiento
             // 
             this.dateTimePickerDeFechaDeNacimiento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(363, 150);
+            this.dateTimePickerDeFechaDeNacimiento.Location = new System.Drawing.Point(315, 150);
             this.dateTimePickerDeFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerDeFechaDeNacimiento.MaxDate = new System.DateTime(2021, 2, 4, 0, 0, 0, 0);
             this.dateTimePickerDeFechaDeNacimiento.Name = "dateTimePickerDeFechaDeNacimiento";
-            this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(261, 26);
+            this.dateTimePickerDeFechaDeNacimiento.Size = new System.Drawing.Size(309, 26);
             this.dateTimePickerDeFechaDeNacimiento.TabIndex = 21;
+            this.dateTimePickerDeFechaDeNacimiento.Value = new System.DateTime(2021, 2, 4, 0, 0, 0, 0);
             // 
             // textBoxDeNombre
             // 
             this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeNombre.Location = new System.Drawing.Point(363, 101);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(315, 101);
             this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeNombre.Name = "textBoxDeNombre";
-            this.textBoxDeNombre.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDeNombre.Size = new System.Drawing.Size(309, 26);
             this.textBoxDeNombre.TabIndex = 22;
             // 
             // textBoxDeCedula
             // 
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeCedula.Location = new System.Drawing.Point(363, 58);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(315, 58);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(309, 26);
             this.textBoxDeCedula.TabIndex = 23;
             // 
             // botonDeGuardar
@@ -125,10 +127,10 @@
             this.botonDeGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeGuardar.ForeColor = System.Drawing.Color.White;
-            this.botonDeGuardar.Location = new System.Drawing.Point(365, 404);
+            this.botonDeGuardar.Location = new System.Drawing.Point(359, 388);
             this.botonDeGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGuardar.Name = "botonDeGuardar";
-            this.botonDeGuardar.Size = new System.Drawing.Size(265, 66);
+            this.botonDeGuardar.Size = new System.Drawing.Size(265, 41);
             this.botonDeGuardar.TabIndex = 24;
             this.botonDeGuardar.Text = "GUARDAR";
             this.botonDeGuardar.UseVisualStyleBackColor = false;
@@ -139,7 +141,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(86, 202);
+            this.label6.Location = new System.Drawing.Point(61, 202);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(194, 18);
@@ -149,26 +151,26 @@
             // textBoxDeCorreoElectronico
             // 
             this.textBoxDeCorreoElectronico.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeCorreoElectronico.Location = new System.Drawing.Point(363, 199);
+            this.textBoxDeCorreoElectronico.Location = new System.Drawing.Point(315, 199);
             this.textBoxDeCorreoElectronico.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCorreoElectronico.Name = "textBoxDeCorreoElectronico";
-            this.textBoxDeCorreoElectronico.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDeCorreoElectronico.Size = new System.Drawing.Size(309, 26);
             this.textBoxDeCorreoElectronico.TabIndex = 27;
             // 
             // textBoxDePuesto
             // 
             this.textBoxDePuesto.Enabled = false;
             this.textBoxDePuesto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDePuesto.Location = new System.Drawing.Point(363, 245);
+            this.textBoxDePuesto.Location = new System.Drawing.Point(315, 245);
             this.textBoxDePuesto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDePuesto.Name = "textBoxDePuesto";
-            this.textBoxDePuesto.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDePuesto.Size = new System.Drawing.Size(309, 26);
             this.textBoxDePuesto.TabIndex = 29;
             // 
             // linkLabelDeCambiarContrasena
             // 
             this.linkLabelDeCambiarContrasena.AutoSize = true;
-            this.linkLabelDeCambiarContrasena.Location = new System.Drawing.Point(480, 318);
+            this.linkLabelDeCambiarContrasena.Location = new System.Drawing.Point(474, 314);
             this.linkLabelDeCambiarContrasena.Name = "linkLabelDeCambiarContrasena";
             this.linkLabelDeCambiarContrasena.Size = new System.Drawing.Size(150, 18);
             this.linkLabelDeCambiarContrasena.TabIndex = 30;
@@ -181,7 +183,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(86, 61);
+            this.label1.Location = new System.Drawing.Point(61, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 18);
@@ -193,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(756, 523);
+            this.ClientSize = new System.Drawing.Size(710, 478);
             this.Controls.Add(this.linkLabelDeCambiarContrasena);
             this.Controls.Add(this.textBoxDePuesto);
             this.Controls.Add(this.textBoxDeCorreoElectronico);

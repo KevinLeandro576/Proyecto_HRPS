@@ -43,7 +43,7 @@ namespace Proyecto_HRPS
             this.labelDeContrasena.AutoSize = true;
             this.labelDeContrasena.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeContrasena.Location = new System.Drawing.Point(59, 116);
+            this.labelDeContrasena.Location = new System.Drawing.Point(59, 66);
             this.labelDeContrasena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeContrasena.Name = "labelDeContrasena";
             this.labelDeContrasena.Size = new System.Drawing.Size(175, 18);
@@ -53,7 +53,7 @@ namespace Proyecto_HRPS
             // textBoxDeContrasena
             // 
             this.textBoxDeContrasena.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeContrasena.Location = new System.Drawing.Point(281, 113);
+            this.textBoxDeContrasena.Location = new System.Drawing.Point(281, 63);
             this.textBoxDeContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeContrasena.Name = "textBoxDeContrasena";
             this.textBoxDeContrasena.PasswordChar = '*';
@@ -65,10 +65,10 @@ namespace Proyecto_HRPS
             this.botonDeGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeGuardar.ForeColor = System.Drawing.Color.White;
-            this.botonDeGuardar.Location = new System.Drawing.Point(328, 289);
+            this.botonDeGuardar.Location = new System.Drawing.Point(328, 240);
             this.botonDeGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGuardar.Name = "botonDeGuardar";
-            this.botonDeGuardar.Size = new System.Drawing.Size(214, 66);
+            this.botonDeGuardar.Size = new System.Drawing.Size(214, 41);
             this.botonDeGuardar.TabIndex = 25;
             this.botonDeGuardar.Text = "GUARDAR";
             this.botonDeGuardar.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@ namespace Proyecto_HRPS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 196);
+            this.label1.Location = new System.Drawing.Point(59, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(465, 18);
             this.label1.TabIndex = 26;
@@ -86,7 +86,7 @@ namespace Proyecto_HRPS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 214);
+            this.label2.Location = new System.Drawing.Point(69, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 18);
             this.label2.TabIndex = 27;
@@ -95,7 +95,7 @@ namespace Proyecto_HRPS
             // checkBoxDeContrasena
             // 
             this.checkBoxDeContrasena.AutoSize = true;
-            this.checkBoxDeContrasena.Location = new System.Drawing.Point(410, 146);
+            this.checkBoxDeContrasena.Location = new System.Drawing.Point(410, 96);
             this.checkBoxDeContrasena.Name = "checkBoxDeContrasena";
             this.checkBoxDeContrasena.Size = new System.Drawing.Size(132, 22);
             this.checkBoxDeContrasena.TabIndex = 28;
@@ -108,10 +108,10 @@ namespace Proyecto_HRPS
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(62, 289);
+            this.botonDeVolver.Location = new System.Drawing.Point(62, 240);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(214, 66);
+            this.botonDeVolver.Size = new System.Drawing.Size(214, 41);
             this.botonDeVolver.TabIndex = 29;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -123,7 +123,7 @@ namespace Proyecto_HRPS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(610, 378);
+            this.ClientSize = new System.Drawing.Size(623, 323);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.checkBoxDeContrasena);
             this.Controls.Add(this.label2);

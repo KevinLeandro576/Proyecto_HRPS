@@ -40,10 +40,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(220, 246);
+            this.botonDeVolver.Location = new System.Drawing.Point(64, 213);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(261, 66);
+            this.botonDeVolver.Size = new System.Drawing.Size(453, 41);
             this.botonDeVolver.TabIndex = 16;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(61, 148);
+            this.label1.Location = new System.Drawing.Point(61, 119);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 18);
@@ -66,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(61, 89);
+            this.label2.Location = new System.Drawing.Point(61, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 18);
@@ -77,19 +77,19 @@
             // 
             this.textBoxDeCedula.Enabled = false;
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeCedula.Location = new System.Drawing.Point(220, 86);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(220, 60);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(297, 26);
             this.textBoxDeCedula.TabIndex = 19;
             // 
             // textBoxDeHorario
             // 
             this.textBoxDeHorario.Enabled = false;
-            this.textBoxDeHorario.Location = new System.Drawing.Point(220, 145);
+            this.textBoxDeHorario.Location = new System.Drawing.Point(220, 116);
             this.textBoxDeHorario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeHorario.Name = "textBoxDeHorario";
-            this.textBoxDeHorario.Size = new System.Drawing.Size(261, 26);
+            this.textBoxDeHorario.Size = new System.Drawing.Size(297, 26);
             this.textBoxDeHorario.TabIndex = 21;
             // 
             // EmpleadoVerHorario
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(615, 373);
+            this.ClientSize = new System.Drawing.Size(595, 292);
             this.Controls.Add(this.textBoxDeHorario);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.label2);

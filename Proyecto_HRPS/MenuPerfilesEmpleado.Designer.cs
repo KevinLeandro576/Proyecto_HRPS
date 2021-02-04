@@ -28,87 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerSalario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerPerfil = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerHorario = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeVerHorario = new System.Windows.Forms.Button();
+            this.botonDeVerPerfil = new System.Windows.Forms.Button();
+            this.botonDeVerSalario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDeVolver
+            // botonDeVolver
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(657, 42);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 10;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(60, 181);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 19;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeVerSalario
+            // botonDeVerHorario
             // 
-            this.enlaceDeVerSalario.AutoSize = true;
-            this.enlaceDeVerSalario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerSalario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerSalario.Location = new System.Drawing.Point(464, 42);
-            this.enlaceDeVerSalario.Name = "enlaceDeVerSalario";
-            this.enlaceDeVerSalario.Size = new System.Drawing.Size(77, 14);
-            this.enlaceDeVerSalario.TabIndex = 11;
-            this.enlaceDeVerSalario.TabStop = true;
-            this.enlaceDeVerSalario.Text = "VER SALARIO";
-            this.enlaceDeVerSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalario_LinkClicked);
+            this.botonDeVerHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerHorario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerHorario.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerHorario.Location = new System.Drawing.Point(60, 34);
+            this.botonDeVerHorario.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerHorario.Name = "botonDeVerHorario";
+            this.botonDeVerHorario.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerHorario.TabIndex = 20;
+            this.botonDeVerHorario.Text = "VER HORARIO";
+            this.botonDeVerHorario.UseVisualStyleBackColor = false;
+            this.botonDeVerHorario.Click += new System.EventHandler(this.botonDeVerHorario_Click);
             // 
-            // enlaceDeVerPerfil
+            // botonDeVerPerfil
             // 
-            this.enlaceDeVerPerfil.AutoSize = true;
-            this.enlaceDeVerPerfil.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerPerfil.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerPerfil.Location = new System.Drawing.Point(256, 42);
-            this.enlaceDeVerPerfil.Name = "enlaceDeVerPerfil";
-            this.enlaceDeVerPerfil.Size = new System.Drawing.Size(64, 14);
-            this.enlaceDeVerPerfil.TabIndex = 12;
-            this.enlaceDeVerPerfil.TabStop = true;
-            this.enlaceDeVerPerfil.Text = "VER PERFIL";
-            this.enlaceDeVerPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerPerfil_LinkClicked);
+            this.botonDeVerPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerPerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerPerfil.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerPerfil.Location = new System.Drawing.Point(60, 83);
+            this.botonDeVerPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerPerfil.Name = "botonDeVerPerfil";
+            this.botonDeVerPerfil.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerPerfil.TabIndex = 21;
+            this.botonDeVerPerfil.Text = "VER PERFIL";
+            this.botonDeVerPerfil.UseVisualStyleBackColor = false;
+            this.botonDeVerPerfil.Click += new System.EventHandler(this.botonDeVerPerfil_Click);
             // 
-            // enlaceDeVerHorario
+            // botonDeVerSalario
             // 
-            this.enlaceDeVerHorario.AutoSize = true;
-            this.enlaceDeVerHorario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerHorario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerHorario.Location = new System.Drawing.Point(73, 42);
-            this.enlaceDeVerHorario.Name = "enlaceDeVerHorario";
-            this.enlaceDeVerHorario.Size = new System.Drawing.Size(78, 14);
-            this.enlaceDeVerHorario.TabIndex = 13;
-            this.enlaceDeVerHorario.TabStop = true;
-            this.enlaceDeVerHorario.Text = "VER HORARIO";
-            this.enlaceDeVerHorario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorario_LinkClicked);
+            this.botonDeVerSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerSalario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerSalario.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerSalario.Location = new System.Drawing.Point(60, 132);
+            this.botonDeVerSalario.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerSalario.Name = "botonDeVerSalario";
+            this.botonDeVerSalario.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerSalario.TabIndex = 22;
+            this.botonDeVerSalario.Text = "VER SALARIO";
+            this.botonDeVerSalario.UseVisualStyleBackColor = false;
+            this.botonDeVerSalario.Click += new System.EventHandler(this.botonDeVerSalario_Click);
             // 
             // MenuPerfilesEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(804, 374);
-            this.Controls.Add(this.enlaceDeVerHorario);
-            this.Controls.Add(this.enlaceDeVerPerfil);
-            this.Controls.Add(this.enlaceDeVerSalario);
-            this.Controls.Add(this.enlaceDeVolver);
+            this.ClientSize = new System.Drawing.Size(454, 252);
+            this.Controls.Add(this.botonDeVerSalario);
+            this.Controls.Add(this.botonDeVerPerfil);
+            this.Controls.Add(this.botonDeVerHorario);
+            this.Controls.Add(this.botonDeVolver);
             this.Name = "MenuPerfilesEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPerfilesEmpleado_FormClosing);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
-        private System.Windows.Forms.LinkLabel enlaceDeVerSalario;
-        private System.Windows.Forms.LinkLabel enlaceDeVerPerfil;
-        private System.Windows.Forms.LinkLabel enlaceDeVerHorario;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeVerHorario;
+        private System.Windows.Forms.Button botonDeVerPerfil;
+        private System.Windows.Forms.Button botonDeVerSalario;
     }
 }

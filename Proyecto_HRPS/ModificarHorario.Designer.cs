@@ -60,10 +60,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(13, 541);
+            this.botonDeVolver.Location = new System.Drawing.Point(54, 517);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(521, 41);
             this.botonDeVolver.TabIndex = 3;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -149,7 +149,7 @@
             this.textBoxDeCedula.Location = new System.Drawing.Point(255, 80);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(318, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(320, 26);
             this.textBoxDeCedula.TabIndex = 6;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
             // 
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 622);
+            this.ClientSize = new System.Drawing.Size(632, 580);
             this.Controls.Add(this.panelDeBorde);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.textBoxDeCedula);

@@ -16,43 +16,37 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
-
-        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void MenuDeEmpleado_FormClosing(object sender, FormClosingEventArgs e)
         {
-            EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
-            this.Hide();
-            empleadoInicioDeSesion.Show();
+            Application.Exit();
         }
 
-        private void enlaceDePerfiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDePerfil_Click(object sender, EventArgs e)
         {
             MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
             this.Hide();
             menuPerfilesEmpleado.Show();
         }
 
-        private void enlaceDeVerHorasExtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVerHorasExtra_Click(object sender, EventArgs e)
         {
             EmpleadoVerHorasExtra empleadoVerHorasExtra = new EmpleadoVerHorasExtra();
             this.Hide();
             empleadoVerHorasExtra.Show();
         }
 
-        private void enlaceDeSolicitudes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeSolicitudes_Click(object sender, EventArgs e)
         {
             SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
             this.Hide();
             solicitudesEmpleados.Show();
         }
 
-        private void MenuDeEmpleado_Load(object sender, EventArgs e)
+        private void botonDeVolver_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void MenuDeEmpleado_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
+            this.Hide();
+            empleadoInicioDeSesion.Show();
         }
     }
 }

@@ -48,10 +48,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(13, 541);
+            this.botonDeVolver.Location = new System.Drawing.Point(60, 532);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(537, 41);
             this.botonDeVolver.TabIndex = 5;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@
             this.textBoxDeCedula.Location = new System.Drawing.Point(271, 86);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(318, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(326, 26);
             this.textBoxDeCedula.TabIndex = 10;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
             // 
@@ -151,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 622);
+            this.ClientSize = new System.Drawing.Size(673, 599);
             this.Controls.Add(this.dataGridViewDeEmpleados);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);

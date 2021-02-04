@@ -32,18 +32,18 @@
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.panelDeBorde = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewDeEmpleados = new System.Windows.Forms.DataGridView();
-            this.empleadoEnObjetoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelDeCedula = new System.Windows.Forms.Label();
-            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
-            this.empleadoEnObjetoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.botonDeModificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.empleadoEnObjetoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadoEnObjetoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelDeCedula = new System.Windows.Forms.Label();
+            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.panelDeBorde.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -51,10 +51,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(15, 532);
+            this.botonDeVolver.Location = new System.Drawing.Point(55, 517);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(543, 41);
             this.botonDeVolver.TabIndex = 4;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -94,29 +94,6 @@
             this.dataGridViewDeEmpleados.TabIndex = 6;
             this.dataGridViewDeEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
             // 
-            // labelDeCedula
-            // 
-            this.labelDeCedula.AutoSize = true;
-            this.labelDeCedula.Location = new System.Drawing.Point(52, 86);
-            this.labelDeCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelDeCedula.Name = "labelDeCedula";
-            this.labelDeCedula.Size = new System.Drawing.Size(182, 18);
-            this.labelDeCedula.TabIndex = 8;
-            this.labelDeCedula.Text = "Escribe cédula o nombre";
-            // 
-            // textBoxDeCedula
-            // 
-            this.textBoxDeCedula.Location = new System.Drawing.Point(282, 83);
-            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(318, 26);
-            this.textBoxDeCedula.TabIndex = 9;
-            this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
-            // 
-            // empleadoEnObjetoBindingSource1
-            // 
-            this.empleadoEnObjetoBindingSource1.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
-            // 
             // dataGridViewTextBoxColumnCedula
             // 
             this.dataGridViewTextBoxColumnCedula.DataPropertyName = "Cedula";
@@ -149,12 +126,35 @@
             this.botonDeModificar.Text = "MODIFICAR";
             this.botonDeModificar.UseColumnTextForButtonValue = true;
             // 
+            // empleadoEnObjetoBindingSource1
+            // 
+            this.empleadoEnObjetoBindingSource1.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
+            // 
+            // labelDeCedula
+            // 
+            this.labelDeCedula.AutoSize = true;
+            this.labelDeCedula.Location = new System.Drawing.Point(52, 86);
+            this.labelDeCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labelDeCedula.Name = "labelDeCedula";
+            this.labelDeCedula.Size = new System.Drawing.Size(182, 18);
+            this.labelDeCedula.TabIndex = 8;
+            this.labelDeCedula.Text = "Escribe cédula o nombre";
+            // 
+            // textBoxDeCedula
+            // 
+            this.textBoxDeCedula.Location = new System.Drawing.Point(282, 83);
+            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.textBoxDeCedula.Name = "textBoxDeCedula";
+            this.textBoxDeCedula.Size = new System.Drawing.Size(318, 26);
+            this.textBoxDeCedula.TabIndex = 9;
+            this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
+            // 
             // ModificarSalario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(682, 622);
+            this.ClientSize = new System.Drawing.Size(655, 578);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.panelDeBorde);
@@ -169,8 +169,8 @@
             this.Load += new System.EventHandler(this.ModificarSalario_Load_1);
             this.panelDeBorde.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

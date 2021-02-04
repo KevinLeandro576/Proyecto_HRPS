@@ -60,7 +60,7 @@
             this.botonDeVolver.Location = new System.Drawing.Point(52, 264);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 66);
+            this.botonDeVolver.Size = new System.Drawing.Size(226, 41);
             this.botonDeVolver.TabIndex = 11;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -74,7 +74,7 @@
             this.botonDeGuardarCambios.Location = new System.Drawing.Point(329, 264);
             this.botonDeGuardarCambios.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGuardarCambios.Name = "botonDeGuardarCambios";
-            this.botonDeGuardarCambios.Size = new System.Drawing.Size(225, 66);
+            this.botonDeGuardarCambios.Size = new System.Drawing.Size(225, 41);
             this.botonDeGuardarCambios.TabIndex = 12;
             this.botonDeGuardarCambios.Text = "GUARDAR CAMBIOS";
             this.botonDeGuardarCambios.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // 
             this.textBoxDeSalarioActual.Enabled = false;
             this.textBoxDeSalarioActual.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeSalarioActual.Location = new System.Drawing.Point(329, 115);
+            this.textBoxDeSalarioActual.Location = new System.Drawing.Point(283, 115);
             this.textBoxDeSalarioActual.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeSalarioActual.Name = "textBoxDeSalarioActual";
-            this.textBoxDeSalarioActual.Size = new System.Drawing.Size(225, 26);
+            this.textBoxDeSalarioActual.Size = new System.Drawing.Size(271, 26);
             this.textBoxDeSalarioActual.TabIndex = 14;
             // 
             // labelDeNombre
@@ -128,17 +128,17 @@
             // 
             this.textBoxDeNombre.Enabled = false;
             this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeNombre.Location = new System.Drawing.Point(329, 66);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(283, 66);
             this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeNombre.Name = "textBoxDeNombre";
-            this.textBoxDeNombre.Size = new System.Drawing.Size(225, 26);
+            this.textBoxDeNombre.Size = new System.Drawing.Size(271, 26);
             this.textBoxDeNombre.TabIndex = 16;
             // 
             // numericUpDownDeSalario
             // 
             this.numericUpDownDeSalario.DecimalPlaces = 2;
             this.numericUpDownDeSalario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownDeSalario.Location = new System.Drawing.Point(329, 162);
+            this.numericUpDownDeSalario.Location = new System.Drawing.Point(283, 162);
             this.numericUpDownDeSalario.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownDeSalario.Maximum = new decimal(new int[] {
             1000000,
@@ -151,7 +151,7 @@
             0,
             0});
             this.numericUpDownDeSalario.Name = "numericUpDownDeSalario";
-            this.numericUpDownDeSalario.Size = new System.Drawing.Size(225, 26);
+            this.numericUpDownDeSalario.Size = new System.Drawing.Size(271, 26);
             this.numericUpDownDeSalario.TabIndex = 28;
             this.numericUpDownDeSalario.Value = new decimal(new int[] {
             347514,
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(628, 412);
+            this.ClientSize = new System.Drawing.Size(631, 333);
             this.Controls.Add(this.numericUpDownDeSalario);
             this.Controls.Add(this.textBoxDeNombre);
             this.Controls.Add(this.labelDeNombre);

@@ -37,12 +37,12 @@ namespace Proyecto_HRPS
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(65, 213);
+            this.botonDeVolver.Location = new System.Drawing.Point(65, 203);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(324, 41);
             this.botonDeVolver.TabIndex = 5;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -51,12 +51,12 @@ namespace Proyecto_HRPS
             // botonDeHorasExtra
             // 
             this.botonDeHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeHorasExtra.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeHorasExtra.ForeColor = System.Drawing.Color.White;
-            this.botonDeHorasExtra.Location = new System.Drawing.Point(65, 88);
+            this.botonDeHorasExtra.Location = new System.Drawing.Point(65, 52);
             this.botonDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeHorasExtra.Name = "botonDeHorasExtra";
-            this.botonDeHorasExtra.Size = new System.Drawing.Size(226, 68);
+            this.botonDeHorasExtra.Size = new System.Drawing.Size(324, 41);
             this.botonDeHorasExtra.TabIndex = 6;
             this.botonDeHorasExtra.Text = "HORAS EXTRA";
             this.botonDeHorasExtra.UseVisualStyleBackColor = false;
@@ -65,12 +65,12 @@ namespace Proyecto_HRPS
             // botonDeVacaciones
             // 
             this.botonDeVacaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVacaciones.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVacaciones.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVacaciones.ForeColor = System.Drawing.Color.White;
-            this.botonDeVacaciones.Location = new System.Drawing.Point(434, 88);
+            this.botonDeVacaciones.Location = new System.Drawing.Point(65, 127);
             this.botonDeVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVacaciones.Name = "botonDeVacaciones";
-            this.botonDeVacaciones.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVacaciones.Size = new System.Drawing.Size(324, 41);
             this.botonDeVacaciones.TabIndex = 7;
             this.botonDeVacaciones.Text = "VACACIONES";
             this.botonDeVacaciones.UseVisualStyleBackColor = false;
@@ -81,7 +81,7 @@ namespace Proyecto_HRPS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(739, 356);
+            this.ClientSize = new System.Drawing.Size(463, 297);
             this.Controls.Add(this.botonDeVacaciones);
             this.Controls.Add(this.botonDeHorasExtra);
             this.Controls.Add(this.botonDeVolver);

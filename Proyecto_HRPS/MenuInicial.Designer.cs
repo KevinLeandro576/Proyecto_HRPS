@@ -35,11 +35,11 @@
             // botonDeAdministrador
             // 
             this.botonDeAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeAdministrador.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeAdministrador.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeAdministrador.ForeColor = System.Drawing.Color.White;
-            this.botonDeAdministrador.Location = new System.Drawing.Point(125, 99);
+            this.botonDeAdministrador.Location = new System.Drawing.Point(52, 46);
             this.botonDeAdministrador.Name = "botonDeAdministrador";
-            this.botonDeAdministrador.Size = new System.Drawing.Size(182, 79);
+            this.botonDeAdministrador.Size = new System.Drawing.Size(400, 41);
             this.botonDeAdministrador.TabIndex = 0;
             this.botonDeAdministrador.Text = "ADMINISTRADOR";
             this.botonDeAdministrador.UseVisualStyleBackColor = false;
@@ -48,11 +48,11 @@
             // botonDeEmpleado
             // 
             this.botonDeEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeEmpleado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeEmpleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeEmpleado.ForeColor = System.Drawing.Color.White;
-            this.botonDeEmpleado.Location = new System.Drawing.Point(371, 99);
+            this.botonDeEmpleado.Location = new System.Drawing.Point(52, 93);
             this.botonDeEmpleado.Name = "botonDeEmpleado";
-            this.botonDeEmpleado.Size = new System.Drawing.Size(182, 79);
+            this.botonDeEmpleado.Size = new System.Drawing.Size(400, 41);
             this.botonDeEmpleado.TabIndex = 1;
             this.botonDeEmpleado.Text = "EMPLEADO";
             this.botonDeEmpleado.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(733, 303);
+            this.ClientSize = new System.Drawing.Size(498, 170);
             this.Controls.Add(this.botonDeEmpleado);
             this.Controls.Add(this.botonDeAdministrador);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

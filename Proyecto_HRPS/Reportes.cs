@@ -17,28 +17,26 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void enlaceDeVerSalariosDeEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVerSalariosDeEmpleados_Click(object sender, EventArgs e)
         {
-            VerSalarioEmpleados verSalarioEmpleados = new VerSalarioEmpleados();
             this.Hide();
-            verSalarioEmpleados.Show();
         }
 
-        private void enlaceDeVerReportesDiarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVevReportesDiarios_Click(object sender, EventArgs e)
         {
             VerReporteHorasExtra verReporteHorasExtra = new VerReporteHorasExtra();
             this.Hide();
             verReporteHorasExtra.Show();
         }
 
-        private void enlaceDeVerVacacionesDeEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVerVacacionesDeEmpleados_Click(object sender, EventArgs e)
         {
             VerReporteVacaciones verReporteVacaciones = new VerReporteVacaciones();
             this.Hide();
             verReporteVacaciones.Show();
         }
 
-        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVolver_Click(object sender, EventArgs e)
         {
             MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
             this.Hide();

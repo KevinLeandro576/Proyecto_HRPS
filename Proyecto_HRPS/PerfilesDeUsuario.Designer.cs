@@ -28,104 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDeCrearPerfilDeUsuario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerEmpleados = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeModificarHorario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeModificarSalario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeEliminarEmpleados = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeCrearPerfil = new System.Windows.Forms.Button();
+            this.botonDeVerEmpleados = new System.Windows.Forms.Button();
+            this.botonDeEliminarEmpleados = new System.Windows.Forms.Button();
+            this.botonDeModificarHorario = new System.Windows.Forms.Button();
+            this.botonDeModificarSalario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDeCrearPerfilDeUsuario
+            // botonDeVolver
             // 
-            this.enlaceDeCrearPerfilDeUsuario.AutoSize = true;
-            this.enlaceDeCrearPerfilDeUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeCrearPerfilDeUsuario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeCrearPerfilDeUsuario.Location = new System.Drawing.Point(12, 30);
-            this.enlaceDeCrearPerfilDeUsuario.Name = "enlaceDeCrearPerfilDeUsuario";
-            this.enlaceDeCrearPerfilDeUsuario.Size = new System.Drawing.Size(143, 14);
-            this.enlaceDeCrearPerfilDeUsuario.TabIndex = 1;
-            this.enlaceDeCrearPerfilDeUsuario.TabStop = true;
-            this.enlaceDeCrearPerfilDeUsuario.Text = "CREAR PERFIL DE USUARIO";
-            this.enlaceDeCrearPerfilDeUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDePerfilesDeUsuario_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(88, 271);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 19;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeVerEmpleados
+            // botonDeCrearPerfil
             // 
-            this.enlaceDeVerEmpleados.AutoSize = true;
-            this.enlaceDeVerEmpleados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerEmpleados.Location = new System.Drawing.Point(198, 30);
-            this.enlaceDeVerEmpleados.Name = "enlaceDeVerEmpleados";
-            this.enlaceDeVerEmpleados.Size = new System.Drawing.Size(93, 14);
-            this.enlaceDeVerEmpleados.TabIndex = 3;
-            this.enlaceDeVerEmpleados.TabStop = true;
-            this.enlaceDeVerEmpleados.Text = "VER EMPLEADOS";
-            this.enlaceDeVerEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerEmpleados_LinkClicked);
+            this.botonDeCrearPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeCrearPerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeCrearPerfil.ForeColor = System.Drawing.Color.White;
+            this.botonDeCrearPerfil.Location = new System.Drawing.Point(88, 25);
+            this.botonDeCrearPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeCrearPerfil.Name = "botonDeCrearPerfil";
+            this.botonDeCrearPerfil.Size = new System.Drawing.Size(325, 41);
+            this.botonDeCrearPerfil.TabIndex = 20;
+            this.botonDeCrearPerfil.Text = "CREAR PERFIL DE USUARIO";
+            this.botonDeCrearPerfil.UseVisualStyleBackColor = false;
+            this.botonDeCrearPerfil.Click += new System.EventHandler(this.botonDeCrearPerfil_Click);
             // 
-            // enlaceDeModificarHorario
+            // botonDeVerEmpleados
             // 
-            this.enlaceDeModificarHorario.AutoSize = true;
-            this.enlaceDeModificarHorario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeModificarHorario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeModificarHorario.Location = new System.Drawing.Point(338, 30);
-            this.enlaceDeModificarHorario.Name = "enlaceDeModificarHorario";
-            this.enlaceDeModificarHorario.Size = new System.Drawing.Size(112, 14);
-            this.enlaceDeModificarHorario.TabIndex = 4;
-            this.enlaceDeModificarHorario.TabStop = true;
-            this.enlaceDeModificarHorario.Text = "MODIFICAR HORARIO";
-            this.enlaceDeModificarHorario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeModificarHorario_LinkClicked);
+            this.botonDeVerEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerEmpleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerEmpleados.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerEmpleados.Location = new System.Drawing.Point(88, 74);
+            this.botonDeVerEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerEmpleados.Name = "botonDeVerEmpleados";
+            this.botonDeVerEmpleados.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerEmpleados.TabIndex = 21;
+            this.botonDeVerEmpleados.Text = "VER EMPLEADOS";
+            this.botonDeVerEmpleados.UseVisualStyleBackColor = false;
+            this.botonDeVerEmpleados.Click += new System.EventHandler(this.botonDeVerEmpleados_Click);
             // 
-            // enlaceDeModificarSalario
+            // botonDeEliminarEmpleados
             // 
-            this.enlaceDeModificarSalario.AutoSize = true;
-            this.enlaceDeModificarSalario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeModificarSalario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeModificarSalario.Location = new System.Drawing.Point(486, 30);
-            this.enlaceDeModificarSalario.Name = "enlaceDeModificarSalario";
-            this.enlaceDeModificarSalario.Size = new System.Drawing.Size(111, 14);
-            this.enlaceDeModificarSalario.TabIndex = 5;
-            this.enlaceDeModificarSalario.TabStop = true;
-            this.enlaceDeModificarSalario.Text = "MODIFICAR SALARIO";
-            this.enlaceDeModificarSalario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeModificarSalario_LinkClicked);
+            this.botonDeEliminarEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeEliminarEmpleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeEliminarEmpleados.ForeColor = System.Drawing.Color.White;
+            this.botonDeEliminarEmpleados.Location = new System.Drawing.Point(88, 222);
+            this.botonDeEliminarEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeEliminarEmpleados.Name = "botonDeEliminarEmpleados";
+            this.botonDeEliminarEmpleados.Size = new System.Drawing.Size(325, 41);
+            this.botonDeEliminarEmpleados.TabIndex = 22;
+            this.botonDeEliminarEmpleados.Text = "ELIMINAR EMPLEADOS";
+            this.botonDeEliminarEmpleados.UseVisualStyleBackColor = false;
+            this.botonDeEliminarEmpleados.Click += new System.EventHandler(this.botonDeEliminarEmpleados_Click);
             // 
-            // enlaceDeEliminarEmpleados
+            // botonDeModificarHorario
             // 
-            this.enlaceDeEliminarEmpleados.AutoSize = true;
-            this.enlaceDeEliminarEmpleados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeEliminarEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeEliminarEmpleados.Location = new System.Drawing.Point(637, 30);
-            this.enlaceDeEliminarEmpleados.Name = "enlaceDeEliminarEmpleados";
-            this.enlaceDeEliminarEmpleados.Size = new System.Drawing.Size(118, 14);
-            this.enlaceDeEliminarEmpleados.TabIndex = 6;
-            this.enlaceDeEliminarEmpleados.TabStop = true;
-            this.enlaceDeEliminarEmpleados.Text = "ELIMINAR EMPLEADOS";
-            this.enlaceDeEliminarEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeEliminarEmpleados_LinkClicked);
+            this.botonDeModificarHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeModificarHorario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeModificarHorario.ForeColor = System.Drawing.Color.White;
+            this.botonDeModificarHorario.Location = new System.Drawing.Point(88, 123);
+            this.botonDeModificarHorario.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeModificarHorario.Name = "botonDeModificarHorario";
+            this.botonDeModificarHorario.Size = new System.Drawing.Size(325, 41);
+            this.botonDeModificarHorario.TabIndex = 22;
+            this.botonDeModificarHorario.Text = "MODIFICAR HORARIO";
+            this.botonDeModificarHorario.UseVisualStyleBackColor = false;
+            this.botonDeModificarHorario.Click += new System.EventHandler(this.botonDeModificarHorario_Click);
             // 
-            // enlaceDeVolver
+            // botonDeModificarSalario
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(12, 58);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 7;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeModificarSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeModificarSalario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeModificarSalario.ForeColor = System.Drawing.Color.White;
+            this.botonDeModificarSalario.Location = new System.Drawing.Point(88, 173);
+            this.botonDeModificarSalario.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeModificarSalario.Name = "botonDeModificarSalario";
+            this.botonDeModificarSalario.Size = new System.Drawing.Size(325, 41);
+            this.botonDeModificarSalario.TabIndex = 23;
+            this.botonDeModificarSalario.Text = "MODIFICAR SALARIO";
+            this.botonDeModificarSalario.UseVisualStyleBackColor = false;
+            this.botonDeModificarSalario.Click += new System.EventHandler(this.botonDeModificarSalario_Click);
             // 
             // PerfilesDeUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 415);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeEliminarEmpleados);
-            this.Controls.Add(this.enlaceDeModificarSalario);
-            this.Controls.Add(this.enlaceDeModificarHorario);
-            this.Controls.Add(this.enlaceDeVerEmpleados);
-            this.Controls.Add(this.enlaceDeCrearPerfilDeUsuario);
+            this.ClientSize = new System.Drawing.Size(517, 336);
+            this.Controls.Add(this.botonDeModificarSalario);
+            this.Controls.Add(this.botonDeModificarHorario);
+            this.Controls.Add(this.botonDeEliminarEmpleados);
+            this.Controls.Add(this.botonDeVerEmpleados);
+            this.Controls.Add(this.botonDeCrearPerfil);
+            this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Volta Modern Display 55 Rom", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PerfilesDeUsuario";
@@ -133,17 +139,15 @@
             this.Text = "Perfiles de usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilesDeUsuario_FormClosing);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel enlaceDeCrearPerfilDeUsuario;
-        private System.Windows.Forms.LinkLabel enlaceDeVerEmpleados;
-        private System.Windows.Forms.LinkLabel enlaceDeModificarHorario;
-        private System.Windows.Forms.LinkLabel enlaceDeModificarSalario;
-        private System.Windows.Forms.LinkLabel enlaceDeEliminarEmpleados;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeCrearPerfil;
+        private System.Windows.Forms.Button botonDeVerEmpleados;
+        private System.Windows.Forms.Button botonDeEliminarEmpleados;
+        private System.Windows.Forms.Button botonDeModificarHorario;
+        private System.Windows.Forms.Button botonDeModificarSalario;
     }
 }

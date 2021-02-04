@@ -37,11 +37,11 @@ namespace Proyecto_HRPS
             this.dateTimePickerFin = new System.Windows.Forms.DateTimePicker();
             this.panelDeFlujoDeSolicitudesDeVacaciones = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewDeSolicitudesDeVacaciones = new System.Windows.Forms.DataGridView();
+            this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labelVacaciones = new System.Windows.Forms.Label();
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
-            this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDeInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDeDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,12 +55,12 @@ namespace Proyecto_HRPS
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
             this.botonDeVolver.Location = new System.Drawing.Point(20, 598);
-            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(6);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 68);
+            this.botonDeVolver.Size = new System.Drawing.Size(226, 41);
             this.botonDeVolver.TabIndex = 5;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -90,19 +90,21 @@ namespace Proyecto_HRPS
             // 
             // dateTimePickerInicio
             // 
-            this.dateTimePickerInicio.Location = new System.Drawing.Point(304, 85);
-            this.dateTimePickerInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(353, 85);
+            this.dateTimePickerInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerInicio.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerInicio.Name = "dateTimePickerInicio";
-            this.dateTimePickerInicio.Size = new System.Drawing.Size(391, 26);
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(354, 26);
             this.dateTimePickerInicio.TabIndex = 21;
             this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePickerInicio_ValueChanged);
             // 
             // dateTimePickerFin
             // 
-            this.dateTimePickerFin.Location = new System.Drawing.Point(304, 125);
-            this.dateTimePickerFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFin.Location = new System.Drawing.Point(353, 125);
+            this.dateTimePickerFin.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerFin.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFin.Name = "dateTimePickerFin";
-            this.dateTimePickerFin.Size = new System.Drawing.Size(391, 26);
+            this.dateTimePickerFin.Size = new System.Drawing.Size(354, 26);
             this.dateTimePickerFin.TabIndex = 22;
             this.dateTimePickerFin.ValueChanged += new System.EventHandler(this.dateTimePickerFin_ValueChanged);
             // 
@@ -110,7 +112,7 @@ namespace Proyecto_HRPS
             // 
             this.panelDeFlujoDeSolicitudesDeVacaciones.Controls.Add(this.dataGridViewDeSolicitudesDeVacaciones);
             this.panelDeFlujoDeSolicitudesDeVacaciones.Location = new System.Drawing.Point(20, 213);
-            this.panelDeFlujoDeSolicitudesDeVacaciones.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelDeFlujoDeSolicitudesDeVacaciones.Margin = new System.Windows.Forms.Padding(6);
             this.panelDeFlujoDeSolicitudesDeVacaciones.Name = "panelDeFlujoDeSolicitudesDeVacaciones";
             this.panelDeFlujoDeSolicitudesDeVacaciones.Size = new System.Drawing.Size(688, 338);
             this.panelDeFlujoDeSolicitudesDeVacaciones.TabIndex = 23;
@@ -134,12 +136,28 @@ namespace Proyecto_HRPS
             this.dataGridViewDeSolicitudesDeVacaciones.DataSource = this.solicitudDeVacacionesBindingSource;
             this.dataGridViewDeSolicitudesDeVacaciones.GridColor = System.Drawing.Color.White;
             this.dataGridViewDeSolicitudesDeVacaciones.Location = new System.Drawing.Point(4, 4);
-            this.dataGridViewDeSolicitudesDeVacaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewDeSolicitudesDeVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDeSolicitudesDeVacaciones.Name = "dataGridViewDeSolicitudesDeVacaciones";
             this.dataGridViewDeSolicitudesDeVacaciones.RowHeadersVisible = false;
             this.dataGridViewDeSolicitudesDeVacaciones.Size = new System.Drawing.Size(683, 334);
             this.dataGridViewDeSolicitudesDeVacaciones.TabIndex = 0;
             this.dataGridViewDeSolicitudesDeVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeSolicitudesDeVacaciones_CellClick);
+            // 
+            // botonAceptar
+            // 
+            this.botonAceptar.DataPropertyName = "botonAceptar";
+            this.botonAceptar.HeaderText = "";
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseColumnTextForButtonValue = true;
+            // 
+            // botonNegar
+            // 
+            this.botonNegar.DataPropertyName = "botonNegar";
+            this.botonNegar.HeaderText = "";
+            this.botonNegar.Name = "botonNegar";
+            this.botonNegar.Text = "Negar";
+            this.botonNegar.UseColumnTextForButtonValue = true;
             // 
             // labelVacaciones
             // 
@@ -164,28 +182,12 @@ namespace Proyecto_HRPS
             // 
             // textBoxDeCedula
             // 
-            this.textBoxDeCedula.Location = new System.Drawing.Point(304, 43);
-            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(353, 43);
+            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(12);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(391, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(354, 26);
             this.textBoxDeCedula.TabIndex = 26;
             this.textBoxDeCedula.TextChanged += new System.EventHandler(this.textBoxDeCedula_TextChanged);
-            // 
-            // botonAceptar
-            // 
-            this.botonAceptar.DataPropertyName = "botonAceptar";
-            this.botonAceptar.HeaderText = "";
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseColumnTextForButtonValue = true;
-            // 
-            // botonNegar
-            // 
-            this.botonNegar.DataPropertyName = "botonNegar";
-            this.botonNegar.HeaderText = "";
-            this.botonNegar.Name = "botonNegar";
-            this.botonNegar.Text = "Negar";
-            this.botonNegar.UseColumnTextForButtonValue = true;
             // 
             // identificadorDataGridViewTextBoxColumn
             // 
@@ -221,7 +223,7 @@ namespace Proyecto_HRPS
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(743, 684);
+            this.ClientSize = new System.Drawing.Size(744, 656);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.labelVacaciones);
@@ -234,7 +236,7 @@ namespace Proyecto_HRPS
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdministradorSolicitudesDeVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes de vacaciones";

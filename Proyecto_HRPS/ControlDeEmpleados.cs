@@ -17,27 +17,27 @@ namespace Proyecto_HRPS
         public ControlDeEmpleados()
         {
             InitializeComponent();
-        }
+        }        
 
-        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
-            this.Hide();
-            menuDeAdministrador.Show();
-        }
-
-        private void enlaceDeCrearPerfilDeUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVerHorasExtra_Click(object sender, EventArgs e)
         {
             VerHorasExtra verHorasExtra = new VerHorasExtra();
             this.Hide();
             verHorasExtra.Show();
         }
 
-        private void enlaceDeVerHorarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeVerHorarios_Click(object sender, EventArgs e)
         {
             VerHorarios verHorarios = new VerHorarios();
             verHorarios.Show();
             this.Hide();
+        }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            this.Hide();
+            menuDeAdministrador.Show();
         }
     }
 }

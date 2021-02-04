@@ -39,53 +39,58 @@
             // labelDeFechaDeInicio
             // 
             this.labelDeFechaDeInicio.AutoSize = true;
-            this.labelDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.labelDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeFechaDeInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeFechaDeInicio.Location = new System.Drawing.Point(95, 65);
+            this.labelDeFechaDeInicio.Location = new System.Drawing.Point(51, 60);
+            this.labelDeFechaDeInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeFechaDeInicio.Name = "labelDeFechaDeInicio";
-            this.labelDeFechaDeInicio.Size = new System.Drawing.Size(87, 14);
+            this.labelDeFechaDeInicio.Size = new System.Drawing.Size(137, 18);
             this.labelDeFechaDeInicio.TabIndex = 3;
             this.labelDeFechaDeInicio.Text = "FECHA DE INICIO";
             // 
             // labelDeFechaDeFin
             // 
             this.labelDeFechaDeFin.AutoSize = true;
-            this.labelDeFechaDeFin.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.labelDeFechaDeFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeFechaDeFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeFechaDeFin.Location = new System.Drawing.Point(373, 65);
+            this.labelDeFechaDeFin.Location = new System.Drawing.Point(477, 60);
+            this.labelDeFechaDeFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeFechaDeFin.Name = "labelDeFechaDeFin";
-            this.labelDeFechaDeFin.Size = new System.Drawing.Size(129, 14);
+            this.labelDeFechaDeFin.Size = new System.Drawing.Size(198, 18);
             this.labelDeFechaDeFin.TabIndex = 4;
             this.labelDeFechaDeFin.Text = "FECHA DE FINALIZACIÓN";
             // 
             // dateTimePickerDeFechaDeInicio
             // 
-            this.dateTimePickerDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePickerDeFechaDeInicio.Location = new System.Drawing.Point(98, 108);
+            this.dateTimePickerDeFechaDeInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDeFechaDeInicio.Location = new System.Drawing.Point(54, 108);
+            this.dateTimePickerDeFechaDeInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDeFechaDeInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerDeFechaDeInicio.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDeFechaDeInicio.Name = "dateTimePickerDeFechaDeInicio";
-            this.dateTimePickerDeFechaDeInicio.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeInicio.Size = new System.Drawing.Size(321, 26);
             this.dateTimePickerDeFechaDeInicio.TabIndex = 5;
             // 
             // dateTimePickerDeFechaDeFinalizacion
             // 
-            this.dateTimePickerDeFechaDeFinalizacion.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dateTimePickerDeFechaDeFinalizacion.Location = new System.Drawing.Point(376, 108);
+            this.dateTimePickerDeFechaDeFinalizacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDeFechaDeFinalizacion.Location = new System.Drawing.Point(480, 108);
+            this.dateTimePickerDeFechaDeFinalizacion.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDeFechaDeFinalizacion.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerDeFechaDeFinalizacion.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDeFechaDeFinalizacion.Name = "dateTimePickerDeFechaDeFinalizacion";
-            this.dateTimePickerDeFechaDeFinalizacion.Size = new System.Drawing.Size(176, 20);
+            this.dateTimePickerDeFechaDeFinalizacion.Size = new System.Drawing.Size(321, 26);
             this.dateTimePickerDeFechaDeFinalizacion.TabIndex = 6;
             // 
             // botonDeVolver
             // 
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(98, 173);
+            this.botonDeVolver.Location = new System.Drawing.Point(54, 175);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(176, 48);
+            this.botonDeVolver.Size = new System.Drawing.Size(321, 41);
             this.botonDeVolver.TabIndex = 16;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -94,11 +99,12 @@
             // botonDeGenerar
             // 
             this.botonDeGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeGenerar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeGenerar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeGenerar.ForeColor = System.Drawing.Color.White;
-            this.botonDeGenerar.Location = new System.Drawing.Point(376, 173);
+            this.botonDeGenerar.Location = new System.Drawing.Point(480, 175);
+            this.botonDeGenerar.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGenerar.Name = "botonDeGenerar";
-            this.botonDeGenerar.Size = new System.Drawing.Size(176, 48);
+            this.botonDeGenerar.Size = new System.Drawing.Size(319, 41);
             this.botonDeGenerar.TabIndex = 17;
             this.botonDeGenerar.Text = "GENERAR";
             this.botonDeGenerar.UseVisualStyleBackColor = false;
@@ -106,16 +112,18 @@
             // 
             // VerReporteHorasExtra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(651, 287);
+            this.ClientSize = new System.Drawing.Size(852, 257);
             this.Controls.Add(this.botonDeGenerar);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.dateTimePickerDeFechaDeFinalizacion);
             this.Controls.Add(this.dateTimePickerDeFechaDeInicio);
             this.Controls.Add(this.labelDeFechaDeFin);
             this.Controls.Add(this.labelDeFechaDeInicio);
+            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerReporteHorasExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerReporteHorasExtra";

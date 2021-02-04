@@ -37,9 +37,9 @@
             // textBoxDeCedula
             // 
             this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeCedula.Location = new System.Drawing.Point(255, 92);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(231, 58);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(176, 26);
+            this.textBoxDeCedula.Size = new System.Drawing.Size(245, 26);
             this.textBoxDeCedula.TabIndex = 22;
             // 
             // labelDeCedula
@@ -47,7 +47,7 @@
             this.labelDeCedula.AutoSize = true;
             this.labelDeCedula.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDeCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeCedula.Location = new System.Drawing.Point(116, 95);
+            this.labelDeCedula.Location = new System.Drawing.Point(68, 61);
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(77, 18);
             this.labelDeCedula.TabIndex = 21;
@@ -58,7 +58,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(71, 188);
+            this.botonDeVolver.Location = new System.Drawing.Point(62, 155);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 41);
             this.botonDeVolver.TabIndex = 24;
@@ -71,7 +71,7 @@
             this.botonDeEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeEnviar.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeEnviar.ForeColor = System.Drawing.Color.White;
-            this.botonDeEnviar.Location = new System.Drawing.Point(300, 188);
+            this.botonDeEnviar.Location = new System.Drawing.Point(300, 155);
             this.botonDeEnviar.Name = "botonDeEnviar";
             this.botonDeEnviar.Size = new System.Drawing.Size(176, 41);
             this.botonDeEnviar.TabIndex = 25;
@@ -84,12 +84,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(559, 291);
+            this.ClientSize = new System.Drawing.Size(556, 240);
             this.Controls.Add(this.botonDeEnviar);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EmpleadoRecuperarContrasenna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar contraseña";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RecuperarContrasenna_FormClosing);
             this.Load += new System.EventHandler(this.RecuperarContrasenna_Load);

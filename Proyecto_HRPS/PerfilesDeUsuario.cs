@@ -14,57 +14,6 @@ namespace Proyecto_HRPS
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void enlaceDePerfilesDeUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            CrearPerfilDeUsuario crearPerfilDeUsuario = new CrearPerfilDeUsuario();
-            this.Hide();
-            crearPerfilDeUsuario.Show();
-        }
-
-        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
-            this.Hide();
-            menuDeAdministrador.Show();
-        }
-
-        private void enlaceDeVerEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS]");
-
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                {
-                    int numeroColumas = informacionEncontrada.FieldCount;
-                    if (informacionEncontrada.Read() != true)
-                    {
-                        MessageBox.Show("No hay empleados activos", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        PdfPTable tabla = CrearTablaPDFEmpleados();
-                        CrearReportePDFEmpleados(tabla);
-                        VerEmpleados verEmpleados = new VerEmpleados();
-                        this.Hide();
-                        verEmpleados.Show();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cierra el reporte de empleados activos" + ex.Message);
-            }
-        }
-
         private PdfPTable CrearTablaPDFEmpleados()
         {
             PdfPTable tabla;
@@ -158,26 +107,7 @@ namespace Proyecto_HRPS
             return true;
         }
 
-        private void enlaceDeModificarHorario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ModificarHorario modificarHorario = new ModificarHorario();
-            this.Hide();
-            modificarHorario.Show();
-        }
 
-        private void enlaceDeModificarSalario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ModificarSalario modificarSalario = new ModificarSalario();
-            this.Hide();
-            modificarSalario.Show();
-        }
-
-        private void enlaceDeEliminarEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            EliminarEmpleados eliminarEmpleados = new EliminarEmpleados();
-            this.Hide();
-            eliminarEmpleados.Show();
-        }
         public Database AbrirBaseDeDatos()
         {
             var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -187,6 +117,72 @@ namespace Proyecto_HRPS
         private void PerfilesDeUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void botonDeCrearPerfil_Click(object sender, EventArgs e)
+        {
+            CrearPerfilDeUsuario crearPerfilDeUsuario = new CrearPerfilDeUsuario();
+            this.Hide();
+            crearPerfilDeUsuario.Show();
+        }
+
+        private void botonDeVerEmpleados_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_EMPLEADOS_ACTIVOS]");
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    if (informacionEncontrada.Read() != true)
+                    {
+                        MessageBox.Show("No hay empleados activos", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        PdfPTable tabla = CrearTablaPDFEmpleados();
+                        CrearReportePDFEmpleados(tabla);
+                        VerEmpleados verEmpleados = new VerEmpleados();
+                        this.Hide();
+                        verEmpleados.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cierra el reporte de empleados activos" + ex.Message);
+            }
+        }
+
+        private void botonDeModificarHorario_Click(object sender, EventArgs e)
+        {
+            ModificarHorario modificarHorario = new ModificarHorario();
+            this.Hide();
+            modificarHorario.Show();
+        }
+
+        private void botonDeModificarSalario_Click(object sender, EventArgs e)
+        {
+            ModificarSalario modificarSalario = new ModificarSalario();
+            this.Hide();
+            modificarSalario.Show();
+        }
+
+        private void botonDeEliminarEmpleados_Click(object sender, EventArgs e)
+        {
+            EliminarEmpleados eliminarEmpleados = new EliminarEmpleados();
+            this.Hide();
+            eliminarEmpleados.Show();
+        }
+
+        private void botonDeVolver_Click(object sender, EventArgs e)
+        {
+            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+            this.Hide();
+            menuDeAdministrador.Show();
         }
     }
 }

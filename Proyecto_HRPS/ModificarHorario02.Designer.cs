@@ -65,10 +65,10 @@
             // textBoxDeHorarioNuevo
             // 
             this.textBoxDeHorarioNuevo.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(329, 167);
+            this.textBoxDeHorarioNuevo.Location = new System.Drawing.Point(287, 167);
             this.textBoxDeHorarioNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeHorarioNuevo.Name = "textBoxDeHorarioNuevo";
-            this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(225, 26);
+            this.textBoxDeHorarioNuevo.Size = new System.Drawing.Size(267, 26);
             this.textBoxDeHorarioNuevo.TabIndex = 9;
             // 
             // botonDeVolver
@@ -76,10 +76,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(52, 270);
+            this.botonDeVolver.Location = new System.Drawing.Point(52, 257);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 66);
+            this.botonDeVolver.Size = new System.Drawing.Size(226, 41);
             this.botonDeVolver.TabIndex = 10;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -90,10 +90,10 @@
             this.botonDeGuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeGuardarCambios.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeGuardarCambios.ForeColor = System.Drawing.Color.White;
-            this.botonDeGuardarCambios.Location = new System.Drawing.Point(328, 270);
+            this.botonDeGuardarCambios.Location = new System.Drawing.Point(328, 257);
             this.botonDeGuardarCambios.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeGuardarCambios.Name = "botonDeGuardarCambios";
-            this.botonDeGuardarCambios.Size = new System.Drawing.Size(226, 66);
+            this.botonDeGuardarCambios.Size = new System.Drawing.Size(226, 41);
             this.botonDeGuardarCambios.TabIndex = 11;
             this.botonDeGuardarCambios.Text = "GUARDAR CAMBIOS";
             this.botonDeGuardarCambios.UseVisualStyleBackColor = false;
@@ -115,20 +115,20 @@
             // 
             this.textBoxDeHorarioActual.Enabled = false;
             this.textBoxDeHorarioActual.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeHorarioActual.Location = new System.Drawing.Point(329, 116);
+            this.textBoxDeHorarioActual.Location = new System.Drawing.Point(287, 116);
             this.textBoxDeHorarioActual.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeHorarioActual.Name = "textBoxDeHorarioActual";
-            this.textBoxDeHorarioActual.Size = new System.Drawing.Size(225, 26);
+            this.textBoxDeHorarioActual.Size = new System.Drawing.Size(267, 26);
             this.textBoxDeHorarioActual.TabIndex = 13;
             // 
             // textBoxDeNombre
             // 
             this.textBoxDeNombre.Enabled = false;
             this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeNombre.Location = new System.Drawing.Point(329, 66);
+            this.textBoxDeNombre.Location = new System.Drawing.Point(287, 66);
             this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDeNombre.Name = "textBoxDeNombre";
-            this.textBoxDeNombre.Size = new System.Drawing.Size(225, 26);
+            this.textBoxDeNombre.Size = new System.Drawing.Size(267, 26);
             this.textBoxDeNombre.TabIndex = 14;
             // 
             // ModificarHorario02
@@ -136,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 411);
+            this.ClientSize = new System.Drawing.Size(616, 329);
             this.Controls.Add(this.textBoxDeNombre);
             this.Controls.Add(this.textBoxDeHorarioActual);
             this.Controls.Add(this.labelDeNombre);

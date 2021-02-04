@@ -28,87 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDeVerSalariosDeEmpleados = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerReportesDiarios = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerVacacionesDeEmpleados = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeVerSalariosDeEmpleados = new System.Windows.Forms.Button();
+            this.botonDeVevReportesDiarios = new System.Windows.Forms.Button();
+            this.botonDeVerVacacionesDeEmpleados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDeVerSalariosDeEmpleados
+            // botonDeVolver
             // 
-            this.enlaceDeVerSalariosDeEmpleados.AutoSize = true;
-            this.enlaceDeVerSalariosDeEmpleados.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVerSalariosDeEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerSalariosDeEmpleados.Location = new System.Drawing.Point(41, 38);
-            this.enlaceDeVerSalariosDeEmpleados.Name = "enlaceDeVerSalariosDeEmpleados";
-            this.enlaceDeVerSalariosDeEmpleados.Size = new System.Drawing.Size(165, 14);
-            this.enlaceDeVerSalariosDeEmpleados.TabIndex = 0;
-            this.enlaceDeVerSalariosDeEmpleados.TabStop = true;
-            this.enlaceDeVerSalariosDeEmpleados.Text = "VER SALARIOS DE EMPLEADOS";
-            this.enlaceDeVerSalariosDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerSalariosDeEmpleados_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(96, 179);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 20;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeVerReportesDiarios
+            // botonDeVerSalariosDeEmpleados
             // 
-            this.enlaceDeVerReportesDiarios.AutoSize = true;
-            this.enlaceDeVerReportesDiarios.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVerReportesDiarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerReportesDiarios.Location = new System.Drawing.Point(244, 38);
-            this.enlaceDeVerReportesDiarios.Name = "enlaceDeVerReportesDiarios";
-            this.enlaceDeVerReportesDiarios.Size = new System.Drawing.Size(128, 14);
-            this.enlaceDeVerReportesDiarios.TabIndex = 1;
-            this.enlaceDeVerReportesDiarios.TabStop = true;
-            this.enlaceDeVerReportesDiarios.Text = "VER REPORTES DIARIOS";
-            this.enlaceDeVerReportesDiarios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerReportesDiarios_LinkClicked);
+            this.botonDeVerSalariosDeEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerSalariosDeEmpleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerSalariosDeEmpleados.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerSalariosDeEmpleados.Location = new System.Drawing.Point(96, 32);
+            this.botonDeVerSalariosDeEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerSalariosDeEmpleados.Name = "botonDeVerSalariosDeEmpleados";
+            this.botonDeVerSalariosDeEmpleados.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerSalariosDeEmpleados.TabIndex = 21;
+            this.botonDeVerSalariosDeEmpleados.Text = "VER SALARIOS DE EMPLEADOS";
+            this.botonDeVerSalariosDeEmpleados.UseVisualStyleBackColor = false;
+            this.botonDeVerSalariosDeEmpleados.Click += new System.EventHandler(this.botonDeVerSalariosDeEmpleados_Click);
             // 
-            // enlaceDeVerVacacionesDeEmpleados
+            // botonDeVevReportesDiarios
             // 
-            this.enlaceDeVerVacacionesDeEmpleados.AutoSize = true;
-            this.enlaceDeVerVacacionesDeEmpleados.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVerVacacionesDeEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerVacacionesDeEmpleados.Location = new System.Drawing.Point(418, 38);
-            this.enlaceDeVerVacacionesDeEmpleados.Name = "enlaceDeVerVacacionesDeEmpleados";
-            this.enlaceDeVerVacacionesDeEmpleados.Size = new System.Drawing.Size(203, 14);
-            this.enlaceDeVerVacacionesDeEmpleados.TabIndex = 2;
-            this.enlaceDeVerVacacionesDeEmpleados.TabStop = true;
-            this.enlaceDeVerVacacionesDeEmpleados.Text = "VER VACACIONES DE LOS EMPLEADOS";
-            this.enlaceDeVerVacacionesDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerVacacionesDeEmpleados_LinkClicked);
+            this.botonDeVevReportesDiarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVevReportesDiarios.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVevReportesDiarios.ForeColor = System.Drawing.Color.White;
+            this.botonDeVevReportesDiarios.Location = new System.Drawing.Point(96, 81);
+            this.botonDeVevReportesDiarios.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVevReportesDiarios.Name = "botonDeVevReportesDiarios";
+            this.botonDeVevReportesDiarios.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVevReportesDiarios.TabIndex = 22;
+            this.botonDeVevReportesDiarios.Text = "VER REPORTES DIARIOS";
+            this.botonDeVevReportesDiarios.UseVisualStyleBackColor = false;
+            this.botonDeVevReportesDiarios.Click += new System.EventHandler(this.botonDeVevReportesDiarios_Click);
             // 
-            // enlaceDeVolver
+            // botonDeVerVacacionesDeEmpleados
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(662, 38);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 3;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeVerVacacionesDeEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerVacacionesDeEmpleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerVacacionesDeEmpleados.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerVacacionesDeEmpleados.Location = new System.Drawing.Point(96, 130);
+            this.botonDeVerVacacionesDeEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerVacacionesDeEmpleados.Name = "botonDeVerVacacionesDeEmpleados";
+            this.botonDeVerVacacionesDeEmpleados.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerVacacionesDeEmpleados.TabIndex = 23;
+            this.botonDeVerVacacionesDeEmpleados.Text = "VER VACACIONES DE EMPLEADOS";
+            this.botonDeVerVacacionesDeEmpleados.UseVisualStyleBackColor = false;
+            this.botonDeVerVacacionesDeEmpleados.Click += new System.EventHandler(this.botonDeVerVacacionesDeEmpleados_Click);
             // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 281);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeVerVacacionesDeEmpleados);
-            this.Controls.Add(this.enlaceDeVerReportesDiarios);
-            this.Controls.Add(this.enlaceDeVerSalariosDeEmpleados);
+            this.ClientSize = new System.Drawing.Size(514, 258);
+            this.Controls.Add(this.botonDeVerVacacionesDeEmpleados);
+            this.Controls.Add(this.botonDeVevReportesDiarios);
+            this.Controls.Add(this.botonDeVerSalariosDeEmpleados);
+            this.Controls.Add(this.botonDeVolver);
             this.Name = "Reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de reportes";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel enlaceDeVerSalariosDeEmpleados;
-        private System.Windows.Forms.LinkLabel enlaceDeVerReportesDiarios;
-        private System.Windows.Forms.LinkLabel enlaceDeVerVacacionesDeEmpleados;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeVerSalariosDeEmpleados;
+        private System.Windows.Forms.Button botonDeVevReportesDiarios;
+        private System.Windows.Forms.Button botonDeVerVacacionesDeEmpleados;
     }
 }

@@ -28,70 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDeSolicitarVacaciones = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeRegistrarHorasExtras = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeRegistrarHorasExtra = new System.Windows.Forms.Button();
+            this.botonDeSolicitarVacaciones = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDeSolicitarVacaciones
+            // botonDeVolver
             // 
-            this.enlaceDeSolicitarVacaciones.AutoSize = true;
-            this.enlaceDeSolicitarVacaciones.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeSolicitarVacaciones.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeSolicitarVacaciones.Location = new System.Drawing.Point(56, 37);
-            this.enlaceDeSolicitarVacaciones.Name = "enlaceDeSolicitarVacaciones";
-            this.enlaceDeSolicitarVacaciones.Size = new System.Drawing.Size(129, 14);
-            this.enlaceDeSolicitarVacaciones.TabIndex = 6;
-            this.enlaceDeSolicitarVacaciones.TabStop = true;
-            this.enlaceDeSolicitarVacaciones.Text = "SOLICITAR VACACIONES";
-            this.enlaceDeSolicitarVacaciones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitarVacaciones_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(104, 135);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 21;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeRegistrarHorasExtras
+            // botonDeRegistrarHorasExtra
             // 
-            this.enlaceDeRegistrarHorasExtras.AutoSize = true;
-            this.enlaceDeRegistrarHorasExtras.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeRegistrarHorasExtras.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeRegistrarHorasExtras.Location = new System.Drawing.Point(259, 37);
-            this.enlaceDeRegistrarHorasExtras.Name = "enlaceDeRegistrarHorasExtras";
-            this.enlaceDeRegistrarHorasExtras.Size = new System.Drawing.Size(149, 14);
-            this.enlaceDeRegistrarHorasExtras.TabIndex = 7;
-            this.enlaceDeRegistrarHorasExtras.TabStop = true;
-            this.enlaceDeRegistrarHorasExtras.Text = "REGISTRAR HORAS EXTRAS";
-            this.enlaceDeRegistrarHorasExtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeRegistrarHorasExtras_LinkClicked);
+            this.botonDeRegistrarHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeRegistrarHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeRegistrarHorasExtra.ForeColor = System.Drawing.Color.White;
+            this.botonDeRegistrarHorasExtra.Location = new System.Drawing.Point(104, 86);
+            this.botonDeRegistrarHorasExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeRegistrarHorasExtra.Name = "botonDeRegistrarHorasExtra";
+            this.botonDeRegistrarHorasExtra.Size = new System.Drawing.Size(325, 41);
+            this.botonDeRegistrarHorasExtra.TabIndex = 22;
+            this.botonDeRegistrarHorasExtra.Text = "REGISTRAR HORAS EXTRA";
+            this.botonDeRegistrarHorasExtra.UseVisualStyleBackColor = false;
+            this.botonDeRegistrarHorasExtra.Click += new System.EventHandler(this.botonDeRegistrarHorasExtra_Click);
             // 
-            // enlaceDeVolver
+            // botonDeSolicitarVacaciones
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(530, 37);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 8;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeSolicitarVacaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeSolicitarVacaciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeSolicitarVacaciones.ForeColor = System.Drawing.Color.White;
+            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(104, 37);
+            this.botonDeSolicitarVacaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeSolicitarVacaciones.Name = "botonDeSolicitarVacaciones";
+            this.botonDeSolicitarVacaciones.Size = new System.Drawing.Size(325, 41);
+            this.botonDeSolicitarVacaciones.TabIndex = 23;
+            this.botonDeSolicitarVacaciones.Text = "SOLICITAR VACACIONES";
+            this.botonDeSolicitarVacaciones.UseVisualStyleBackColor = false;
+            this.botonDeSolicitarVacaciones.Click += new System.EventHandler(this.botonDeSolicitarVacaciones_Click);
             // 
             // SolicitudesEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(692, 330);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeRegistrarHorasExtras);
-            this.Controls.Add(this.enlaceDeSolicitarVacaciones);
+            this.ClientSize = new System.Drawing.Size(545, 209);
+            this.Controls.Add(this.botonDeSolicitarVacaciones);
+            this.Controls.Add(this.botonDeRegistrarHorasExtra);
+            this.Controls.Add(this.botonDeVolver);
             this.Name = "SolicitudesEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de solicitudes";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.LinkLabel enlaceDeSolicitarVacaciones;
-        private System.Windows.Forms.LinkLabel enlaceDeRegistrarHorasExtras;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeRegistrarHorasExtra;
+        private System.Windows.Forms.Button botonDeSolicitarVacaciones;
     }
 }

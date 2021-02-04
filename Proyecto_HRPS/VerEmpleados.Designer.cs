@@ -37,9 +37,9 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(35, 61);
+            this.botonDeVolver.Location = new System.Drawing.Point(32, 90);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(148, 72);
+            this.botonDeVolver.Size = new System.Drawing.Size(348, 41);
             this.botonDeVolver.TabIndex = 3;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -50,9 +50,9 @@
             this.botonDeVerEmpleadosInactivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVerEmpleadosInactivos.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVerEmpleadosInactivos.ForeColor = System.Drawing.Color.White;
-            this.botonDeVerEmpleadosInactivos.Location = new System.Drawing.Point(220, 61);
+            this.botonDeVerEmpleadosInactivos.Location = new System.Drawing.Point(32, 43);
             this.botonDeVerEmpleadosInactivos.Name = "botonDeVerEmpleadosInactivos";
-            this.botonDeVerEmpleadosInactivos.Size = new System.Drawing.Size(148, 72);
+            this.botonDeVerEmpleadosInactivos.Size = new System.Drawing.Size(348, 41);
             this.botonDeVerEmpleadosInactivos.TabIndex = 4;
             this.botonDeVerEmpleadosInactivos.Text = "VER EMPLEADOS INACTIVOS";
             this.botonDeVerEmpleadosInactivos.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(404, 199);
+            this.ClientSize = new System.Drawing.Size(404, 157);
             this.Controls.Add(this.botonDeVerEmpleadosInactivos);
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

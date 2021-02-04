@@ -28,73 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDeCrearPerfilDeUsuario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVerHorarios = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVerHorasExtra = new System.Windows.Forms.Button();
+            this.botonDeVerHorarios = new System.Windows.Forms.Button();
+            this.botonDeVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDeCrearPerfilDeUsuario
+            // botonDeVerHorasExtra
             // 
-            this.enlaceDeCrearPerfilDeUsuario.AutoSize = true;
-            this.enlaceDeCrearPerfilDeUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeCrearPerfilDeUsuario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeCrearPerfilDeUsuario.Location = new System.Drawing.Point(53, 31);
-            this.enlaceDeCrearPerfilDeUsuario.Name = "enlaceDeCrearPerfilDeUsuario";
-            this.enlaceDeCrearPerfilDeUsuario.Size = new System.Drawing.Size(105, 14);
-            this.enlaceDeCrearPerfilDeUsuario.TabIndex = 2;
-            this.enlaceDeCrearPerfilDeUsuario.TabStop = true;
-            this.enlaceDeCrearPerfilDeUsuario.Text = "VER HORAS EXTRA";
-            this.enlaceDeCrearPerfilDeUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeCrearPerfilDeUsuario_LinkClicked);
+            this.botonDeVerHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerHorasExtra.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerHorasExtra.Location = new System.Drawing.Point(91, 50);
+            this.botonDeVerHorasExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerHorasExtra.Name = "botonDeVerHorasExtra";
+            this.botonDeVerHorasExtra.Size = new System.Drawing.Size(324, 41);
+            this.botonDeVerHorasExtra.TabIndex = 9;
+            this.botonDeVerHorasExtra.Text = "HORAS EXTRA";
+            this.botonDeVerHorasExtra.UseVisualStyleBackColor = false;
+            this.botonDeVerHorasExtra.Click += new System.EventHandler(this.botonDeVerHorasExtra_Click);
             // 
-            // enlaceDeVerHorarios
+            // botonDeVerHorarios
             // 
-            this.enlaceDeVerHorarios.AutoSize = true;
-            this.enlaceDeVerHorarios.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVerHorarios.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVerHorarios.Location = new System.Drawing.Point(350, 31);
-            this.enlaceDeVerHorarios.Name = "enlaceDeVerHorarios";
-            this.enlaceDeVerHorarios.Size = new System.Drawing.Size(85, 14);
-            this.enlaceDeVerHorarios.TabIndex = 3;
-            this.enlaceDeVerHorarios.TabStop = true;
-            this.enlaceDeVerHorarios.Text = "VER HORARIOS";
-            this.enlaceDeVerHorarios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVerHorarios_LinkClicked);
+            this.botonDeVerHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerHorarios.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerHorarios.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerHorarios.Location = new System.Drawing.Point(91, 122);
+            this.botonDeVerHorarios.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerHorarios.Name = "botonDeVerHorarios";
+            this.botonDeVerHorarios.Size = new System.Drawing.Size(324, 41);
+            this.botonDeVerHorarios.TabIndex = 10;
+            this.botonDeVerHorarios.Text = "VER HORARIOS";
+            this.botonDeVerHorarios.UseVisualStyleBackColor = false;
+            this.botonDeVerHorarios.Click += new System.EventHandler(this.botonDeVerHorarios_Click);
             // 
-            // enlaceDeVolver
+            // botonDeVolver
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(689, 31);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 8;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(91, 198);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(324, 41);
+            this.botonDeVolver.TabIndex = 11;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // ControlDeEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(788, 330);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeVerHorarios);
-            this.Controls.Add(this.enlaceDeCrearPerfilDeUsuario);
+            this.ClientSize = new System.Drawing.Size(519, 289);
+            this.Controls.Add(this.botonDeVolver);
+            this.Controls.Add(this.botonDeVerHorarios);
+            this.Controls.Add(this.botonDeVerHorasExtra);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ControlDeEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de empleados";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel enlaceDeCrearPerfilDeUsuario;
-        private System.Windows.Forms.LinkLabel enlaceDeVerHorarios;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVerHorasExtra;
+        private System.Windows.Forms.Button botonDeVerHorarios;
+        private System.Windows.Forms.Button botonDeVolver;
     }
 }

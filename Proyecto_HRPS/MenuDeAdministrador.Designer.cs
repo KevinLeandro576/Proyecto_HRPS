@@ -28,107 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.enlaceDePerfilesDeUsuario = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeControlDeEmpleados = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeSolicitudes = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeReportes = new System.Windows.Forms.LinkLabel();
-            this.enlaceDeVolver = new System.Windows.Forms.LinkLabel();
+            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDePerfilesDeUsuario = new System.Windows.Forms.Button();
+            this.botonDeControlDeEmpleados = new System.Windows.Forms.Button();
+            this.botonDeSolicitudes = new System.Windows.Forms.Button();
+            this.botonDeReportes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // enlaceDePerfilesDeUsuario
+            // botonDeVolver
             // 
-            this.enlaceDePerfilesDeUsuario.AutoSize = true;
-            this.enlaceDePerfilesDeUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDePerfilesDeUsuario.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDePerfilesDeUsuario.Location = new System.Drawing.Point(37, 30);
-            this.enlaceDePerfilesDeUsuario.Name = "enlaceDePerfilesDeUsuario";
-            this.enlaceDePerfilesDeUsuario.Size = new System.Drawing.Size(118, 14);
-            this.enlaceDePerfilesDeUsuario.TabIndex = 0;
-            this.enlaceDePerfilesDeUsuario.TabStop = true;
-            this.enlaceDePerfilesDeUsuario.Text = "PERFILES DE USUARIO";
-            this.enlaceDePerfilesDeUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDePerfilesDeUsuario_LinkClicked);
+            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
+            this.botonDeVolver.Location = new System.Drawing.Point(84, 227);
+            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVolver.Name = "botonDeVolver";
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.TabIndex = 17;
+            this.botonDeVolver.Text = "VOLVER";
+            this.botonDeVolver.UseVisualStyleBackColor = false;
+            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
-            // enlaceDeControlDeEmpleados
+            // botonDePerfilesDeUsuario
             // 
-            this.enlaceDeControlDeEmpleados.AutoSize = true;
-            this.enlaceDeControlDeEmpleados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeControlDeEmpleados.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeControlDeEmpleados.Location = new System.Drawing.Point(201, 30);
-            this.enlaceDeControlDeEmpleados.Name = "enlaceDeControlDeEmpleados";
-            this.enlaceDeControlDeEmpleados.Size = new System.Drawing.Size(137, 14);
-            this.enlaceDeControlDeEmpleados.TabIndex = 1;
-            this.enlaceDeControlDeEmpleados.TabStop = true;
-            this.enlaceDeControlDeEmpleados.Text = "CONTROL DE EMPLEADOS";
-            this.enlaceDeControlDeEmpleados.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeControlDeEmpleados_LinkClicked);
+            this.botonDePerfilesDeUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDePerfilesDeUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDePerfilesDeUsuario.ForeColor = System.Drawing.Color.White;
+            this.botonDePerfilesDeUsuario.Location = new System.Drawing.Point(84, 31);
+            this.botonDePerfilesDeUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDePerfilesDeUsuario.Name = "botonDePerfilesDeUsuario";
+            this.botonDePerfilesDeUsuario.Size = new System.Drawing.Size(325, 41);
+            this.botonDePerfilesDeUsuario.TabIndex = 18;
+            this.botonDePerfilesDeUsuario.Text = "PERFILES DE USUARIO";
+            this.botonDePerfilesDeUsuario.UseVisualStyleBackColor = false;
+            this.botonDePerfilesDeUsuario.Click += new System.EventHandler(this.botonDePerfilesDeUsuario_Click);
             // 
-            // enlaceDeSolicitudes
+            // botonDeControlDeEmpleados
             // 
-            this.enlaceDeSolicitudes.AutoSize = true;
-            this.enlaceDeSolicitudes.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeSolicitudes.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeSolicitudes.Location = new System.Drawing.Point(411, 30);
-            this.enlaceDeSolicitudes.Name = "enlaceDeSolicitudes";
-            this.enlaceDeSolicitudes.Size = new System.Drawing.Size(72, 14);
-            this.enlaceDeSolicitudes.TabIndex = 2;
-            this.enlaceDeSolicitudes.TabStop = true;
-            this.enlaceDeSolicitudes.Text = "SOLICITUDES";
-            this.enlaceDeSolicitudes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeSolicitudes_LinkClicked);
+            this.botonDeControlDeEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeControlDeEmpleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeControlDeEmpleados.ForeColor = System.Drawing.Color.White;
+            this.botonDeControlDeEmpleados.Location = new System.Drawing.Point(84, 80);
+            this.botonDeControlDeEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeControlDeEmpleados.Name = "botonDeControlDeEmpleados";
+            this.botonDeControlDeEmpleados.Size = new System.Drawing.Size(325, 41);
+            this.botonDeControlDeEmpleados.TabIndex = 19;
+            this.botonDeControlDeEmpleados.Text = "CONTROL DE EMPLEADOS";
+            this.botonDeControlDeEmpleados.UseVisualStyleBackColor = false;
+            this.botonDeControlDeEmpleados.Click += new System.EventHandler(this.botonDeControlDeEmpleados_Click);
             // 
-            // enlaceDeReportes
+            // botonDeSolicitudes
             // 
-            this.enlaceDeReportes.AutoSize = true;
-            this.enlaceDeReportes.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeReportes.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeReportes.Location = new System.Drawing.Point(556, 30);
-            this.enlaceDeReportes.Name = "enlaceDeReportes";
-            this.enlaceDeReportes.Size = new System.Drawing.Size(60, 14);
-            this.enlaceDeReportes.TabIndex = 3;
-            this.enlaceDeReportes.TabStop = true;
-            this.enlaceDeReportes.Text = "REPORTES";
-            this.enlaceDeReportes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeReportes_LinkClicked);
+            this.botonDeSolicitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeSolicitudes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeSolicitudes.ForeColor = System.Drawing.Color.White;
+            this.botonDeSolicitudes.Location = new System.Drawing.Point(84, 129);
+            this.botonDeSolicitudes.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeSolicitudes.Name = "botonDeSolicitudes";
+            this.botonDeSolicitudes.Size = new System.Drawing.Size(325, 41);
+            this.botonDeSolicitudes.TabIndex = 20;
+            this.botonDeSolicitudes.Text = "SOLICITUDES";
+            this.botonDeSolicitudes.UseVisualStyleBackColor = false;
+            this.botonDeSolicitudes.Click += new System.EventHandler(this.botonDeSolicitudes_Click);
             // 
-            // enlaceDeVolver
+            // botonDeReportes
             // 
-            this.enlaceDeVolver.AutoSize = true;
-            this.enlaceDeVolver.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enlaceDeVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.enlaceDeVolver.Location = new System.Drawing.Point(696, 30);
-            this.enlaceDeVolver.Name = "enlaceDeVolver";
-            this.enlaceDeVolver.Size = new System.Drawing.Size(49, 14);
-            this.enlaceDeVolver.TabIndex = 4;
-            this.enlaceDeVolver.TabStop = true;
-            this.enlaceDeVolver.Text = "VOLVER";
-            this.enlaceDeVolver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.enlaceDeVolver_LinkClicked);
+            this.botonDeReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeReportes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeReportes.ForeColor = System.Drawing.Color.White;
+            this.botonDeReportes.Location = new System.Drawing.Point(84, 178);
+            this.botonDeReportes.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeReportes.Name = "botonDeReportes";
+            this.botonDeReportes.Size = new System.Drawing.Size(325, 41);
+            this.botonDeReportes.TabIndex = 21;
+            this.botonDeReportes.Text = "REPORTES";
+            this.botonDeReportes.UseVisualStyleBackColor = false;
+            this.botonDeReportes.Click += new System.EventHandler(this.botonDeReportes_Click);
             // 
             // MenuDeAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(788, 329);
-            this.Controls.Add(this.enlaceDeVolver);
-            this.Controls.Add(this.enlaceDeReportes);
-            this.Controls.Add(this.enlaceDeSolicitudes);
-            this.Controls.Add(this.enlaceDeControlDeEmpleados);
-            this.Controls.Add(this.enlaceDePerfilesDeUsuario);
+            this.ClientSize = new System.Drawing.Size(495, 298);
+            this.Controls.Add(this.botonDeReportes);
+            this.Controls.Add(this.botonDeSolicitudes);
+            this.Controls.Add(this.botonDeControlDeEmpleados);
+            this.Controls.Add(this.botonDePerfilesDeUsuario);
+            this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuDeAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de administrador";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuDeAdministrador_FormClosing);
-            this.Load += new System.EventHandler(this.MenuDeAdministrador_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel enlaceDePerfilesDeUsuario;
-        private System.Windows.Forms.LinkLabel enlaceDeControlDeEmpleados;
-        private System.Windows.Forms.LinkLabel enlaceDeSolicitudes;
-        private System.Windows.Forms.LinkLabel enlaceDeReportes;
-        private System.Windows.Forms.LinkLabel enlaceDeVolver;
+        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDePerfilesDeUsuario;
+        private System.Windows.Forms.Button botonDeControlDeEmpleados;
+        private System.Windows.Forms.Button botonDeSolicitudes;
+        private System.Windows.Forms.Button botonDeReportes;
     }
 }

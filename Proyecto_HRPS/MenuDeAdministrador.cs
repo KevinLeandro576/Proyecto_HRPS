@@ -17,49 +17,44 @@ namespace Proyecto_HRPS
             InitializeComponent();
         }
 
-        private void enlaceDePerfilesDeUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void MenuDeAdministrador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void botonDePerfilesDeUsuario_Click(object sender, EventArgs e)
         {
             PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
             this.Hide();
             perfilesDeUsuario.Show();
         }
 
-        private void MenuDeAdministrador_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void enlaceDeControlDeEmpleados_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeControlDeEmpleados_Click(object sender, EventArgs e)
         {
             ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
             this.Hide();
             controlDeEmpleados.Show();
         }
 
-        private void enlaceDeVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AdministradorInicioDeSesion administradorInicioDeSesion = new AdministradorInicioDeSesion();
-            this.Hide();
-            administradorInicioDeSesion.Show();
-        }
-
-        private void enlaceDeSolicitudes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeSolicitudes_Click(object sender, EventArgs e)
         {
             AdminstradorEscogerSolicitud adminstradorEscogerSolicitud = new AdminstradorEscogerSolicitud();
             this.Hide();
             adminstradorEscogerSolicitud.Show();
         }
 
-        private void enlaceDeReportes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void botonDeReportes_Click(object sender, EventArgs e)
         {
             Reportes reportes = new Reportes();
             this.Hide();
             reportes.Show();
         }
 
-        private void MenuDeAdministrador_FormClosing(object sender, FormClosingEventArgs e)
+        private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            AdministradorInicioDeSesion administradorInicioDeSesion = new AdministradorInicioDeSesion();
+            this.Hide();
+            administradorInicioDeSesion.Show();
         }
     }
 }
