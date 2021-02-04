@@ -109,7 +109,7 @@ namespace Proyecto_HRPS
                         }
                         else
                         {
-                            MessageBox.Show("La contraseña no ha sido restablecida.");
+                            MessageBox.Show("La contraseña no se restablecerá.");
                         }
                     }
                     else
@@ -163,13 +163,13 @@ namespace Proyecto_HRPS
                     }
                 }
 
-                administradorDeCorreo.EnviarCorreo("<h1>Se ha cambiado una contraseña</h1> <br/> " + builder.ToString(), "Cambio de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                administradorDeCorreo.EnviarCorreo("<h1>Ha cambiado la contraseña</h1> <br/> " + builder.ToString(), "Cambio de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                administradorDeCorreo.EnviarCorreo("<h1>Se ha restablecido una contraseña</h1> <br/> " + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                administradorDeCorreo.EnviarCorreo("<h1>Ha restablecido la contraseña</h1> <br/> " + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
                 string evento = "El empleado con cédula: " + cedula + "; ha restablecido su contraseña";
                 registrarEvento(evento);
 
-                MessageBox.Show("Se ha enviado una contraseña temporal su correo");
+                MessageBox.Show("Se ha enviado una contraseña temporal a su correo");
                 volverAInicio();
             }
             catch (Exception ex)

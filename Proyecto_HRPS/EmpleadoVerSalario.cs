@@ -113,7 +113,7 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex)
+                registrarError(ex);
             }
         }
 
