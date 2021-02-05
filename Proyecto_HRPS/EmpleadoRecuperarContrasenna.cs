@@ -22,7 +22,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
             
         }
@@ -40,14 +41,23 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
             
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            volverAInicio();
+            try
+            {
+                volverAInicio();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void volverAInicio()
@@ -60,13 +70,22 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
         private void botonDeEnviar_Click(object sender, EventArgs e)
         {
-            renovarContrasenna();
+            try
+            {
+                renovarContrasenna();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         public Database AbrirBaseDeDatos()
@@ -78,7 +97,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -87,40 +107,46 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string cedula = textBoxDeCedula.Text;
-                string correo = "";
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("SACAR_CORREO_DE_EMPLEADO_CON_CEDULA", cedula);
-
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                if (validarTextBox() == true)
                 {
-                    if (informacionEncontrada.Read())
-                    {
-                        correo = informacionEncontrada.GetString(0);
-                        const string message = "¿Restablecer contraseña?";
-                        const string caption = "Form Closing";
-                        var result = MessageBox.Show(message, caption,
-                                                     MessageBoxButtons.YesNoCancel,
-                                                     MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
-                            enviarCorreoConContraseña(cedula, correo);
+                    string cedula = textBoxDeCedula.Text;
+                    string correo = "";
+                    var conexion = AbrirBaseDeDatos();
+                    var comando = conexion.GetStoredProcCommand("SACAR_CORREO_DE_EMPLEADO_CON_CEDULA", cedula);
 
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                    {
+                        if (informacionEncontrada.Read())
+                        {
+                            correo = informacionEncontrada.GetString(0);
+                            const string message = "¿Restablecer contraseña?";
+                            const string caption = "Form Closing";
+                            var result = MessageBox.Show(message, caption,
+                                                         MessageBoxButtons.YesNoCancel,
+                                                         MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                enviarCorreoConContraseña(cedula, correo);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("La contraseña no se restablecerá.", "",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("La contraseña no se restablecerá.");
+                            MessageBox.Show("Cédula inexistente.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Información incorrecta");
                     }
                 }
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -133,48 +159,36 @@ namespace Proyecto_HRPS
                 StringBuilder builder = new StringBuilder();
                 List<string> listaDeCorreos = new List<string>();
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("SACAR_CORREOS_DE_ADMINISTRADORES");
                 string claveTemporal = RandomString(8);
                 string claveTemporalEncriptada = encriptarClaveAsha256(claveTemporal);
 
                 builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
                 builder.Append("<tr>");
-                builder.Append("<th>CÉDULA</th>");
                 builder.Append("<th>CONTRASEÑA TEMPORAL<th>");
                 builder.Append("</tr>");
 
                 builder.Append("<tr align= center>");
-                builder.Append("<td>" + cedula + "</td>");
                 builder.Append("<td>" + claveTemporal + "</td>");
                 builder.Append("</tr>");
                 builder.Append("</table>");
 
-                var comando01 = conexion.GetStoredProcCommand("EMPLEADO_CAMBIAR_CONTRASENA", cedula, claveTemporalEncriptada);
-                conexion.ExecuteNonQuery(comando01);
+                var comando = conexion.GetStoredProcCommand("EMPLEADO_CAMBIAR_CONTRASENA", cedula, claveTemporalEncriptada);
+                conexion.ExecuteNonQuery(comando);
 
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                {
-                    string correoDeAdministrador = "";
-
-                    while (informacionEncontrada.Read())
-                    {
-                        correoDeAdministrador = informacionEncontrada.GetString(0);
-                        listaDeCorreos.Add(correoDeAdministrador);
-                    }
-                }
-
-                administradorDeCorreo.EnviarCorreo("<h1>Se ha restablecido una contraseña</h1> <br/> " + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                 administradorDeCorreo.EnviarCorreo("<h1>Ha restablecido la contraseña</h1> <br/> " + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
                 string evento = "El empleado con cédula: " + cedula + "; ha restablecido su contraseña";
-                registrarEvento(evento);
+                registrarEvento(evento,
+                    this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                MessageBox.Show("Se ha enviado una contraseña temporal a su correo");
+                MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 volverAInicio();
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -200,7 +214,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -216,28 +231,79 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
 
-        private void registrarEvento(string evento)
+        private void registrarEvento(string evento, string metodoYclase)
         {
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
+
+        private bool validarTextBox()
+        {
+            try
+            {
+                bool estaBien = false;
+                if (string.IsNullOrEmpty(textBoxDeCedula.Text) || textBoxDeCedula.Text.Length != 9)
+                {
+                    textBoxDeCedula.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa cédula", "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (!soloTieneNumeros(textBoxDeCedula.Text))
+                {
+                    textBoxDeCedula.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa cédula", "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    estaBien = true;
+                }
+                return estaBien;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+
+        bool soloTieneNumeros(string str)
+        {
+            try
+            {
+                foreach (char c in str)
+                {
+                    if (c < '0' || c > '9')
+                        return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+
+
     }
 }

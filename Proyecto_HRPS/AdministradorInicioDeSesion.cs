@@ -16,12 +16,28 @@ namespace Proyecto_HRPS
     {
         public AdministradorInicioDeSesion()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeIniciarSesion_Click(object sender, EventArgs e)
         {
-            comprobarContrasenna();
+            try
+            {
+                comprobarContrasenna();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -34,7 +50,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -47,7 +64,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -59,44 +77,92 @@ namespace Proyecto_HRPS
                 string cedula = textBoxDeCedula.Text;
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INICIO_SESION", cedula, contrasennaEncriptada);
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                if (validarTextBox())
                 {
-                    if (informacionEncontrada.Read())
+                    var conexion = AbrirBaseDeDatos();
+                    var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INICIO_SESION", cedula, contrasennaEncriptada);
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                     {
-                        var comando02 = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
-                        using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
+                        if (informacionEncontrada.Read())
                         {
-                            if (informacionEncontrada02.Read())
+                            var comando02 = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
+                            using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
                             {
-                                Empleado.Cedula = cedula;
-                                Empleado.Nombre = informacionEncontrada02["NOMBRE"].ToString();
-                                Empleado.Horario = informacionEncontrada02["HORARIO"].ToString();
-                                Empleado.Tiempo = informacionEncontrada02["TIEMPO"].ToString();
-                                Empleado.FechaDeNacimiento = DateTime.Parse(informacionEncontrada02["FECHA_NAC"].ToString());
-                                Empleado.Salario = decimal.Parse(informacionEncontrada02["SALARIO"].ToString());
-                                Empleado.SalarioPorHora = decimal.Parse(informacionEncontrada02["SALARIO_HORA"].ToString());
-                                Empleado.Puesto = informacionEncontrada02["PUESTO"].ToString();
-                                Empleado.Correo = informacionEncontrada02["CORREO"].ToString();
-                                Empleado.Contrasena = informacionEncontrada02["CONTRASENNA"].ToString();
-                                generarCorreoNotificacionDias();
-                                Empleado.Cedula = textBoxDeCedula.Text;
-                                MenuDeAdministrador menu = new MenuDeAdministrador();
-                                this.Hide();
-                                menu.Show();
+                                if (informacionEncontrada02.Read())
+                                {
+                                    iniciarSesion();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontraron datos al iniciar sesión."
+                                        , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                                    this.Hide();
+                                    administrador.Show();
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cédula o contraseña incorrectas, favor volver a intentar");
+                        else
+                        {
+                            MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales."
+                                , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void iniciarSesion()
+        {
+            try
+            {
+                string cedula = textBoxDeCedula.Text;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    if (informacionEncontrada.Read())
+                    {
+                        Empleado.Cedula = cedula;
+                        Empleado.Nombre = informacionEncontrada["NOMBRE"].ToString();
+                        Empleado.Horario = informacionEncontrada["HORARIO"].ToString();
+                        Empleado.Tiempo = informacionEncontrada["TIEMPO"].ToString();
+                        Empleado.FechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                        Empleado.Salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
+                        Empleado.SalarioPorHora = decimal.Parse(informacionEncontrada["SALARIO_HORA"].ToString());
+                        Empleado.Puesto = informacionEncontrada["PUESTO"].ToString();
+                        Empleado.Correo = informacionEncontrada["CORREO"].ToString();
+                        Empleado.Contrasena = informacionEncontrada["CONTRASENNA"].ToString();
+
+                        generarCorreoNotificacionDias();
+
+                        string evento = "El administrador: " + Empleado.Nombre + "; ha iniciado sesión";
+                        registrarEvento(evento,
+                            this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                        MenuDeAdministrador menu = new MenuDeAdministrador();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron datos al iniciar sesión."
+                            , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                        this.Hide();
+                        administrador.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -111,7 +177,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
@@ -167,7 +234,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
 
         }
@@ -180,7 +248,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -194,18 +263,102 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
+        }
+
+        private void registrarEvento(string texto, string metodoYclase)
+        {
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
+        }
+
+        private void checkBoxDeContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkBoxDeContrasena.Checked)
+                {
+                    textBoxDeContrasena.PasswordChar = '\0';
+                }
+                else
+                {
+                    textBoxDeContrasena.PasswordChar = '*';
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private bool validarTextBox()
+        {
+            try
+            {
+                bool estaBien = false;
+                if (string.IsNullOrEmpty(textBoxDeCedula.Text) || textBoxDeCedula.Text.Length != 9)
+                {
+                    textBoxDeCedula.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (!soloTieneNumeros(textBoxDeCedula.Text))
+                {
+                    textBoxDeCedula.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length <= 25)
+                {
+                    textBoxDeCedula.Focus();
+                    estaBien = false;
+                    MessageBox.Show("Revisa contraseña", "Inicio de sesións", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    estaBien = true;
+                }
+                return estaBien;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+
+        bool soloTieneNumeros(string str)
+        {
+            try
+            {
+                foreach (char c in str)
+                {
+                    if (c < '0' || c > '9')
+                        return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
         }
     }
 }

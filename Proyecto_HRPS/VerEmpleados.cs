@@ -18,7 +18,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -50,7 +51,8 @@ namespace Proyecto_HRPS
             catch (Exception ex)
             {
                 MessageBox.Show("Cierra el reporte de empleados inactivos" + ex.Message);
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -64,7 +66,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -104,7 +107,8 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
 
@@ -148,11 +152,14 @@ namespace Proyecto_HRPS
                     FS.Close();
                     FS.Dispose();
 
+                    MessageBox.Show("Reporte creado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
 
@@ -167,15 +174,15 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                registrarError(ex);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 return null;
             }
         }
 
-        private void registrarError(Exception ex)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
-            string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);

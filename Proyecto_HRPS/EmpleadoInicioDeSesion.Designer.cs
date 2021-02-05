@@ -37,6 +37,7 @@
             this.botonDeIniciarSesion = new System.Windows.Forms.Button();
             this.linkLabelDeRecuperarPW = new System.Windows.Forms.LinkLabel();
             this.labelDeRecuperarContrasenna = new System.Windows.Forms.Label();
+            this.checkBoxDeContrasena = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelDeCedula
@@ -110,7 +111,7 @@
             this.linkLabelDeRecuperarPW.AutoSize = true;
             this.linkLabelDeRecuperarPW.Font = new System.Drawing.Font("Arial", 8F);
             this.linkLabelDeRecuperarPW.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(487, 149);
+            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(487, 166);
             this.linkLabelDeRecuperarPW.Name = "linkLabelDeRecuperarPW";
             this.linkLabelDeRecuperarPW.Size = new System.Drawing.Size(32, 14);
             this.linkLabelDeRecuperarPW.TabIndex = 25;
@@ -122,11 +123,23 @@
             // 
             this.labelDeRecuperarContrasenna.AutoSize = true;
             this.labelDeRecuperarContrasenna.Font = new System.Drawing.Font("Arial", 8F);
-            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(261, 149);
+            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(261, 166);
             this.labelDeRecuperarContrasenna.Name = "labelDeRecuperarContrasenna";
             this.labelDeRecuperarContrasenna.Size = new System.Drawing.Size(220, 14);
             this.labelDeRecuperarContrasenna.TabIndex = 26;
             this.labelDeRecuperarContrasenna.Text = "*SI OLVIDÓ SU CONTRASEÑA, HAGA CLICK";
+            // 
+            // checkBoxDeContrasena
+            // 
+            this.checkBoxDeContrasena.AutoSize = true;
+            this.checkBoxDeContrasena.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDeContrasena.Location = new System.Drawing.Point(387, 129);
+            this.checkBoxDeContrasena.Name = "checkBoxDeContrasena";
+            this.checkBoxDeContrasena.Size = new System.Drawing.Size(132, 22);
+            this.checkBoxDeContrasena.TabIndex = 29;
+            this.checkBoxDeContrasena.Text = "Ver contraseña";
+            this.checkBoxDeContrasena.UseVisualStyleBackColor = true;
+            this.checkBoxDeContrasena.CheckedChanged += new System.EventHandler(this.checkBoxDeContrasena_CheckedChanged);
             // 
             // EmpleadoInicioDeSesion
             // 
@@ -134,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(602, 281);
+            this.Controls.Add(this.checkBoxDeContrasena);
             this.Controls.Add(this.labelDeRecuperarContrasenna);
             this.Controls.Add(this.linkLabelDeRecuperarPW);
             this.Controls.Add(this.botonDeIniciarSesion);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.Button botonDeIniciarSesion;
         private System.Windows.Forms.LinkLabel linkLabelDeRecuperarPW;
         private System.Windows.Forms.Label labelDeRecuperarContrasenna;
+        private System.Windows.Forms.CheckBox checkBoxDeContrasena;
     }
 }

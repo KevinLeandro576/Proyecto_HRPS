@@ -37,6 +37,7 @@
             this.botonDeIniciarSesion = new System.Windows.Forms.Button();
             this.labelDeRecuperarContrasenna = new System.Windows.Forms.Label();
             this.linkLabelDeRecuperarPW = new System.Windows.Forms.LinkLabel();
+            this.checkBoxDeContrasena = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelDeCedula
@@ -55,7 +56,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(65, 90);
+            this.label1.Location = new System.Drawing.Point(65, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 18);
             this.label1.TabIndex = 22;
@@ -72,8 +73,9 @@
             // textBoxDeContrasena
             // 
             this.textBoxDeContrasena.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBoxDeContrasena.Location = new System.Drawing.Point(261, 87);
+            this.textBoxDeContrasena.Location = new System.Drawing.Point(261, 91);
             this.textBoxDeContrasena.Name = "textBoxDeContrasena";
+            this.textBoxDeContrasena.PasswordChar = '*';
             this.textBoxDeContrasena.Size = new System.Drawing.Size(255, 26);
             this.textBoxDeContrasena.TabIndex = 24;
             // 
@@ -82,7 +84,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(68, 190);
+            this.botonDeVolver.Location = new System.Drawing.Point(68, 199);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(176, 41);
             this.botonDeVolver.TabIndex = 25;
@@ -95,7 +97,7 @@
             this.botonDeIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeIniciarSesion.Font = new System.Drawing.Font("Arial", 12F);
             this.botonDeIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.botonDeIniciarSesion.Location = new System.Drawing.Point(340, 190);
+            this.botonDeIniciarSesion.Location = new System.Drawing.Point(340, 199);
             this.botonDeIniciarSesion.Name = "botonDeIniciarSesion";
             this.botonDeIniciarSesion.Size = new System.Drawing.Size(176, 41);
             this.botonDeIniciarSesion.TabIndex = 26;
@@ -107,7 +109,7 @@
             // 
             this.labelDeRecuperarContrasenna.AutoSize = true;
             this.labelDeRecuperarContrasenna.Font = new System.Drawing.Font("Arial", 8F);
-            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(258, 148);
+            this.labelDeRecuperarContrasenna.Location = new System.Drawing.Point(258, 157);
             this.labelDeRecuperarContrasenna.Name = "labelDeRecuperarContrasenna";
             this.labelDeRecuperarContrasenna.Size = new System.Drawing.Size(220, 14);
             this.labelDeRecuperarContrasenna.TabIndex = 28;
@@ -118,7 +120,7 @@
             this.linkLabelDeRecuperarPW.AutoSize = true;
             this.linkLabelDeRecuperarPW.Font = new System.Drawing.Font("Arial", 8F);
             this.linkLabelDeRecuperarPW.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(484, 148);
+            this.linkLabelDeRecuperarPW.Location = new System.Drawing.Point(484, 157);
             this.linkLabelDeRecuperarPW.Name = "linkLabelDeRecuperarPW";
             this.linkLabelDeRecuperarPW.Size = new System.Drawing.Size(32, 14);
             this.linkLabelDeRecuperarPW.TabIndex = 27;
@@ -126,12 +128,25 @@
             this.linkLabelDeRecuperarPW.Text = "AQUÍ";
             this.linkLabelDeRecuperarPW.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDeRecuperarPW_LinkClicked);
             // 
+            // checkBoxDeContrasena
+            // 
+            this.checkBoxDeContrasena.AutoSize = true;
+            this.checkBoxDeContrasena.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDeContrasena.Location = new System.Drawing.Point(384, 123);
+            this.checkBoxDeContrasena.Name = "checkBoxDeContrasena";
+            this.checkBoxDeContrasena.Size = new System.Drawing.Size(132, 22);
+            this.checkBoxDeContrasena.TabIndex = 30;
+            this.checkBoxDeContrasena.Text = "Ver contraseña";
+            this.checkBoxDeContrasena.UseVisualStyleBackColor = true;
+            this.checkBoxDeContrasena.CheckedChanged += new System.EventHandler(this.checkBoxDeContrasena_CheckedChanged);
+            // 
             // AdministradorInicioDeSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 266);
+            this.ClientSize = new System.Drawing.Size(602, 281);
+            this.Controls.Add(this.checkBoxDeContrasena);
             this.Controls.Add(this.labelDeRecuperarContrasenna);
             this.Controls.Add(this.linkLabelDeRecuperarPW);
             this.Controls.Add(this.botonDeIniciarSesion);
@@ -162,5 +177,6 @@
         private System.Windows.Forms.Button botonDeIniciarSesion;
         private System.Windows.Forms.Label labelDeRecuperarContrasenna;
         private System.Windows.Forms.LinkLabel linkLabelDeRecuperarPW;
+        private System.Windows.Forms.CheckBox checkBoxDeContrasena;
     }
 }

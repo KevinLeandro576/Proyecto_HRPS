@@ -12,7 +12,15 @@ namespace Proyecto_HRPS
     {
         public PerfilesDeUsuario()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
         private PdfPTable CrearTablaPDFEmpleados()
         {
@@ -52,8 +60,10 @@ namespace Proyecto_HRPS
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
 
@@ -99,8 +109,10 @@ namespace Proyecto_HRPS
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
 
@@ -110,20 +122,44 @@ namespace Proyecto_HRPS
 
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void PerfilesDeUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeCrearPerfil_Click(object sender, EventArgs e)
         {
-            CrearPerfilDeUsuario crearPerfilDeUsuario = new CrearPerfilDeUsuario();
-            this.Hide();
-            crearPerfilDeUsuario.Show();
+            try
+            {
+                CrearPerfilDeUsuario crearPerfilDeUsuario = new CrearPerfilDeUsuario();
+                this.Hide();
+                crearPerfilDeUsuario.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVerEmpleados_Click(object sender, EventArgs e)
@@ -154,35 +190,78 @@ namespace Proyecto_HRPS
             catch (Exception ex)
             {
                 MessageBox.Show("Cierra el reporte de empleados activos" + ex.Message);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
         private void botonDeModificarHorario_Click(object sender, EventArgs e)
         {
-            ModificarHorario modificarHorario = new ModificarHorario();
-            this.Hide();
-            modificarHorario.Show();
+            try
+            {
+                ModificarHorario modificarHorario = new ModificarHorario();
+                this.Hide();
+                modificarHorario.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeModificarSalario_Click(object sender, EventArgs e)
         {
-            ModificarSalario modificarSalario = new ModificarSalario();
-            this.Hide();
-            modificarSalario.Show();
+            try
+            {
+                ModificarSalario modificarSalario = new ModificarSalario();
+                this.Hide();
+                modificarSalario.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeEliminarEmpleados_Click(object sender, EventArgs e)
         {
-            EliminarEmpleados eliminarEmpleados = new EliminarEmpleados();
-            this.Hide();
-            eliminarEmpleados.Show();
+            try
+            {
+                EliminarEmpleados eliminarEmpleados = new EliminarEmpleados();
+                this.Hide();
+                eliminarEmpleados.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
-            this.Hide();
-            menuDeAdministrador.Show();
+            try
+            {
+                MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+                this.Hide();
+                menuDeAdministrador.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void registrarError(Exception ex, string metodoYclase)
+        {
+            string texto = "Error: " + ex.ToString();
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
         }
     }
 }
