@@ -120,7 +120,7 @@ namespace Proyecto_HRPS
                         {
                             correo = informacionEncontrada.GetString(0);
                             const string message = "¿Restablecer contraseña?";
-                            const string caption = "Form Closing";
+                            const string caption = "Opciones de recuperar contraseña";
                             var result = MessageBox.Show(message, caption,
                                                          MessageBoxButtons.YesNoCancel,
                                                          MessageBoxIcon.Question);
@@ -131,7 +131,7 @@ namespace Proyecto_HRPS
                             }
                             else
                             {
-                                MessageBox.Show("La contraseña no se restablecerá.", "",
+                                MessageBox.Show("La contraseña no se restablecerá.", "Opciones de recuperar contraseña",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
@@ -181,7 +181,7 @@ namespace Proyecto_HRPS
                 registrarEvento(evento,
                     this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "",
+                MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "Opciones de recuperar contraseña",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 volverAInicio();
             }
