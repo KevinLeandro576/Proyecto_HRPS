@@ -109,7 +109,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmpleadoVerHorario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ver Horario";
+            this.Text = "Ver horario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmpleadoVerHorario_FormClosing);
             this.Load += new System.EventHandler(this.EmpleadoVerHorario_Load);
             this.ResumeLayout(false);

@@ -54,7 +54,7 @@ namespace Proyecto_HRPS
 
         private void botonDeGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (HorarioEstaBienEscrito() && horarioNoEsIgual() && horariosSonIguales() == false)//ERROR AQUI PORQUE NO SE SALDRIA DE IF
+            if (HorarioEstaBienEscrito() && horarioNoEsIgual() && horariosSonIguales() == false && !soloTieneNumeros(textBoxDeHorarioNuevo.Text))
             {
                 guardarCambios();
             }
@@ -105,7 +105,7 @@ namespace Proyecto_HRPS
                         }
                     }
                     administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                    MessageBox.Show("Cambios guardados", caption);
+                    MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                     conexion.ExecuteNonQuery(comando02);
 
@@ -302,6 +302,27 @@ namespace Proyecto_HRPS
             {
                 string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase02);
+            }
+        }
+        bool soloTieneNumeros(string str)
+        {
+            try
+            {
+                foreach (char c in str)
+                {
+                    if (c < '0' || c > '9')
+                    {
+                        return false;
+                    }
+                }
+                MessageBox.Show("Revise horario", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
             }
         }
     }

@@ -68,6 +68,7 @@ namespace Proyecto_HRPS
             {
                 string claveTemporal = RandomString(5);
                 string claveTemporalEncriptada = encriptarClaveAsha256(claveTemporal);
+                claveTemporalEncriptada = claveTemporalEncriptada.Substring(0, 24);
                 var conexion = AbrirBaseDeDatos();
                 const string message = "Desea agregar un nuevo empleado?";
                 const string caption = "Opciones de Perfil";

@@ -91,7 +91,7 @@ namespace Proyecto_HRPS
 
                         var comando02 = conexion.GetStoredProcCommand("[EMPLEADO_CAMBIAR_CONTRASENA]", Empleado.Cedula, contrasenaEnHash);
                         conexion.ExecuteNonQuery(comando02);
-                        MessageBox.Show("Cambios realizados", "Opciones de Contraseña");
+                        MessageBox.Show("Cambios realizados", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
                         StringBuilder builder = new StringBuilder();
 

@@ -128,7 +128,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerReporteVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VerReporteVacaciones";
+            this.Text = "Reporte de vacaciones";
             this.ResumeLayout(false);
             this.PerformLayout();
 

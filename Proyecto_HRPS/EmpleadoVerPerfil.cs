@@ -140,9 +140,10 @@ namespace Proyecto_HRPS
                 textBoxDeCedula.Text = Empleado.Cedula;
                 textBoxDeCedula.Enabled = false;
                 textBoxDeNombre.Text = Empleado.Nombre;
-                dateTimePickerDeFechaDeNacimiento.Value = Empleado.FechaDeNacimiento;
+                dateTimePickerDeFechaDeNacimiento.Value = Empleado.FechaDeNacimiento.Date;
                 textBoxDeCorreoElectronico.Text = Empleado.Correo;
                 textBoxDePuesto.Text = Empleado.Puesto;
+
             }
             catch (Exception ex)
             {

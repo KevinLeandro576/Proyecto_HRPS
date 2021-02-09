@@ -126,7 +126,7 @@ namespace Proyecto_HRPS
 
                         string evento = "El empleado: " + Empleado.Nombre + "; ha iniciado sesión";
                         registrarEvento(evento,
-                            this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);                        
+                            this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                         MenuDeEmpleado menuDeEmpleado = new MenuDeEmpleado();
                         this.Hide();
@@ -253,7 +253,7 @@ namespace Proyecto_HRPS
                     estaBien = false;
                     MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length <= 25)
+                else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length < 5 || textBoxDeContrasena.Text.Length > 16)
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;

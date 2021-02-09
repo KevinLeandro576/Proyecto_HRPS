@@ -77,6 +77,7 @@ namespace Proyecto_HRPS
                 string cedula = textBoxDeCedula.Text;
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
+                contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
                 if (validarTextBox())
                 {
                     var conexion = AbrirBaseDeDatos();
@@ -322,11 +323,11 @@ namespace Proyecto_HRPS
                     estaBien = false;
                     MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length <= 25)
+                else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length < 5 || textBoxDeContrasena.Text.Length > 16)
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa contraseña", "Inicio de sesións", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revisa contraseña", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

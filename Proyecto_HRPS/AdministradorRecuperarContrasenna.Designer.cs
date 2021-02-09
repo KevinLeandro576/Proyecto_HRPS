@@ -92,7 +92,8 @@
             this.Controls.Add(this.botonDeVolver);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdministradorRecuperarContrasenna";
-            this.Text = "AdministradorRecuperarContrasenna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Administrador recuperar contraseña";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorRecuperarContrasenna_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

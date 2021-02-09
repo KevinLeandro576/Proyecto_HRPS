@@ -160,7 +160,7 @@
             this.labelDePuesto.AutoSize = true;
             this.labelDePuesto.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDePuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDePuesto.Location = new System.Drawing.Point(663, 169);
+            this.labelDePuesto.Location = new System.Drawing.Point(666, 174);
             this.labelDePuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDePuesto.Name = "labelDePuesto";
             this.labelDePuesto.Size = new System.Drawing.Size(73, 18);
@@ -172,7 +172,7 @@
             this.labelDeMedioTiempoOtiempoCompleto.AutoSize = true;
             this.labelDeMedioTiempoOtiempoCompleto.Font = new System.Drawing.Font("Arial", 12F);
             this.labelDeMedioTiempoOtiempoCompleto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeMedioTiempoOtiempoCompleto.Location = new System.Drawing.Point(663, 240);
+            this.labelDeMedioTiempoOtiempoCompleto.Location = new System.Drawing.Point(663, 238);
             this.labelDeMedioTiempoOtiempoCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeMedioTiempoOtiempoCompleto.Name = "labelDeMedioTiempoOtiempoCompleto";
             this.labelDeMedioTiempoOtiempoCompleto.Size = new System.Drawing.Size(294, 18);
@@ -215,7 +215,7 @@
             // 
             // textBoxDePuesto
             // 
-            this.textBoxDePuesto.Location = new System.Drawing.Point(971, 166);
+            this.textBoxDePuesto.Location = new System.Drawing.Point(971, 171);
             this.textBoxDePuesto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDePuesto.Name = "textBoxDePuesto";
             this.textBoxDePuesto.Size = new System.Drawing.Size(275, 26);
