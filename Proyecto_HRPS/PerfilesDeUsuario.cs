@@ -131,6 +131,7 @@ namespace Proyecto_HRPS
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
+                return null;
             }
         }
 
