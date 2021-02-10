@@ -289,7 +289,7 @@ namespace Proyecto_HRPS
                     estaBien = false;
                     MessageBox.Show("Revise horario", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (!horarioEstaBien(textBoxDeHorario.Text))
+                else if (!horarioEstaBien(textBoxDeHorario.Text) || soloTieneNumeros(textBoxDeHorario.Text))
                 {
                     textBoxDeHorario.Focus();
                     estaBien = false;
