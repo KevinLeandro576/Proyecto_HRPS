@@ -143,7 +143,7 @@ namespace Proyecto_HRPS
                                 else
                                 {
                                     textBoxDeCedula.Focus();
-                                    MessageBox.Show("Cédula no registrada o inactiva.", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Cédula no registrada o inactiva", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     reiniciarPagina();
                                 }
                             }

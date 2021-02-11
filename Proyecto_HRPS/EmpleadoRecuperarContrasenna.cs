@@ -25,7 +25,7 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
-            
+
         }
 
         private void RecuperarContrasenna_Load(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
-            
+
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace Proyecto_HRPS
                         {
                             correo = informacionEncontrada.GetString(0);
                             const string message = "¿Restablecer contraseña?";
-                            const string caption = "Opciones de recuperar contraseña";
+                            const string caption = "Opciones de Recuperar Contraseña";
                             var result = MessageBox.Show(message, caption,
                                                          MessageBoxButtons.YesNoCancel,
                                                          MessageBoxIcon.Question);
@@ -131,13 +131,13 @@ namespace Proyecto_HRPS
                             }
                             else
                             {
-                                MessageBox.Show("La contraseña no se restablecerá.", "Opciones de recuperar contraseña",
+                                MessageBox.Show("Regresando", "Opciones de Recuperar Contraseña",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Cédula inexistente.", "Error",
+                            MessageBox.Show("Cédula inexistente", "Opciones de Recuperar Contraseña",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -164,7 +164,7 @@ namespace Proyecto_HRPS
 
                 builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
                 builder.Append("<tr>");
-                builder.Append("<th>CONTRASEÑA TEMPORAL<th>");
+                builder.Append("<th>CONTRASEÑA TEMPORAL</th>");
                 builder.Append("</tr>");
 
                 builder.Append("<tr align= center>");
@@ -175,13 +175,13 @@ namespace Proyecto_HRPS
                 var comando = conexion.GetStoredProcCommand("EMPLEADO_CAMBIAR_CONTRASENA", cedula, claveTemporalEncriptada);
                 conexion.ExecuteNonQuery(comando);
 
-                administradorDeCorreo.EnviarCorreo("<h1>Ha restablecido la contraseña</h1> <br/> " + builder.ToString(), "Restablecimiento de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                administradorDeCorreo.EnviarCorreo("<h1>Atención, se ha establecido una contraseña temporal para su inicio de sesión:</h1> <br/> " + builder.ToString(), "Restablecimiento de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
                 string evento = "El empleado con cédula: " + cedula + "; ha restablecido su contraseña";
                 registrarEvento(evento,
                     this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "Opciones de recuperar contraseña",
+                MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "Opciones de Recuperar Contraseña",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 volverAInicio();
             }
@@ -263,13 +263,13 @@ namespace Proyecto_HRPS
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Opciones de Recuperar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneNumeros(textBoxDeCedula.Text))
                 {
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Opciones de Recuperar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

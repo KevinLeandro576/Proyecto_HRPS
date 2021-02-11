@@ -35,7 +35,7 @@ namespace Proyecto_HRPS
                     int numeroColumas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
                     {
-                        MessageBox.Show("No hay empleados inactivos", "Error",
+                        MessageBox.Show("No hay empleados inactivos", "Opciones de Ver Empleados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
@@ -50,7 +50,7 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cierra el reporte de empleados inactivos" + ex.Message);
+                MessageBox.Show("Cierra el reporte de empleados inactivos" + ex.Message, "Opciones de Ver Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
@@ -83,7 +83,7 @@ namespace Proyecto_HRPS
                 {
                     int numeroColumas = informacionEncontrada.FieldCount;
                     tabla = new PdfPTable(numeroColumas);
-                    tabla.WidthPercentage = 80; 
+                    tabla.WidthPercentage = 80;
 
                     Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
@@ -152,7 +152,7 @@ namespace Proyecto_HRPS
                     FS.Close();
                     FS.Dispose();
 
-                    MessageBox.Show("Reporte creado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reporte de empleados inactivos creado", "Opciones de Ver Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }

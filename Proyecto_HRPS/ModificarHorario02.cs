@@ -56,7 +56,16 @@ namespace Proyecto_HRPS
         {
             if (HorarioEstaBienEscrito() && horarioNoEsIgual() && horariosSonIguales() == false && !soloTieneNumeros(textBoxDeHorarioNuevo.Text))
             {
-                guardarCambios();
+                if (!soloTieneLetras(textBoxDeHorarioNuevo.Text))
+                {
+                    guardarCambios();
+                }
+                else
+                {
+                    textBoxDeHorarioNuevo.Focus();
+                    MessageBox.Show("Revise horario", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -75,7 +84,7 @@ namespace Proyecto_HRPS
                 // Seleccionar no
                 if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Cambios descartados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Cambios descartados", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (result == DialogResult.Yes)
                 {
@@ -104,8 +113,8 @@ namespace Proyecto_HRPS
                             correoDeEmpleado = informacionEncontrada.GetString(0);
                         }
                     }
-                    administradorDeCorreo.EnviarCorreo("<h1>Su horario ha sido modificado</h1> <br/> " + builder.ToString(), "Modificación de horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                    MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    administradorDeCorreo.EnviarCorreo("<h1>Atención, su horario ha sido modificado:</h1> <br/> " + builder.ToString(), "Modificación de Horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                     conexion.ExecuteNonQuery(comando02);
 
@@ -117,7 +126,7 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Regresando", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -317,6 +326,20 @@ namespace Proyecto_HRPS
                 }
                 MessageBox.Show("Revise horario", "Opciones de Horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return false;
+            }
+        }
+        bool soloTieneLetras(String strToCheck)
+        {
+            try
+            {
+                Regex objAlphaPattern = new Regex("^[a-z A-Z\u00C0-\u00FF]*$");
+                return objAlphaPattern.IsMatch(strToCheck);
             }
             catch (Exception ex)
             {

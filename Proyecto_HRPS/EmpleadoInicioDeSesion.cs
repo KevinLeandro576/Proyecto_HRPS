@@ -14,6 +14,8 @@ namespace Proyecto_HRPS
 {
     public partial class EmpleadoInicioDeSesion : Form
     {
+
+        int numeroDeIntentos = 0;
         public EmpleadoInicioDeSesion()
         {
             try
@@ -135,7 +137,7 @@ namespace Proyecto_HRPS
                     else
                     {
                         MessageBox.Show("No se encontraron datos al iniciar sesión."
-                            , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
                         this.Hide();
                         empleadoInicioDeSesion.Show();
@@ -157,22 +159,32 @@ namespace Proyecto_HRPS
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
                 contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
-                if (validarTextBox())
+                if (numeroDeIntentos != 2)
                 {
-                    var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("EMPLEADO_INICIO_SESION", cedula, contrasennaEncriptada);
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                    if (validarTextBox())
                     {
-                        if (informacionEncontrada.Read())
+                        var conexion = AbrirBaseDeDatos();
+                        var comando = conexion.GetStoredProcCommand("EMPLEADO_INICIO_SESION", cedula, contrasennaEncriptada);
+                        using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                         {
-                            iniciarSesion();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales."
-                                , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (informacionEncontrada.Read())
+                            {
+                                iniciarSesion();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales."
+                                    , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                numeroDeIntentos = numeroDeIntentos + 1;
+                            }
                         }
                     }
+                }
+                else
+                {
+                    numeroDeIntentos = 0;
+                    MessageBox.Show("Ha fallado tres veces el inicio de sesión, por favor revise cédula o restablezca contraseña"
+                        , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -243,21 +255,24 @@ namespace Proyecto_HRPS
                 bool estaBien = false;
                 if (string.IsNullOrEmpty(textBoxDeCedula.Text) || textBoxDeCedula.Text.Length != 9)
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneNumeros(textBoxDeCedula.Text))
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length < 5 || textBoxDeContrasena.Text.Length > 16)
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa contraseña", "Inicio de sesións", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise contraseña", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

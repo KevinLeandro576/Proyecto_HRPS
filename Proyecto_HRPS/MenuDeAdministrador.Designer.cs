@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeCerrarSesion = new System.Windows.Forms.Button();
             this.botonDePerfilesDeUsuario = new System.Windows.Forms.Button();
             this.botonDeControlDeEmpleados = new System.Windows.Forms.Button();
             this.botonDeSolicitudes = new System.Windows.Forms.Button();
             this.botonDeReportes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // botonDeVolver
+            // botonDeCerrarSesion
             // 
-            this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(84, 227);
-            this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
-            this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
-            this.botonDeVolver.TabIndex = 17;
-            this.botonDeVolver.Text = "VOLVER";
-            this.botonDeVolver.UseVisualStyleBackColor = false;
-            this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
+            this.botonDeCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeCerrarSesion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.botonDeCerrarSesion.Location = new System.Drawing.Point(84, 227);
+            this.botonDeCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeCerrarSesion.Name = "botonDeCerrarSesion";
+            this.botonDeCerrarSesion.Size = new System.Drawing.Size(325, 41);
+            this.botonDeCerrarSesion.TabIndex = 17;
+            this.botonDeCerrarSesion.Text = "CERRAR SESIÓN";
+            this.botonDeCerrarSesion.UseVisualStyleBackColor = false;
+            this.botonDeCerrarSesion.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
             // botonDePerfilesDeUsuario
             // 
@@ -115,7 +115,7 @@
             this.Controls.Add(this.botonDeSolicitudes);
             this.Controls.Add(this.botonDeControlDeEmpleados);
             this.Controls.Add(this.botonDePerfilesDeUsuario);
-            this.Controls.Add(this.botonDeVolver);
+            this.Controls.Add(this.botonDeCerrarSesion);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuDeAdministrador";
@@ -127,7 +127,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeCerrarSesion;
         private System.Windows.Forms.Button botonDePerfilesDeUsuario;
         private System.Windows.Forms.Button botonDeControlDeEmpleados;
         private System.Windows.Forms.Button botonDeSolicitudes;

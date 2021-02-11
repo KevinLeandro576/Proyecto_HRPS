@@ -136,7 +136,7 @@ namespace Proyecto_HRPS
             {
                 DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
                 int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
-                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());                
+                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());
                 int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
                 String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -207,12 +207,12 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 // Seleccionar no
                 else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -222,7 +222,7 @@ namespace Proyecto_HRPS
             {
                 DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
                 int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
-                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());                
+                DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());
                 int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
                 String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -293,12 +293,12 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 // Seleccionar no
                 else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Solicitud");
+                    MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

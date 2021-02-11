@@ -128,7 +128,7 @@ namespace Proyecto_HRPS
                                                                                                     textBoxDeCorreoElectronico.Text);
                         conexion.ExecuteNonQuery(comando);
                         MessageBox.Show("Empleado agregado exitosamente", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema, bienvenido a Electrónica UREBA S.A.!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                         string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
@@ -136,12 +136,12 @@ namespace Proyecto_HRPS
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Seleccionar no
                     else if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -289,7 +289,7 @@ namespace Proyecto_HRPS
                     estaBien = false;
                     MessageBox.Show("Revise horario", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (!horarioEstaBien(textBoxDeHorario.Text) || soloTieneNumeros(textBoxDeHorario.Text))
+                else if (!horarioEstaBien(textBoxDeHorario.Text) || soloTieneNumeros(textBoxDeHorario.Text) || soloTieneLetras(textBoxDeHorario.Text))
                 {
                     textBoxDeHorario.Focus();
                     estaBien = false;
@@ -382,7 +382,7 @@ namespace Proyecto_HRPS
                 return false;
             }
         }
-        bool soloTieneLetras(String strToCheck)//LETRAS ESPACIO Y TILDES
+        bool soloTieneLetras(String strToCheck)
         {
             try
             {

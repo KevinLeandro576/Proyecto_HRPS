@@ -14,6 +14,7 @@ namespace Proyecto_HRPS
 {
     public partial class AdministradorInicioDeSesion : Form
     {
+        int numeroDeIntentos = 0;
         public AdministradorInicioDeSesion()
         {
             try
@@ -78,37 +79,48 @@ namespace Proyecto_HRPS
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
                 contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
-                if (validarTextBox())
+                if (numeroDeIntentos != 2)
                 {
-                    var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INICIO_SESION", cedula, contrasennaEncriptada);
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                    if (validarTextBox())
                     {
-                        if (informacionEncontrada.Read())
+                        var conexion = AbrirBaseDeDatos();
+                        var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INICIO_SESION", cedula, contrasennaEncriptada);
+                        using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                         {
-                            var comando02 = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
-                            using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
+                            if (informacionEncontrada.Read())
                             {
-                                if (informacionEncontrada02.Read())
+                                var comando02 = conexion.GetStoredProcCommand("SACAR_INFORMACION_DE_EMPLEADO", cedula);
+                                using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
                                 {
-                                    iniciarSesion();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No se encontraron datos al iniciar sesión."
-                                        , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
-                                    this.Hide();
-                                    administrador.Show();
+                                    if (informacionEncontrada02.Read())
+                                    {
+                                        iniciarSesion();
+                                    }
+                                    else
+                                    {
+                                        numeroDeIntentos = numeroDeIntentos + 1;
+                                        MessageBox.Show("No se encontraron datos al iniciar sesión"
+                                            , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                                        this.Hide();
+                                        administrador.Show();
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales."
-                                , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                            {
+                                numeroDeIntentos = numeroDeIntentos + 1;
+                                MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales"
+                                    , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
+                }
+                else
+                {
+                    numeroDeIntentos = 0;
+                    MessageBox.Show("Ha fallado tres veces el inicio de sesión, por favor revise cédula o restablezca contraseña"
+                        , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -313,21 +325,24 @@ namespace Proyecto_HRPS
                 bool estaBien = false;
                 if (string.IsNullOrEmpty(textBoxDeCedula.Text) || textBoxDeCedula.Text.Length != 9)
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!soloTieneNumeros(textBoxDeCedula.Text))
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa cédula", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise cédula", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (string.IsNullOrEmpty(textBoxDeContrasena.Text) || textBoxDeContrasena.Text.Length < 5 || textBoxDeContrasena.Text.Length > 16)
                 {
+                    numeroDeIntentos = numeroDeIntentos + 1;
                     textBoxDeCedula.Focus();
                     estaBien = false;
-                    MessageBox.Show("Revisa contraseña", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise contraseña", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

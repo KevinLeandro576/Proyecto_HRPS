@@ -175,13 +175,14 @@ namespace Proyecto_HRPS
                     int numeroColumas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
                     {
-                        MessageBox.Show("No hay empleados activos", "Error",
+                        MessageBox.Show("No hay empleados activos", "Opciones de Ver Empleados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
                         PdfPTable tabla = CrearTablaPDFEmpleados();
                         CrearReportePDFEmpleados(tabla);
+                        MessageBox.Show("Reporte de empleados activos creado", "Opciones de Ver Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         VerEmpleados verEmpleados = new VerEmpleados();
                         this.Hide();
                         verEmpleados.Show();

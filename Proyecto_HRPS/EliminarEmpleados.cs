@@ -84,7 +84,7 @@ namespace Proyecto_HRPS
                         });
                     }
                 }
-                DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["botonDeModificar"];//ERROR AQUI, BOTON ESTARIA LO QUE SERIA NULO
+                DataGridViewButtonColumn boton = (DataGridViewButtonColumn)dataGridViewDeEmpleados.Columns["botonDeModificar"];
                 boton.FlatStyle = FlatStyle.Popup;
                 boton.DefaultCellStyle.ForeColor = Color.White;
                 boton.DefaultCellStyle.BackColor = Color.FromArgb(36, 75, 128);
@@ -196,7 +196,7 @@ namespace Proyecto_HRPS
                         // Seleccionar no
                         if (result == DialogResult.No)
                         {
-                            MessageBox.Show("Empleado no borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Empleado no borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else if (result == DialogResult.Yes)
                         {
@@ -207,12 +207,12 @@ namespace Proyecto_HRPS
                             string texto = "El empleado: " + Empleado.Nombre + " ha eliminado al empleado " + nombreDeEmpleado + ".";
                             string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                             registrarEvento(texto, metodoYclase);
-                            MessageBox.Show("Empleado borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Empleado borrado", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             reiniciarPagina();
                         }
                         else if (result == DialogResult.Cancel)
                         {
-                            MessageBox.Show("Regresando", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Regresando", "Eliminación de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }

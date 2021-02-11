@@ -66,7 +66,7 @@ namespace Proyecto_HRPS
                     // Seleccionar no
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Cambios descartados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Cambios descartados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result == DialogResult.Yes)
                     {
@@ -75,13 +75,13 @@ namespace Proyecto_HRPS
                         string texto = "El empleado: " + Empleado.Nombre + " ha cambiado datos.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
-                        MessageBox.Show("Cambios guardados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Cambios guardados", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                         ReiniciarPantalla();
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -176,7 +176,7 @@ namespace Proyecto_HRPS
                 // Seleccionar no
                 if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (result == DialogResult.Yes)
                 {
@@ -186,7 +186,7 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Regresando", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

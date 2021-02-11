@@ -67,7 +67,7 @@ namespace Proyecto_HRPS
                 }
                 else if (!ValidarContrasena(contrasena))
                 {
-                    MessageBox.Show("Revise la contraseña", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise contraseña", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (contrasenaEnHash.Equals(contrasenaAnterior))
                 {
@@ -83,7 +83,7 @@ namespace Proyecto_HRPS
                     // Seleccionar no
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Cambios descartados", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Regresando", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result == DialogResult.Yes)
                     {
@@ -91,7 +91,7 @@ namespace Proyecto_HRPS
 
                         var comando02 = conexion.GetStoredProcCommand("[EMPLEADO_CAMBIAR_CONTRASENA]", Empleado.Cedula, contrasenaEnHash);
                         conexion.ExecuteNonQuery(comando02);
-                        MessageBox.Show("Cambios realizados", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Cambios realizados, su nueva contraseña se ha enviado a su correo", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
                         StringBuilder builder = new StringBuilder();
 
@@ -105,22 +105,21 @@ namespace Proyecto_HRPS
                         builder.Append("</table>");
 
 
-
                         List<string> listaDeCorreos = new List<string>();
                         listaDeCorreos.Add("1037joseg@gmail.com");
                         listaDeCorreos.Add("leandrokevin576@gmail.com");
 
-                        string evento = "El empleado: " + Empleado.Nombre + "; ha actualizado su contraseña.";
+                        string evento = "El empleado con cédula: " + Empleado.Cedula + "; ha actualizado su contraseña."; 
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(evento, metodoYclase);
 
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha hecho un cambio de contraseña</h1> <br/> " + builder.ToString(), "Cambio de contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
+                        administradorDeCorreo.EnviarCorreo("<h1>Ha hecho un cambio de contraseña, a continuación se muestra su nueva contraseña:</h1> <br/> " + builder.ToString(), "Cambio de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
                         this.Hide();
                         empleadoVerPerfil.Show();
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Regresando", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
