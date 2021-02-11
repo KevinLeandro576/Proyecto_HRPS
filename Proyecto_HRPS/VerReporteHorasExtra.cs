@@ -49,7 +49,7 @@ namespace Proyecto_HRPS
             try
             {
                 DateTime fechaDeInicio = dateTimePickerDeFechaDeInicio.Value;
-                DateTime fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value;
+                DateTime fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value; 
 
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("REPORTE_DE_HORAS_EXTRA", fechaDeInicio, fechaDeFinalizacion);
