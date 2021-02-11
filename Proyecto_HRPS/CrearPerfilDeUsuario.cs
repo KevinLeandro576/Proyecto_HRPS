@@ -503,6 +503,19 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase02);
             }
         }
+
+        private void CrearPerfilDeUsuario_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dateTimePickerDeFechaDeNacimiento.MaxDate = DateTime.Now.AddYears(-5);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
     }
 }
 

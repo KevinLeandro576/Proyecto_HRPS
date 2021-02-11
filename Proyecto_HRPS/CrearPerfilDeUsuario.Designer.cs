@@ -368,6 +368,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear perfil de usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearPerfilDeUsuario_FormClosing);
+            this.Load += new System.EventHandler(this.CrearPerfilDeUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDeSalario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDeSalarioPorHora)).EndInit();
             this.ResumeLayout(false);
