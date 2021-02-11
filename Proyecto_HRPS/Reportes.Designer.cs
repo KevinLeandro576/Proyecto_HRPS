@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.botonDeVerSalariosDeEmpleados = new System.Windows.Forms.Button();
-            this.botonDeVevReportesDiarios = new System.Windows.Forms.Button();
+            this.botonDeVerReportesDiarios = new System.Windows.Forms.Button();
             this.botonDeVerVacacionesDeEmpleados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -63,19 +63,19 @@
             this.botonDeVerSalariosDeEmpleados.UseVisualStyleBackColor = false;
             this.botonDeVerSalariosDeEmpleados.Click += new System.EventHandler(this.botonDeVerSalariosDeEmpleados_Click);
             // 
-            // botonDeVevReportesDiarios
+            // botonDeVerReportesDiarios
             // 
-            this.botonDeVevReportesDiarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVevReportesDiarios.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonDeVevReportesDiarios.ForeColor = System.Drawing.Color.White;
-            this.botonDeVevReportesDiarios.Location = new System.Drawing.Point(96, 81);
-            this.botonDeVevReportesDiarios.Margin = new System.Windows.Forms.Padding(4);
-            this.botonDeVevReportesDiarios.Name = "botonDeVevReportesDiarios";
-            this.botonDeVevReportesDiarios.Size = new System.Drawing.Size(325, 41);
-            this.botonDeVevReportesDiarios.TabIndex = 22;
-            this.botonDeVevReportesDiarios.Text = "VER REPORTES DIARIOS";
-            this.botonDeVevReportesDiarios.UseVisualStyleBackColor = false;
-            this.botonDeVevReportesDiarios.Click += new System.EventHandler(this.botonDeVevReportesDiarios_Click);
+            this.botonDeVerReportesDiarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeVerReportesDiarios.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeVerReportesDiarios.ForeColor = System.Drawing.Color.White;
+            this.botonDeVerReportesDiarios.Location = new System.Drawing.Point(96, 81);
+            this.botonDeVerReportesDiarios.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeVerReportesDiarios.Name = "botonDeVerReportesDiarios";
+            this.botonDeVerReportesDiarios.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVerReportesDiarios.TabIndex = 22;
+            this.botonDeVerReportesDiarios.Text = "VER REPORTES DIARIOS";
+            this.botonDeVerReportesDiarios.UseVisualStyleBackColor = false;
+            this.botonDeVerReportesDiarios.Click += new System.EventHandler(this.botonDeVevReportesDiarios_Click);
             // 
             // botonDeVerVacacionesDeEmpleados
             // 
@@ -98,7 +98,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(514, 258);
             this.Controls.Add(this.botonDeVerVacacionesDeEmpleados);
-            this.Controls.Add(this.botonDeVevReportesDiarios);
+            this.Controls.Add(this.botonDeVerReportesDiarios);
             this.Controls.Add(this.botonDeVerSalariosDeEmpleados);
             this.Controls.Add(this.botonDeVolver);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -112,7 +112,7 @@
         #endregion
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Button botonDeVerSalariosDeEmpleados;
-        private System.Windows.Forms.Button botonDeVevReportesDiarios;
+        private System.Windows.Forms.Button botonDeVerReportesDiarios;
         private System.Windows.Forms.Button botonDeVerVacacionesDeEmpleados;
     }
 }

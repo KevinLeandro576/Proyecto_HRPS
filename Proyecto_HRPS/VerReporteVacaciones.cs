@@ -18,14 +18,30 @@ namespace Proyecto_HRPS
     {
         public VerReporteVacaciones()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            Reportes reportes = new Reportes();
-            this.Hide();
-            reportes.Show();
+            try
+            {
+                Reportes reportes = new Reportes();
+                this.Hide();
+                reportes.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeGenerar_Click(object sender, EventArgs e)
@@ -58,7 +74,9 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cierra el reporte de vacaciones", ex.Message);
+                MessageBox.Show("Cierra el reporte de vacaciones", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -111,8 +129,10 @@ namespace Proyecto_HRPS
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
             return tabla;
@@ -163,10 +183,14 @@ namespace Proyecto_HRPS
                     DC.Close();
                     FS.Close();
                     FS.Dispose();
+                    MessageBox.Show("Se ha creado un reporte de vacaciones.", "Creación de reporte",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
                 throw;
             }
             return true;
@@ -174,8 +198,40 @@ namespace Proyecto_HRPS
 
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return null;
+            }
+        }
+
+        private void VerReporteVacaciones_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dateTimePickerDeFechaDeFinalizacion.MaxDate = DateTime.Now;
+                dateTimePickerDeFechaDeInicio.MaxDate = DateTime.Now;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void registrarError(Exception ex, string metodoYclase)
+        {
+            string texto = "Error: " + ex.ToString();
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
+                                                                             metodoYclase);
+            conexion.ExecuteNonQuery(comando);
         }
     }
 }
