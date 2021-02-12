@@ -143,7 +143,7 @@ namespace Proyecto_HRPS
                 dateTimePickerDeFechaDeNacimiento.Value = Empleado.FechaDeNacimiento.Date;
                 textBoxDeCorreoElectronico.Text = Empleado.Correo;
                 textBoxDePuesto.Text = Empleado.Puesto;
-
+                dateTimePickerDeFechaDeNacimiento.MaxDate = DateTime.Now.AddYears(-5);
             }
             catch (Exception ex)
             {

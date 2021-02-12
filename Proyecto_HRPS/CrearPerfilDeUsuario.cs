@@ -14,10 +14,13 @@ using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
+
     public partial class CrearPerfilDeUsuario : Form
     {
         int rol = 0;
         string tiempo = "";
+        TextBox txt;
+        TextBox txt01;
         public CrearPerfilDeUsuario()
         {
             try
@@ -509,6 +512,50 @@ namespace Proyecto_HRPS
             try
             {
                 dateTimePickerDeFechaDeNacimiento.MaxDate = DateTime.Now.AddYears(-5);
+                txt = (TextBox)numericUpDownDeSalario.Controls[1];
+                txt.Validating += new CancelEventHandler(txt_Validating);
+                txt01 = (TextBox)numericUpDownDeSalarioPorHora.Controls[1];
+                txt01.Validating += new CancelEventHandler(txt01_Validating);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                string caption = "Opciones de Salario";
+                if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Minimum)
+                {
+                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Maximum)
+                {
+                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        private void txt01_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                string caption = "Opciones de Salario";
+                if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Minimum)
+                {
+                    MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Maximum)
+                {
+                    MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

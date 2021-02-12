@@ -77,17 +77,24 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
-        void txt_Validating(object sender, CancelEventArgs e)
+        private void txt_Validating(object sender, CancelEventArgs e)
         {
-
-            string caption = "Opciones de Salario";
-            if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Minimum)
+            try
             {
-                MessageBox.Show("Salario menor a mínimo, por favor cambiar", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string caption = "Opciones de Salario";
+                if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Minimum)
+                {
+                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Maximum)
+                {
+                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Maximum)
+            catch (Exception ex)
             {
-                MessageBox.Show("Salario mayor al máximo, por favor cambiar", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
 
