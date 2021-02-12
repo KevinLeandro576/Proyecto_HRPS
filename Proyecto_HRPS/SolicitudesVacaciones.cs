@@ -71,7 +71,7 @@ namespace Proyecto_HRPS
                 return null;
             }
         }
-        
+
         private void enviarCorreoNotificacion()
         {
             var conexion = AbrirBaseDeDatos();
@@ -148,6 +148,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -161,6 +162,11 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
+        }
+
+        private void SolicitudesVacaciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

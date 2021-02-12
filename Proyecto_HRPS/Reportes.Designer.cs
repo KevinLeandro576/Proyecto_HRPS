@@ -106,6 +106,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de reportes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Reportes_FormClosing);
+            this.Load += new System.EventHandler(this.Reportes_Load);
             this.ResumeLayout(false);
 
         }

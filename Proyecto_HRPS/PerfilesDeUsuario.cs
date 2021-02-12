@@ -148,6 +148,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -163,7 +164,7 @@ namespace Proyecto_HRPS
             }
         }
 
-        
+
 
         private void botonDeCrearPerfil_Click(object sender, EventArgs e)
         {
@@ -281,6 +282,11 @@ namespace Proyecto_HRPS
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
+        }
+
+        private void PerfilesDeUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

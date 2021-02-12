@@ -130,6 +130,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -145,7 +146,7 @@ namespace Proyecto_HRPS
             }
         }
 
-                private void registrarError(Exception ex, string metodoYclase)
+        private void registrarError(Exception ex, string metodoYclase)
         {
             string texto = "Error: " + ex.ToString();
             var conexion = AbrirBaseDeDatos();

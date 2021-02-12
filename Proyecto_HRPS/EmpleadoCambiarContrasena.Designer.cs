@@ -140,6 +140,7 @@ namespace Proyecto_HRPS
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar contraseña";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmpleadoCambiarContrasena_FormClosing);
+            this.Load += new System.EventHandler(this.EmpleadoCambiarContrasena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

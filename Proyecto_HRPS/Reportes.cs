@@ -28,9 +28,9 @@ namespace Proyecto_HRPS
 
         private void botonDeVerSalariosDeEmpleados_Click(object sender, EventArgs e)
         {
-            try 
-            { 
-            
+            try
+            {
+
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace Proyecto_HRPS
             }
         }
 
-        
+
 
         private void registrarError(Exception ex, string metodoYclase)
         {
@@ -124,6 +124,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -137,6 +138,11 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
+        }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

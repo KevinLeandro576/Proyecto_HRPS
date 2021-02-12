@@ -39,6 +39,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -136,6 +137,11 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
                 return null;
             }
+        }
+
+        private void MenuPerfilesEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

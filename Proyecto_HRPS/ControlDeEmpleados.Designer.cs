@@ -92,6 +92,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de empleados";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlDeEmpleados_FormClosing);
+            this.Load += new System.EventHandler(this.ControlDeEmpleados_Load);
             this.ResumeLayout(false);
 
         }

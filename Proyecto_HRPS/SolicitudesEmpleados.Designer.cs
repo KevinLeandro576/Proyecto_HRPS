@@ -90,6 +90,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de solicitudes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolicitudesEmpleados_FormClosing);
+            this.Load += new System.EventHandler(this.SolicitudesEmpleados_Load);
             this.ResumeLayout(false);
 
         }

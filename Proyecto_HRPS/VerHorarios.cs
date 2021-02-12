@@ -29,13 +29,13 @@ namespace Proyecto_HRPS
         {
             var conexion = AbrirBaseDeDatos();
             var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORARIOS]");
-            DataSet ds = new DataSet();            
+            DataSet ds = new DataSet();
 
             using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
             {
                 while (informacionEncontrada.Read())
                 {
-                    
+
                 }
             }
         }
@@ -58,6 +58,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {

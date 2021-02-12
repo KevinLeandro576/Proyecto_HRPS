@@ -27,7 +27,7 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
 
-        }        
+        }
 
         private void botonDeVerHorasExtra_Click(object sender, EventArgs e)
         {
@@ -87,6 +87,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -124,6 +125,11 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
                 return null;
             }
+        }
+
+        private void ControlDeEmpleados_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

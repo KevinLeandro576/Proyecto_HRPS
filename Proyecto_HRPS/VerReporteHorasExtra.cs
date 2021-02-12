@@ -49,7 +49,7 @@ namespace Proyecto_HRPS
             try
             {
                 DateTime fechaDeInicio = dateTimePickerDeFechaDeInicio.Value;
-                DateTime fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value; 
+                DateTime fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value;
 
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("REPORTE_DE_HORAS_EXTRA", fechaDeInicio, fechaDeFinalizacion);
@@ -116,7 +116,7 @@ namespace Proyecto_HRPS
                         tabla.AddCell(horasExtra);
                     }
                 }
-            } 
+            }
             catch (Exception ex)
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
@@ -173,8 +173,8 @@ namespace Proyecto_HRPS
                     FS.Dispose();
                     MessageBox.Show("Se ha creado un reporte de horas extra.", "Creación de reporte",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }                
-            } 
+                }
+            }
             catch (Exception ex)
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
@@ -235,6 +235,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {

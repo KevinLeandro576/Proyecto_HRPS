@@ -151,6 +151,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitar vacaciones";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolicitudesVacaciones_FormClosing);
+            this.Load += new System.EventHandler(this.SolicitudesVacaciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -106,6 +106,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPerfilesEmpleado_FormClosing);
+            this.Load += new System.EventHandler(this.MenuPerfilesEmpleado_Load);
             this.ResumeLayout(false);
 
         }

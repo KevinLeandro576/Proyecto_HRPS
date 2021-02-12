@@ -106,6 +106,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de empleado";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuDeEmpleado_FormClosing);
+            this.Load += new System.EventHandler(this.MenuDeEmpleado_Load);
             this.ResumeLayout(false);
 
         }

@@ -42,6 +42,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
                 else
                 {
@@ -124,7 +125,7 @@ namespace Proyecto_HRPS
                         listaDeCorreos.Add("1037joseg@gmail.com");
                         listaDeCorreos.Add("leandrokevin576@gmail.com");
 
-                        string evento = "El empleado con cédula: " + Empleado.Cedula + "; ha actualizado su contraseña."; 
+                        string evento = "El empleado con cédula: " + Empleado.Cedula + "; ha actualizado su contraseña.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(evento, metodoYclase);
 
@@ -260,6 +261,11 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
+        }
+
+        private void EmpleadoCambiarContrasena_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

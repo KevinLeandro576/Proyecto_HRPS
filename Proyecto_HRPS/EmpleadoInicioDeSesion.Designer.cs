@@ -163,6 +163,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado inicio de sesión";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmpleadoInicioDeSesion_FormClosing);
+            this.Load += new System.EventHandler(this.EmpleadoInicioDeSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
