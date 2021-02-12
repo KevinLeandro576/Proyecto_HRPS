@@ -15,37 +15,91 @@ namespace Proyecto_HRPS
     {
         public MenuDeEmpleado()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
         private void MenuDeEmpleado_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                const string message = "¿Desea cerrar la aplicación?";
+                const string caption = "Opciones de Sesión";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Regresando", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDePerfil_Click(object sender, EventArgs e)
         {
-            MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
-            this.Hide();
-            menuPerfilesEmpleado.Show();
+            try
+            {
+                MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+                this.Hide();
+                menuPerfilesEmpleado.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVerHorasExtra_Click(object sender, EventArgs e)
         {
-            EmpleadoVerHorasExtra empleadoVerHorasExtra = new EmpleadoVerHorasExtra();
-            this.Hide();
-            empleadoVerHorasExtra.Show();
+            try
+            {
+                EmpleadoVerHorasExtra empleadoVerHorasExtra = new EmpleadoVerHorasExtra();
+                this.Hide();
+                empleadoVerHorasExtra.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeSolicitudes_Click(object sender, EventArgs e)
         {
-            SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
-            this.Hide();
-            solicitudesEmpleados.Show();
+            try
+            {
+                SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
+                this.Hide();
+                solicitudesEmpleados.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-
 
             try
             {

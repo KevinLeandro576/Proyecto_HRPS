@@ -90,6 +90,7 @@ namespace Proyecto_HRPS
             this.Name = "AdminstradorEscogerSolicitud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escoger solicitud";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminstradorEscogerSolicitud_FormClosing);
             this.ResumeLayout(false);
 
         }

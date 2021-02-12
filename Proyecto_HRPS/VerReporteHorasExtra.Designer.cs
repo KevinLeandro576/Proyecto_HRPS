@@ -129,6 +129,7 @@
             this.Name = "VerReporteHorasExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de horas extra";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerReporteHorasExtra_FormClosing);
             this.Load += new System.EventHandler(this.VerReporteHorasExtra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -441,9 +441,29 @@ namespace Proyecto_HRPS
 
         private void CrearPerfilDeUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
+            cerrarSesion();
+        }
+
+        private void cerrarSesion()
+        {
             try
             {
-                Application.Exit();
+                const string message = "¿Desea cerrar la aplicación?";
+                const string caption = "Opciones de Sesión";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+                else
+                {
+                    MessageBox.Show("Regresando", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -451,6 +471,7 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
+
         private bool empleadoExiste()
         {
             try
