@@ -79,7 +79,8 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
+                    FormCollection fc = Application.OpenForms;
+                    System.Environment.Exit(1);
                 }
                 else
                 {

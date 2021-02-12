@@ -408,7 +408,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();p
+                    Application.Exit();
                 }
                 else
                 {
