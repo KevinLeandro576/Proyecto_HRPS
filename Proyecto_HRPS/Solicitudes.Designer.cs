@@ -227,6 +227,7 @@
             this.Name = "Solicitudes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Solicitudes_FormClosing);
             this.Load += new System.EventHandler(this.Solicitudes_Load);
             this.panelDeFlujoDeSolicitudesDeHorasExtra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeHorasExtra)).EndInit();

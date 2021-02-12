@@ -73,6 +73,7 @@
             this.Name = "VerEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver empleados";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerEmpleados_FormClosing);
             this.ResumeLayout(false);
 
         }

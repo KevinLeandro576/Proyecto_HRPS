@@ -91,6 +91,7 @@
             this.Name = "ControlDeEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de empleados";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlDeEmpleados_FormClosing);
             this.ResumeLayout(false);
 
         }

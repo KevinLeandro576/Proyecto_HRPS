@@ -61,6 +61,7 @@ namespace Proyecto_HRPS
             this.Name = "VerHorarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver horarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerHorarios_FormClosing);
             this.Load += new System.EventHandler(this.VerHorarios_Load);
             this.ResumeLayout(false);
 

@@ -129,6 +129,7 @@
             this.Name = "VerReporteVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de vacaciones";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerReporteVacaciones_FormClosing);
             this.Load += new System.EventHandler(this.VerReporteVacaciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

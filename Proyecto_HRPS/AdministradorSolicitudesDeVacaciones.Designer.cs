@@ -242,6 +242,7 @@ namespace Proyecto_HRPS
             this.Name = "AdministradorSolicitudesDeVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes de vacaciones";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorSolicitudesDeVacaciones_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorSolicitudesDeVacaciones_Load);
             this.panelDeFlujoDeSolicitudesDeVacaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeVacaciones)).EndInit();

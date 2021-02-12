@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuDeAdministrador));
             this.botonDeCerrarSesion = new System.Windows.Forms.Button();
             this.botonDePerfilesDeUsuario = new System.Windows.Forms.Button();
             this.botonDeControlDeEmpleados = new System.Windows.Forms.Button();
@@ -118,6 +119,7 @@
             this.Controls.Add(this.botonDeCerrarSesion);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuDeAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú de administrador";

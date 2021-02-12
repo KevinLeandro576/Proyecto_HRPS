@@ -153,6 +153,7 @@
             this.Name = "SolicitudesHorasExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de horas extra";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolicitudesHorasExtra_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericDeCantidadDeHorasExtra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

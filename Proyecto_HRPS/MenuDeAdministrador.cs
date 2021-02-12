@@ -15,40 +15,103 @@ namespace Proyecto_HRPS
     {
         public MenuDeAdministrador()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void MenuDeAdministrador_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                const string message = "¿Desea cerrar la aplicación?";
+                const string caption = "Opciones de Sesión";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Regresando", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDePerfilesDeUsuario_Click(object sender, EventArgs e)
         {
-            PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
-            this.Hide();
-            perfilesDeUsuario.Show();
+            try
+            {
+                PerfilesDeUsuario perfilesDeUsuario = new PerfilesDeUsuario();
+                this.Hide();
+                perfilesDeUsuario.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeControlDeEmpleados_Click(object sender, EventArgs e)
         {
-            ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
-            this.Hide();
-            controlDeEmpleados.Show();
+            try
+            {
+                ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
+                this.Hide();
+                controlDeEmpleados.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeSolicitudes_Click(object sender, EventArgs e)
         {
-            AdminstradorEscogerSolicitud adminstradorEscogerSolicitud = new AdminstradorEscogerSolicitud();
-            this.Hide();
-            adminstradorEscogerSolicitud.Show();
+            try
+            {
+                AdminstradorEscogerSolicitud adminstradorEscogerSolicitud = new AdminstradorEscogerSolicitud();
+                this.Hide();
+                adminstradorEscogerSolicitud.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeReportes_Click(object sender, EventArgs e)
         {
-            Reportes reportes = new Reportes();
-            this.Hide();
-            reportes.Show();
+            try
+            {
+                Reportes reportes = new Reportes();
+                this.Hide();
+                reportes.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void registrarError(Exception ex, string metodoYclase)
@@ -106,6 +169,5 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
-
     }
 }
