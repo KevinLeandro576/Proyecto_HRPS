@@ -570,7 +570,7 @@ namespace Proyecto_HRPS
             {
                 string caption = "Opciones de Salario";
                 if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Minimum)
-                {
+                {  
                     MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Maximum)
