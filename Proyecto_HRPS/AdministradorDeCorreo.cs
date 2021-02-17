@@ -44,7 +44,7 @@ namespace Proyecto_HRPS
                 correo.Priority = MailPriority.Normal;
 
                 SmtpClient smtp = new SmtpClient();
-                smtp.UseDefaultCredentials = false;
+                smtp.UseDefaultCredentials = true; //ESTABA EN FALSE Y SERVIA
                 smtp.Host = servidorDeSmtp; //Host del servidor de correo
                 smtp.Port = puerto; //Puerto de salida
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioSmtp, passwordSmtp);//Cuenta de correo
