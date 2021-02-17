@@ -48,9 +48,9 @@ namespace Proyecto_HRPS
                 smtp.Host = servidorDeSmtp; //Host del servidor de correo
                 smtp.Port = puerto; //Puerto de salida
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioSmtp, passwordSmtp);//Cuenta de correo
-                
-                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
-                smtp.EnableSsl = true;//True si el servidor de correo permite ssl
+                smtp.EnableSsl = true;
+               /*ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+                smtp.EnableSsl = true;//True si el servidor de correo permite ssl*/
 
                 smtp.Send(correo);
 

@@ -129,9 +129,9 @@ namespace Proyecto_HRPS
                                                                                                     claveTemporalEncriptada,
                                                                                                     rol,
                                                                                                     textBoxDeCorreoElectronico.Text);
-                        conexion.ExecuteNonQuery(comando);
-                        MessageBox.Show("Empleado agregado exitosamente", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        conexion.ExecuteNonQuery(comando);                        
                         administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema, bienvenido a Electrónica UREBA S.A.!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        MessageBox.Show("Empleado agregado exitosamente, se ha enviado un correo al empleado con la información escrita y contraseña temporal.", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
