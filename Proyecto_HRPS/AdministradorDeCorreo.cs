@@ -36,7 +36,7 @@ namespace Proyecto_HRPS
                 {
                     correo.To.Add(item); //Correo destino?
                 }
-                
+
                 correo.Subject = encabezado; //Asunto
                 correo.Body = mensaje; //Mensaje del correo
 
@@ -49,8 +49,8 @@ namespace Proyecto_HRPS
                 smtp.Port = puerto; //Puerto de salida
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioSmtp, passwordSmtp);//Cuenta de correo
                 smtp.EnableSsl = true;
-               /*ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
-                smtp.EnableSsl = true;//True si el servidor de correo permite ssl*/
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+                smtp.EnableSsl = true;//True si el servidor de correo permite ssl
 
                 smtp.Send(correo);
 
