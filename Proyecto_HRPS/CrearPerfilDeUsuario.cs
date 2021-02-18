@@ -129,7 +129,7 @@ namespace Proyecto_HRPS
                                                                                                     claveTemporalEncriptada,
                                                                                                     rol,
                                                                                                     textBoxDeCorreoElectronico.Text);
-                        conexion.ExecuteNonQuery(comando);                        
+                        conexion.ExecuteNonQuery(comando);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha sido registrado en el sistema, bienvenido a Electrónica UREBA S.A.!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                         MessageBox.Show("Empleado agregado exitosamente, se ha enviado un correo al empleado con la información escrita y contraseña temporal.", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
@@ -347,7 +347,7 @@ namespace Proyecto_HRPS
                     MessageBox.Show("Revise correo electrónico", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                else if (!esCorreo(textBoxDeCorreoElectronico.Text) || !textBoxDeCorreoElectronico.Text.EndsWith(".com"))
+                else if (!esCorreo(textBoxDeCorreoElectronico.Text))
                 {
                     textBoxDeCorreoElectronico.Focus();
                     estaBien = false;
@@ -570,7 +570,7 @@ namespace Proyecto_HRPS
             {
                 string caption = "Opciones de Salario";
                 if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Minimum)
-                {  
+                {
                     MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Maximum)
