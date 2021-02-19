@@ -141,6 +141,7 @@ namespace Proyecto_HRPS
                         Empleado.Puesto = informacionEncontrada["PUESTO"].ToString();
                         Empleado.Correo = informacionEncontrada["CORREO"].ToString();
                         Empleado.Contrasena = informacionEncontrada["CONTRASENNA"].ToString();
+                        Empleado.CantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
 
                         string evento = "El empleado: " + Empleado.Nombre + "; ha iniciado sesión";
                         registrarEvento(evento,

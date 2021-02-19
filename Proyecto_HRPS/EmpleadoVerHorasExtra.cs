@@ -41,28 +41,6 @@ namespace Proyecto_HRPS
             }
         }
 
-        private void botonDeBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string cedula = textBoxDeCedula.Text;
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_HORAS_EXTRAS", cedula);
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                {
-                    if (informacionEncontrada.Read())
-                    {
-                        decimal cantidadDeHoras = decimal.Parse(informacionEncontrada.GetDecimal(0).ToString());
-                        textBoxDeHorasExtra.Text = cantidadDeHoras.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-            }
-        }
         public Database AbrirBaseDeDatos()
         {
             try
@@ -82,7 +60,27 @@ namespace Proyecto_HRPS
         {
             try
             {
+                textBoxDeCedula.Enabled = false;
                 textBoxDeHorasExtra.Enabled = false;
+                string cedula = Empleado.Cedula;
+                textBoxDeCedula.Text = cedula;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("EMPLEADO_VER_HORAS_EXTRAS", cedula);
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    if (informacionEncontrada.Read())
+                    {
+                        if (informacionEncontrada.GetValue(0) == DBNull.Value)
+                        {
+                            textBoxDeHorasExtra.Text = "Sin horas extra del mes";
+                        }
+                        else
+                        {
+                            decimal cantidadDeHoras = decimal.Parse(informacionEncontrada.GetDecimal(0).ToString());
+                            textBoxDeHorasExtra.Text = cantidadDeHoras.ToString();
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
