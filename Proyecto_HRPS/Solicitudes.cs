@@ -254,7 +254,12 @@ namespace Proyecto_HRPS
                         conexion.ExecuteNonQuery(comando05);
                         MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
                         administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(texto, metodoYclase);
+
                         reiniciarPagina();
                     }
                     else if (result == DialogResult.Cancel)
@@ -338,7 +343,12 @@ namespace Proyecto_HRPS
                         conexion.ExecuteNonQuery(comando04);
                         MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
                         administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+
+                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(texto, metodoYclase);
+
                         reiniciarPagina();
                     }
                     else if (result == DialogResult.Cancel)
@@ -395,7 +405,23 @@ namespace Proyecto_HRPS
             conexion.ExecuteNonQuery(comando);
         }
 
-        private void Solicitudes_FormClosing(object sender, FormClosingEventArgs e)
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
+        }
+
+            private void Solicitudes_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {

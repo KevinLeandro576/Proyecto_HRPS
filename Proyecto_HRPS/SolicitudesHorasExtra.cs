@@ -45,57 +45,69 @@ namespace Proyecto_HRPS
         {
             try
             {
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("EMPLEADO_INSERTAR_SOLICITUD_HORAS_EXTRAS", textBoxDeNombre.Text,
-                                                                                                       dateTimePickerDeDiaTrabajado.Value,
-                                                                                                       numericDeCantidadDeHorasExtra.Value);
-                conexion.ExecuteNonQuery(comando);
-                //ENVIA UN CORREO
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
-
-                StringBuilder builder = new StringBuilder();
-
-                builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
-                builder.Append("<tr>");
-                builder.Append("<th>NOMBRE</th>");
-                builder.Append("<th>FECHA DE SOLICITUD</th>");
-                builder.Append("<th>CANTIDAD DE HORAS</th>");
-                builder.Append("<th>ESTADO DE SOLICITUD</th>");
-                builder.Append("</tr>");
-
-                builder.Append("<tr align= center>");
-                builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
-                builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString() + "</td>");
-                builder.Append("<td>" + numericDeCantidadDeHorasExtra.Value.ToString() + "</td>");
-                builder.Append("<td>" + "PENDIENTE" + "</td>");
-                builder.Append("</tr>");
-                builder.Append("</table>");
-
-
-                var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", textBoxDeNombre.Text);
-                string correoDeEmpleado = "";
-                string correoDeAdministrador;
-                List<string> listaDeCorreos = new List<string>();
-                listaDeCorreos.Add("leandrokevin576@gmail.com");
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
+                if (numericDeCantidadDeHorasExtra.Value != 0)
                 {
-                    if (informacionEncontrada.Read())
-                    {
-                        correoDeEmpleado = informacionEncontrada.GetString(0);
-                    }
-                }
-                var comando03 = conexion.GetStoredProcCommand("[SACAR_CORREOS_DE_ADMINISTRADORES]");
+                    var conexion = AbrirBaseDeDatos();
+                    var comando = conexion.GetStoredProcCommand("EMPLEADO_INSERTAR_SOLICITUD_HORAS_EXTRAS", textBoxDeNombre.Text,
+                                                                                                           dateTimePickerDeDiaTrabajado.Value,
+                                                                                                           numericDeCantidadDeHorasExtra.Value);
+                    conexion.ExecuteNonQuery(comando);
+                    //ENVIA UN CORREO
+                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
 
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando03))
-                {
-                    while (informacionEncontrada.Read())
+                    StringBuilder builder = new StringBuilder();
+
+                    builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+                    builder.Append("<tr>");
+                    builder.Append("<th>NOMBRE</th>");
+                    builder.Append("<th>FECHA DE SOLICITUD</th>");
+                    builder.Append("<th>CANTIDAD DE HORAS</th>");
+                    builder.Append("<th>ESTADO DE SOLICITUD</th>");
+                    builder.Append("</tr>");
+
+                    builder.Append("<tr align= center>");
+                    builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
+                    builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString() + "</td>");
+                    builder.Append("<td>" + numericDeCantidadDeHorasExtra.Value.ToString() + "</td>");
+                    builder.Append("<td>" + "PENDIENTE" + "</td>");
+                    builder.Append("</tr>");
+                    builder.Append("</table>");
+
+
+                    var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", textBoxDeNombre.Text);
+                    string correoDeEmpleado = "";
+                    string correoDeAdministrador;
+                    List<string> listaDeCorreos = new List<string>();
+                    listaDeCorreos.Add("leandrokevin576@gmail.com");
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
                     {
-                        correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
-                        listaDeCorreos.Add(correoDeAdministrador);
+                        if (informacionEncontrada.Read())
+                        {
+                            correoDeEmpleado = informacionEncontrada.GetString(0);
+                        }
                     }
+                    var comando03 = conexion.GetStoredProcCommand("[SACAR_CORREOS_DE_ADMINISTRADORES]");
+
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando03))
+                    {
+                        while (informacionEncontrada.Read())
+                        {
+                            correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
+                            listaDeCorreos.Add(correoDeAdministrador);
+                        }
+                    }
+                    administradorDeCorreo.EnviarCorreo("<h1>Ha enviado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                    MessageBox.Show("Ha registrado una solicitud de horas extra", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SolicitudesHorasExtra solicitudes = new SolicitudesHorasExtra();
+                    this.Hide();
+                    solicitudes.Show();
                 }
-                administradorDeCorreo.EnviarCorreo("<h1>Ha enviado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                else
+                {
+                    MessageBox.Show("No puede registrar cero horas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    numericDeCantidadDeHorasExtra.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -157,7 +169,9 @@ namespace Proyecto_HRPS
 
         private void SolicitudesHorasExtra_Load(object sender, EventArgs e)
         {
-
+            textBoxDeNombre.Text = Empleado.Nombre;
+            textBoxDeNombre.Enabled = false;
+            dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now;
         }
     }
 }

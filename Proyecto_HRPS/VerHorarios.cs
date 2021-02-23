@@ -15,34 +15,58 @@ namespace Proyecto_HRPS
     {
         public VerHorarios()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
-            ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
-            controlDeEmpleados.Show();
-            this.Hide();
+            try
+            {
+                ControlDeEmpleados controlDeEmpleados = new ControlDeEmpleados();
+                controlDeEmpleados.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
 
         private void VerHorarios_Load(object sender, EventArgs e)
         {
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORARIOS]");
-            DataSet ds = new DataSet();
-
-            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            try
             {
-                while (informacionEncontrada.Read())
-                {
-
-                }
+                cargarDataGridView();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
             }
         }
+
         public Database AbrirBaseDeDatos()
         {
-            var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            try
+            {
+                var connectionString = @"Server=tcp:servidor-de-hr-payroll-system.database.windows.net,1433;Initial Catalog=HR_PAYROLL_SYSTEM;Persist Security Info=False;User ID=Kevin;Password=Leandro123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                return new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase(connectionString);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                return null;
+            }
         }
 
         private void VerHorarios_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,6 +105,58 @@ namespace Proyecto_HRPS
             var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", texto,
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
+        }
+
+        private void cargarDataGridView()
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORARIOS]");
+                DataSet ds = new DataSet();
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    while (informacionEncontrada.Read())
+                    {
+                        string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                        string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                        string horario = informacionEncontrada["HORARIO"].ToString();
+
+                        dataGridViewDeEmpleados.DefaultCellStyle.ForeColor = Color.Black;
+                        empleadoEnObjetoBindingSource.Add(new EmpleadoEnObjeto
+                        {
+                            Cedula = cedula,
+                            Nombre = nombre,
+                            Horario = horario
+                        });
+                    }
+                    cargarAltura();
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void cargarAltura()
+        {
+            try
+            {
+                var heigth = 40;
+                foreach(DataGridViewRow dr in dataGridViewDeEmpleados.Rows)
+                {
+                    heigth += dr.Height;
+                }
+                dataGridViewDeEmpleados.Height = heigth;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
         }
     }
 }
