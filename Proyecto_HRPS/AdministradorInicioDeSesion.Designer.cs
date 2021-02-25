@@ -78,6 +78,7 @@
             this.textBoxDeContrasena.PasswordChar = '*';
             this.textBoxDeContrasena.Size = new System.Drawing.Size(255, 26);
             this.textBoxDeContrasena.TabIndex = 24;
+            this.textBoxDeContrasena.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDeContrasena_KeyDown);
             // 
             // botonDeVolver
             // 
@@ -162,7 +163,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador inicio de sesión";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorInicioDeSesion_FormClosing);
-            this.Load += new System.EventHandler(this.AdministradorInicioDeSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
