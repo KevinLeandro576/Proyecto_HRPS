@@ -129,6 +129,11 @@
             this.numericDeCantidadDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericDeCantidadDeHorasExtra.Location = new System.Drawing.Point(333, 157);
             this.numericDeCantidadDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.numericDeCantidadDeHorasExtra.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericDeCantidadDeHorasExtra.Name = "numericDeCantidadDeHorasExtra";
             this.numericDeCantidadDeHorasExtra.Size = new System.Drawing.Size(281, 26);
             this.numericDeCantidadDeHorasExtra.TabIndex = 15;
