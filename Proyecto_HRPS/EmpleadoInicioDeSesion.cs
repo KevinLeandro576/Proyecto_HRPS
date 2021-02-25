@@ -328,5 +328,21 @@ namespace Proyecto_HRPS
         {
 
         }
+
+        private void textBoxDeContrasena_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    comprobarContrasenna();
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
     }
 }

@@ -79,6 +79,7 @@
             this.textBoxDeContrasena.PasswordChar = '*';
             this.textBoxDeContrasena.Size = new System.Drawing.Size(255, 26);
             this.textBoxDeContrasena.TabIndex = 22;
+            this.textBoxDeContrasena.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDeContrasena_KeyDown);
             // 
             // botonDeVolver
             // 
