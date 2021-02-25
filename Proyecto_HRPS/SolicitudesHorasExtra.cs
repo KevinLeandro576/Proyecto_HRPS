@@ -163,7 +163,7 @@ namespace Proyecto_HRPS
             catch (Exception ex)
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
+                registrarError(ex, metodoYclase); 
             }
         }
 
