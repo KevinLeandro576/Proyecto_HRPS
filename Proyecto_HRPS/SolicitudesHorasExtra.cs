@@ -171,6 +171,7 @@ namespace Proyecto_HRPS
         {
             textBoxDeNombre.Text = Empleado.Nombre;
             textBoxDeNombre.Enabled = false;
+            dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now.AddYears(-5);
             dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now;
         }
     }
