@@ -32,11 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarHorario));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.dataGridViewDeEmpleados = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.empleadoEnObjetoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.empleadoEnObjetoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hR_PAYROLL_SYSTEMDataSet = new Proyecto_HRPS.HR_PAYROLL_SYSTEMDataSet();
             this.uSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,16 +40,22 @@
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.panelDeBorde = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadoEnObjetoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadoEnObjetoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hR_PAYROLL_SYSTEMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource)).BeginInit();
             this.panelDeBorde.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -77,6 +79,7 @@
             this.dataGridViewDeEmpleados.AllowUserToResizeColumns = false;
             this.dataGridViewDeEmpleados.AllowUserToResizeRows = false;
             this.dataGridViewDeEmpleados.AutoGenerateColumns = false;
+            this.dataGridViewDeEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDeEmpleados.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDeEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -86,36 +89,15 @@
             this.Modificar});
             this.dataGridViewDeEmpleados.DataSource = this.empleadoEnObjetoBindingSource2;
             this.dataGridViewDeEmpleados.GridColor = System.Drawing.Color.White;
-            this.dataGridViewDeEmpleados.Location = new System.Drawing.Point(4, 0);
+            this.dataGridViewDeEmpleados.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDeEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDeEmpleados.Name = "dataGridViewDeEmpleados";
             this.dataGridViewDeEmpleados.ReadOnly = true;
             this.dataGridViewDeEmpleados.RowHeadersVisible = false;
-            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(521, 338);
+            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(513, 383);
             this.dataGridViewDeEmpleados.TabIndex = 5;
             this.dataGridViewDeEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
-            // 
-            // dataGridViewTextBoxColumnCedula
-            // 
-            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "Cedula";
-            this.dataGridViewTextBoxColumnCedula.HeaderText = "CÉDULA";
-            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
-            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnNombre
-            // 
-            this.dataGridViewTextBoxColumnNombre.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumnNombre.HeaderText = "NOMBRE";
-            this.dataGridViewTextBoxColumnNombre.Name = "dataGridViewTextBoxColumnNombre";
-            this.dataGridViewTextBoxColumnNombre.ReadOnly = true;
-            this.dataGridViewTextBoxColumnNombre.Width = 200;
-            // 
-            // dataGridViewTextBoxColumnHorario
-            // 
-            this.dataGridViewTextBoxColumnHorario.DataPropertyName = "Horario";
-            this.dataGridViewTextBoxColumnHorario.HeaderText = "HORARIO";
-            this.dataGridViewTextBoxColumnHorario.Name = "dataGridViewTextBoxColumnHorario";
-            this.dataGridViewTextBoxColumnHorario.ReadOnly = true;
+            this.dataGridViewDeEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellContentClick);
             // 
             // Modificar
             // 
@@ -126,10 +108,6 @@
             this.Modificar.ReadOnly = true;
             this.Modificar.Text = "MODIFICAR";
             this.Modificar.UseColumnTextForButtonValue = true;
-            // 
-            // empleadoEnObjetoBindingSource2
-            // 
-            this.empleadoEnObjetoBindingSource2.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
             // 
             // hR_PAYROLL_SYSTEMDataSet
             // 
@@ -166,19 +144,53 @@
             // 
             // panelDeBorde
             // 
-            this.panelDeBorde.Controls.Add(this.dataGridViewDeEmpleados);
-            this.panelDeBorde.Location = new System.Drawing.Point(50, 141);
+            this.panelDeBorde.Controls.Add(this.panel1);
+            this.panelDeBorde.Location = new System.Drawing.Point(54, 114);
             this.panelDeBorde.Margin = new System.Windows.Forms.Padding(4);
             this.panelDeBorde.Name = "panelDeBorde";
-            this.panelDeBorde.Size = new System.Drawing.Size(525, 338);
+            this.panelDeBorde.Size = new System.Drawing.Size(525, 395);
             this.panelDeBorde.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewDeEmpleados);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(517, 387);
+            this.panel1.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumnCedula
+            // 
+            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "Cedula";
+            this.dataGridViewTextBoxColumnCedula.HeaderText = "CÉDULA";
+            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
+            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnNombre
+            // 
+            this.dataGridViewTextBoxColumnNombre.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumnNombre.HeaderText = "NOMBRE";
+            this.dataGridViewTextBoxColumnNombre.Name = "dataGridViewTextBoxColumnNombre";
+            this.dataGridViewTextBoxColumnNombre.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnHorario
+            // 
+            this.dataGridViewTextBoxColumnHorario.DataPropertyName = "Horario";
+            this.dataGridViewTextBoxColumnHorario.HeaderText = "HORARIO";
+            this.dataGridViewTextBoxColumnHorario.Name = "dataGridViewTextBoxColumnHorario";
+            this.dataGridViewTextBoxColumnHorario.ReadOnly = true;
+            // 
+            // empleadoEnObjetoBindingSource2
+            // 
+            this.empleadoEnObjetoBindingSource2.DataSource = typeof(Proyecto_HRPS.EmpleadoEnObjeto);
             // 
             // ModificarHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(632, 580);
+            this.ClientSize = new System.Drawing.Size(643, 623);
             this.Controls.Add(this.panelDeBorde);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.textBoxDeCedula);
@@ -193,13 +205,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarHorario_FormClosing);
             this.Load += new System.EventHandler(this.ModificarHorario_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hR_PAYROLL_SYSTEMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource)).EndInit();
             this.panelDeBorde.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoEnObjetoBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnHorario;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -241,5 +241,15 @@ namespace Proyecto_HRPS
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
+
+        private void dataGridViewDeEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

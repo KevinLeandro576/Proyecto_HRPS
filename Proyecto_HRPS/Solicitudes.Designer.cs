@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Solicitudes));
             this.botonDeVolver = new System.Windows.Forms.Button();
-            this.panelDeFlujoDeSolicitudesDeHorasExtra = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridViewDeSolicitudesDeHorasExtra = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumnIdentificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnCantidadDeHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botonDeAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.botonDeNegar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.solicitudDeHorasExtraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
@@ -46,10 +38,20 @@
             this.dateTimePickerDeFecha = new System.Windows.Forms.DateTimePicker();
             this.labelHorasExtra = new System.Windows.Forms.Label();
             this.solicitudDeVacacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeHorasExtra)).BeginInit();
+            this.dataGridViewDeSolicitudesDeHorasExtra = new System.Windows.Forms.DataGridView();
+            this.botonDeNegar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.botonDeAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnCantidadDeHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnIdentificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeHorasExtraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeVacacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeHorasExtra)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // botonDeVolver
@@ -57,7 +59,7 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(56, 480);
+            this.botonDeVolver.Location = new System.Drawing.Point(56, 602);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(694, 41);
@@ -65,90 +67,6 @@
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
             this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
-            // 
-            // panelDeFlujoDeSolicitudesDeHorasExtra
-            // 
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Controls.Add(this.dataGridViewDeSolicitudesDeHorasExtra);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Location = new System.Drawing.Point(56, 197);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Name = "panelDeFlujoDeSolicitudesDeHorasExtra";
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(694, 228);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.TabIndex = 7;
-            // 
-            // dataGridViewDeSolicitudesDeHorasExtra
-            // 
-            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToAddRows = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToDeleteRows = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToResizeColumns = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToResizeRows = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.AutoGenerateColumns = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewDeSolicitudesDeHorasExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeSolicitudesDeHorasExtra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumnIdentificador,
-            this.dataGridViewTextBoxColumnDia,
-            this.dataGridViewTextBoxColumnCantidadDeHoras,
-            this.dataGridViewTextBoxColumnCedula,
-            this.botonDeAceptar,
-            this.botonDeNegar});
-            this.dataGridViewDeSolicitudesDeHorasExtra.DataSource = this.solicitudDeHorasExtraBindingSource;
-            this.dataGridViewDeSolicitudesDeHorasExtra.GridColor = System.Drawing.Color.White;
-            this.dataGridViewDeSolicitudesDeHorasExtra.Location = new System.Drawing.Point(8, 9);
-            this.dataGridViewDeSolicitudesDeHorasExtra.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.dataGridViewDeSolicitudesDeHorasExtra.Name = "dataGridViewDeSolicitudesDeHorasExtra";
-            this.dataGridViewDeSolicitudesDeHorasExtra.ReadOnly = true;
-            this.dataGridViewDeSolicitudesDeHorasExtra.RowHeadersVisible = false;
-            this.dataGridViewDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(683, 211);
-            this.dataGridViewDeSolicitudesDeHorasExtra.TabIndex = 8;
-            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
-            // 
-            // dataGridViewTextBoxColumnIdentificador
-            // 
-            this.dataGridViewTextBoxColumnIdentificador.DataPropertyName = "Identificador";
-            this.dataGridViewTextBoxColumnIdentificador.HeaderText = "Identificador";
-            this.dataGridViewTextBoxColumnIdentificador.Name = "dataGridViewTextBoxColumnIdentificador";
-            this.dataGridViewTextBoxColumnIdentificador.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnDia
-            // 
-            this.dataGridViewTextBoxColumnDia.DataPropertyName = "Dia";
-            this.dataGridViewTextBoxColumnDia.HeaderText = "Dia";
-            this.dataGridViewTextBoxColumnDia.Name = "dataGridViewTextBoxColumnDia";
-            this.dataGridViewTextBoxColumnDia.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnCantidadDeHoras
-            // 
-            this.dataGridViewTextBoxColumnCantidadDeHoras.DataPropertyName = "CantidadDeHoras";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.HeaderText = "Cantidad De Horas";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.Name = "dataGridViewTextBoxColumnCantidadDeHoras";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnCedula
-            // 
-            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "CedulaDeEmpleado";
-            this.dataGridViewTextBoxColumnCedula.HeaderText = "Cedula De Empleado";
-            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
-            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
-            this.dataGridViewTextBoxColumnCedula.Width = 180;
-            // 
-            // botonDeAceptar
-            // 
-            this.botonDeAceptar.DataPropertyName = "botonDeAceptar";
-            this.botonDeAceptar.HeaderText = "";
-            this.botonDeAceptar.Name = "botonDeAceptar";
-            this.botonDeAceptar.ReadOnly = true;
-            this.botonDeAceptar.Text = "Aceptar";
-            this.botonDeAceptar.UseColumnTextForButtonValue = true;
-            // 
-            // botonDeNegar
-            // 
-            this.botonDeNegar.DataPropertyName = "botonDeNegar";
-            this.botonDeNegar.HeaderText = "";
-            this.botonDeNegar.Name = "botonDeNegar";
-            this.botonDeNegar.ReadOnly = true;
-            this.botonDeNegar.Text = "Negar";
-            this.botonDeNegar.UseColumnTextForButtonValue = true;
             // 
             // solicitudDeHorasExtraBindingSource
             // 
@@ -207,18 +125,109 @@
             // 
             this.solicitudDeVacacionesBindingSource.DataSource = typeof(Proyecto_HRPS.SolicitudDeVacaciones);
             // 
+            // dataGridViewDeSolicitudesDeHorasExtra
+            // 
+            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToAddRows = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToDeleteRows = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToResizeColumns = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.AllowUserToResizeRows = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.AutoGenerateColumns = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDeSolicitudesDeHorasExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDeSolicitudesDeHorasExtra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumnIdentificador,
+            this.dataGridViewTextBoxColumnDia,
+            this.dataGridViewTextBoxColumnCantidadDeHoras,
+            this.dataGridViewTextBoxColumnCedula,
+            this.botonDeAceptar,
+            this.botonDeNegar});
+            this.dataGridViewDeSolicitudesDeHorasExtra.DataSource = this.solicitudDeHorasExtraBindingSource;
+            this.dataGridViewDeSolicitudesDeHorasExtra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDeSolicitudesDeHorasExtra.GridColor = System.Drawing.Color.White;
+            this.dataGridViewDeSolicitudesDeHorasExtra.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewDeSolicitudesDeHorasExtra.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.dataGridViewDeSolicitudesDeHorasExtra.Name = "dataGridViewDeSolicitudesDeHorasExtra";
+            this.dataGridViewDeSolicitudesDeHorasExtra.ReadOnly = true;
+            this.dataGridViewDeSolicitudesDeHorasExtra.RowHeadersVisible = false;
+            this.dataGridViewDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(677, 416);
+            this.dataGridViewDeSolicitudesDeHorasExtra.TabIndex = 8;
+            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
+            // 
+            // botonDeNegar
+            // 
+            this.botonDeNegar.DataPropertyName = "botonDeNegar";
+            this.botonDeNegar.HeaderText = "";
+            this.botonDeNegar.Name = "botonDeNegar";
+            this.botonDeNegar.ReadOnly = true;
+            this.botonDeNegar.Text = "Negar";
+            this.botonDeNegar.UseColumnTextForButtonValue = true;
+            // 
+            // botonDeAceptar
+            // 
+            this.botonDeAceptar.DataPropertyName = "botonDeAceptar";
+            this.botonDeAceptar.HeaderText = "";
+            this.botonDeAceptar.Name = "botonDeAceptar";
+            this.botonDeAceptar.ReadOnly = true;
+            this.botonDeAceptar.Text = "Aceptar";
+            this.botonDeAceptar.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewTextBoxColumnCedula
+            // 
+            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "CedulaDeEmpleado";
+            this.dataGridViewTextBoxColumnCedula.HeaderText = "Cedula De Empleado";
+            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
+            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
+            this.dataGridViewTextBoxColumnCedula.Width = 180;
+            // 
+            // dataGridViewTextBoxColumnCantidadDeHoras
+            // 
+            this.dataGridViewTextBoxColumnCantidadDeHoras.DataPropertyName = "CantidadDeHoras";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.HeaderText = "Cantidad De Horas";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.Name = "dataGridViewTextBoxColumnCantidadDeHoras";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnDia
+            // 
+            this.dataGridViewTextBoxColumnDia.DataPropertyName = "Dia";
+            this.dataGridViewTextBoxColumnDia.HeaderText = "Dia";
+            this.dataGridViewTextBoxColumnDia.Name = "dataGridViewTextBoxColumnDia";
+            this.dataGridViewTextBoxColumnDia.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnIdentificador
+            // 
+            this.dataGridViewTextBoxColumnIdentificador.DataPropertyName = "Identificador";
+            this.dataGridViewTextBoxColumnIdentificador.HeaderText = "Identificador";
+            this.dataGridViewTextBoxColumnIdentificador.Name = "dataGridViewTextBoxColumnIdentificador";
+            this.dataGridViewTextBoxColumnIdentificador.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(56, 156);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(683, 422);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridViewDeSolicitudesDeHorasExtra);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(677, 416);
+            this.panel2.TabIndex = 17;
+            // 
             // Solicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(824, 543);
+            this.ClientSize = new System.Drawing.Size(811, 656);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelHorasExtra);
             this.Controls.Add(this.dateTimePickerDeFecha);
             this.Controls.Add(this.labelDeFecha);
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
-            this.Controls.Add(this.panelDeFlujoDeSolicitudesDeHorasExtra);
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -229,10 +238,11 @@
             this.Text = "Solicitudes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Solicitudes_FormClosing);
             this.Load += new System.EventHandler(this.Solicitudes_Load);
-            this.panelDeFlujoDeSolicitudesDeHorasExtra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeHorasExtra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeHorasExtraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeVacacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeHorasExtra)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,20 +251,21 @@
         #endregion
 
         private System.Windows.Forms.Button botonDeVolver;
-        private System.Windows.Forms.FlowLayoutPanel panelDeFlujoDeSolicitudesDeHorasExtra;
         private System.Windows.Forms.Label labelDeCedula;
         private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.BindingSource solicitudDeHorasExtraBindingSource;
-        private System.Windows.Forms.DataGridView dataGridViewDeSolicitudesDeHorasExtra;
         private System.Windows.Forms.Label labelDeFecha;
         private System.Windows.Forms.DateTimePicker dateTimePickerDeFecha;
+        private System.Windows.Forms.BindingSource solicitudDeVacacionesBindingSource;
+        private System.Windows.Forms.Label labelHorasExtra;
+        private System.Windows.Forms.DataGridView dataGridViewDeSolicitudesDeHorasExtra;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnIdentificador;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnDia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnCantidadDeHoras;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnCedula;
         private System.Windows.Forms.DataGridViewButtonColumn botonDeAceptar;
         private System.Windows.Forms.DataGridViewButtonColumn botonDeNegar;
-        private System.Windows.Forms.BindingSource solicitudDeVacacionesBindingSource;
-        private System.Windows.Forms.Label labelHorasExtra;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
