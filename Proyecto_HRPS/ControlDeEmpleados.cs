@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using iTextSharp.text.pdf;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using System.IO;
 
 namespace Proyecto_HRPS
 {
@@ -48,9 +51,27 @@ namespace Proyecto_HRPS
         {
             try
             {
-                VerHorarios verHorarios = new VerHorarios();
-                verHorarios.Show();
-                this.Hide();
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORARIOS]");
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    if (informacionEncontrada.Read() != true)
+                    {
+                        MessageBox.Show("No hay empleados registrados", "Opciones de Ver Empleados",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        PdfPTable tabla = CrearTablaPDFHorarios();
+                        CrearReportePDFHorarios(tabla);
+                        MessageBox.Show("Reporte de horarios creado", "Opciones de Control de Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ControlDeEmpleados control = new ControlDeEmpleados();
+                        this.Hide();
+                        control.Show();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -130,6 +151,100 @@ namespace Proyecto_HRPS
         private void ControlDeEmpleados_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private PdfPTable CrearTablaPDFHorarios()
+        {
+            PdfPTable tabla;
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORARIOS]");
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    tabla = new PdfPTable(numeroColumas);
+                    tabla.WidthPercentage = 100f;
+
+                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeHorario = new Paragraph("HORARIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+
+                    tabla.AddCell(encabezadoDeCedula);
+                    tabla.AddCell(encabezadoDeNombre);
+                    tabla.AddCell(encabezadoDeHorario);
+
+                    while (informacionEncontrada.Read())
+                    {
+                        string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                        string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                        string horario = informacionEncontrada["HORARIO"].ToString();
+
+                        tabla.AddCell(cedula);
+                        tabla.AddCell(nombre);
+                        tabla.AddCell(horario);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                throw;
+            }
+
+            return tabla;
+        }
+
+        private bool CrearReportePDFHorarios(PdfPTable tabla)
+        {
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/HORARIOS_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+
+                Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
+
+                using (FileStream FS = File.Create(path))
+                {
+                    PdfWriter.GetInstance(DC, FS);
+                    DC.Open();
+
+                    iTextSharp.text.Image jpeg01 = iTextSharp.text.Image.GetInstance(Properties.Resources.iconoDeUREBA, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    jpeg01.ScaleToFit(500f, 500f);
+                    jpeg01.SpacingBefore = 10f;
+                    jpeg01.SpacingAfter = 1f;
+                    jpeg01.Alignment = Element.ALIGN_CENTER;
+                    DC.Add(jpeg01);
+
+                    Paragraph para = new Paragraph("HORARIOS" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
+                    para.Alignment = Element.ALIGN_CENTER;
+                    para.SpacingAfter = 18f;
+                    DC.Add(para);
+
+                    DC.Add(tabla);
+                    tabla.SpacingAfter = 14f;
+                    string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+                    Paragraph fechaYhoraDeGeneracion = new Paragraph("Fecha y hora de generación de reporte: " + fechaYhora, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
+                    fechaYhoraDeGeneracion.SpacingBefore = 20f;
+                    fechaYhoraDeGeneracion.Alignment = Element.ALIGN_CENTER;
+                    DC.Add(fechaYhoraDeGeneracion);
+                    DC.Close();
+                    FS.Close();
+                    FS.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                throw;
+            }
+
+            return true;
         }
     }
 }
