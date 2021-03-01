@@ -252,7 +252,7 @@ namespace Proyecto_HRPS
                         estado = "ACEPTADO";
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
-                        MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
+                        MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
@@ -264,12 +264,12 @@ namespace Proyecto_HRPS
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Solicitud");
+                        MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Seleccionar no
                     else if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Solicitud");
+                        MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 if (dataGridViewDeSolicitudesDeHorasExtra.Columns[e.ColumnIndex].Name == "botonDeNegar")
@@ -341,7 +341,7 @@ namespace Proyecto_HRPS
                         estado = "NEGADO";
                         var comando04 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                         conexion.ExecuteNonQuery(comando04);
-                        MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
+                        MessageBox.Show("Solicitud negada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
@@ -353,12 +353,12 @@ namespace Proyecto_HRPS
                     }
                     else if (result == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Solicitud");
+                        MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Seleccionar no
                     else if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Regresando", "Opciones de Solicitud");
+                        MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -421,7 +421,7 @@ namespace Proyecto_HRPS
             }
         }
 
-            private void Solicitudes_FormClosing(object sender, FormClosingEventArgs e)
+        private void Solicitudes_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {

@@ -251,9 +251,12 @@ namespace Proyecto_HRPS
                         estado = "ACEPTADO";
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
-                        MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud");
+                        MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones aceptada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
                     }
                     else if (result == DialogResult.Cancel)
@@ -266,9 +269,6 @@ namespace Proyecto_HRPS
                         MessageBox.Show("Regresando", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
-
-
                 if (dataGridViewDeSolicitudesDeVacaciones.Columns[e.ColumnIndex].Name == "botonNegar")
                 {
                     DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
@@ -337,9 +337,12 @@ namespace Proyecto_HRPS
                         estado = "NEGADO";
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
-                        MessageBox.Show("Solicitud negada", "Opciones de Solicitud");
+                        MessageBox.Show("Solicitud negada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones negada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
                     }
                     else if (result == DialogResult.Cancel)
@@ -399,6 +402,21 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
+        }
 
         private void registrarError(Exception ex, string metodoYclase)
         {
@@ -437,5 +455,6 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
+
     }
 }

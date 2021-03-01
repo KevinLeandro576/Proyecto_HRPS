@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerHorasExtra));
             this.labelDeCedula = new System.Windows.Forms.Label();
-            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.labelDeNombre = new System.Windows.Forms.Label();
             this.labelDeHorario = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.textBoxDeDeducciones = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioNeto = new System.Windows.Forms.TextBox();
             this.botonDeBuscar = new System.Windows.Forms.Button();
+            this.comboBoxDeCedulas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelDeCedula
@@ -64,15 +64,6 @@
             this.labelDeCedula.Size = new System.Drawing.Size(74, 18);
             this.labelDeCedula.TabIndex = 5;
             this.labelDeCedula.Text = "CÉDULA";
-            // 
-            // textBoxDeCedula
-            // 
-            this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeCedula.Location = new System.Drawing.Point(245, 69);
-            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDeCedula.Name = "textBoxDeCedula";
-            this.textBoxDeCedula.Size = new System.Drawing.Size(310, 26);
-            this.textBoxDeCedula.TabIndex = 13;
             // 
             // botonDeVolver
             // 
@@ -291,12 +282,21 @@
             this.botonDeBuscar.UseVisualStyleBackColor = false;
             this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
             // 
+            // comboBoxDeCedulas
+            // 
+            this.comboBoxDeCedulas.FormattingEnabled = true;
+            this.comboBoxDeCedulas.Location = new System.Drawing.Point(245, 69);
+            this.comboBoxDeCedulas.Name = "comboBoxDeCedulas";
+            this.comboBoxDeCedulas.Size = new System.Drawing.Size(310, 26);
+            this.comboBoxDeCedulas.TabIndex = 35;
+            // 
             // VerHorasExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1371, 443);
+            this.Controls.Add(this.comboBoxDeCedulas);
             this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeSalarioNeto);
             this.Controls.Add(this.textBoxDeDeducciones);
@@ -317,7 +317,6 @@
             this.Controls.Add(this.labelDeHorario);
             this.Controls.Add(this.labelDeNombre);
             this.Controls.Add(this.botonDeVolver);
-            this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -336,7 +335,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelDeCedula;
-        private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Label labelDeNombre;
         private System.Windows.Forms.Label labelDeHorario;
@@ -357,5 +355,6 @@
         private System.Windows.Forms.TextBox textBoxDeDeducciones;
         private System.Windows.Forms.TextBox textBoxDeSalarioNeto;
         private System.Windows.Forms.Button botonDeBuscar;
+        private System.Windows.Forms.ComboBox comboBoxDeCedulas;
     }
 }

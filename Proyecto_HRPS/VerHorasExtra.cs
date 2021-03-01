@@ -30,6 +30,7 @@ namespace Proyecto_HRPS
         {
             try
             {
+                PonerCedulasAcomboBox();
                 textBoxDeNombre.Enabled = false;
                 textBoxDeHorario.Enabled = false;
                 textBoxDeSalarioBruto.Enabled = false;
@@ -47,6 +48,28 @@ namespace Proyecto_HRPS
             }
         }
 
+        private void PonerCedulasAcomboBox()
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[SACAR_CEDULAS_DE_EMPLEADOS]");
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    while (informacionEncontrada.Read())
+                    {
+                        comboBoxDeCedulas.Items.Add(informacionEncontrada["PK_CEDULA"].ToString());
+                    }
+                    comboBoxDeCedulas.ValueMember = "PK_CEDULA";
+                    comboBoxDeCedulas.DisplayMember = "PK_CEDULA";
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
+            }
+        }
         private void botonDeVolver_Click(object sender, EventArgs e)
         {
             try
@@ -80,8 +103,8 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string cedula = textBoxDeCedula.Text;
-                if (cedulaEstaBienEscrita())
+                string cedula = comboBoxDeCedulas.GetItemText(comboBoxDeCedulas.SelectedItem);
+                if (comboBoxDeCedulas.SelectedIndex != -1)
                 {
                     var conexion = AbrirBaseDeDatos();
                     var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORAS_EXTRAS]", cedula);
@@ -142,8 +165,8 @@ namespace Proyecto_HRPS
                                 }
                                 else
                                 {
-                                    textBoxDeCedula.Focus();
-                                    MessageBox.Show("Cédula no registrada o inactiva", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    comboBoxDeCedulas.Focus();
+                                    MessageBox.Show("Revisa cédula", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     reiniciarPagina();
                                 }
                             }
@@ -155,46 +178,6 @@ namespace Proyecto_HRPS
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
-            }
-        }
-        private bool cedulaEstaBienEscrita()
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(textBoxDeCedula.Text) || textBoxDeCedula.Text.Length != 9 || !soloTieneNumeros(textBoxDeCedula.Text))
-                {
-                    textBoxDeCedula.Focus();
-                    MessageBox.Show("Revise cédula", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-                return false;
-            }
-        }
-        bool soloTieneNumeros(string str)
-        {
-            try
-            {
-                foreach (char c in str)
-                {
-                    if (c < '0' || c > '9')
-                        return false;
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-                return false;
             }
         }
         private void registrarError(Exception ex, string metodoYclase)

@@ -39,12 +39,12 @@
             this.labelHorasExtra = new System.Windows.Forms.Label();
             this.solicitudDeVacacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewDeSolicitudesDeHorasExtra = new System.Windows.Forms.DataGridView();
-            this.botonDeNegar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.botonDeAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnCantidadDeHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumnDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnIdentificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnCantidadDeHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.botonDeAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.botonDeNegar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeHorasExtraBindingSource)).BeginInit();
@@ -153,14 +153,34 @@
             this.dataGridViewDeSolicitudesDeHorasExtra.TabIndex = 8;
             this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
             // 
-            // botonDeNegar
+            // dataGridViewTextBoxColumnIdentificador
             // 
-            this.botonDeNegar.DataPropertyName = "botonDeNegar";
-            this.botonDeNegar.HeaderText = "";
-            this.botonDeNegar.Name = "botonDeNegar";
-            this.botonDeNegar.ReadOnly = true;
-            this.botonDeNegar.Text = "Negar";
-            this.botonDeNegar.UseColumnTextForButtonValue = true;
+            this.dataGridViewTextBoxColumnIdentificador.DataPropertyName = "Identificador";
+            this.dataGridViewTextBoxColumnIdentificador.HeaderText = "Identificador";
+            this.dataGridViewTextBoxColumnIdentificador.Name = "dataGridViewTextBoxColumnIdentificador";
+            this.dataGridViewTextBoxColumnIdentificador.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnDia
+            // 
+            this.dataGridViewTextBoxColumnDia.DataPropertyName = "Dia";
+            this.dataGridViewTextBoxColumnDia.HeaderText = "Dia";
+            this.dataGridViewTextBoxColumnDia.Name = "dataGridViewTextBoxColumnDia";
+            this.dataGridViewTextBoxColumnDia.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnCantidadDeHoras
+            // 
+            this.dataGridViewTextBoxColumnCantidadDeHoras.DataPropertyName = "CantidadDeHoras";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.HeaderText = "Cantidad De Horas";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.Name = "dataGridViewTextBoxColumnCantidadDeHoras";
+            this.dataGridViewTextBoxColumnCantidadDeHoras.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnCedula
+            // 
+            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "CedulaDeEmpleado";
+            this.dataGridViewTextBoxColumnCedula.HeaderText = "Cedula De Empleado";
+            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
+            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
+            this.dataGridViewTextBoxColumnCedula.Width = 180;
             // 
             // botonDeAceptar
             // 
@@ -171,34 +191,14 @@
             this.botonDeAceptar.Text = "Aceptar";
             this.botonDeAceptar.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewTextBoxColumnCedula
+            // botonDeNegar
             // 
-            this.dataGridViewTextBoxColumnCedula.DataPropertyName = "CedulaDeEmpleado";
-            this.dataGridViewTextBoxColumnCedula.HeaderText = "Cedula De Empleado";
-            this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
-            this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
-            this.dataGridViewTextBoxColumnCedula.Width = 180;
-            // 
-            // dataGridViewTextBoxColumnCantidadDeHoras
-            // 
-            this.dataGridViewTextBoxColumnCantidadDeHoras.DataPropertyName = "CantidadDeHoras";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.HeaderText = "Cantidad De Horas";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.Name = "dataGridViewTextBoxColumnCantidadDeHoras";
-            this.dataGridViewTextBoxColumnCantidadDeHoras.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnDia
-            // 
-            this.dataGridViewTextBoxColumnDia.DataPropertyName = "Dia";
-            this.dataGridViewTextBoxColumnDia.HeaderText = "Dia";
-            this.dataGridViewTextBoxColumnDia.Name = "dataGridViewTextBoxColumnDia";
-            this.dataGridViewTextBoxColumnDia.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnIdentificador
-            // 
-            this.dataGridViewTextBoxColumnIdentificador.DataPropertyName = "Identificador";
-            this.dataGridViewTextBoxColumnIdentificador.HeaderText = "Identificador";
-            this.dataGridViewTextBoxColumnIdentificador.Name = "dataGridViewTextBoxColumnIdentificador";
-            this.dataGridViewTextBoxColumnIdentificador.ReadOnly = true;
+            this.botonDeNegar.DataPropertyName = "botonDeNegar";
+            this.botonDeNegar.HeaderText = "";
+            this.botonDeNegar.Name = "botonDeNegar";
+            this.botonDeNegar.ReadOnly = true;
+            this.botonDeNegar.Text = "Negar";
+            this.botonDeNegar.UseColumnTextForButtonValue = true;
             // 
             // panel1
             // 
@@ -235,7 +235,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Solicitudes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitudes";
+            this.Text = "Solicitudes de horas extra";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Solicitudes_FormClosing);
             this.Load += new System.EventHandler(this.Solicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeHorasExtraBindingSource)).EndInit();
