@@ -30,8 +30,8 @@ namespace Proyecto_HRPS
         {
             try
             {
-                PonerCedulasAcomboBox();
-                textBoxDeNombre.Enabled = false;
+                PonerNombresAcomboBox();
+                textBoxDeCedula.Enabled = false;
                 textBoxDeHorario.Enabled = false;
                 textBoxDeSalarioBruto.Enabled = false;
                 textBoxDeSalarioPorHora.Enabled = false;
@@ -48,20 +48,20 @@ namespace Proyecto_HRPS
             }
         }
 
-        private void PonerCedulasAcomboBox()
+        private void PonerNombresAcomboBox()
         {
             try
             {
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[SACAR_CEDULAS_DE_EMPLEADOS]");
+                var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS]");
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
                     while (informacionEncontrada.Read())
                     {
-                        comboBoxDeCedulas.Items.Add(informacionEncontrada["PK_CEDULA"].ToString());
+                        comboBoxDeNombres.Items.Add(informacionEncontrada["NOMBRE"].ToString());
                     }
-                    comboBoxDeCedulas.ValueMember = "PK_CEDULA";
-                    comboBoxDeCedulas.DisplayMember = "PK_CEDULA";
+                    comboBoxDeNombres.ValueMember = "NOMBRE";
+                    comboBoxDeNombres.DisplayMember = "NOMBRE";
                 }
             }
             catch (Exception ex)
@@ -103,17 +103,17 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string cedula = comboBoxDeCedulas.GetItemText(comboBoxDeCedulas.SelectedItem);
-                if (comboBoxDeCedulas.SelectedIndex != -1)
+                Buscar();
+                /*string nombre = comboBoxDeNombres.GetItemText(comboBoxDeNombres.SelectedItem);
+                if (comboBoxDeNombres.SelectedIndex != -1)
                 {
                     var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORAS_EXTRAS]", cedula);
+                    var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORAS_EXTRAS]", nombre);
                     using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                     {
                         if (informacionEncontrada.Read())
                         {
-                            string nombre = informacionEncontrada.GetString(0);
-                            textBoxDeNombre.Text = nombre;
+                            textBoxDeCedula.Text = informacionEncontrada.GetString(0);
                             string horario = informacionEncontrada.GetString(1);
                             textBoxDeHorario.Text = horario;
                             decimal salarioBruto = informacionEncontrada.GetDecimal(2);
@@ -140,13 +140,13 @@ namespace Proyecto_HRPS
                         }
                         else
                         {
-                            var comando02 = conexion.GetStoredProcCommand("[SACAR_INFORMACION_DE_EMPLEADO]", cedula);
+                            var comando02 = conexion.GetStoredProcCommand("[SACAR_INFORMACION_DE_EMPLEADO_PARA_HORAS_EXTRA]", nombre);
                             using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
                             {
                                 if (informacionEncontrada02.Read())
                                 {
                                     decimal salarioBruto = decimal.Parse(informacionEncontrada02["SALARIO"].ToString());
-                                    textBoxDeNombre.Text = informacionEncontrada02["NOMBRE"].ToString(); ;
+                                    textBoxDeCedula.Text = informacionEncontrada02["PK_CEDULA"].ToString(); ;
                                     textBoxDeHorario.Text = informacionEncontrada02["HORARIO"].ToString();
                                     textBoxDeSalarioBruto.Text = salarioBruto.ToString();
                                     decimal salarioPorHora = decimal.Parse(informacionEncontrada02["SALARIO_HORA"].ToString());
@@ -165,14 +165,14 @@ namespace Proyecto_HRPS
                                 }
                                 else
                                 {
-                                    comboBoxDeCedulas.Focus();
-                                    MessageBox.Show("Revisa cédula", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    comboBoxDeNombres.Focus();
+                                    MessageBox.Show("Revisa nombre", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     reiniciarPagina();
                                 }
                             }
                         }
                     }
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -232,5 +232,98 @@ namespace Proyecto_HRPS
             }
         }
 
+        private void Buscar()
+        {
+            try
+            {
+                string nombre = comboBoxDeNombres.GetItemText(comboBoxDeNombres.SelectedItem);
+                if (comboBoxDeNombres.SelectedIndex != -1)
+                {
+                    var conexion = AbrirBaseDeDatos();
+                    var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORAS_EXTRAS]", nombre);
+                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                    {
+                        if (informacionEncontrada.Read())
+                        {
+                            textBoxDeCedula.Text = informacionEncontrada.GetString(0);
+                            string horario = informacionEncontrada.GetString(1);
+                            textBoxDeHorario.Text = horario;
+                            decimal salarioBruto = informacionEncontrada.GetDecimal(2);
+                            salarioBruto = decimal.Round(salarioBruto, 2);
+                            textBoxDeSalarioBruto.Text = salarioBruto.ToString();
+                            decimal salarioPorHora = informacionEncontrada.GetDecimal(3);
+                            salarioPorHora = decimal.Round(salarioPorHora, 2);
+                            textBoxDeSalarioPorHora.Text = salarioPorHora.ToString();
+                            decimal cantidadDeHorasExtra = informacionEncontrada.GetDecimal(4);
+                            cantidadDeHorasExtra = decimal.Round(cantidadDeHorasExtra, 2);
+                            textBoxDeCantidadDeHorasExtra.Text = cantidadDeHorasExtra.ToString();
+                            decimal pagoPorHorasExtra = informacionEncontrada.GetDecimal(5);
+                            pagoPorHorasExtra = decimal.Round(pagoPorHorasExtra, 2);
+                            textBoxDePagoPorHorasExtra.Text = pagoPorHorasExtra.ToString();
+                            decimal salarioBrutoConHorasExtra = informacionEncontrada.GetDecimal(6);
+                            salarioBrutoConHorasExtra = decimal.Round(salarioBrutoConHorasExtra, 2);
+                            textBoxDeSalarioBrutoConHorasExtra.Text = salarioBrutoConHorasExtra.ToString();
+                            decimal deducciones = informacionEncontrada.GetDecimal(7);
+                            deducciones = decimal.Round(deducciones, 2);
+                            textBoxDeDeducciones.Text = deducciones.ToString();
+                            decimal salarioNeto = informacionEncontrada.GetDecimal(8);
+                            salarioNeto = decimal.Round(salarioNeto, 2);
+                            textBoxDeSalarioNeto.Text = salarioNeto.ToString();
+                        }
+                        else
+                        {
+                            var comando02 = conexion.GetStoredProcCommand("[SACAR_INFORMACION_DE_EMPLEADO_PARA_HORAS_EXTRA]", nombre);
+                            using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
+                            {
+                                if (informacionEncontrada02.Read())
+                                {
+                                    decimal salarioBruto = decimal.Parse(informacionEncontrada02["SALARIO"].ToString());
+                                    textBoxDeCedula.Text = informacionEncontrada02["PK_CEDULA"].ToString(); ;
+                                    textBoxDeHorario.Text = informacionEncontrada02["HORARIO"].ToString();
+                                    textBoxDeSalarioBruto.Text = salarioBruto.ToString();
+                                    decimal salarioPorHora = decimal.Parse(informacionEncontrada02["SALARIO_HORA"].ToString());
+                                    salarioPorHora = decimal.Round(salarioPorHora, 2);
+                                    textBoxDeSalarioPorHora.Text = salarioPorHora.ToString();
+                                    textBoxDeCantidadDeHorasExtra.Text = "0";
+                                    textBoxDePagoPorHorasExtra.Text = "0.00";
+                                    salarioBruto = decimal.Round(salarioBruto, 2);
+                                    textBoxDeSalarioBrutoConHorasExtra.Text = salarioBruto.ToString();
+                                    decimal deducciones = salarioBruto * 0.13M;
+                                    deducciones = decimal.Round(deducciones, 2);
+                                    textBoxDeDeducciones.Text = deducciones.ToString();
+                                    decimal salarioNeto = salarioBruto - deducciones;
+                                    salarioNeto = decimal.Round(salarioNeto, 2);
+                                    textBoxDeSalarioNeto.Text = salarioNeto.ToString();
+                                }
+                                else
+                                {
+                                    comboBoxDeNombres.Focus();
+                                    MessageBox.Show("Revisa nombre", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    reiniciarPagina();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void comboBoxDeNombres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@
             this.labelDeSalarioBrutoConHorasExtra = new System.Windows.Forms.Label();
             this.labelDeDeducciones = new System.Windows.Forms.Label();
             this.labelDeSalarioNeto = new System.Windows.Forms.Label();
-            this.textBoxDeNombre = new System.Windows.Forms.TextBox();
+            this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.textBoxDeHorario = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioBruto = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioPorHora = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.textBoxDeDeducciones = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioNeto = new System.Windows.Forms.TextBox();
             this.botonDeBuscar = new System.Windows.Forms.Button();
-            this.comboBoxDeCedulas = new System.Windows.Forms.ComboBox();
+            this.comboBoxDeNombres = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelDeCedula
@@ -58,7 +58,7 @@
             this.labelDeCedula.AutoSize = true;
             this.labelDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeCedula.Location = new System.Drawing.Point(62, 72);
+            this.labelDeCedula.Location = new System.Drawing.Point(62, 127);
             this.labelDeCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(74, 18);
@@ -84,7 +84,7 @@
             this.labelDeNombre.AutoSize = true;
             this.labelDeNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.labelDeNombre.Location = new System.Drawing.Point(59, 127);
+            this.labelDeNombre.Location = new System.Drawing.Point(62, 72);
             this.labelDeNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeNombre.Name = "labelDeNombre";
             this.labelDeNombre.Size = new System.Drawing.Size(77, 18);
@@ -187,14 +187,14 @@
             this.labelDeSalarioNeto.TabIndex = 24;
             this.labelDeSalarioNeto.Text = "SALARIO NETO";
             // 
-            // textBoxDeNombre
+            // textBoxDeCedula
             // 
-            this.textBoxDeNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDeNombre.Location = new System.Drawing.Point(245, 124);
-            this.textBoxDeNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDeNombre.Name = "textBoxDeNombre";
-            this.textBoxDeNombre.Size = new System.Drawing.Size(310, 26);
-            this.textBoxDeNombre.TabIndex = 25;
+            this.textBoxDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDeCedula.Location = new System.Drawing.Point(245, 124);
+            this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDeCedula.Name = "textBoxDeCedula";
+            this.textBoxDeCedula.Size = new System.Drawing.Size(310, 26);
+            this.textBoxDeCedula.TabIndex = 25;
             // 
             // textBoxDeHorario
             // 
@@ -282,13 +282,14 @@
             this.botonDeBuscar.UseVisualStyleBackColor = false;
             this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
             // 
-            // comboBoxDeCedulas
+            // comboBoxDeNombres
             // 
-            this.comboBoxDeCedulas.FormattingEnabled = true;
-            this.comboBoxDeCedulas.Location = new System.Drawing.Point(245, 69);
-            this.comboBoxDeCedulas.Name = "comboBoxDeCedulas";
-            this.comboBoxDeCedulas.Size = new System.Drawing.Size(310, 26);
-            this.comboBoxDeCedulas.TabIndex = 35;
+            this.comboBoxDeNombres.FormattingEnabled = true;
+            this.comboBoxDeNombres.Location = new System.Drawing.Point(245, 69);
+            this.comboBoxDeNombres.Name = "comboBoxDeNombres";
+            this.comboBoxDeNombres.Size = new System.Drawing.Size(310, 26);
+            this.comboBoxDeNombres.TabIndex = 35;
+            this.comboBoxDeNombres.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeNombres_SelectedIndexChanged);
             // 
             // VerHorasExtra
             // 
@@ -296,7 +297,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1371, 443);
-            this.Controls.Add(this.comboBoxDeCedulas);
+            this.Controls.Add(this.comboBoxDeNombres);
             this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeSalarioNeto);
             this.Controls.Add(this.textBoxDeDeducciones);
@@ -306,7 +307,7 @@
             this.Controls.Add(this.textBoxDeSalarioPorHora);
             this.Controls.Add(this.textBoxDeSalarioBruto);
             this.Controls.Add(this.textBoxDeHorario);
-            this.Controls.Add(this.textBoxDeNombre);
+            this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeSalarioNeto);
             this.Controls.Add(this.labelDeDeducciones);
             this.Controls.Add(this.labelDeSalarioBrutoConHorasExtra);
@@ -345,7 +346,7 @@
         private System.Windows.Forms.Label labelDeSalarioBrutoConHorasExtra;
         private System.Windows.Forms.Label labelDeDeducciones;
         private System.Windows.Forms.Label labelDeSalarioNeto;
-        private System.Windows.Forms.TextBox textBoxDeNombre;
+        private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.TextBox textBoxDeHorario;
         private System.Windows.Forms.TextBox textBoxDeSalarioBruto;
         private System.Windows.Forms.TextBox textBoxDeSalarioPorHora;
@@ -355,6 +356,6 @@
         private System.Windows.Forms.TextBox textBoxDeDeducciones;
         private System.Windows.Forms.TextBox textBoxDeSalarioNeto;
         private System.Windows.Forms.Button botonDeBuscar;
-        private System.Windows.Forms.ComboBox comboBoxDeCedulas;
+        private System.Windows.Forms.ComboBox comboBoxDeNombres;
     }
 }
