@@ -289,7 +289,9 @@
             this.comboBoxDeNombres.Name = "comboBoxDeNombres";
             this.comboBoxDeNombres.Size = new System.Drawing.Size(310, 26);
             this.comboBoxDeNombres.TabIndex = 35;
+            this.comboBoxDeNombres.DropDown += new System.EventHandler(this.comboBoxDeNombres_DropDown);
             this.comboBoxDeNombres.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeNombres_SelectedIndexChanged);
+            
             // 
             // VerHorasExtra
             // 

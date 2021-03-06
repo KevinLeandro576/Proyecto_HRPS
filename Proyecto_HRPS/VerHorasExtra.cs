@@ -52,6 +52,9 @@ namespace Proyecto_HRPS
         {
             try
             {
+                comboBoxDeNombres.SelectedItem = null;
+                comboBoxDeNombres.SelectedText = "Seleccione el nombre de un empleado";
+                comboBoxDeNombres.ForeColor = Color.Gray;
                 var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS]");
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
@@ -318,6 +321,20 @@ namespace Proyecto_HRPS
             try
             {
                 Buscar();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        
+
+        private void comboBoxDeNombres_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                comboBoxDeNombres.ForeColor = Color.Black;
             }
             catch (Exception ex)
             {
