@@ -328,7 +328,7 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
-        
+
 
         private void comboBoxDeNombres_DropDown(object sender, EventArgs e)
         {
