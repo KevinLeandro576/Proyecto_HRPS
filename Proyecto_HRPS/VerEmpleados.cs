@@ -119,7 +119,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ReporteEmpleadosInactivos_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
 
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
 

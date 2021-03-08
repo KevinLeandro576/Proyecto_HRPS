@@ -59,7 +59,7 @@ namespace Proyecto_HRPS
                     int numeroColumnas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
                     {
-                        MessageBox.Show("No hay horas extras registradas.", "Error",
+                        MessageBox.Show("No hay horas extras registradas", "Opciones de Reportes",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
@@ -74,7 +74,7 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cierra el reporte de horas extra", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cierre el reporte de horas extra", "Opciones de Reportes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
@@ -96,7 +96,6 @@ namespace Proyecto_HRPS
                     int numeroColumnas = informacionEncontrada.FieldCount;
                     tabla = new PdfPTable(numeroColumnas);
                     tabla.WidthPercentage = 80;
-
                     Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeSumaDeHoras = new Paragraph("TOTAL DE HORAS EXTRA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
@@ -130,7 +129,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_HORAS_EXTRA_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ReporteHorasExtra_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
 
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
 
@@ -155,10 +154,10 @@ namespace Proyecto_HRPS
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
 
-                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString();
-                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString();
+                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd-MM-yyyy");
+                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd-MM-yyyy");
                     string rangoDeFechas = fechaDeInicio + " - " + fechaDeFinalizacion;
-                    Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generarión de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
+                    Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generación de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     rangoDeFechasDeGeneracion.SpacingBefore = 20f;
                     rangoDeFechasDeGeneracion.Alignment = Element.ALIGN_CENTER;
                     DC.Add(rangoDeFechasDeGeneracion);
@@ -171,7 +170,7 @@ namespace Proyecto_HRPS
                     DC.Close();
                     FS.Close();
                     FS.Dispose();
-                    MessageBox.Show("Se ha creado un reporte de horas extra.", "Creación de reporte",
+                    MessageBox.Show("Reporte de horas extra creado", "Opciones de Reportes",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -203,8 +202,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                dateTimePickerDeFechaDeFinalizacion.MaxDate = DateTime.Now;
-                dateTimePickerDeFechaDeInicio.MaxDate = DateTime.Now;
+                PonerFechas();
             }
             catch (Exception ex)
             {
@@ -243,6 +241,21 @@ namespace Proyecto_HRPS
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                     e.Cancel = true;
                 }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        private void PonerFechas()
+        {
+            try
+            {
+                dateTimePickerDeFechaDeFinalizacion.MinDate = DateTime.Now.AddYears(-5);
+                dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now.AddYears(-5);
+                dateTimePickerDeFechaDeFinalizacion.MaxDate = DateTime.Now;
+                dateTimePickerDeFechaDeInicio.MaxDate = DateTime.Now;
             }
             catch (Exception ex)
             {

@@ -1,9 +1,12 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +33,24 @@ namespace Proyecto_HRPS
         {
             try
             {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_EMPLEADOS_PARA_SALARIOS]");
 
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumas = informacionEncontrada.FieldCount;
+                    if (informacionEncontrada.Read() != true)
+                    {
+                        MessageBox.Show("No hay salarios registrados", "Opciones de Reportes",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        PdfPTable tabla = CrearTablaPDFSalarios();
+                        CrearReportePDFSalarios(tabla);
+                        MessageBox.Show("Reporte de salarios creado", "Opciones de Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -38,6 +58,100 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
 
+        }
+        private PdfPTable CrearTablaPDFSalarios()
+        {
+            PdfPTable tabla;
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_PARA_SALARIOS");
+
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    int numeroColumnas = informacionEncontrada.FieldCount;
+                    tabla = new PdfPTable(numeroColumnas);
+                    tabla.WidthPercentage = 80;
+                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeSalarioBruto = new Paragraph("SALARIO BRUTO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeTiempo = new Paragraph("TIEMPO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    tabla.AddCell(encabezadoDeCedula);
+                    tabla.AddCell(encabezadoDeNombre);
+                    tabla.AddCell(encabezadoDeSalarioBruto);
+                    tabla.AddCell(encabezadoDeTiempo);
+
+                    while (informacionEncontrada.Read())
+                    {
+                        /*CAMBIAR TEXTO DE FILAS*/
+                        string cedula = informacionEncontrada.GetString(0);
+                        string nombre = informacionEncontrada.GetString(1);
+                        string salarioBruto = informacionEncontrada.GetValue(2).ToString();
+                        string tiempo = informacionEncontrada.GetString(3);
+
+                        /*CAMBIAR NOMBRES DE VARIABLES CON TEXTO DE FILAS*/
+                        tabla.AddCell(cedula);
+                        tabla.AddCell(nombre);
+                        tabla.AddCell(salarioBruto);
+                        tabla.AddCell(tiempo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                throw;
+            }
+            return tabla;
+        }
+
+        private bool CrearReportePDFSalarios(PdfPTable tabla)
+        {
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ReporteSalarios_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+
+                Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
+
+                using (FileStream FS = File.Create(path))
+                {
+                    PdfWriter.GetInstance(DC, FS);
+                    DC.Open();
+
+                    iTextSharp.text.Image jpeg01 = iTextSharp.text.Image.GetInstance(Properties.Resources.iconoDeUREBA, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    jpeg01.ScaleToFit(500f, 500f);
+                    jpeg01.SpacingBefore = 10f;
+                    jpeg01.SpacingAfter = 1f;
+                    jpeg01.Alignment = Element.ALIGN_CENTER;
+                    DC.Add(jpeg01);
+
+                    Paragraph para = new Paragraph("REPORTE DE SALARIOS" + "\n", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 24));
+                    para.Alignment = Element.ALIGN_CENTER;
+                    para.SpacingAfter = 18f;
+                    DC.Add(para);
+
+                    DC.Add(tabla);
+                    tabla.SpacingAfter = 14f;
+
+                    string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+                    Paragraph fechaYhoraDeGeneracion = new Paragraph("Fecha y hora de generación de reporte: " + fechaYhora, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
+                    fechaYhoraDeGeneracion.SpacingBefore = 20f;
+                    fechaYhoraDeGeneracion.Alignment = Element.ALIGN_CENTER;
+                    DC.Add(fechaYhoraDeGeneracion);
+                    DC.Close();
+                    FS.Close();
+                    FS.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+                throw;
+            }
+            return true;
         }
 
         private void botonDeVevReportesDiarios_Click(object sender, EventArgs e)

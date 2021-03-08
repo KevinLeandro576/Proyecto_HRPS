@@ -74,7 +74,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/REPORTE_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ReporteEmpleadosActivos_" + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(':', '_') + ".pdf";
 
                 Document DC = new Document(PageSize.A4, 25, 25, 30, 30);
 
@@ -209,7 +209,7 @@ namespace Proyecto_HRPS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cierra el reporte de empleados activos" + ex.Message);
+                MessageBox.Show("Cierre el reporte de empleados activos" + ex.Message);
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
