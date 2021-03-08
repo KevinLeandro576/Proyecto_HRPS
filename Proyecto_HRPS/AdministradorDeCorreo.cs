@@ -12,7 +12,7 @@ namespace Proyecto_HRPS
 {
     public class AdministradorDeCorreo
     {
-        private string servidorDeSmtp;
+        private string servidorDeSmtp; 
         private string usuarioSmtp;
         private string passwordSmtp;
         private int puerto;
