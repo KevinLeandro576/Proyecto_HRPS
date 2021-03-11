@@ -196,63 +196,6 @@ namespace Proyecto_HRPS
             }
         }
 
-        private void generarCorreoNotificacionDias()
-        {
-            try
-            {
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("MOSTRAR_EMPLEADOS_CON_DIAS_LIBRES");
-
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                {
-                    if (informacionEncontrada.FieldCount != 0)
-                    {
-                        if (informacionEncontrada.Read() == true)
-                        {
-                            //ENVIA UN CORREO
-                            AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 25);
-
-                            StringBuilder builder = new StringBuilder();
-
-                            builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
-                            builder.Append("<tr>");
-                            builder.Append("<th>CÉDULA</th>");
-                            builder.Append("<th>NOMBRE</th>");
-                            builder.Append("<th>CANTIDAD DE DÍAS DISPONIBLES</th>");
-                            builder.Append("</tr>");
-
-                            builder.Append("<tr align= center>");
-                            builder.Append("<td>" + informacionEncontrada.GetString(0) + "</td>");
-                            builder.Append("<td>" + informacionEncontrada.GetString(1) + "</td>");
-                            builder.Append("<td>" + informacionEncontrada.GetInt32(2).ToString() + "</td>");
-                            builder.Append("</tr>");
-                            builder.Append("</table>");
-
-                            var comando02 = conexion.GetStoredProcCommand("SACAR_CORREOS_DE_ADMINISTRADORES");
-                            string correoDeAdministrador = "";
-                            List<string> listaDeCorreos = new List<string>();
-                            listaDeCorreos.Add("leandrokevin576@gmail.com");
-                            using (IDataReader informacionEncontrada01 = conexion.ExecuteReader(comando02))
-                            {
-                                while (informacionEncontrada.Read())
-                                {
-                                    correoDeAdministrador = informacionEncontrada01.GetString(0);
-                                    listaDeCorreos.Add(correoDeAdministrador);
-                                }
-                            }
-                            administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h2>Los siguientes empleados poseen 10 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 10 días libres", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-            }
-
-        }
-
         private void AdministradorInicioDeSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
