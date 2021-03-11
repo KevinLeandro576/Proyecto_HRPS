@@ -13,6 +13,7 @@ namespace Proyecto_HRPS
 {
     public partial class SolicitudesVacaciones : Form
     {
+        int cantidadDeDiasEnMedio;
         public SolicitudesVacaciones()
         {
             try
@@ -45,7 +46,13 @@ namespace Proyecto_HRPS
         {
             try
             {
-                if (dateTimePickerDeFechaDeInicio.Value >= dateTimePickerDeFechaDeFinalizacion.Value)
+                TimeSpan tiempoEnMedio = dateTimePickerDeFechaDeFinalizacion.Value - dateTimePickerDeFechaDeInicio.Value;
+                cantidadDeDiasEnMedio = tiempoEnMedio.Days + 1;
+                if (Empleado.CantidadDeDiasDisponibles < cantidadDeDiasEnMedio)
+                {
+                    MessageBox.Show("Revise cantidad de días disponibles de vacaciones", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (dateTimePickerDeFechaDeInicio.Value >= dateTimePickerDeFechaDeFinalizacion.Value)
                 {
                     MessageBox.Show("Revise fechas escogidas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -91,71 +98,60 @@ namespace Proyecto_HRPS
         {
             try
             {
-                TimeSpan tiempoEnMedio = dateTimePickerDeFechaDeFinalizacion.Value - dateTimePickerDeFechaDeInicio.Value;
-                int cantidadDeDiasEnMedio = tiempoEnMedio.Days;
-                if (Empleado.CantidadDeDiasDisponibles < cantidadDeDiasEnMedio)
+                //ENVIA UN CORREO
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+
+                StringBuilder builder = new StringBuilder();
+                builder.Append("<br/>");
+                builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
+                builder.Append("<tr>");
+                builder.Append("<th>NOMBRE</th>");
+                builder.Append("<th>FECHA DE INICIO</th>");
+                builder.Append("<th>FECHA DE FINALIZACIÓN</th>");
+                builder.Append("<th>CANTIDAD DE DÍAS</th>");
+                builder.Append("<th>ESTADO</th>");
+                builder.Append("</tr>");
+
+                builder.Append("<tr align= center>");
+                builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
+                builder.Append("<td>" + dateTimePickerDeFechaDeInicio.Value.ToString() + "</td>");
+                builder.Append("<td>" + dateTimePickerDeFechaDeFinalizacion.Value.ToString() + "</td>");
+                builder.Append("<td>" + cantidadDeDiasEnMedio + "</td>");
+                builder.Append("<td>" + "PENDIENTE" + "</td>");
+                builder.Append("</tr>");
+                builder.Append("</table>");
+
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", textBoxDeNombre.Text);
+                string correoDeEmpleado = "";
+                string correoDeAdministrador;
+                List<string> listaDeCorreos = new List<string>();
+                listaDeCorreos.Add("leandrokevin576@gmail.com");
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
-                    MessageBox.Show("Revise cantidad de días disponibles de vacaciones", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (informacionEncontrada.Read())
+                    {
+                        correoDeEmpleado = informacionEncontrada.GetString(0);
+                    }
                 }
-                else
+                var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREOS_DE_ADMINISTRADORES]");
+
+                using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
                 {
-                    var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("EMPLEADO_INSERTAR_SOLICITUD_VACACIONES", textBoxDeNombre.Text,
-                                                                                                       dateTimePickerDeFechaDeInicio.Value,
-                                                                                                       dateTimePickerDeFechaDeFinalizacion.Value);
-                    conexion.ExecuteNonQuery(comando);
-                    //ENVIA UN CORREO
-                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
-
-                    StringBuilder builder = new StringBuilder();
-
-                    builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
-                    builder.Append("<tr>");
-                    builder.Append("<th>NOMBRE</th>");
-                    builder.Append("<th>FECHA DE INICIO</th>");
-                    builder.Append("<th>FECHA DE FINALIZACIÓN</th>");
-                    builder.Append("<th>ESTADO</th>");
-                    builder.Append("</tr>");
-
-                    builder.Append("<tr align= center>");
-                    builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
-                    builder.Append("<td>" + dateTimePickerDeFechaDeInicio.Value.ToString() + "</td>");
-                    builder.Append("<td>" + dateTimePickerDeFechaDeFinalizacion.Value.ToString() + "</td>");
-                    builder.Append("<td>" + "PENDIENTE" + "</td>");
-                    builder.Append("</tr>");
-                    builder.Append("</table>");
-
-
-                    var comando02 = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", textBoxDeNombre.Text);
-                    string correoDeEmpleado = "";
-                    string correoDeAdministrador;
-                    List<string> listaDeCorreos = new List<string>();
-                    listaDeCorreos.Add("leandrokevin576@gmail.com");
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando02))
+                    while (informacionEncontrada02.Read())
                     {
-                        if (informacionEncontrada.Read())
-                        {
-                            correoDeEmpleado = informacionEncontrada.GetString(0);
-                        }
+                        correoDeAdministrador = informacionEncontrada02["CORREO"].ToString();
+                        listaDeCorreos.Add(correoDeAdministrador);
                     }
-                    var comando03 = conexion.GetStoredProcCommand("[SACAR_CORREOS_DE_ADMINISTRADORES]");
-
-                    using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando03))
-                    {
-                        while (informacionEncontrada02.Read())
-                        {
-                            correoDeAdministrador = informacionEncontrada02["CORREO"].ToString();
-                            listaDeCorreos.Add(correoDeAdministrador);
-                        }
-                    }
-                    administradorDeCorreo.EnviarCorreo("<h1>Ha enviado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                    administradorDeCorreo.EnviarCorreo("<h1>Ha recibido una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                    MessageBox.Show("Ha registrado una solicitud de vacaciones", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    SolicitudesVacaciones solicitudesVacaciones = new SolicitudesVacaciones();
-                    this.Hide();
-                    solicitudesVacaciones.Show();
                 }
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha enviado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha recibido una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                MessageBox.Show("Ha registrado una solicitud de vacaciones", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SolicitudesVacaciones solicitudesVacaciones = new SolicitudesVacaciones();
+                this.Hide();
+                solicitudesVacaciones.Show();
             }
+
             catch (Exception ex)
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;

@@ -162,7 +162,7 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarEvento(evento, metodoYclase);
 
-                administradorDeCorreo.EnviarCorreo("<h1>Atención, se ha establecido una contraseña temporal para su inicio de sesión:</h1> <br/> " + builder.ToString(), "Restablecimiento de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correo });
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, se ha establecido una contraseña temporal para su inicio de sesión:</h1> <br/> " + builder.ToString(), "Restablecimiento de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correo });
 
                 MessageBox.Show("Se ha enviado una contraseña temporal a su correo", "Opciones de Recuperar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -33,22 +33,21 @@ namespace Proyecto_HRPS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministradorSolicitudesDeVacaciones));
             this.botonDeVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFin = new System.Windows.Forms.DateTimePicker();
             this.solicitudDeVacacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelVacaciones = new System.Windows.Forms.Label();
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.dataGridViewDeSolicitudesDeVacaciones = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDeInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaDeFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDeDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDeEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeVacacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeVacaciones)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,17 +79,6 @@ namespace Proyecto_HRPS
             this.label1.TabIndex = 18;
             this.label1.Text = "Selecciona fecha de inicio";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 131);
-            this.label2.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 18);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Selecciona fecha de fin";
-            // 
             // dateTimePickerInicio
             // 
             this.dateTimePickerInicio.Location = new System.Drawing.Point(353, 85);
@@ -101,16 +89,6 @@ namespace Proyecto_HRPS
             this.dateTimePickerInicio.TabIndex = 21;
             this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePickerInicio_ValueChanged);
             // 
-            // dateTimePickerFin
-            // 
-            this.dateTimePickerFin.Location = new System.Drawing.Point(353, 125);
-            this.dateTimePickerFin.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePickerFin.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerFin.Name = "dateTimePickerFin";
-            this.dateTimePickerFin.Size = new System.Drawing.Size(354, 26);
-            this.dateTimePickerFin.TabIndex = 22;
-            this.dateTimePickerFin.ValueChanged += new System.EventHandler(this.dateTimePickerFin_ValueChanged);
-            // 
             // solicitudDeVacacionesBindingSource
             // 
             this.solicitudDeVacacionesBindingSource.DataSource = typeof(Proyecto_HRPS.SolicitudDeVacaciones);
@@ -118,7 +96,7 @@ namespace Proyecto_HRPS
             // labelVacaciones
             // 
             this.labelVacaciones.AutoSize = true;
-            this.labelVacaciones.Location = new System.Drawing.Point(265, 189);
+            this.labelVacaciones.Location = new System.Drawing.Point(266, 159);
             this.labelVacaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVacaciones.Name = "labelVacaciones";
             this.labelVacaciones.Size = new System.Drawing.Size(193, 18);
@@ -157,6 +135,7 @@ namespace Proyecto_HRPS
             this.dataGridViewDeSolicitudesDeVacaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.identificadorDataGridViewTextBoxColumn,
             this.diaDeInicioDataGridViewTextBoxColumn,
+            this.diaDeFinDataGridViewTextBoxColumn,
             this.cantidadDeDiasDataGridViewTextBoxColumn,
             this.cedulaDeEmpleadoDataGridViewTextBoxColumn,
             this.botonAceptar,
@@ -168,9 +147,25 @@ namespace Proyecto_HRPS
             this.dataGridViewDeSolicitudesDeVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDeSolicitudesDeVacaciones.Name = "dataGridViewDeSolicitudesDeVacaciones";
             this.dataGridViewDeSolicitudesDeVacaciones.RowHeadersVisible = false;
-            this.dataGridViewDeSolicitudesDeVacaciones.Size = new System.Drawing.Size(672, 348);
+            this.dataGridViewDeSolicitudesDeVacaciones.Size = new System.Drawing.Size(672, 378);
             this.dataGridViewDeSolicitudesDeVacaciones.TabIndex = 0;
             this.dataGridViewDeSolicitudesDeVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeSolicitudesDeVacaciones_CellClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(29, 193);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(678, 381);
+            this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridViewDeSolicitudesDeVacaciones);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(672, 378);
+            this.panel2.TabIndex = 29;
             // 
             // identificadorDataGridViewTextBoxColumn
             // 
@@ -183,6 +178,12 @@ namespace Proyecto_HRPS
             this.diaDeInicioDataGridViewTextBoxColumn.DataPropertyName = "DiaDeInicio";
             this.diaDeInicioDataGridViewTextBoxColumn.HeaderText = "Día De Inicio";
             this.diaDeInicioDataGridViewTextBoxColumn.Name = "diaDeInicioDataGridViewTextBoxColumn";
+            // 
+            // diaDeFinDataGridViewTextBoxColumn
+            // 
+            this.diaDeFinDataGridViewTextBoxColumn.DataPropertyName = "DiaDeFin";
+            this.diaDeFinDataGridViewTextBoxColumn.HeaderText = "Dia De Fin";
+            this.diaDeFinDataGridViewTextBoxColumn.Name = "diaDeFinDataGridViewTextBoxColumn";
             // 
             // cantidadDeDiasDataGridViewTextBoxColumn
             // 
@@ -213,22 +214,6 @@ namespace Proyecto_HRPS
             this.botonNegar.Text = "Negar";
             this.botonNegar.UseColumnTextForButtonValue = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(29, 220);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(678, 354);
-            this.panel1.TabIndex = 28;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridViewDeSolicitudesDeVacaciones);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(672, 348);
-            this.panel2.TabIndex = 29;
-            // 
             // AdministradorSolicitudesDeVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -239,9 +224,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.textBoxDeCedula);
             this.Controls.Add(this.labelDeCedula);
             this.Controls.Add(this.labelVacaciones);
-            this.Controls.Add(this.dateTimePickerFin);
             this.Controls.Add(this.dateTimePickerInicio);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonDeVolver);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,21 +250,20 @@ namespace Proyecto_HRPS
 
         private System.Windows.Forms.Button botonDeVolver;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFin;
         private System.Windows.Forms.BindingSource solicitudDeVacacionesBindingSource;
         private System.Windows.Forms.Label labelVacaciones;
         private System.Windows.Forms.Label labelDeCedula;
         private System.Windows.Forms.TextBox textBoxDeCedula;
         private System.Windows.Forms.DataGridView dataGridViewDeSolicitudesDeVacaciones;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificadorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaDeInicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaDeFinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDeDiasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDeEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn botonAceptar;
         private System.Windows.Forms.DataGridViewButtonColumn botonNegar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }

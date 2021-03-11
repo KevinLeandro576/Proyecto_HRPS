@@ -135,7 +135,7 @@ namespace Proyecto_HRPS
             {
                 bool hayFilas = false;
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("[SACAR_VACACIONES_POR_FECHAS_O_CEDULA]", dateTimePickerInicio.Value, dateTimePickerFin.Value, textBoxDeCedula.Text);
+                var comando = conexion.GetStoredProcCommand("[SACAR_VACACIONES_POR_FECHAS_O_CEDULA]", dateTimePickerInicio.Value, textBoxDeCedula.Text);
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
                     if (informacionEncontrada.Read())
@@ -252,9 +252,9 @@ namespace Proyecto_HRPS
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
                         MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones aceptada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha aceptado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de vacaciones aceptada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de vacaciones del empleado " + nombreDeEmpleado + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
@@ -338,9 +338,9 @@ namespace Proyecto_HRPS
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_O_NEGAR_SOLICITUD", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
                         MessageBox.Show("Solicitud negada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Solicitud de vacaciones negada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha negado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de vacaciones negada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
@@ -455,6 +455,5 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
-
     }
 }

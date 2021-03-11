@@ -129,7 +129,7 @@ namespace Proyecto_HRPS
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(evento, metodoYclase);
 
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha hecho un cambio de contraseña, a continuación se muestra su nueva contraseña:</h1> <br/> " + builder.ToString(), "Cambio de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha hecho un cambio de contraseña, a continuación se muestra su nueva contraseña:</h1> <br/> " + builder.ToString(), "Cambio de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
                         this.Hide();
                         empleadoVerPerfil.Show();
                     }

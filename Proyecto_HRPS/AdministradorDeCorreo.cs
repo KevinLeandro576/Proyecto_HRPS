@@ -12,7 +12,7 @@ namespace Proyecto_HRPS
 {
     public class AdministradorDeCorreo
     {
-        private string servidorDeSmtp; 
+        private string servidorDeSmtp;
         private string usuarioSmtp;
         private string passwordSmtp;
         private int puerto;
@@ -30,8 +30,7 @@ namespace Proyecto_HRPS
             try
             {
                 MailMessage correo = new MailMessage();
-                correo.From = new MailAddress(de, alias, System.Text.Encoding.UTF8);//Correo de salida
-                //correo.To.Add(para (pasado como string desde lo que seria metodo en boton))
+                correo.From = new MailAddress(de, alias, System.Text.Encoding.UTF8);//Correo de salida                
                 foreach (string item in para)
                 {
                     correo.To.Add(item); //Correo destino?

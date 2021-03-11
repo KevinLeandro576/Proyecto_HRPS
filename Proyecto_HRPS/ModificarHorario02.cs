@@ -113,7 +113,7 @@ namespace Proyecto_HRPS
                             correoDeEmpleado = informacionEncontrada.GetString(0);
                         }
                     }
-                    administradorDeCorreo.EnviarCorreo("<h1>Atención, su horario ha sido modificado:</h1> <br/> " + builder.ToString(), "Modificación de Horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, su horario ha sido modificado:</h1> <br/> " + builder.ToString(), "Modificación de Horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                     MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                     conexion.ExecuteNonQuery(comando02);

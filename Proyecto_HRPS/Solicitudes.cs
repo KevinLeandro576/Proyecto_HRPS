@@ -58,7 +58,6 @@ namespace Proyecto_HRPS
         private void Solicitudes_Load(object sender, EventArgs e)
         {
             cargarDataGridViewDeHorasExtra();
-            //cargarDataGridViewDeVacaciones();
         }
         private void cargarDataGridViewDeHorasExtra()
         {
@@ -253,10 +252,10 @@ namespace Proyecto_HRPS
                         var comando05 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                         conexion.ExecuteNonQuery(comando05);
                         MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
-                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
 
@@ -342,10 +341,10 @@ namespace Proyecto_HRPS
                         var comando04 = conexion.GetStoredProcCommand("ADMINISTRADOR_ACEPTAR_NEGAR_SOLICITUD_HORAS_EXTRAS", identificador, estado);
                         conexion.ExecuteNonQuery(comando04);
                         MessageBox.Show("Solicitud negada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        administradorDeCorreo.EnviarCorreo("<h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                        administradorDeCorreo.EnviarCorreo("<h1>Su solicitud ha sido negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
-                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
 

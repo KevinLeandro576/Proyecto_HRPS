@@ -240,7 +240,7 @@ namespace Proyecto_HRPS
                                     listaDeCorreos.Add(correoDeAdministrador);
                                 }
                             }
-                            administradorDeCorreo.EnviarCorreo("<h2>Los siguientes empleados posee 10 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 10 días libres", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                            administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h2>Los siguientes empleados poseen 10 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 10 días libres", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         }
                     }
                 }
