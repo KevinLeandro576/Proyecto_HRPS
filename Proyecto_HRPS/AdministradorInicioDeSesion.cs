@@ -152,7 +152,7 @@ namespace Proyecto_HRPS
                         Empleado.Correo = informacionEncontrada["CORREO"].ToString();
                         Empleado.Contrasena = informacionEncontrada["CONTRASENNA"].ToString();
 
-                        generarCorreoNotificacionDias();
+                        //generarCorreoNotificacionDias();
 
                         string evento = "El administrador: " + Empleado.Nombre + "; ha iniciado sesión";
                         registrarEvento(evento,
