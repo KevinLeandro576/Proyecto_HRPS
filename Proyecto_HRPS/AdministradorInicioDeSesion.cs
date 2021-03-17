@@ -45,9 +45,9 @@ namespace Proyecto_HRPS
         {
             try
             {
-                MenuInicial menuInicial = new MenuInicial();
+                MenuInicial02 menuInicial02 = new MenuInicial02();
                 this.Hide();
-                menuInicial.Show();
+                menuInicial02.Show();
             }
             catch (Exception ex)
             {

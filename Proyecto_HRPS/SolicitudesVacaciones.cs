@@ -99,7 +99,7 @@ namespace Proyecto_HRPS
             try
             {
                 //ENVIA UN CORREO
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo(/*smtp.gmail.com*/"smtp.sendgrid.net","1037joseg@gmail.com" /*"planilla@electronicaureba.com"*//*"apikey"*/ , /*"SG.jwZwcq7eTgynoKP3fHBrOw.2FlkLP61Je6XQQbRPukuTTecTz - je3lsL2h7Aagk8jg*/"Qwertz987.,!", /*587*/465);
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com"/*"smtp.sendgrid.net"*/,"1037joseg@gmail.com" /*"planilla@electronicaureba.com"*//*"apikey"*/ , /*"SG.jwZwcq7eTgynoKP3fHBrOw.2FlkLP61Je6XQQbRPukuTTecTz - je3lsL2h7Aagk8jg*/"Qwertz987.,!", 587/*465*/);
 
                 StringBuilder builder = new StringBuilder();
                 builder.Append("<br/>");
