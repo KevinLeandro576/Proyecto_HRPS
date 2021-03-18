@@ -223,7 +223,7 @@ namespace Proyecto_HRPS
 
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                    builder.Append("<td>" + fechaDeSolicitud + "</td>");
+                    builder.Append("<td>" + fechaDeSolicitud.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + cantidadDeHoras + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
@@ -312,7 +312,7 @@ namespace Proyecto_HRPS
 
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                    builder.Append("<td>" + fechaDeSolicitud + "</td>");
+                    builder.Append("<td>" + fechaDeSolicitud.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + cantidadDeHoras + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
