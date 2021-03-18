@@ -67,7 +67,7 @@ namespace Proyecto_HRPS
 
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
-                    builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString() + "</td>");
+                    builder.Append("<td>" + dateTimePickerDeDiaTrabajado.Value.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + numericDeCantidadDeHorasExtra.Value.ToString() + "</td>");
                     builder.Append("<td>" + "PENDIENTE" + "</td>");
                     builder.Append("</tr>");
@@ -98,6 +98,10 @@ namespace Proyecto_HRPS
                     }
                     administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha enviado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                     administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha recibido una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+
+                    string texto = "El empleado: " + Empleado.Nombre + " ha enviado una solicitud de horas extra de " + numericDeCantidadDeHorasExtra.Value.ToString() + " horas para el día " + dateTimePickerDeDiaTrabajado.Value.ToString("dd/MM/yyyy") + ".";
+                    string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                    registrarEvento(texto, metodoYclase);
                     MessageBox.Show("Ha registrado una solicitud de horas extra", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SolicitudesHorasExtra solicitudes = new SolicitudesHorasExtra();
                     this.Hide();
@@ -127,6 +131,21 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
                 return null;
+            }
+        }
+        private void registrarEvento(string evento, string metodoYclase)
+        {
+            try
+            {
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[INSERTAR_EVENTO]", evento,
+                                                                                metodoYclase);
+                conexion.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase02 = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase02);
             }
         }
         private void registrarError(Exception ex, string metodoYclase)
@@ -183,5 +202,6 @@ namespace Proyecto_HRPS
             }
             dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now.AddYears(+5);
         }
+
     }
 }

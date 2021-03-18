@@ -225,8 +225,8 @@ namespace Proyecto_HRPS
 
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                    builder.Append("<td>" + diaDeInicio + "</td>");
-                    builder.Append("<td>" + diaDeFin + "</td>");
+                    builder.Append("<td>" + diaDeInicio.ToString("dd/MM/yyyy") + "</td>");
+                    builder.Append("<td>" + diaDeFin.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + cantidadDeDias + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
@@ -257,7 +257,7 @@ namespace Proyecto_HRPS
                         MessageBox.Show("Solicitud aceptada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha aceptado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de vacaciones aceptada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de vacaciones del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de vacaciones del empleado " + nombreDeEmpleado + " del día " + diaDeInicio.ToString("dd/MM/yyyy") + " al día " + diaDeFin.ToString("dd/MM/yyyy") + " con la cantidad de " + cantidadDeDias + " días.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
                         reiniciarPagina();
@@ -314,8 +314,8 @@ namespace Proyecto_HRPS
 
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
-                    builder.Append("<td>" + diaDeInicio + "</td>");
-                    builder.Append("<td>" + diaDeFin + "</td>");
+                    builder.Append("<td>" + diaDeInicio.ToString("dd/MM/yyyy") + "</td>");
+                    builder.Append("<td>" + diaDeFin.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + cantidadDeDias + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
@@ -346,7 +346,7 @@ namespace Proyecto_HRPS
                         MessageBox.Show("Solicitud negada", "Opciones de Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha negado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de vacaciones negada</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha negado la solicitud de vacaciones del empleado " + nombreDeEmpleado + " del día " + diaDeInicio.ToString("dd/MM/yyyy") + " al día " + diaDeFin.ToString("dd/MM/yyyy") + " con la cantidad de " + cantidadDeDias + " días.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
                         reiniciarPagina();

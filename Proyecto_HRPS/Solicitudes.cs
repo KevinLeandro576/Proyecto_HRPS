@@ -255,7 +255,7 @@ namespace Proyecto_HRPS
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha aceptado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de horas extra aceptada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
-                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha aceptado la solicitud de horas extra del empleado " + nombreDeEmpleado + " del día " + fechaDeSolicitud.ToString("dd/MM/yyyy") + " de " + cantidadDeHoras + " horas.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
 
@@ -344,7 +344,7 @@ namespace Proyecto_HRPS
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha negado una solicitud de horas extra</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Solicitud de horas extra negada</h1> <br/> " + builder.ToString(), "Solicitud de horas extra", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
-                        string texto = "El administrador: " + Empleado.Nombre + " ha rechazado la solicitud de horas extra del empleado " + nombreDeEmpleado + ".";
+                        string texto = "El administrador: " + Empleado.Nombre + " ha negado la solicitud de horas extra del empleado " + nombreDeEmpleado + " del día " + fechaDeSolicitud.ToString("dd/MM/yyyy") + " de " + cantidadDeHoras + " horas.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                         registrarEvento(texto, metodoYclase);
 
