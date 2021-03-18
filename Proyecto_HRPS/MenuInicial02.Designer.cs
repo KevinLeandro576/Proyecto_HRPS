@@ -29,6 +29,7 @@ namespace Proyecto_HRPS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicial02));
             this.botonDeAdministrador = new System.Windows.Forms.Button();
             this.botonDeEmpleado = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -69,6 +70,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.botonDeAdministrador);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuInicial02";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú inicial";
