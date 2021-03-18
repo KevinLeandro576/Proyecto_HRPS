@@ -163,7 +163,7 @@ namespace Proyecto_HRPS
             catch (Exception ex)
             {
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase); 
+                registrarError(ex, metodoYclase);
             }
         }
 
@@ -171,8 +171,17 @@ namespace Proyecto_HRPS
         {
             textBoxDeNombre.Text = Empleado.Nombre;
             textBoxDeNombre.Enabled = false;
-            dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now.AddYears(-5);
-            dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now;
+            var conexion = AbrirBaseDeDatos();
+            var comando = conexion.GetStoredProcCommand("SACAR_PRIMER_DIA_DISPONIBLE_HORAS_EXTRA");
+            conexion.ExecuteNonQuery(comando);
+            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            {
+                if (informacionEncontrada.Read())
+                {
+                    dateTimePickerDeDiaTrabajado.MinDate = informacionEncontrada.GetDateTime(0);
+                }
+            }
+            dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now.AddYears(+5);
         }
     }
 }

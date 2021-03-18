@@ -188,6 +188,7 @@ namespace Proyecto_HRPS
                     DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
                     int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
                     DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());
+                    DateTime diaDeFin = DateTime.Parse(fila.Cells["diaDeFinDataGridViewTextBoxColumn"].Value.ToString());
                     int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
                     String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -217,6 +218,7 @@ namespace Proyecto_HRPS
                     builder.Append("<tr>");
                     builder.Append("<th>NOMBRE</th>");
                     builder.Append("<th>FECHA DE INICIO</th>");
+                    builder.Append("<th>FECHA DE FINALIZACIÓN</th>");
                     builder.Append("<th>CANTIDAD DE DÍAS</th>");
                     builder.Append("<th>ESTADO DE SOLICITUD</th>");
                     builder.Append("</tr>");
@@ -224,6 +226,7 @@ namespace Proyecto_HRPS
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
                     builder.Append("<td>" + diaDeInicio + "</td>");
+                    builder.Append("<td>" + diaDeFin + "</td>");
                     builder.Append("<td>" + cantidadDeDias + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
@@ -274,6 +277,7 @@ namespace Proyecto_HRPS
                     DataGridViewRow fila = this.dataGridViewDeSolicitudesDeVacaciones.Rows[e.RowIndex];
                     int identificador = int.Parse(fila.Cells["identificadorDataGridViewTextBoxColumn"].Value.ToString());
                     DateTime diaDeInicio = DateTime.Parse(fila.Cells["diaDeInicioDataGridViewTextBoxColumn"].Value.ToString());
+                    DateTime diaDeFin = DateTime.Parse(fila.Cells["diaDeFinDataGridViewTextBoxColumn"].Value.ToString());
                     int cantidadDeDias = int.Parse(fila.Cells["cantidadDeDiasDataGridViewTextBoxColumn"].Value.ToString());
                     String infoCedula = fila.Cells["cedulaDeEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -303,6 +307,7 @@ namespace Proyecto_HRPS
                     builder.Append("<tr>");
                     builder.Append("<th>NOMBRE</th>");
                     builder.Append("<th>FECHA DE INICIO</th>");
+                    builder.Append("<th>FECHA DE FINALIZACIÓN</th>");
                     builder.Append("<th>CANTIDAD DE DÍAS</th>");
                     builder.Append("<th>ESTADO DE SOLICITUD</th>");
                     builder.Append("</tr>");
@@ -310,6 +315,7 @@ namespace Proyecto_HRPS
                     builder.Append("<tr align= center>");
                     builder.Append("<td>" + nombreDeEmpleado + "</td>");
                     builder.Append("<td>" + diaDeInicio + "</td>");
+                    builder.Append("<td>" + diaDeFin + "</td>");
                     builder.Append("<td>" + cantidadDeDias + "</td>");
                     builder.Append("<td>" + "REVISADA" + "</td>");
                     builder.Append("</tr>");
