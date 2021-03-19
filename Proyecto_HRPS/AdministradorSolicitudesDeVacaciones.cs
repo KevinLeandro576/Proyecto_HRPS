@@ -396,7 +396,7 @@ namespace Proyecto_HRPS
             }
         }
 
-        private void dateTimePickerFin_ValueChanged(object sender, EventArgs e)
+        private void dateTimePickerFin_ValueChanged(object sender, EventArgs e) 
         {
             try
             {

@@ -79,7 +79,6 @@
             this.dataGridViewDeEmpleados.AllowUserToResizeColumns = false;
             this.dataGridViewDeEmpleados.AllowUserToResizeRows = false;
             this.dataGridViewDeEmpleados.AutoGenerateColumns = false;
-            this.dataGridViewDeEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDeEmpleados.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDeEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -88,13 +87,14 @@
             this.dataGridViewTextBoxColumnHorario,
             this.Modificar});
             this.dataGridViewDeEmpleados.DataSource = this.empleadoEnObjetoBindingSource2;
+            this.dataGridViewDeEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDeEmpleados.GridColor = System.Drawing.Color.White;
             this.dataGridViewDeEmpleados.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDeEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDeEmpleados.Name = "dataGridViewDeEmpleados";
             this.dataGridViewDeEmpleados.ReadOnly = true;
             this.dataGridViewDeEmpleados.RowHeadersVisible = false;
-            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(513, 383);
+            this.dataGridViewDeEmpleados.Size = new System.Drawing.Size(517, 387);
             this.dataGridViewDeEmpleados.TabIndex = 5;
             this.dataGridViewDeEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
             this.dataGridViewDeEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellContentClick);
@@ -166,6 +166,7 @@
             this.dataGridViewTextBoxColumnCedula.HeaderText = "CÉDULA";
             this.dataGridViewTextBoxColumnCedula.Name = "dataGridViewTextBoxColumnCedula";
             this.dataGridViewTextBoxColumnCedula.ReadOnly = true;
+            this.dataGridViewTextBoxColumnCedula.Width = 128;
             // 
             // dataGridViewTextBoxColumnNombre
             // 
@@ -173,6 +174,7 @@
             this.dataGridViewTextBoxColumnNombre.HeaderText = "NOMBRE";
             this.dataGridViewTextBoxColumnNombre.Name = "dataGridViewTextBoxColumnNombre";
             this.dataGridViewTextBoxColumnNombre.ReadOnly = true;
+            this.dataGridViewTextBoxColumnNombre.Width = 127;
             // 
             // dataGridViewTextBoxColumnHorario
             // 
@@ -180,6 +182,7 @@
             this.dataGridViewTextBoxColumnHorario.HeaderText = "HORARIO";
             this.dataGridViewTextBoxColumnHorario.Name = "dataGridViewTextBoxColumnHorario";
             this.dataGridViewTextBoxColumnHorario.ReadOnly = true;
+            this.dataGridViewTextBoxColumnHorario.Width = 128;
             // 
             // empleadoEnObjetoBindingSource2
             // 

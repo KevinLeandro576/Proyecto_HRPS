@@ -106,8 +106,7 @@ namespace Proyecto_HRPS
 
 
                         var comando02 = conexion.GetStoredProcCommand("[EMPLEADO_CAMBIAR_CONTRASENA]", Empleado.Cedula, contrasenaEnHash);
-                        conexion.ExecuteNonQuery(comando02);
-                        MessageBox.Show("Cambios realizados, su nueva contraseña se ha enviado a su correo", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conexion.ExecuteNonQuery(comando02);                        
                         AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
                         StringBuilder builder = new StringBuilder();
 
@@ -124,10 +123,10 @@ namespace Proyecto_HRPS
                         List<string> listaDeCorreos = new List<string>();
 
                         string evento = "El empleado con cédula: " + Empleado.Cedula + "; ha actualizado su contraseña.";
-                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                        string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name; 
                         registrarEvento(evento, metodoYclase);
-
                         administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha hecho un cambio de contraseña, a continuación se muestra su nueva contraseña:</h1> <br/> " + builder.ToString(), "Cambio de Contraseña", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", new List<string> { Empleado.Correo });
+                        MessageBox.Show("Cambios realizados, su nueva contraseña se ha enviado a su correo", "Opciones de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                         empleadoVerPerfil.Show();
                     }

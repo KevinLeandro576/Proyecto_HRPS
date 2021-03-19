@@ -170,7 +170,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889); 
 
                 StringBuilder builder = new StringBuilder();
                 List<string> listaDeCorreos = new List<string>();

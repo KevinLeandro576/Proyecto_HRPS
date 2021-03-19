@@ -125,7 +125,7 @@ namespace Proyecto_HRPS
 
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
-                    if (informacionEncontrada.Read() == true)
+                    if (informacionEncontrada.Read())
                     {
                         //ENVIA UN CORREO
                         AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
@@ -138,18 +138,14 @@ namespace Proyecto_HRPS
                         builder.Append("<th>NOMBRE</th>");
                         builder.Append("<th>CANTIDAD DE DÍAS DISPONIBLES</th>");
                         builder.Append("</tr>");
-                        int numeroColumnas = informacionEncontrada.FieldCount;
-                        int x = 0;
-                        while (x < numeroColumnas)
+                        do
                         {
                             builder.Append("<tr align= center>");
                             builder.Append("<td>" + informacionEncontrada.GetString(0) + "</td>");
                             builder.Append("<td>" + informacionEncontrada.GetString(1) + "</td>");
                             builder.Append("<td>" + informacionEncontrada.GetInt32(2).ToString() + "</td>");
-                            informacionEncontrada.Read();
                             builder.Append("</tr>");
-                            x++;
-                        }
+                        } while (informacionEncontrada.Read());
                         builder.Append("</table>");
 
                         var comando02 = conexion.GetStoredProcCommand("SACAR_CORREOS_DE_ADMINISTRADORES");

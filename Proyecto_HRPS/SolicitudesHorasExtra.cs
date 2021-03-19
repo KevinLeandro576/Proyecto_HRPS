@@ -92,7 +92,7 @@ namespace Proyecto_HRPS
                     {
                         while (informacionEncontrada.Read())
                         {
-                            correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
+                            correoDeAdministrador = informacionEncontrada["CORREO"].ToString(); 
                             listaDeCorreos.Add(correoDeAdministrador);
                         }
                     }

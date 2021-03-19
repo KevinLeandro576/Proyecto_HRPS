@@ -116,7 +116,7 @@ namespace Proyecto_HRPS
                     var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                     conexion.ExecuteNonQuery(comando02);
 
-                    string evento = "El empleado " + Empleado.Nombre + " ha cambiado el horario del empleado " + infoNombre + ", del horario " + textBoxDeHorarioActual.Text + " al horario " + horarioNuevo + ".";
+                    string evento = "El empleado " + Empleado.Nombre + " ha cambiado el horario del empleado " + infoNombre + ", del horario " + textBoxDeHorarioActual.Text + " al horario " + horarioNuevo + "."; 
                     string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                     registrarEvento(evento, metodoYclase);
 
