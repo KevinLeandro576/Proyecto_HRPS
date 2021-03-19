@@ -88,7 +88,7 @@ namespace Proyecto_HRPS
                 }
                 else if (result == DialogResult.Yes)
                 {
-                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
                     StringBuilder builder = new StringBuilder();
 
                     builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");
@@ -104,8 +104,6 @@ namespace Proyecto_HRPS
                     var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_NOMBRE]", infoNombre);
                     string correoDeEmpleado = "";
                     List<string> listaDeCorreos = new List<string>();
-                    listaDeCorreos.Add("1037joseg@gmail.com");
-                    listaDeCorreos.Add("leandrokevin576@gmail.com");
                     using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                     {
                         if (informacionEncontrada.Read())
@@ -113,7 +111,7 @@ namespace Proyecto_HRPS
                             correoDeEmpleado = informacionEncontrada.GetString(0);
                         }
                     }
-                    administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, su horario ha sido modificado:</h1> <br/> " + builder.ToString(), "Modificación de Horario", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                    administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, su horario ha sido modificado:</h1> <br/> " + builder.ToString(), "Modificación de Horario", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                     MessageBox.Show("Cambios guardados", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var comando02 = conexion.GetStoredProcCommand("ADMINISTRADOR_CAMBIAR_HORARIO", infoCedula, horarioNuevo);
                     conexion.ExecuteNonQuery(comando02);

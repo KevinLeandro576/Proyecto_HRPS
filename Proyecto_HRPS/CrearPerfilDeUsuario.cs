@@ -85,7 +85,7 @@ namespace Proyecto_HRPS
                     string correoDeEmpleado = textBoxDeCorreoElectronico.Text;
                     List<string> listaDeCorreos = new List<string>();
                     listaDeCorreos.Add("leandrokevin576@gmail.com");
-                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                    AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
                     StringBuilder builder = new StringBuilder();
                     builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
                     builder.Append("<tr>");
@@ -130,7 +130,7 @@ namespace Proyecto_HRPS
                                                                                                     rol,
                                                                                                     textBoxDeCorreoElectronico.Text);
                         conexion.ExecuteNonQuery(comando);
-                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha sido registrado en el sistema, bienvenido a Electrónica UREBA S.A.!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha sido registrado en el sistema, bienvenido a Electrónica UREBA S.A.!</h1><br/><h3>Información de Perfil</h3> " + builder.ToString(), "Creación de Perfil", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
                         MessageBox.Show("Empleado agregado exitosamente, se ha enviado un correo al empleado con la información escrita y contraseña temporal.", "Opciones de Perfil", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         string texto = "El empleado: " + Empleado.Nombre + " ha agregado al empleado " + textBoxDeNombre.Text + ".";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;

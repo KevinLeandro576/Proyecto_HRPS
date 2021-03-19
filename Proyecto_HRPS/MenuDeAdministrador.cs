@@ -169,11 +169,6 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
-        }
-
-        private void MenuDeAdministrador_Load(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

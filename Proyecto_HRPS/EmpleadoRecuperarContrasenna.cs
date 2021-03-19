@@ -170,7 +170,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
 
                 StringBuilder builder = new StringBuilder();
                 List<string> listaDeCorreos = new List<string>();
@@ -191,7 +191,7 @@ namespace Proyecto_HRPS
                 var comando = conexion.GetStoredProcCommand("EMPLEADO_CAMBIAR_CONTRASENA", cedula, claveTemporalEncriptada);
                 conexion.ExecuteNonQuery(comando);
 
-                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, se ha establecido una contraseña temporal para su inicio de sesión:</h1> <br/> " + builder.ToString(), "Restablecimiento de Contraseña", "1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Atención, se ha establecido una contraseña temporal para su inicio de sesión:</h1> <br/> " + builder.ToString(), "Restablecimiento de Contraseña", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
 
                 string evento = "El empleado con cédula: " + cedula + "; ha restablecido su contraseña";
                 registrarEvento(evento,

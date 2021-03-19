@@ -99,7 +99,7 @@ namespace Proyecto_HRPS
             try
             {
                 //ENVIA UN CORREO
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com"/*"smtp.sendgrid.net"*/, "1037joseg@gmail.com" /*"planilla@electronicaureba.com"*//*"apikey"*/ , /*"SG.jwZwcq7eTgynoKP3fHBrOw.2FlkLP61Je6XQQbRPukuTTecTz - je3lsL2h7Aagk8jg*/"Qwertz987.,!", 587/*465*/);
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
 
                 StringBuilder builder = new StringBuilder();
                 builder.Append("<br/>");
@@ -144,8 +144,8 @@ namespace Proyecto_HRPS
                         listaDeCorreos.Add(correoDeAdministrador);
                     }
                 }
-                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha enviado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", /*"planilla@electronicaureba.com"*/"1037joseg@gmail.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
-                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha recibido una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", /*"planilla@electronicaureba.com"*/"1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha enviado una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", new List<string> { correoDeEmpleado });
+                administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h1>Ha recibido una solicitud de vacaciones</h1> <br/> " + builder.ToString(), "Solicitud de vacaciones", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", listaDeCorreos);
 
                 string texto = "El empleado: " + Empleado.Nombre + " ha enviado una solicitud de vacaciones de " + cantidadDeDiasEnMedio + " días, del día " + dateTimePickerDeFechaDeInicio.Value.ToString("dd/MM/yyyy") + " al día " + dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd/MM/yyyy") + ".";
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;

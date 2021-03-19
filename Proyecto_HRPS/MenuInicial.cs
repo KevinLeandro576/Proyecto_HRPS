@@ -128,7 +128,7 @@ namespace Proyecto_HRPS
                     if (informacionEncontrada.Read() == true)
                     {
                         //ENVIA UN CORREO
-                        AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("smtp.gmail.com", "1037joseg@gmail.com", "Qwertz987.,!", 587);
+                        AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
 
                         StringBuilder builder = new StringBuilder();
 
@@ -164,7 +164,7 @@ namespace Proyecto_HRPS
                                 listaDeCorreos.Add(correoDeAdministrador);
                             }
                         }
-                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h2>Los siguientes empleados poseen 10 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 10 días libres", "1037joseg@gmail.com", "Electrónica UREBA S.A.", listaDeCorreos);
+                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h2>Atención, los siguientes empleados poseen 10 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 10 días libres", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", listaDeCorreos);
                     }
                 }
             }
