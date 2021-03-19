@@ -73,7 +73,7 @@ namespace Proyecto_HRPS
                         contrasenaAnterior = informacionEncontrada.GetString(0);
                     }
                 }
-                EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil();
+                EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil(); 
                 string contrasena = textBoxDeContrasena.Text;
                 string contrasenaEnHash = encriptarClaveAsha256(contrasena);
                 contrasenaEnHash = contrasenaEnHash.Substring(0, 24);
