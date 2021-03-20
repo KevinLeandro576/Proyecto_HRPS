@@ -13,6 +13,7 @@ namespace Proyecto_HRPS
 {
     public partial class VerHorasExtra : Form
     {
+        List<string> nombresConLetras = new List<string>();
         public VerHorasExtra()
         {
             try
@@ -62,6 +63,7 @@ namespace Proyecto_HRPS
                     while (informacionEncontrada.Read())
                     {
                         comboBoxDeNombres.Items.Add(informacionEncontrada["NOMBRE"].ToString());
+                        nombresConLetras.Add(informacionEncontrada["NOMBRE"].ToString());
                     }
                     comboBoxDeNombres.ValueMember = "NOMBRE";
                     comboBoxDeNombres.DisplayMember = "NOMBRE";
@@ -107,75 +109,6 @@ namespace Proyecto_HRPS
             try
             {
                 Buscar();
-                /*string nombre = comboBoxDeNombres.GetItemText(comboBoxDeNombres.SelectedItem);
-                if (comboBoxDeNombres.SelectedIndex != -1)
-                {
-                    var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("[ADMINISTRADOR_VER_HORAS_EXTRAS]", nombre);
-                    using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                    {
-                        if (informacionEncontrada.Read())
-                        {
-                            textBoxDeCedula.Text = informacionEncontrada.GetString(0);
-                            string horario = informacionEncontrada.GetString(1);
-                            textBoxDeHorario.Text = horario;
-                            decimal salarioBruto = informacionEncontrada.GetDecimal(2);
-                            salarioBruto = decimal.Round(salarioBruto, 2);
-                            textBoxDeSalarioBruto.Text = salarioBruto.ToString();
-                            decimal salarioPorHora = informacionEncontrada.GetDecimal(3);
-                            salarioPorHora = decimal.Round(salarioPorHora, 2);
-                            textBoxDeSalarioPorHora.Text = salarioPorHora.ToString();
-                            decimal cantidadDeHorasExtra = informacionEncontrada.GetDecimal(4);
-                            cantidadDeHorasExtra = decimal.Round(cantidadDeHorasExtra, 2);
-                            textBoxDeCantidadDeHorasExtra.Text = cantidadDeHorasExtra.ToString();
-                            decimal pagoPorHorasExtra = informacionEncontrada.GetDecimal(5);
-                            pagoPorHorasExtra = decimal.Round(pagoPorHorasExtra, 2);
-                            textBoxDePagoPorHorasExtra.Text = pagoPorHorasExtra.ToString();
-                            decimal salarioBrutoConHorasExtra = informacionEncontrada.GetDecimal(6);
-                            salarioBrutoConHorasExtra = decimal.Round(salarioBrutoConHorasExtra, 2);
-                            textBoxDeSalarioBrutoConHorasExtra.Text = salarioBrutoConHorasExtra.ToString();
-                            decimal deducciones = informacionEncontrada.GetDecimal(7);
-                            deducciones = decimal.Round(deducciones, 2);
-                            textBoxDeDeducciones.Text = deducciones.ToString();
-                            decimal salarioNeto = informacionEncontrada.GetDecimal(8);
-                            salarioNeto = decimal.Round(salarioNeto, 2);
-                            textBoxDeSalarioNeto.Text = salarioNeto.ToString();
-                        }
-                        else
-                        {
-                            var comando02 = conexion.GetStoredProcCommand("[SACAR_INFORMACION_DE_EMPLEADO_PARA_HORAS_EXTRA]", nombre);
-                            using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
-                            {
-                                if (informacionEncontrada02.Read())
-                                {
-                                    decimal salarioBruto = decimal.Parse(informacionEncontrada02["SALARIO"].ToString());
-                                    textBoxDeCedula.Text = informacionEncontrada02["PK_CEDULA"].ToString(); ;
-                                    textBoxDeHorario.Text = informacionEncontrada02["HORARIO"].ToString();
-                                    textBoxDeSalarioBruto.Text = salarioBruto.ToString();
-                                    decimal salarioPorHora = decimal.Parse(informacionEncontrada02["SALARIO_HORA"].ToString());
-                                    salarioPorHora = decimal.Round(salarioPorHora, 2);
-                                    textBoxDeSalarioPorHora.Text = salarioPorHora.ToString();
-                                    textBoxDeCantidadDeHorasExtra.Text = "0";
-                                    textBoxDePagoPorHorasExtra.Text = "0.00";
-                                    salarioBruto = decimal.Round(salarioBruto, 2);
-                                    textBoxDeSalarioBrutoConHorasExtra.Text = salarioBruto.ToString();
-                                    decimal deducciones = salarioBruto * 0.13M;
-                                    deducciones = decimal.Round(deducciones, 2);
-                                    textBoxDeDeducciones.Text = deducciones.ToString();
-                                    decimal salarioNeto = salarioBruto - deducciones;
-                                    salarioNeto = decimal.Round(salarioNeto, 2);
-                                    textBoxDeSalarioNeto.Text = salarioNeto.ToString();
-                                }
-                                else
-                                {
-                                    comboBoxDeNombres.Focus();
-                                    MessageBox.Show("Revisa nombre", "Opciones de Horas Extra", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    reiniciarPagina();
-                                }
-                            }
-                        }
-                    }
-                }*/
             }
             catch (Exception ex)
             {
@@ -335,6 +268,39 @@ namespace Proyecto_HRPS
             try
             {
                 comboBoxDeNombres.ForeColor = Color.Black;
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+        private void comboBoxDeNombres_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //comboBoxDeNombres.FindString(comboBoxDeNombres.Text);
+                string letra = comboBoxDeNombres.Text;
+                var conexion = AbrirBaseDeDatos();
+                var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS_CON_LETRAS]", letra);
+                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+                {
+                    if (informacionEncontrada.Read())
+                    {
+                        comboBoxDeNombres.Items.Clear();
+                        comboBoxDeNombres.SelectionStart = comboBoxDeNombres.Text.Length;
+                        //comboBoxDeNombres.SelectionLength = 0;
+                        /*comboBoxDeNombres.SelectedItem = null;
+                        comboBoxDeNombres.SelectedIndex = -1;*/
+                        //int cantidadDeItems = comboBoxDeNombres.Items.Count;
+                        do
+                        {
+                            comboBoxDeNombres.Items.Add(informacionEncontrada["NOMBRE"].ToString());
+                        } while (informacionEncontrada.Read());
+                        comboBoxDeNombres.ValueMember = "NOMBRE";
+                        comboBoxDeNombres.DisplayMember = "NOMBRE";
+                    }
+                }
             }
             catch (Exception ex)
             {

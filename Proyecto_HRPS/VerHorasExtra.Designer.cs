@@ -49,7 +49,6 @@
             this.textBoxDePagoPorHorasExtra = new System.Windows.Forms.TextBox();
             this.textBoxDeDeducciones = new System.Windows.Forms.TextBox();
             this.textBoxDeSalarioNeto = new System.Windows.Forms.TextBox();
-            this.botonDeBuscar = new System.Windows.Forms.Button();
             this.comboBoxDeNombres = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -70,10 +69,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(62, 363);
+            this.botonDeVolver.Location = new System.Drawing.Point(65, 363);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(547, 41);
+            this.botonDeVolver.Size = new System.Drawing.Size(1227, 41);
             this.botonDeVolver.TabIndex = 14;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -268,30 +267,17 @@
             this.textBoxDeSalarioNeto.Size = new System.Drawing.Size(310, 26);
             this.textBoxDeSalarioNeto.TabIndex = 33;
             // 
-            // botonDeBuscar
-            // 
-            this.botonDeBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonDeBuscar.ForeColor = System.Drawing.Color.White;
-            this.botonDeBuscar.Location = new System.Drawing.Point(745, 363);
-            this.botonDeBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.botonDeBuscar.Name = "botonDeBuscar";
-            this.botonDeBuscar.Size = new System.Drawing.Size(547, 41);
-            this.botonDeBuscar.TabIndex = 34;
-            this.botonDeBuscar.Text = "BUSCAR";
-            this.botonDeBuscar.UseVisualStyleBackColor = false;
-            this.botonDeBuscar.Click += new System.EventHandler(this.botonDeBuscar_Click);
-            // 
             // comboBoxDeNombres
             // 
             this.comboBoxDeNombres.FormattingEnabled = true;
             this.comboBoxDeNombres.Location = new System.Drawing.Point(245, 69);
             this.comboBoxDeNombres.Name = "comboBoxDeNombres";
+            this.comboBoxDeNombres.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxDeNombres.Size = new System.Drawing.Size(310, 26);
             this.comboBoxDeNombres.TabIndex = 35;
             this.comboBoxDeNombres.DropDown += new System.EventHandler(this.comboBoxDeNombres_DropDown);
             this.comboBoxDeNombres.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeNombres_SelectedIndexChanged);
-            
+            this.comboBoxDeNombres.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBoxDeNombres_KeyUp);
             // 
             // VerHorasExtra
             // 
@@ -300,7 +286,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1371, 443);
             this.Controls.Add(this.comboBoxDeNombres);
-            this.Controls.Add(this.botonDeBuscar);
             this.Controls.Add(this.textBoxDeSalarioNeto);
             this.Controls.Add(this.textBoxDeDeducciones);
             this.Controls.Add(this.textBoxDePagoPorHorasExtra);
@@ -357,7 +342,6 @@
         private System.Windows.Forms.TextBox textBoxDePagoPorHorasExtra;
         private System.Windows.Forms.TextBox textBoxDeDeducciones;
         private System.Windows.Forms.TextBox textBoxDeSalarioNeto;
-        private System.Windows.Forms.Button botonDeBuscar;
         private System.Windows.Forms.ComboBox comboBoxDeNombres;
     }
 }
