@@ -281,7 +281,7 @@ namespace Proyecto_HRPS
             {
                 //comboBoxDeNombres.FindString(comboBoxDeNombres.Text);
                 string letra = comboBoxDeNombres.Text;
-                var conexion = AbrirBaseDeDatos();
+                var conexion = AbrirBaseDeDatos(); 
                 var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS_CON_LETRAS]", letra);
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
