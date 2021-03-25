@@ -59,7 +59,7 @@ namespace Proyecto_HRPS
                     int numeroColumas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
                     {
-                        MessageBox.Show("No hay empleados registrados", "Opciones de Ver Empleados",
+                        MessageBox.Show("No hay empleados registrados", "Opciones de Control de Empleados",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
