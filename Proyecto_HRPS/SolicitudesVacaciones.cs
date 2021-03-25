@@ -140,7 +140,7 @@ namespace Proyecto_HRPS
                 {
                     while (informacionEncontrada02.Read())
                     {
-                        correoDeAdministrador = informacionEncontrada02["CORREO"].ToString(); 
+                        correoDeAdministrador = informacionEncontrada02["CORREO"].ToString();
                         listaDeCorreos.Add(correoDeAdministrador);
                     }
                 }
@@ -227,6 +227,14 @@ namespace Proyecto_HRPS
                 if (informacionEncontrada.Read())
                 {
                     dateTimePickerDeFechaDeInicio.MinDate = informacionEncontrada.GetDateTime(0);
+                    if ((informacionEncontrada.GetDateTime(0) < DateTime.Now))
+                    {
+                        dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
                 }
             }
             textBoxDeNombre.Enabled = false;

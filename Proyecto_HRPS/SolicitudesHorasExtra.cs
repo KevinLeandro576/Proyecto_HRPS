@@ -109,7 +109,7 @@ namespace Proyecto_HRPS
                 }
                 else
                 {
-                    MessageBox.Show("No puede registrar cero horas extra", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No puede registrar menos de una hora extra", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     numericDeCantidadDeHorasExtra.Focus();
                 }
             }
@@ -198,6 +198,14 @@ namespace Proyecto_HRPS
                 if (informacionEncontrada.Read())
                 {
                     dateTimePickerDeDiaTrabajado.MinDate = informacionEncontrada.GetDateTime(0);
+                    if (informacionEncontrada.GetDateTime(0) < DateTime.Now)
+                    {
+                        dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
                 }
             }
             dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now.AddYears(+5);
