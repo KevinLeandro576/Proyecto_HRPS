@@ -109,7 +109,7 @@ namespace Proyecto_HRPS
                 }
                 else
                 {
-                    MessageBox.Show("No puede registrar cero horas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No puede registrar cero horas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     numericDeCantidadDeHorasExtra.Focus();
                 }
             }
