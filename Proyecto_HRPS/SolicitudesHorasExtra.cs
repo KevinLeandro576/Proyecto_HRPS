@@ -92,7 +92,7 @@ namespace Proyecto_HRPS
                     {
                         while (informacionEncontrada.Read())
                         {
-                            correoDeAdministrador = informacionEncontrada["CORREO"].ToString(); 
+                            correoDeAdministrador = informacionEncontrada["CORREO"].ToString();
                             listaDeCorreos.Add(correoDeAdministrador);
                         }
                     }
@@ -109,7 +109,7 @@ namespace Proyecto_HRPS
                 }
                 else
                 {
-                    MessageBox.Show("No puede registrar cero horas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No puede registrar cero horas extra", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     numericDeCantidadDeHorasExtra.Focus();
                 }
             }
