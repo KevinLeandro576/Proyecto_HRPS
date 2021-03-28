@@ -295,6 +295,22 @@ namespace Proyecto_HRPS
                         comboBoxDeNombres.ValueMember = "NOMBRE";
                         comboBoxDeNombres.DisplayMember = "NOMBRE";
                     }
+                    else
+                    {
+                        comboBoxDeNombres.Items.Clear();
+                        comboBoxDeNombres.SelectionStart = comboBoxDeNombres.Text.Length;
+                        var comando02 = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS]");
+                        using (IDataReader informacionEncontrada02 = conexion.ExecuteReader(comando02))
+                        {
+                            while (informacionEncontrada02.Read())
+                            {
+                                comboBoxDeNombres.Items.Add(informacionEncontrada02["NOMBRE"].ToString());
+                                nombresConLetras.Add(informacionEncontrada02["NOMBRE"].ToString());
+                            }
+                            comboBoxDeNombres.ValueMember = "NOMBRE";
+                            comboBoxDeNombres.DisplayMember = "NOMBRE";
+                        }
+                    }
                 }
             }
             catch (Exception ex)
