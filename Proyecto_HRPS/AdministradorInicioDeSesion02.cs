@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
-    public partial class AdministradorInicioDeSesion : Form
+    public partial class AdministradorInicioDeSesion02 : Form
     {
         int numeroDeIntentos = 0;
-        public AdministradorInicioDeSesion()
+        public AdministradorInicioDeSesion02()
         {
             try
             {
@@ -87,9 +87,9 @@ namespace Proyecto_HRPS
                                         numeroDeIntentos = numeroDeIntentos + 1;
                                         MessageBox.Show("No se encontraron datos al iniciar sesión"
                                             , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                                        AdministradorInicioDeSesion02 pantalla = new AdministradorInicioDeSesion02();
                                         this.Hide();
-                                        administrador.Show();
+                                        pantalla.Show();
                                     }
                                 }
                             }
@@ -173,9 +173,9 @@ namespace Proyecto_HRPS
                     {
                         MessageBox.Show("No se encontraron datos al iniciar sesión."
                             , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                        AdministradorInicioDeSesion02 pantalla = new AdministradorInicioDeSesion02();
                         this.Hide();
-                        administrador.Show();
+                        pantalla.Show();
                     }
                 }
             }
@@ -203,7 +203,7 @@ namespace Proyecto_HRPS
             }
         }
 
-        private void AdministradorInicioDeSesion_FormClosing(object sender, FormClosingEventArgs e)
+        private void AdministradorInicioDeSesion02_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {
@@ -351,92 +351,6 @@ namespace Proyecto_HRPS
                     comprobarContrasenna();
                 }
 
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-            }
-        }
-
-        private void AdministradorInicioDeSesion_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!Empleado.YaEjecutoProceso)
-                {
-                    aumentarDias();
-                    generarCorreoNotificacionDias();
-                }
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-            }
-        }
-        private void aumentarDias()
-        {
-            try
-            {
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("AUMENTAR_DIAS_LIBRES");
-                conexion.ExecuteNonQuery(comando);
-            }
-            catch (Exception ex)
-            {
-                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                registrarError(ex, metodoYclase);
-            }
-        }
-        private void generarCorreoNotificacionDias()
-        {
-            try
-            {
-                var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("MOSTRAR_EMPLEADOS_CON_DIAS_LIBRES");
-
-                using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-                {
-                    if (informacionEncontrada.Read())
-                    {
-                        Empleado.YaEjecutoProceso = true;
-                        //ENVIA UN CORREO
-                        AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
-
-                        StringBuilder builder = new StringBuilder();
-
-                        builder.Append("<table class=table table-bordered align= center border= 1 cellpadding= 3 cellspacing= 0 width= 100%'>");
-                        builder.Append("<tr>");
-                        builder.Append("<th>CÉDULA</th>");
-                        builder.Append("<th>NOMBRE</th>");
-                        builder.Append("<th>CANTIDAD DE DÍAS DISPONIBLES</th>");
-                        builder.Append("</tr>");
-                        do
-                        {
-                            builder.Append("<tr align= center>");
-                            builder.Append("<td>" + informacionEncontrada.GetString(0) + "</td>");
-                            builder.Append("<td>" + informacionEncontrada.GetString(1) + "</td>");
-                            builder.Append("<td>" + informacionEncontrada.GetInt32(2).ToString() + "</td>");
-                            builder.Append("</tr>");
-                        } while (informacionEncontrada.Read());
-                        builder.Append("</table>");
-
-                        var comando02 = conexion.GetStoredProcCommand("SACAR_CORREOS_DE_ADMINISTRADORES");
-                        string correoDeAdministrador = "";
-                        List<string> listaDeCorreos = new List<string>();
-                        listaDeCorreos.Add("leandrokevin576@gmail.com");
-                        using (IDataReader informacionEncontrada01 = conexion.ExecuteReader(comando02))
-                        {
-                            while (informacionEncontrada01.Read())
-                            {
-                                correoDeAdministrador = informacionEncontrada01.GetString(0);
-                                listaDeCorreos.Add(correoDeAdministrador);
-                            }
-                        }
-                        administradorDeCorreo.EnviarCorreo("<img src=https://i.ibb.co/jv7wTtq/LOGO-UREBA.png height=80vh width=100%> <br> <br> <h2>Atención, los siguientes empleados poseen 12 o más días libres</h2> <br/> " + builder.ToString(), "Notificación de 12 días libres", "planilla@electronicaureba.com", "Electrónica UREBA S.A.", listaDeCorreos);
-                    }
-                }
             }
             catch (Exception ex)
             {

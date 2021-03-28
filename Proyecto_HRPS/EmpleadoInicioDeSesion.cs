@@ -38,7 +38,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                MenuInicial02 menuInicial02 = new MenuInicial02();
+                AdministradorInicioDeSesion02 menuInicial02 = new AdministradorInicioDeSesion02();
                 this.Hide();
                 menuInicial02.Show();
             }
@@ -109,7 +109,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                EmpleadoRecuperarContrasenna recuperar = new EmpleadoRecuperarContrasenna();
+                AdministradorRecuperarContrasenna recuperar = new AdministradorRecuperarContrasenna();
                 this.Hide();
                 recuperar.Show();
             }

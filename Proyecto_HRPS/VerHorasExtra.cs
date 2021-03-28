@@ -279,9 +279,8 @@ namespace Proyecto_HRPS
         {
             try
             {
-                //comboBoxDeNombres.FindString(comboBoxDeNombres.Text);
                 string letra = comboBoxDeNombres.Text;
-                var conexion = AbrirBaseDeDatos(); 
+                var conexion = AbrirBaseDeDatos();
                 var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRES_DE_EMPLEADOS_CON_LETRAS]", letra);
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
@@ -289,10 +288,6 @@ namespace Proyecto_HRPS
                     {
                         comboBoxDeNombres.Items.Clear();
                         comboBoxDeNombres.SelectionStart = comboBoxDeNombres.Text.Length;
-                        //comboBoxDeNombres.SelectionLength = 0;
-                        /*comboBoxDeNombres.SelectedItem = null;
-                        comboBoxDeNombres.SelectedIndex = -1;*/
-                        //int cantidadDeItems = comboBoxDeNombres.Items.Count;
                         do
                         {
                             comboBoxDeNombres.Items.Add(informacionEncontrada["NOMBRE"].ToString());

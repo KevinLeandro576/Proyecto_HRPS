@@ -346,7 +346,7 @@ namespace Proyecto_HRPS
 
                         string texto = "El administrador: " + Empleado.Nombre + " ha negado la solicitud de horas extra del empleado " + nombreDeEmpleado + " del día " + fechaDeSolicitud.ToString("dd/MM/yyyy") + " de " + cantidadDeHoras + " horas.";
                         string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
-                        registrarEvento(texto, metodoYclase); 
+                        registrarEvento(texto, metodoYclase);
 
                         reiniciarPagina();
                     }
@@ -448,5 +448,6 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
+
     }
 }

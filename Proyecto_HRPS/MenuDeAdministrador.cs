@@ -155,9 +155,9 @@ namespace Proyecto_HRPS
                 else if (result == DialogResult.Yes)//ERROR AQUI PORQUE NO SE SALDRIA DE IF
                 {
                     MessageBox.Show("Ha cerrado sesión", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AdministradorInicioDeSesion administradorInicioDeSesion = new AdministradorInicioDeSesion();
+                    AdministradorInicioDeSesion02 pantallaPrincipal = new AdministradorInicioDeSesion02();//PANTALLA PRINCIPAL GENERAL, NO DE ADMINSITRADOR
                     this.Hide();
-                    administradorInicioDeSesion.Show();
+                    pantallaPrincipal.Show();
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -169,6 +169,21 @@ namespace Proyecto_HRPS
                 string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
                 registrarError(ex, metodoYclase);
             }
-        }        
+        }
+
+        private void botonDeVerPerfil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil();
+                this.Hide();
+                empleadoVerPerfil.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
     }
 }

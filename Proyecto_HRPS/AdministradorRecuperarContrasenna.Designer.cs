@@ -93,7 +93,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdministradorRecuperarContrasenna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrador recuperar contraseña";
+            this.Text = "Recuperar contraseña";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorRecuperarContrasenna_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorRecuperarContrasenna_Load);
             this.ResumeLayout(false);

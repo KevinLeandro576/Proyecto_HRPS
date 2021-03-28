@@ -22,5 +22,7 @@ namespace Proyecto_HRPS
         public static DateTime FechaDeInicio { get; set; }
         public static string Correo { get; set; }
         public static string Contrasena { get; set; }
+        public static int Rol { get; set; }
+        public static bool YaEjecutoProceso { get; set; }
     }
 }

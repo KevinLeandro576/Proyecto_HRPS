@@ -63,7 +63,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                AdministradorInicioDeSesion administrador = new AdministradorInicioDeSesion();
+                AdministradorInicioDeSesion02 administrador = new AdministradorInicioDeSesion02();
                 this.Hide();
                 administrador.Show();
             }
@@ -98,7 +98,7 @@ namespace Proyecto_HRPS
                     string cedula = textBoxDeCedula.Text;
                     string correo = "";
                     var conexion = AbrirBaseDeDatos();
-                    var comando = conexion.GetStoredProcCommand("SACAR_CORREO_DE_ADMINISTRADOR_CON_CEDULA", cedula);
+                    var comando = conexion.GetStoredProcCommand("[SACAR_CORREO_DE_EMPLEADO_CON_CEDULA]", cedula);
 
                     using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                     {
@@ -139,7 +139,7 @@ namespace Proyecto_HRPS
         {
             try
             {
-                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889); 
+                AdministradorDeCorreo administradorDeCorreo = new AdministradorDeCorreo("mail.electronicaureba.com", "planilla@electronicaureba.com", "Qwertz987.,!", 8889);
                 StringBuilder builder = new StringBuilder();
 
                 builder.Append("<table class=table table-bordered align=center border=1 cellpadding= 3 cellspacing= 0 width= 100%'>");

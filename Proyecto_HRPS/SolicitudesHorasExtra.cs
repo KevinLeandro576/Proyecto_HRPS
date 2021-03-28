@@ -190,25 +190,26 @@ namespace Proyecto_HRPS
         {
             textBoxDeNombre.Text = Empleado.Nombre;
             textBoxDeNombre.Enabled = false;
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("SACAR_PRIMER_DIA_DISPONIBLE_HORAS_EXTRA");
-            conexion.ExecuteNonQuery(comando);
-            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-            {
-                if (informacionEncontrada.Read())
-                {
-                    dateTimePickerDeDiaTrabajado.MinDate = informacionEncontrada.GetDateTime(0);
-                    if (informacionEncontrada.GetDateTime(0) < DateTime.Now)
-                    {
-                        dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
-                    }
-                }
-                else
-                {
-                    dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
-                }
-            }
-            dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now.AddYears(+5);
+            //var conexion = AbrirBaseDeDatos();
+            //var comando = conexion.GetStoredProcCommand("SACAR_PRIMER_DIA_DISPONIBLE_HORAS_EXTRA");
+            //conexion.ExecuteNonQuery(comando);
+            //using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            //{
+            //    if (informacionEncontrada.Read())
+            //    {
+            //        dateTimePickerDeDiaTrabajado.MinDate = informacionEncontrada.GetDateTime(0);
+            //        if (informacionEncontrada.GetDateTime(0) < DateTime.Now)
+            //        {
+            //            dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
+            //    }
+            //}
+            dateTimePickerDeDiaTrabajado.MinDate = DateTime.Now;
+            dateTimePickerDeDiaTrabajado.MaxDate = DateTime.Now.AddYears(+1);
         }
 
     }

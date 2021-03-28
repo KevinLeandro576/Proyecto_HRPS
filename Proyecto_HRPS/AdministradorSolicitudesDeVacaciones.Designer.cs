@@ -39,8 +39,6 @@ namespace Proyecto_HRPS
             this.labelDeCedula = new System.Windows.Forms.Label();
             this.textBoxDeCedula = new System.Windows.Forms.TextBox();
             this.dataGridViewDeSolicitudesDeVacaciones = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDeInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDeFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,8 @@ namespace Proyecto_HRPS
             this.cedulaDeEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.botonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.botonNegar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudDeVacacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeSolicitudesDeVacaciones)).BeginInit();
             this.panel1.SuspendLayout();
@@ -77,7 +77,7 @@ namespace Proyecto_HRPS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 18);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Selecciona fecha de inicio";
+            this.label1.Text = "Seleccione fecha de inicio";
             // 
             // dateTimePickerInicio
             // 
@@ -112,7 +112,7 @@ namespace Proyecto_HRPS
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(112, 18);
             this.labelDeCedula.TabIndex = 25;
-            this.labelDeCedula.Text = "Escribe cédula";
+            this.labelDeCedula.Text = "Escriba cédula";
             // 
             // textBoxDeCedula
             // 
@@ -150,22 +150,6 @@ namespace Proyecto_HRPS
             this.dataGridViewDeSolicitudesDeVacaciones.Size = new System.Drawing.Size(672, 378);
             this.dataGridViewDeSolicitudesDeVacaciones.TabIndex = 0;
             this.dataGridViewDeSolicitudesDeVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeSolicitudesDeVacaciones_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(29, 193);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(678, 381);
-            this.panel1.TabIndex = 28;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridViewDeSolicitudesDeVacaciones);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(672, 378);
-            this.panel2.TabIndex = 29;
             // 
             // identificadorDataGridViewTextBoxColumn
             // 
@@ -213,6 +197,22 @@ namespace Proyecto_HRPS
             this.botonNegar.Name = "botonNegar";
             this.botonNegar.Text = "Negar";
             this.botonNegar.UseColumnTextForButtonValue = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(29, 193);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(678, 381);
+            this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridViewDeSolicitudesDeVacaciones);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(672, 378);
+            this.panel2.TabIndex = 29;
             // 
             // AdministradorSolicitudesDeVacaciones
             // 

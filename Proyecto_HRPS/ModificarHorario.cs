@@ -150,26 +150,30 @@ namespace Proyecto_HRPS
                 {
                     if (informacionEncontrada.Read())
                     {
-                        string cedula = informacionEncontrada["PK_CEDULA"].ToString();
-                        string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
-                        string horario = informacionEncontrada["HORARIO"].ToString();
-                        string tiempo = informacionEncontrada["TIEMPO"].ToString();
-                        DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
-                        decimal salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
-                        string puesto = informacionEncontrada["PUESTO"].ToString();
-                        int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
                         empleadoEnObjetoBindingSource2.Clear();
-                        empleadoEnObjetoBindingSource2.Add(new EmpleadoEnObjeto()
+                        do
                         {
-                            Cedula = cedula,
-                            Nombre = nombre,
-                            Horario = horario,
-                            Tiempo = tiempo,
-                            FechaDeNacimiento = fechaDeNacimiento,
-                            Salario = salario,
-                            Puesto = puesto,
-                            CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
-                        });
+                            string cedula = informacionEncontrada["PK_CEDULA"].ToString();
+                            string nombre = informacionEncontrada["NOMBRE"].ToString(); ;
+                            string horario = informacionEncontrada["HORARIO"].ToString();
+                            string tiempo = informacionEncontrada["TIEMPO"].ToString();
+                            DateTime fechaDeNacimiento = DateTime.Parse(informacionEncontrada["FECHA_NAC"].ToString());
+                            decimal salario = decimal.Parse(informacionEncontrada["SALARIO"].ToString());
+                            string puesto = informacionEncontrada["PUESTO"].ToString();
+                            int cantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
+
+                            empleadoEnObjetoBindingSource2.Add(new EmpleadoEnObjeto()
+                            {
+                                Cedula = cedula,
+                                Nombre = nombre,
+                                Horario = horario,
+                                Tiempo = tiempo,
+                                FechaDeNacimiento = fechaDeNacimiento,
+                                Salario = salario,
+                                Puesto = puesto,
+                                CantidadDeDiasDisponibles = cantidadDeDiasDisponibles
+                            });
+                        } while (informacionEncontrada.Read());
                     }
                     else
                     {

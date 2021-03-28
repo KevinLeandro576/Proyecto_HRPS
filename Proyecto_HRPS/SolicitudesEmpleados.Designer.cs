@@ -39,10 +39,10 @@
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(104, 135);
+            this.botonDeVolver.Location = new System.Drawing.Point(104, 212);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(325, 41);
+            this.botonDeVolver.Size = new System.Drawing.Size(325, 57);
             this.botonDeVolver.TabIndex = 21;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;
@@ -53,12 +53,12 @@
             this.botonDeRegistrarHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeRegistrarHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeRegistrarHorasExtra.ForeColor = System.Drawing.Color.White;
-            this.botonDeRegistrarHorasExtra.Location = new System.Drawing.Point(104, 86);
+            this.botonDeRegistrarHorasExtra.Location = new System.Drawing.Point(104, 131);
             this.botonDeRegistrarHorasExtra.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeRegistrarHorasExtra.Name = "botonDeRegistrarHorasExtra";
-            this.botonDeRegistrarHorasExtra.Size = new System.Drawing.Size(325, 41);
+            this.botonDeRegistrarHorasExtra.Size = new System.Drawing.Size(325, 57);
             this.botonDeRegistrarHorasExtra.TabIndex = 22;
-            this.botonDeRegistrarHorasExtra.Text = "REGISTRAR HORAS EXTRA";
+            this.botonDeRegistrarHorasExtra.Text = "REGISTRAR SOLICITUD DE HORAS EXTRA";
             this.botonDeRegistrarHorasExtra.UseVisualStyleBackColor = false;
             this.botonDeRegistrarHorasExtra.Click += new System.EventHandler(this.botonDeRegistrarHorasExtra_Click);
             // 
@@ -67,12 +67,12 @@
             this.botonDeSolicitarVacaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeSolicitarVacaciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeSolicitarVacaciones.ForeColor = System.Drawing.Color.White;
-            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(104, 37);
+            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(104, 46);
             this.botonDeSolicitarVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeSolicitarVacaciones.Name = "botonDeSolicitarVacaciones";
-            this.botonDeSolicitarVacaciones.Size = new System.Drawing.Size(325, 41);
+            this.botonDeSolicitarVacaciones.Size = new System.Drawing.Size(325, 57);
             this.botonDeSolicitarVacaciones.TabIndex = 23;
-            this.botonDeSolicitarVacaciones.Text = "SOLICITAR VACACIONES";
+            this.botonDeSolicitarVacaciones.Text = "REGISTRAR SOLICITUD DE VACACIONES";
             this.botonDeSolicitarVacaciones.UseVisualStyleBackColor = false;
             this.botonDeSolicitarVacaciones.Click += new System.EventHandler(this.botonDeSolicitarVacaciones_Click);
             // 
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(545, 209);
+            this.ClientSize = new System.Drawing.Size(545, 324);
             this.Controls.Add(this.botonDeSolicitarVacaciones);
             this.Controls.Add(this.botonDeRegistrarHorasExtra);
             this.Controls.Add(this.botonDeVolver);

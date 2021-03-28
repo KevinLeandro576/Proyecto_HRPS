@@ -116,9 +116,9 @@ namespace Proyecto_HRPS
                 else if (result == DialogResult.Yes)//ERROR AQUI PORQUE NO SE SALDRIA DE IF
                 {
                     MessageBox.Show("Ha cerrado sesión", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    EmpleadoInicioDeSesion empleadoInicioDeSesion = new EmpleadoInicioDeSesion();
+                    AdministradorInicioDeSesion02 pantallaPrincipal = new AdministradorInicioDeSesion02();
                     this.Hide();
-                    empleadoInicioDeSesion.Show();
+                    pantallaPrincipal.Show();
                 }
                 else if (result == DialogResult.Cancel)
                 {

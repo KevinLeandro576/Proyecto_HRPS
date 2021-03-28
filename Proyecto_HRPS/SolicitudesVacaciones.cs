@@ -69,7 +69,7 @@ namespace Proyecto_HRPS
                     }
                     else
                     {
-                        MessageBox.Show("Revise fechas de solicitud de vacaciones o cantidad de días disponibles", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Revise cantidad de días disponibles", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -219,27 +219,30 @@ namespace Proyecto_HRPS
 
         private void SolicitudesVacaciones_Load(object sender, EventArgs e)
         {
-            var conexion = AbrirBaseDeDatos();
-            var comando = conexion.GetStoredProcCommand("SACAR_PRIMER_DIA_DISPONIBLE");
-            conexion.ExecuteNonQuery(comando);
-            using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
-            {
-                if (informacionEncontrada.Read())
-                {
-                    dateTimePickerDeFechaDeInicio.MinDate = informacionEncontrada.GetDateTime(0);
-                    if ((informacionEncontrada.GetDateTime(0) < DateTime.Now))
-                    {
-                        dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
-                    }
-                }
-                else
-                {
-                    dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
-                }
-            }
+            //var conexion = AbrirBaseDeDatos();
+            //var comando = conexion.GetStoredProcCommand("SACAR_PRIMER_DIA_DISPONIBLE");
+            //conexion.ExecuteNonQuery(comando);
+            //using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
+            //{
+            //    if (informacionEncontrada.Read())
+            //    {
+            //        dateTimePickerDeFechaDeInicio.MinDate = informacionEncontrada.GetDateTime(0);
+            //        if ((informacionEncontrada.GetDateTime(0) < DateTime.Now))
+            //        {
+            //            dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
+            //    }
+            //}
             textBoxDeNombre.Enabled = false;
-            textBoxDeNombre.Text = Empleado.Nombre;
-            dateTimePickerDeFechaDeFinalizacion.MinDate = dateTimePickerDeFechaDeInicio.MinDate.AddDays(1);
+            textBoxDeNombre.Text = Empleado.Nombre;            
+            dateTimePickerDeFechaDeInicio.MinDate = DateTime.Now;
+            dateTimePickerDeFechaDeInicio.MaxDate = DateTime.Now.AddYears(+1);
+            dateTimePickerDeFechaDeFinalizacion.MinDate = DateTime.Now;
+            dateTimePickerDeFechaDeFinalizacion.MaxDate = DateTime.Now.AddYears(+1);
         }
     }
 }

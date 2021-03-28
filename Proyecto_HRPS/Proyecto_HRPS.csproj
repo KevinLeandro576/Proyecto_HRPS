@@ -98,6 +98,12 @@
     <Compile Include="AdministradorInicioDeSesion.Designer.cs">
       <DependentUpon>AdministradorInicioDeSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdministradorInicioDeSesion02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorInicioDeSesion02.Designer.cs">
+      <DependentUpon>AdministradorInicioDeSesion02.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdministradorRecuperarContrasenna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,12 +178,6 @@
     <Compile Include="EmpleadoVerSalario.Designer.cs">
       <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadoRecuperarContrasenna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmpleadoRecuperarContrasenna.Designer.cs">
-      <DependentUpon>EmpleadoRecuperarContrasenna.cs</DependentUpon>
-    </Compile>
     <Compile Include="HR_PAYROLL_SYSTEMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,18 +194,6 @@
     </Compile>
     <Compile Include="MenuDeEmpleado.Designer.cs">
       <DependentUpon>MenuDeEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuInicial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuInicial.Designer.cs">
-      <DependentUpon>MenuInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuInicial02.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuInicial02.Designer.cs">
-      <DependentUpon>MenuInicial02.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPerfilesEmpleado.cs">
       <SubType>Form</SubType>
@@ -310,6 +298,9 @@
     <EmbeddedResource Include="AdministradorInicioDeSesion.resx">
       <DependentUpon>AdministradorInicioDeSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdministradorInicioDeSesion02.resx">
+      <DependentUpon>AdministradorInicioDeSesion02.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministradorRecuperarContrasenna.resx">
       <DependentUpon>AdministradorRecuperarContrasenna.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,20 +337,11 @@
     <EmbeddedResource Include="EmpleadoVerSalario.resx">
       <DependentUpon>EmpleadoVerSalario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmpleadoRecuperarContrasenna.resx">
-      <DependentUpon>EmpleadoRecuperarContrasenna.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuDeAdministrador.resx">
       <DependentUpon>MenuDeAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuDeEmpleado.resx">
       <DependentUpon>MenuDeEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuInicial.resx">
-      <DependentUpon>MenuInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuInicial02.resx">
-      <DependentUpon>MenuInicial02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPerfilesEmpleado.resx">
       <DependentUpon>MenuPerfilesEmpleado.cs</DependentUpon>

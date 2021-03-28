@@ -76,16 +76,16 @@
             // 
             this.labelDeCedula.AutoSize = true;
             this.labelDeCedula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeCedula.Location = new System.Drawing.Point(53, 105);
+            this.labelDeCedula.Location = new System.Drawing.Point(56, 58);
             this.labelDeCedula.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelDeCedula.Name = "labelDeCedula";
             this.labelDeCedula.Size = new System.Drawing.Size(112, 18);
             this.labelDeCedula.TabIndex = 10;
-            this.labelDeCedula.Text = "Escribe cédula";
+            this.labelDeCedula.Text = "Escriba cédula";
             // 
             // textBoxDeCedula
             // 
-            this.textBoxDeCedula.Location = new System.Drawing.Point(358, 102);
+            this.textBoxDeCedula.Location = new System.Drawing.Point(358, 55);
             this.textBoxDeCedula.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.textBoxDeCedula.Name = "textBoxDeCedula";
             this.textBoxDeCedula.Size = new System.Drawing.Size(381, 26);
@@ -96,16 +96,16 @@
             // 
             this.labelDeFecha.AutoSize = true;
             this.labelDeFecha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeFecha.Location = new System.Drawing.Point(53, 58);
+            this.labelDeFecha.Location = new System.Drawing.Point(56, 105);
             this.labelDeFecha.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelDeFecha.Name = "labelDeFecha";
             this.labelDeFecha.Size = new System.Drawing.Size(128, 18);
             this.labelDeFecha.TabIndex = 13;
-            this.labelDeFecha.Text = "Selecciona fecha";
+            this.labelDeFecha.Text = "Seleccione fecha";
             // 
             // dateTimePickerDeFecha
             // 
-            this.dateTimePickerDeFecha.Location = new System.Drawing.Point(358, 52);
+            this.dateTimePickerDeFecha.Location = new System.Drawing.Point(358, 99);
             this.dateTimePickerDeFecha.Name = "dateTimePickerDeFecha";
             this.dateTimePickerDeFecha.Size = new System.Drawing.Size(381, 26);
             this.dateTimePickerDeFecha.TabIndex = 14;

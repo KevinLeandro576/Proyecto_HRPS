@@ -40,9 +40,19 @@ namespace Proyecto_HRPS
         {
             try
             {
-                MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
-                this.Hide();
-                menuPerfilesEmpleado.Show();
+                if (Empleado.Rol == 1)
+                {
+                    MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+                    this.Hide();
+                    menuDeAdministrador.Show();
+                }
+                else if (Empleado.Rol == 2)
+                {
+                    MenuPerfilesEmpleado menuPerfilesEmpleado = new MenuPerfilesEmpleado();
+                    this.Hide();
+                    menuPerfilesEmpleado.Show();
+                }
+
             }
             catch (Exception ex)
             {
