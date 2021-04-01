@@ -137,6 +137,7 @@ namespace Proyecto_HRPS
                         Empleado.Puesto = informacionEncontrada["PUESTO"].ToString();
                         Empleado.Correo = informacionEncontrada["CORREO"].ToString();
                         Empleado.Contrasena = informacionEncontrada["CONTRASENNA"].ToString();
+                        Empleado.CantidadDeDiasDisponibles = int.Parse(informacionEncontrada["DIAS_LIBRES"].ToString());
                         Empleado.Rol = int.Parse(informacionEncontrada["FK_ROL"].ToString());
 
                         if (Empleado.Rol == 1)
