@@ -42,9 +42,9 @@ namespace Proyecto_HRPS
             {
                 if (Empleado.Rol == 1)
                 {
-                    MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
+                    PerfilDeAdministrador perfil = new PerfilDeAdministrador();
                     this.Hide();
-                    menuDeAdministrador.Show();
+                    perfil.Show();
                 }
                 else if (Empleado.Rol == 2)
                 {

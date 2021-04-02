@@ -31,9 +31,18 @@ namespace Proyecto_HRPS
         {
             try
             {
-                SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
-                this.Hide();
-                solicitudesEmpleados.Show();
+                if (Empleado.Rol == 2)
+                {
+                    SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
+                    this.Hide();
+                    solicitudesEmpleados.Show();
+                }
+                else if (Empleado.Rol == 1)
+                {
+                    PerfilDeAdministrador perfil = new PerfilDeAdministrador();
+                    this.Hide();
+                    perfil.Show();
+                }
             }
             catch (Exception ex)
             {

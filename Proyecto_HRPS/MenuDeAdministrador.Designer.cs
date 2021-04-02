@@ -34,7 +34,7 @@
             this.botonDeControlDeEmpleados = new System.Windows.Forms.Button();
             this.botonDeSolicitudes = new System.Windows.Forms.Button();
             this.botonDeReportes = new System.Windows.Forms.Button();
-            this.botonDeVerPerfil = new System.Windows.Forms.Button();
+            this.botonDePerfilDeAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botonDeCerrarSesion
@@ -107,19 +107,19 @@
             this.botonDeReportes.UseVisualStyleBackColor = false;
             this.botonDeReportes.Click += new System.EventHandler(this.botonDeReportes_Click);
             // 
-            // botonDeVerPerfil
+            // botonDePerfilDeAdmin
             // 
-            this.botonDeVerPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.botonDeVerPerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonDeVerPerfil.ForeColor = System.Drawing.Color.White;
-            this.botonDeVerPerfil.Location = new System.Drawing.Point(84, 227);
-            this.botonDeVerPerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.botonDeVerPerfil.Name = "botonDeVerPerfil";
-            this.botonDeVerPerfil.Size = new System.Drawing.Size(325, 41);
-            this.botonDeVerPerfil.TabIndex = 22;
-            this.botonDeVerPerfil.Text = "VER PERFIL";
-            this.botonDeVerPerfil.UseVisualStyleBackColor = false;
-            this.botonDeVerPerfil.Click += new System.EventHandler(this.botonDeVerPerfil_Click);
+            this.botonDePerfilDeAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDePerfilDeAdmin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDePerfilDeAdmin.ForeColor = System.Drawing.Color.White;
+            this.botonDePerfilDeAdmin.Location = new System.Drawing.Point(84, 227);
+            this.botonDePerfilDeAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDePerfilDeAdmin.Name = "botonDePerfilDeAdmin";
+            this.botonDePerfilDeAdmin.Size = new System.Drawing.Size(325, 41);
+            this.botonDePerfilDeAdmin.TabIndex = 22;
+            this.botonDePerfilDeAdmin.Text = "PERFIL DE ADMINISTRADOR";
+            this.botonDePerfilDeAdmin.UseVisualStyleBackColor = false;
+            this.botonDePerfilDeAdmin.Click += new System.EventHandler(this.botonDeVerPerfil_Click);
             // 
             // MenuDeAdministrador
             // 
@@ -127,7 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 355);
-            this.Controls.Add(this.botonDeVerPerfil);
+            this.Controls.Add(this.botonDePerfilDeAdmin);
             this.Controls.Add(this.botonDeReportes);
             this.Controls.Add(this.botonDeSolicitudes);
             this.Controls.Add(this.botonDeControlDeEmpleados);
@@ -150,6 +150,6 @@
         private System.Windows.Forms.Button botonDeControlDeEmpleados;
         private System.Windows.Forms.Button botonDeSolicitudes;
         private System.Windows.Forms.Button botonDeReportes;
-        private System.Windows.Forms.Button botonDeVerPerfil;
+        private System.Windows.Forms.Button botonDePerfilDeAdmin;
     }
 }

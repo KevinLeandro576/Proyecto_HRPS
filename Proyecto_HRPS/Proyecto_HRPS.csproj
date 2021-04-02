@@ -225,6 +225,12 @@
     <Compile Include="ModificarSalario02.Designer.cs">
       <DependentUpon>ModificarSalario02.cs</DependentUpon>
     </Compile>
+    <Compile Include="PerfilDeAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerfilDeAdministrador.Designer.cs">
+      <DependentUpon>PerfilDeAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="PerfilesDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarSalario02.resx">
       <DependentUpon>ModificarSalario02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerfilDeAdministrador.resx">
+      <DependentUpon>PerfilDeAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilesDeUsuario.resx">
       <DependentUpon>PerfilesDeUsuario.cs</DependentUpon>

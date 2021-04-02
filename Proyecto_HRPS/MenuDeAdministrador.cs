@@ -175,9 +175,9 @@ namespace Proyecto_HRPS
         {
             try
             {
-                EmpleadoVerPerfil empleadoVerPerfil = new EmpleadoVerPerfil();
+                PerfilDeAdministrador perfil = new PerfilDeAdministrador();
                 this.Hide();
-                empleadoVerPerfil.Show();
+                perfil.Show();
             }
             catch (Exception ex)
             {
