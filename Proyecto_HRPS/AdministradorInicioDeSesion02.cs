@@ -149,7 +149,7 @@ namespace Proyecto_HRPS
                             MenuDeAdministrador menuDeAdministrador = new MenuDeAdministrador();
                             this.Hide();
                             menuDeAdministrador.Show();
-                            string evento = "El administrador: " + Empleado.Nombre + "; ha iniciado sesión";
+                            string evento = "El administrador: " + Empleado.Nombre + "; ha iniciado sesión.";
                             registrarEvento(evento,
                                 this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
