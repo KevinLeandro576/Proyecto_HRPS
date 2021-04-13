@@ -59,7 +59,7 @@ namespace Proyecto_HRPS
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
                 contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
-                if (numeroDeIntentos <= 2)
+                if (numeroDeIntentos <= 2) 
                 {
                     if (validarTextBox())
                     {
