@@ -390,7 +390,7 @@ namespace Proyecto_HRPS
                 registrarError(ex, metodoYclase);
             }
         }
-        private void generarCorreoNotificacionDias()
+        private void generarCorreoNotificacionDias() 
         {
             try
             {
