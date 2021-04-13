@@ -53,7 +53,7 @@
             this.botonDeRegistrarHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeRegistrarHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeRegistrarHorasExtra.ForeColor = System.Drawing.Color.White;
-            this.botonDeRegistrarHorasExtra.Location = new System.Drawing.Point(104, 131);
+            this.botonDeRegistrarHorasExtra.Location = new System.Drawing.Point(104, 42);
             this.botonDeRegistrarHorasExtra.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeRegistrarHorasExtra.Name = "botonDeRegistrarHorasExtra";
             this.botonDeRegistrarHorasExtra.Size = new System.Drawing.Size(325, 57);
@@ -67,7 +67,7 @@
             this.botonDeSolicitarVacaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeSolicitarVacaciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeSolicitarVacaciones.ForeColor = System.Drawing.Color.White;
-            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(104, 46);
+            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(104, 123);
             this.botonDeSolicitarVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeSolicitarVacaciones.Name = "botonDeSolicitarVacaciones";
             this.botonDeSolicitarVacaciones.Size = new System.Drawing.Size(325, 57);

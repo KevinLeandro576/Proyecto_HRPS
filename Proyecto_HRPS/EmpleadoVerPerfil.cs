@@ -1,14 +1,7 @@
-﻿using System;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using System;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {

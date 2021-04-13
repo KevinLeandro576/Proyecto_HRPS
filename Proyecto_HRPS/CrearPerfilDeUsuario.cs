@@ -3,13 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_HRPS
@@ -115,7 +112,7 @@ namespace Proyecto_HRPS
                     builder.Append("</tr>");
                     builder.Append("</table>");
                     builder.Append("<br><br>");
-                    builder.Append("<h3>*Por favor cambie su contraseña temporal cuando ingrese al sistema en la sección " + "'Perfil'" + " y seguidamente " + "'Ver Perfil'." + "</h3>"); 
+                    builder.Append("<h3>*Por favor cambie su contraseña temporal cuando ingrese al sistema en la sección " + "'Perfil'" + " y seguidamente " + "'Ver Perfil'." + "</h3>");
                     if (result == DialogResult.Yes)
                     {
                         var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_INSERTAR_EMPLEADO", textBoxDeCedula.Text,

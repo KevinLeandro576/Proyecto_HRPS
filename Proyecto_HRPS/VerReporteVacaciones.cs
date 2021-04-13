@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System.IO;
 using Microsoft.Practices.EnterpriseLibrary.Data;
+using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Proyecto_HRPS
 {
@@ -97,7 +91,7 @@ namespace Proyecto_HRPS
                     tabla = new PdfPTable(numeroColumnas);
                     tabla.WidthPercentage = 90;
 
-                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16)); 
+                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeFechaDeInicio = new Paragraph("FECHA DE INICIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     Paragraph encabezadoDeFechaDeFin = new Paragraph("FECHA DE FINALIZACIÓN", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));

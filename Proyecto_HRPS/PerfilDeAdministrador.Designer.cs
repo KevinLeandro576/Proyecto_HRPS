@@ -33,6 +33,7 @@ namespace Proyecto_HRPS
             this.botonDeVerPerfil = new System.Windows.Forms.Button();
             this.botonDeSolicitarVacaciones = new System.Windows.Forms.Button();
             this.botonDeVolver = new System.Windows.Forms.Button();
+            this.botonDeRegistrarSolicitudDeHorasExtra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botonDeVerPerfil
@@ -55,7 +56,7 @@ namespace Proyecto_HRPS
             this.botonDeSolicitarVacaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeSolicitarVacaciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeSolicitarVacaciones.ForeColor = System.Drawing.Color.White;
-            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(55, 98);
+            this.botonDeSolicitarVacaciones.Location = new System.Drawing.Point(55, 163);
             this.botonDeSolicitarVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeSolicitarVacaciones.Name = "botonDeSolicitarVacaciones";
             this.botonDeSolicitarVacaciones.Size = new System.Drawing.Size(325, 57);
@@ -69,7 +70,7 @@ namespace Proyecto_HRPS
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(55, 163);
+            this.botonDeVolver.Location = new System.Drawing.Point(55, 228);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
             this.botonDeVolver.Size = new System.Drawing.Size(325, 57);
@@ -78,12 +79,28 @@ namespace Proyecto_HRPS
             this.botonDeVolver.UseVisualStyleBackColor = false;
             this.botonDeVolver.Click += new System.EventHandler(this.botonDeVolver_Click);
             // 
+            // botonDeRegistrarSolicitudDeHorasExtra
+            // 
+            this.botonDeRegistrarSolicitudDeHorasExtra.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.botonDeRegistrarSolicitudDeHorasExtra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.botonDeRegistrarSolicitudDeHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonDeRegistrarSolicitudDeHorasExtra.ForeColor = System.Drawing.Color.White;
+            this.botonDeRegistrarSolicitudDeHorasExtra.Location = new System.Drawing.Point(55, 98);
+            this.botonDeRegistrarSolicitudDeHorasExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.botonDeRegistrarSolicitudDeHorasExtra.Name = "botonDeRegistrarSolicitudDeHorasExtra";
+            this.botonDeRegistrarSolicitudDeHorasExtra.Size = new System.Drawing.Size(325, 57);
+            this.botonDeRegistrarSolicitudDeHorasExtra.TabIndex = 22;
+            this.botonDeRegistrarSolicitudDeHorasExtra.Text = "REGISTRAR SOLICITUD DE HORAS EXTRA";
+            this.botonDeRegistrarSolicitudDeHorasExtra.UseVisualStyleBackColor = false;
+            this.botonDeRegistrarSolicitudDeHorasExtra.Click += new System.EventHandler(this.botonDeRegistrarSolicitudDeHorasExtra_Click);
+            // 
             // PerfilDeAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(432, 250);
+            this.ClientSize = new System.Drawing.Size(432, 321);
+            this.Controls.Add(this.botonDeRegistrarSolicitudDeHorasExtra);
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.botonDeSolicitarVacaciones);
             this.Controls.Add(this.botonDeVerPerfil);
@@ -100,5 +117,6 @@ namespace Proyecto_HRPS
         private System.Windows.Forms.Button botonDeVerPerfil;
         private System.Windows.Forms.Button botonDeSolicitarVacaciones;
         private System.Windows.Forms.Button botonDeVolver;
+        private System.Windows.Forms.Button botonDeRegistrarSolicitudDeHorasExtra;
     }
 }

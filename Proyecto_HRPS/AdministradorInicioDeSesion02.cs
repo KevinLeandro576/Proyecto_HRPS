@@ -1,13 +1,8 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_HRPS
@@ -64,7 +59,7 @@ namespace Proyecto_HRPS
                 string contrasenna = textBoxDeContrasena.Text;
                 string contrasennaEncriptada = encriptarClaveAsha256(contrasenna);
                 contrasennaEncriptada = contrasennaEncriptada.Substring(0, 24);
-                if (numeroDeIntentos != 2)
+                if (numeroDeIntentos <= 2)
                 {
                     if (validarTextBox())
                     {
@@ -86,7 +81,7 @@ namespace Proyecto_HRPS
                                     {
                                         numeroDeIntentos = numeroDeIntentos + 1;
                                         MessageBox.Show("No se encontraron datos al iniciar sesión"
-                                            , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         AdministradorInicioDeSesion02 pantalla = new AdministradorInicioDeSesion02();
                                         this.Hide();
                                         pantalla.Show();
@@ -96,8 +91,17 @@ namespace Proyecto_HRPS
                             else
                             {
                                 numeroDeIntentos = numeroDeIntentos + 1;
-                                MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales"
+                                if (numeroDeIntentos < 3)
+                                {
+                                    MessageBox.Show("Cédula o contraseña incorrectas, por favor revisar credenciales"
                                     , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha fallado tres veces el inicio de sesión, por favor revise cédula o restablezca contraseña"
+                        , "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    numeroDeIntentos = 0;
+                                }
                             }
                         }
                     }

@@ -1,12 +1,8 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_HRPS
@@ -30,9 +26,18 @@ namespace Proyecto_HRPS
         {
             try
             {
-                SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
-                this.Hide();
-                solicitudesEmpleados.Show();
+                if (Empleado.Rol == 2)
+                {
+                    SolicitudesEmpleados solicitudesEmpleados = new SolicitudesEmpleados();
+                    this.Hide();
+                    solicitudesEmpleados.Show();
+                }
+                else if (Empleado.Rol == 1)
+                {
+                    PerfilDeAdministrador perfil = new PerfilDeAdministrador();
+                    this.Hide();
+                    perfil.Show();
+                }
             }
             catch (Exception ex)
             {

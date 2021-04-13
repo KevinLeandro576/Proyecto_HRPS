@@ -1,12 +1,5 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_HRPS
@@ -79,6 +72,21 @@ namespace Proyecto_HRPS
                 MenuDeAdministrador menu = new MenuDeAdministrador();
                 this.Hide();
                 menu.Show();
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+        }
+
+        private void botonDeRegistrarSolicitudDeHorasExtra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SolicitudesHorasExtra solicitud = new SolicitudesHorasExtra();
+                this.Hide();
+                solicitud.Show();
             }
             catch (Exception ex)
             {
