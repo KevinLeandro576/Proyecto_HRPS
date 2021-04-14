@@ -114,10 +114,13 @@ namespace Proyecto_HRPS
                         string cantidadDeDias = informacionEncontrada.GetValue(4).ToString();
                         string diasLibres = informacionEncontrada.GetValue(5).ToString();
 
+                        DateTime inicio01 = DateTime.Parse(inicio);
+                        DateTime fin02 = DateTime.Parse(fin);
+
                         tabla.AddCell(cedula);
                         tabla.AddCell(nombre);
-                        tabla.AddCell(inicio);
-                        tabla.AddCell(fin);
+                        tabla.AddCell(inicio01.ToString("dd.MM.yyyy"));
+                        tabla.AddCell(fin02.ToString("dd.MM.yyyy"));
                         tabla.AddCell(cantidadDeDias);
                         tabla.AddCell(diasLibres);
                     }
@@ -161,8 +164,8 @@ namespace Proyecto_HRPS
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
 
-                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString();
-                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString();
+                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd.MM.yyyy");
+                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd.MM.yyyy");
                     string rangoDeFechas = fechaDeInicio + " - " + fechaDeFinalizacion;
                     Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generarión de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
                     rangoDeFechasDeGeneracion.SpacingBefore = 20f;
