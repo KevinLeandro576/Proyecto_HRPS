@@ -91,12 +91,12 @@ namespace Proyecto_HRPS
                     tabla = new PdfPTable(numeroColumnas);
                     tabla.WidthPercentage = 90;
 
-                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeFechaDeInicio = new Paragraph("FECHA DE INICIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeFechaDeFin = new Paragraph("FECHA DE FINALIZACIÓN", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeCantidadDeDias = new Paragraph("CANTIDAD DE DÍAS", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
-                    Paragraph encabezadoDeDiasLibres = new Paragraph("DÍAS LIBRES", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
+                    Paragraph encabezadoDeCedula = new Paragraph("CÉDULA", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
+                    Paragraph encabezadoDeNombre = new Paragraph("NOMBRE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
+                    Paragraph encabezadoDeFechaDeInicio = new Paragraph("FECHA DE INICIO", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
+                    Paragraph encabezadoDeFechaDeFin = new Paragraph("FECHA DE FINALIZACIÓN", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
+                    Paragraph encabezadoDeCantidadDeDias = new Paragraph("CANTIDAD DE DÍAS", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
+                    Paragraph encabezadoDeDiasLibres = new Paragraph("DÍAS LIBRES", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11));
 
                     tabla.AddCell(encabezadoDeCedula);
                     tabla.AddCell(encabezadoDeNombre);

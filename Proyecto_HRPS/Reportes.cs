@@ -129,7 +129,7 @@ namespace Proyecto_HRPS
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
 
-                    string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+                    string fechaYhora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                     Paragraph fechaYhoraDeGeneracion = new Paragraph("Fecha y hora de generación de reporte: " + fechaYhora, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
                     fechaYhoraDeGeneracion.SpacingBefore = 20f;
                     fechaYhoraDeGeneracion.Alignment = Element.ALIGN_CENTER;
