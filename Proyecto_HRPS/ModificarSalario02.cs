@@ -78,11 +78,11 @@ namespace Proyecto_HRPS
                 string caption = "Opciones de Salario";
                 if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Minimum)
                 {
-                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario, es el mínimo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Maximum)
                 {
-                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario, es el máximo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

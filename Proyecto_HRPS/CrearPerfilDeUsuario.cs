@@ -102,7 +102,7 @@ namespace Proyecto_HRPS
                     builder.Append("<td>" + textBoxDeCedula.Text + "</td>");
                     builder.Append("<td>" + textBoxDeNombre.Text + "</td>");
                     builder.Append("<td>" + textBoxDeHorario.Text + "</td>");
-                    builder.Append("<td>" + dateTimePickerDeFechaDeNacimiento.Value + "</td>");
+                    builder.Append("<td>" + dateTimePickerDeFechaDeNacimiento.Value.ToString("dd/MM/yyyy") + "</td>");
                     builder.Append("<td>" + numericUpDownDeSalario.Value.ToString() + "</td>");
                     builder.Append("<td>" + numericUpDownDeSalarioPorHora.Value.ToString() + "</td>");
                     builder.Append("<td>" + textBoxDePuesto.Text + "</td>");
@@ -400,8 +400,10 @@ namespace Proyecto_HRPS
         {
             try
             {
-                var mail = new System.Net.Mail.MailAddress(correo);
-                return true;
+                //var mail = new System.Net.Mail.MailAddress(correo);
+                //return true;
+                Regex objAlphaPattern = new Regex("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$");
+                return objAlphaPattern.IsMatch(correo);
             }
             catch (Exception ex)
             {
@@ -529,6 +531,7 @@ namespace Proyecto_HRPS
         {
             try
             {
+                dateTimePickerDeFechaDeNacimiento.MinDate = DateTime.Now.AddYears(-70);
                 dateTimePickerDeFechaDeNacimiento.MaxDate = DateTime.Now.AddYears(-5);
                 txt = (TextBox)numericUpDownDeSalario.Controls[1];
                 txt.Validating += new CancelEventHandler(txt_Validating);
@@ -548,11 +551,11 @@ namespace Proyecto_HRPS
                 string caption = "Opciones de Salario";
                 if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Minimum)
                 {
-                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario, es el mínimo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (numericUpDownDeSalario.Value == numericUpDownDeSalario.Maximum)
                 {
-                    MessageBox.Show("Revise salario", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario, es el máximo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -568,11 +571,11 @@ namespace Proyecto_HRPS
                 string caption = "Opciones de Salario";
                 if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Minimum)
                 {
-                    MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario por hora, es el mínimo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (numericUpDownDeSalarioPorHora.Value == numericUpDownDeSalarioPorHora.Maximum)
                 {
-                    MessageBox.Show("Revise salario mínimo", caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Revise salario por hora, es el máximo posible", caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

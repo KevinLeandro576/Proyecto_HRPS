@@ -57,7 +57,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Revise cantidad de días disponibles de vacaciones", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (dateTimePickerDeFechaDeInicio.Value >= dateTimePickerDeFechaDeFinalizacion.Value)
+                else if (dateTimePickerDeFechaDeInicio.Value > dateTimePickerDeFechaDeFinalizacion.Value)
                 {
                     MessageBox.Show("Revise fechas escogidas", "Opciones de Solicitudes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

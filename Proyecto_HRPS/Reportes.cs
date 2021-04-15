@@ -59,7 +59,7 @@ namespace Proyecto_HRPS
             try
             {
                 var conexion = AbrirBaseDeDatos();
-                var comando = conexion.GetStoredProcCommand("ADMINISTRADOR_VER_EMPLEADOS_PARA_SALARIOS");
+                var comando = conexion.GetStoredProcCommand("REPORTE_DE_SALARIO");
 
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
