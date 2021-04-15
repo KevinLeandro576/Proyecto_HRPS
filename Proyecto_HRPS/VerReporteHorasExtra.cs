@@ -233,7 +233,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Regresando", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    e.Cancel = true;
+                    e.Cancel = true; 
                 }
             }
             catch (Exception ex)
