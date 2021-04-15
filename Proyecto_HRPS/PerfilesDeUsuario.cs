@@ -283,10 +283,5 @@ namespace Proyecto_HRPS
                                                                              metodoYclase);
             conexion.ExecuteNonQuery(comando);
         }
-
-        private void PerfilesDeUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

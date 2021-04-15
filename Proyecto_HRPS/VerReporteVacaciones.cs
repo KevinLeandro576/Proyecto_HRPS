@@ -119,8 +119,8 @@ namespace Proyecto_HRPS
 
                         tabla.AddCell(cedula);
                         tabla.AddCell(nombre);
-                        tabla.AddCell(inicio01.ToString("dd.MM.yyyy"));
-                        tabla.AddCell(fin02.ToString("dd.MM.yyyy"));
+                        tabla.AddCell(inicio01.ToString("dd-MM-yyyy"));
+                        tabla.AddCell(fin02.ToString("dd-MM-yyyy"));
                         tabla.AddCell(cantidadDeDias);
                         tabla.AddCell(diasLibres);
                     }
@@ -164,8 +164,8 @@ namespace Proyecto_HRPS
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
 
-                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd.MM.yyyy");
-                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd.MM.yyyy");
+                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd-MM-yyyy");
+                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd-MM-yyyy");
                     string rangoDeFechas = fechaDeInicio + " - " + fechaDeFinalizacion;
                     Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generarión de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
                     rangoDeFechasDeGeneracion.SpacingBefore = 20f;
