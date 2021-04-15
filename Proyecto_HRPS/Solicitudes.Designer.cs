@@ -151,7 +151,7 @@
             this.dataGridViewDeSolicitudesDeHorasExtra.RowHeadersVisible = false;
             this.dataGridViewDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(677, 416);
             this.dataGridViewDeSolicitudesDeHorasExtra.TabIndex = 8;
-            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
+            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);            
             // 
             // dataGridViewTextBoxColumnIdentificador
             // 

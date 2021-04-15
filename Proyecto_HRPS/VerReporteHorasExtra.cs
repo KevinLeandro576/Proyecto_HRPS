@@ -148,15 +148,15 @@ namespace Proyecto_HRPS
                     DC.Add(tabla);
                     tabla.SpacingAfter = 14f;
 
-                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd-MM-yyyy");
-                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd-MM-yyyy");
+                    string fechaDeInicio = dateTimePickerDeFechaDeInicio.Value.ToString("dd/MM/yyyy");
+                    string fechaDeFinalizacion = dateTimePickerDeFechaDeFinalizacion.Value.ToString("dd/MM/yyyy");
                     string rangoDeFechas = fechaDeInicio + " - " + fechaDeFinalizacion;
                     Paragraph rangoDeFechasDeGeneracion = new Paragraph("Rango de fechas de generación de reporte: " + rangoDeFechas, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16));
                     rangoDeFechasDeGeneracion.SpacingBefore = 20f;
                     rangoDeFechasDeGeneracion.Alignment = Element.ALIGN_CENTER;
                     DC.Add(rangoDeFechasDeGeneracion);
 
-                    string fechaYhora = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+                    string fechaYhora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                     Paragraph fechaYhoraDeGeneracion = new Paragraph("Fecha y hora de generación de reporte: " + fechaYhora, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10));
                     fechaYhoraDeGeneracion.SpacingBefore = 20f;
                     fechaYhoraDeGeneracion.Alignment = Element.ALIGN_CENTER;
