@@ -53,7 +53,7 @@ namespace Proyecto_HRPS
                     int numeroColumnas = informacionEncontrada.FieldCount;
                     if (informacionEncontrada.Read() != true)
                     {
-                        MessageBox.Show("No hay horas extras registradas.", "Error",
+                        MessageBox.Show("No hay vacaciones registradas.", "Opciones de Reportes",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
