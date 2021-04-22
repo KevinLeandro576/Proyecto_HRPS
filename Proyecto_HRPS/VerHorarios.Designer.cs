@@ -49,7 +49,7 @@ namespace Proyecto_HRPS
             this.botonDeVolver.Location = new System.Drawing.Point(34, 323);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(4);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(264, 41);
+            this.botonDeVolver.Size = new System.Drawing.Size(450, 41);
             this.botonDeVolver.TabIndex = 3;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;

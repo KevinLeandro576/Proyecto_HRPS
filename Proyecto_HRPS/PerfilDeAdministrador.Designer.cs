@@ -108,6 +108,7 @@ namespace Proyecto_HRPS
             this.Name = "PerfilDeAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil de Administrador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilDeAdministrador_FormClosing);
             this.ResumeLayout(false);
 
         }

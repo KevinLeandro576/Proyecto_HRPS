@@ -67,7 +67,7 @@ namespace Proyecto_HRPS
                     while (informacionEncontrada.Read())
                     {
                         int identificador = int.Parse(informacionEncontrada["PK_ID_SOLICITUD"].ToString());
-                        DateTime dia = DateTime.Parse(informacionEncontrada["DIA_SOLICITUD"].ToString());                        
+                        DateTime dia = DateTime.Parse(informacionEncontrada["DIA_SOLICITUD"].ToString());
                         decimal cantidadDeHoras = decimal.Parse(informacionEncontrada["CANT_HORAS"].ToString());
                         string cedulaDeEmpleado = informacionEncontrada["FK_CEDULA"].ToString();
                         solicitudDeHorasExtraBindingSource.Add(new SolicitudDeHorasExtra()
@@ -430,6 +430,7 @@ namespace Proyecto_HRPS
                 {
                     MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                     System.Environment.Exit(1);
                 }
                 else
@@ -446,6 +447,6 @@ namespace Proyecto_HRPS
             }
         }
 
-       
+
     }
 }

@@ -443,7 +443,36 @@ namespace Proyecto_HRPS
 
         private void CrearPerfilDeUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cerrarSesion();
+            //if (e.CloseReason==CloseReason.UserClosing)
+            //{
+            //    cerrarSesion();
+            //}
+            try
+            {
+                const string message = "¿Desea cerrar la aplicación?";
+                const string caption = "Opciones de Sesión";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Cerrando la aplicación", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                    System.Environment.Exit(1);
+                }
+                else
+                {
+                    MessageBox.Show("Regresando", "Opciones de Sesión"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                string metodoYclase = this.GetType().Name + ", " + System.Reflection.MethodBase.GetCurrentMethod().Name;
+                registrarError(ex, metodoYclase);
+            }
+
         }
 
         private void cerrarSesion()
