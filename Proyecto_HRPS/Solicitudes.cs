@@ -197,7 +197,6 @@ namespace Proyecto_HRPS
                     string correoDeAdministrador = "";
                     string nombreDeEmpleado = "";
                     List<string> listaDeCorreos = new List<string>();
-                    listaDeCorreos.Add("leandrokevin576@gmail.com");
                     var conexion = AbrirBaseDeDatos();
                     var comando = conexion.GetStoredProcCommand("[SACAR_NOMBRE_DE_EMPLEADO_CON_CEDULA]", infoCedula);
                     using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
