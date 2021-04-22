@@ -59,10 +59,10 @@ namespace Proyecto_HRPS
             this.botonDeVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.botonDeVolver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonDeVolver.ForeColor = System.Drawing.Color.White;
-            this.botonDeVolver.Location = new System.Drawing.Point(20, 598);
+            this.botonDeVolver.Location = new System.Drawing.Point(29, 600);
             this.botonDeVolver.Margin = new System.Windows.Forms.Padding(6);
             this.botonDeVolver.Name = "botonDeVolver";
-            this.botonDeVolver.Size = new System.Drawing.Size(226, 41);
+            this.botonDeVolver.Size = new System.Drawing.Size(678, 41);
             this.botonDeVolver.TabIndex = 5;
             this.botonDeVolver.Text = "VOLVER";
             this.botonDeVolver.UseVisualStyleBackColor = false;

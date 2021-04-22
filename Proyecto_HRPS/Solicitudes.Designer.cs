@@ -115,7 +115,7 @@
             // 
             this.labelHorasExtra.AutoSize = true;
             this.labelHorasExtra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHorasExtra.Location = new System.Drawing.Point(295, 175);
+            this.labelHorasExtra.Location = new System.Drawing.Point(295, 162);
             this.labelHorasExtra.Name = "labelHorasExtra";
             this.labelHorasExtra.Size = new System.Drawing.Size(193, 18);
             this.labelHorasExtra.TabIndex = 15;
@@ -151,7 +151,7 @@
             this.dataGridViewDeSolicitudesDeHorasExtra.RowHeadersVisible = false;
             this.dataGridViewDeSolicitudesDeHorasExtra.Size = new System.Drawing.Size(677, 416);
             this.dataGridViewDeSolicitudesDeHorasExtra.TabIndex = 8;
-            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);            
+            this.dataGridViewDeSolicitudesDeHorasExtra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeEmpleados_CellClick);
             // 
             // dataGridViewTextBoxColumnIdentificador
             // 
@@ -203,9 +203,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(56, 156);
+            this.panel1.Location = new System.Drawing.Point(59, 196);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(683, 422);
+            this.panel1.Size = new System.Drawing.Size(680, 382);
             this.panel1.TabIndex = 16;
             // 
             // panel2
