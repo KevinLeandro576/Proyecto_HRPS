@@ -132,7 +132,6 @@ namespace Proyecto_HRPS
                 string correoDeEmpleado = "";
                 string correoDeAdministrador;
                 List<string> listaDeCorreos = new List<string>();
-                listaDeCorreos.Add("leandrokevin576@gmail.com");
                 using (IDataReader informacionEncontrada = conexion.ExecuteReader(comando))
                 {
                     if (informacionEncontrada.Read())
