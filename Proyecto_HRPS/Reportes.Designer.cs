@@ -101,6 +101,7 @@
             this.Controls.Add(this.botonDeVerReportesDiarios);
             this.Controls.Add(this.botonDeVerSalariosDeEmpleados);
             this.Controls.Add(this.botonDeVolver);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

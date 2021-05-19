@@ -104,6 +104,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.botonDeVolver);
             this.Controls.Add(this.botonDeSolicitarVacaciones);
             this.Controls.Add(this.botonDeVerPerfil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PerfilDeAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

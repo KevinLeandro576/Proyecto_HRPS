@@ -86,6 +86,7 @@ namespace Proyecto_HRPS
             this.Controls.Add(this.botonDeVacaciones);
             this.Controls.Add(this.botonDeHorasExtra);
             this.Controls.Add(this.botonDeVolver);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminstradorEscogerSolicitud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

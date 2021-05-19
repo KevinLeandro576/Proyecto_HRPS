@@ -101,6 +101,7 @@
             this.Controls.Add(this.botonDeVerHorasExtra);
             this.Controls.Add(this.botonDePerfil);
             this.Controls.Add(this.botonDeCerrarSesión);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuDeEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

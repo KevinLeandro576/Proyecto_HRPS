@@ -85,6 +85,7 @@
             this.Controls.Add(this.botonDeSolicitarVacaciones);
             this.Controls.Add(this.botonDeRegistrarHorasExtra);
             this.Controls.Add(this.botonDeVolver);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SolicitudesEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

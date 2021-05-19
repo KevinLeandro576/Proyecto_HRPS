@@ -101,6 +101,7 @@
             this.Controls.Add(this.botonDeVerPerfil);
             this.Controls.Add(this.botonDeVerHorario);
             this.Controls.Add(this.botonDeVolver);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPerfilesEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
