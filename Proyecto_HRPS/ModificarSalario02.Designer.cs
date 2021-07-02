@@ -147,7 +147,7 @@
             0,
             0});
             this.numericUpDownDeSalario.Minimum = new decimal(new int[] {
-            347514,
+            100000,
             0,
             0,
             0});
@@ -159,7 +159,6 @@
             0,
             0,
             0});
-
             // 
             // ModificarSalario02
             // 

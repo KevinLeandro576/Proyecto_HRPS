@@ -293,7 +293,7 @@
             0,
             0});
             this.numericUpDownDeSalario.Minimum = new decimal(new int[] {
-            347514,
+            100000,
             0,
             0,
             0});
@@ -318,7 +318,7 @@
             0,
             0});
             this.numericUpDownDeSalarioPorHora.Minimum = new decimal(new int[] {
-            1448,
+            1000,
             0,
             0,
             0});
